@@ -3,7 +3,7 @@ defaults: &defaults
   environment:
     - SOURCE_DIR: /tmp/petersouter.xyz/public
     - S3_BUCKET: petersouter.xyz
-    - S3_REGION: us-east-1
+    - S3_REGION: eu-west-1
     - DEV_URL: http://dev.petersouter.xyz
 
 
@@ -15,9 +15,6 @@ jobs:
       - image: jguyomard/hugo-builder:0.33
     steps:
       - checkout
-      - run:
-          name: Download submodules for our theme
-          command: git submodule sync && git submodule update --init
       - run:
           name: Compile site
           command: |

@@ -4,14 +4,14 @@ categories = ["Tech", "meetup", "performance"]
 date = 2013-10-15T11:00:00Z
 description = ""
 draft = false
-image = "/images/2016/10/web_perf_oct-4.jpeg"
+coverImage = "/images/2016/10/web_perf_oct-4.jpeg"
 slug = "london-web-performance-group-meetup-october-2013-2"
 tags = ["Tech", "meetup", "performance"]
 title = "London Web Performance Group meetup - October 2013"
 
 +++
 
-![London Web Performance Group meetup - October 2013](/content/images/2016/10/global_18959598-1.jpeg)
+![London Web Performance Group meetup - October 2013](/images/2016/10/global_18959598-1.jpeg)
 
 So, I've just come back from the October London Web Performance Group meetup, and I thought I'd write up some notes, as I've found it to be one of the best tech meetup groups in London. There's been a nice line-up of speakers, it's a pretty good location to get to and, last but not least free beer and food!
 
@@ -67,7 +67,7 @@ However, if your load is fairly static, it's a lot better to have a dedicated se
 
 # Alternatives to Cloud Servers
 
-### Dedicated 
+### Dedicated
 - Full control
 - Inexpensive disk space
 - Bandwidth is cheap
@@ -80,7 +80,7 @@ However, if your load is fairly static, it's a lot better to have a dedicated se
 
 A lot of detail about Server Density's initial trial's of setting up, was quite cool to get pretty granular with the companies choices and the comparisons in cost.
 
-But the general take-away was: the more DIY you put in and more you pay up front in purchase costs, the less you pay in the long term. 
+But the general take-away was: the more DIY you put in and more you pay up front in purchase costs, the less you pay in the long term.
 
 # Backups
 
@@ -105,11 +105,11 @@ From personal experience it's a bit distracting when you're in the guts of a ser
 
 They use New Relic Reports of uptime, and have post-mortems for downtime. Bottom line is, whilst you aim for 100% uptime, you can never avoid outages (even google and AWS go down!)
 
-# Simulations and drills. 
+# Simulations and drills.
 
 Something not often discussed, but needs to be done.
 
-It's too common of a pattern to have a load of fail-safes that are never tested until an incident actually occurs. 
+It's too common of a pattern to have a load of fail-safes that are never tested until an incident actually occurs.
 
 # Questions
 

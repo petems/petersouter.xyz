@@ -4,7 +4,7 @@ categories = ["vDM30in30", "Tech", "sysadmin"]
 date = 2016-11-14T16:57:00Z
 description = ""
 draft = false
-image = "/images/2016/11/45-0.png"
+coverImage = "/images/2016/11/45-0.png"
 slug = "the-story-of-errata-for-centos"
 tags = ["vDM30in30", "Tech", "sysadmin"]
 title = "The Story of Errata for CentOS"
@@ -19,9 +19,9 @@ I've done a bunch of work with customers around patch management and packaging e
 
 ## What is errata?
 
-In the context of packaging, errata is basically listings from the package manager upstreams with updates for when CVE's and vulnerabilities are found. 
+In the context of packaging, errata is basically listings from the package manager upstreams with updates for when CVE's and vulnerabilities are found.
 
-So for official RHEL systems, this is available by default from the upstream, and the whole managed with Red Hat's Satellite tool, which gets the information directly from RedHat's infrastructure with your official paid login. 
+So for official RHEL systems, this is available by default from the upstream, and the whole managed with Red Hat's Satellite tool, which gets the information directly from RedHat's infrastructure with your official paid login.
 
 This information is kept in the `UPDATEINFO.XML` file for each repository upstream.
 
@@ -45,7 +45,7 @@ This is documented in the [RedHat knowledge base article (paywall)](https://acce
 
 ## The problem with CentOS
 
-However, CentOS does not have official errata: the CentOS upstream repos do not have an `UPDATEINFO.XML`. 
+However, CentOS does not have official errata: the CentOS upstream repos do not have an `UPDATEINFO.XML`.
 
 There have been a few mailing list posts about it (such as [here](https://lists.centos.org/pipermail/centos-devel/2015-January/012600.html) and [here](https://lists.centos.org/pipermail/centos/2015-January/148839.html)), but the long story short is there seems to be a difference in opinion whether this is a technical or legal problem from the mailing lists, but regardless: it's not there, and probably won't ever be for the foreseeable future.
 
@@ -66,7 +66,7 @@ There appear to be four solutions to get errata on CentOS:
 
 The most complete solution is to setup Spacewalk. Spacewalk is actually the open-source core that powers RedHat's satellite solution, so it makes sense that it'd work for CentOS.
 
-It's probably the heaviest handed method, as you have to setup an entire dedicated application that will require maintenance. 
+It's probably the heaviest handed method, as you have to setup an entire dedicated application that will require maintenance.
 
 But it also gives you the other features that Spacewalk has like showing what servers have versions of packages, what errata is currently installed in your estate and so on.
 
@@ -78,10 +78,10 @@ However, with a bit of tooling, it has a process for errata:
 2. Mirror CentOS repos in Spacewalk that sync from the upstream
 3. Get the information on vulnerabilities from somewhere
 4. Inject that information into the Spacewalk repos, so that they have a `UPDATEINFO.XML` file
-5. Point your CentOS machines from the upstream repos to the Spacewalk repos 
+5. Point your CentOS machines from the upstream repos to the Spacewalk repos
 6. CentOS machines will now be pointing to SpaceWalk yumrepos, that have security information
 
-The difficult bit is Step 4. 
+The difficult bit is Step 4.
 
 How do we get that information?
 
@@ -90,13 +90,13 @@ The main approach seems to be:
 1. Go through CentOS mail archives, digests and mailing list websites for CentOS errata
 2. Push them to the Spacewalk server
 
-The main issue is that the main way to do that is download the the gzipped archive from the mailing list, which is only available at the end of every month from the CentOS lists. 
+The main issue is that the main way to do that is download the the gzipped archive from the mailing list, which is only available at the end of every month from the CentOS lists.
 
 You may have to wait a little while to get that information...
 
 Regardless, the main project to do this is Steve Meier's CEFS Project [CentOS Errata for Spacewalk](http://cefs.steve-meier.de/)
 
-Steve provides a parsed `errata.xml` file generated from the centos-announce mailing lists and the scripts you need to import them in to your spacewalk server. His script will download the information directly from CEFS and then inject it into Spacewalk 
+Steve provides a parsed `errata.xml` file generated from the centos-announce mailing lists and the scripts you need to import them in to your spacewalk server. His script will download the information directly from CEFS and then inject it into Spacewalk
 
 There's a similar script by David Nutter that does the scraping itself (rather than get it from CEFS) called `centos-errata.py`. avaliable [here](http://www.bioss.ac.uk/people/davidn/spacewalk-stuff/0.7/).
 
@@ -114,7 +114,7 @@ After that, CentOS machines pointing to the Spacewalk server should have availab
 
 This uses the CEFS information, but runs it against a local copy rather than Spacewalk. Same concept, less moving parts.
 
-This is best documented in the [`generate_updateinfo`](https://github.com/vmfarms/generate_updateinfo) script Github project and the [original blogpost by VMFarms](http://blog.vmfarms.com/2013/12/inject-little-security-in-to-your.html) 
+This is best documented in the [`generate_updateinfo`](https://github.com/vmfarms/generate_updateinfo) script Github project and the [original blogpost by VMFarms](http://blog.vmfarms.com/2013/12/inject-little-security-in-to-your.html)
 
 You're doing something like this:
 
@@ -128,7 +128,7 @@ generate_updateinfo.py /security/errata.latest.xml
 
 ### centos-package-cron
 
-These is the simplest of solutions, and doesn't actually involve `UPDATEINFO.XML` at all. 
+These is the simplest of solutions, and doesn't actually involve `UPDATEINFO.XML` at all.
 
 Instead of messing with your actual `yumrepos` or setting up Spacewalk, it simply grabs the security announcements, compares with what you have installed locally, then sends the message to STDOUT or emails you.
 

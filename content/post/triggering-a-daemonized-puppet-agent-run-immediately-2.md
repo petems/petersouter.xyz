@@ -4,7 +4,7 @@ categories = ["vDM30in30", "Puppet", "Tech", "sysadmin"]
 date = 2016-11-13T19:12:00Z
 description = ""
 draft = false
-image = "/images/2016/11/usr1.png"
+coverImage = "/images/2016/11/usr1.png"
 slug = "triggering-a-daemonized-puppet-agent-run-immediately-2"
 tags = ["vDM30in30", "Puppet", "Tech", "sysadmin"]
 title = "Triggering a daemonized puppet agent with SIGUSR1"
@@ -44,14 +44,14 @@ Ctrl-\ sends a QUIT signal (SIGQUIT); by default, this causes the process to ter
 
 Like a lot of people, I knew to run Ctrl-C in a terminal if I wanted to jump out of a process, but I had never really thought about how it works until someone told be about unix signals.
 
-So what about `SIGUSR1`? Well, basically SIGUSR1 and SIGUSR2 are reserved for the developer to define the behaviour: 
+So what about `SIGUSR1`? Well, basically SIGUSR1 and SIGUSR2 are reserved for the developer to define the behaviour:
 
 ```
 The SIGUSR1 and SIGUSR2 signals are set aside for you to use any way you want. They’re useful for simple interprocess communication, if you write a signal handler for them in the program that receives the signal.
 ```
 **Source: http://www.gnu.org/software/libc/manual/html_node/Miscellaneous-Signals.html**
 
-OK, so basically it's up to the developers to define what the behaviour is. 
+OK, so basically it's up to the developers to define what the behaviour is.
 
 For Puppet, these are defined as the following:
 

@@ -4,7 +4,7 @@ categories = ["Tech", "ghost", "vDM30in30"]
 date = 2016-11-09T20:48:00Z
 description = ""
 draft = false
-image = "/images/2016/11/optimised.png"
+coverImage = "/images/2016/11/optimised.png"
 slug = "compressing-images-in-gh"
 tags = ["Tech", "ghost", "vDM30in30"]
 title = "Compressing images in Ghost blog"
@@ -13,7 +13,7 @@ title = "Compressing images in Ghost blog"
 
 #### Day 9 in the #vDM30in30
 
-If you're not careful, it's easy to bloat a website with large images. 
+If you're not careful, it's easy to bloat a website with large images.
 
 A feature that would be awesome in Ghost would be the ability to auto-compress images on upload. This idea has been around for a while, [and it's highly voted for in the wish-list.](http://ideas.ghost.org/forums/285309-wishlist/suggestions/7191829-image-optimization)
 

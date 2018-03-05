@@ -4,7 +4,7 @@ categories = ["Puppet", "Tech", "vDM30in30"]
 date = 2016-11-08T19:25:00Z
 description = ""
 draft = false
-image = "/images/2016/11/marmo.png"
+coverImage = "/images/2016/11/marmo.png"
 slug = "debugging-puppet-issues"
 tags = ["Puppet", "Tech", "vDM30in30"]
 title = "Debugging Puppet Issues"
@@ -45,7 +45,7 @@ Lets go through them and explain them a bit...
 This is a simple text file that lists all classes applied during the last run.
 
 ```
-[root@graphiteagent ~]# cat $(puppet agent --configprint classfile) 
+[root@graphiteagent ~]# cat $(puppet agent --configprint classfile)
 cat $(puppet agent --configprint classfile)
 profiles::grafana
 profiles::graphite
@@ -83,7 +83,7 @@ graphite::config_apache
 Similar to `classes.txt`, but this lists all resource titles enforced during the last run:
 
 ```
-[root@graphiteagent ~]# cat $(puppet agent --configprint resourcefile) 
+[root@graphiteagent ~]# cat $(puppet agent --configprint resourcefile)
 package[fontconfig]
 package[grafana]
 file[/etc/grafana/grafana.ini]
@@ -197,12 +197,12 @@ digraph Relationships {
 
 You can then put this into a graph that can visualise .dot files such as Graphviz. There's a web version of it that you can use in a pinch:
 
-![Graph Vis Example](/content/images/2016/11/Screenshot-2016-11-14-20.17.58.png)
+![Graph Vis Example](/images/2016/11/Screenshot-2016-11-14-20.17.58.png)
 ###### A Puppet relationship graph made from http://www.webgraphviz.com/
 
 ### Cached Agent Catalog
 
-A newish feature of Puppet is the cached catalog. The master sends the compiled catalog to the agent to be applied. In the event the agent cannot reach the master, it will continue to enforce the last catalog it received (the cached catalog). 
+A newish feature of Puppet is the cached catalog. The master sends the compiled catalog to the agent to be applied. In the event the agent cannot reach the master, it will continue to enforce the last catalog it received (the cached catalog).
 
 This is so that when the master is unavailable, there can still be ongoing Puppet management of systems.
 
@@ -250,7 +250,7 @@ But with `jq` or `python` we can read it a little better:
         "graphite::config",
 ```
 
-As you can see, this is the complete catalog: so it's all the information, which classes, which resources, tags, parameters, relationships are being created. 
+As you can see, this is the complete catalog: so it's all the information, which classes, which resources, tags, parameters, relationships are being created.
 
 There's a powerful `jq` tool which as the website says:
 
@@ -280,7 +280,7 @@ So for example, if we want to see all the parameters for a certain class from th
 
 ### last\_run\_report.yaml
 
-Lastly, this is a basic yaml file giving the last report run on a machine: 
+Lastly, this is a basic yaml file giving the last report run on a machine:
 
 ```
 [root@graphiteagent ~]# cat $(puppet agent --configprint lastrunreport)
@@ -306,15 +306,15 @@ metrics:
       - Restarted
 ```
 
-With some simple grepping, you can get simple information from the report. For example, finding changed resources: 
+With some simple grepping, you can get simple information from the report. For example, finding changed resources:
 
 ```
 [root@graphiteagent ~]# grep -c 'changed: true' $(puppet agent --configprint lastrunreport)
 7
 ```
 
-There's a really cool report reading script written by R.I called 
-[report-print](https://github.com/ripienaar/puppet-reportprint). 
+There's a really cool report reading script written by R.I called
+[report-print](https://github.com/ripienaar/puppet-reportprint).
 
 ### report-print
 
@@ -457,6 +457,6 @@ Slowest 20 resources by evaluation time:
       0.02 Puppet_enterprise::Mcollective::Cleanup
       0.02 Puppet_enterprise::Mcollective::Server::Certs
       0.01 Graphite::Install
-``` 
+```
 
 As you can see, we can see what resources took up the most time, the largest resources in the catalog and how long each step of the Puppet run took: compilation, enforcement and reporting.

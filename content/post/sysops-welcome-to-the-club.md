@@ -4,7 +4,7 @@ categories = ["vDM30in30", "sysops", "sysadmin", "devops"]
 date = 2016-11-06T15:42:00Z
 description = ""
 draft = false
-image = "/images/2016/11/472028910_ec8f1fde23_z.jpg"
+coverImage = "/images/2016/11/472028910_ec8f1fde23_z.jpg"
 slug = "sysops-welcome-to-the-club"
 tags = ["vDM30in30", "sysops", "sysadmin", "devops"]
 title = "SysOps: Welcome to the Club"
@@ -17,18 +17,18 @@ Header Source: https://flic.kr/p/HHgKu
 
 #### What is this?
 
-This is a post I wrote a year or so ago for SysAdvent 2015, but some issues came up and it didn't get published. 
+This is a post I wrote a year or so ago for SysAdvent 2015, but some issues came up and it didn't get published.
 
 It's basically about about welcoming new people to the world of SysOps and Sysadmin-ing, avoiding imposter syndrome and general tips about things to read and do to get used to the world of sysadmin-ing.
 
 # SysOps: Welcome to the Club!
 
-Let's talk about the old days. 
+Let's talk about the old days.
 
-In the old days, system administration was in a dark place. Shell scripts roamed the land, the IT department was seen as a facility which only seemed to consume money, and the common image of a sysadmin was the 
+In the old days, system administration was in a dark place. Shell scripts roamed the land, the IT department was seen as a facility which only seemed to consume money, and the common image of a sysadmin was the
 [BOFH](https://en.wikipedia.org/wiki/Bastard_Operator_From_Hell) who hated users and wanted to be left to the blinding LED's of the barren wasteland of the cold server room.
 
-Have things changed? Hopefully the cultural shift to DevOps has fixed things up, new and shiny tools have helped automate old boring tasks away and the operations team is seen as part of the team, just as important as engineering, management, or any other department. 
+Have things changed? Hopefully the cultural shift to DevOps has fixed things up, new and shiny tools have helped automate old boring tasks away and the operations team is seen as part of the team, just as important as engineering, management, or any other department.
 
 With this shift, there are a bunch of people who are working more closely with sysadmins or maybe even making a more permanent shift to system operations. And there are probably a bunch of existing sysadmins who are now working alongside or even mentoring these new sysadmins.
 
@@ -44,10 +44,10 @@ As a newbie, you probably have a ton of questions on what is the best way to do 
 
 With that said, there are something that are pretty universally good to know:
 
-* `sed, grep, awk` - The trifecta. As archimedes once said "Give me a long enough awk command and a file system on which to run it and I shall move the world." These are common *nix low level commands that exist across most distributions of Operating Systems. 
+* `sed, grep, awk` - The trifecta. As archimedes once said "Give me a long enough awk command and a file system on which to run it and I shall move the world." These are common *nix low level commands that exist across most distributions of Operating Systems.
 * Networking basics - Depending on your background, your network knowledge might be a little bit lacking with what you'd need to know as a sysadmin. There are a few good sites on where to brush up on the basics (see Books). After that, you probably want to talk about the networking equivalent swiss army knife. These aren't nearly so ubiquitous as `sed, grep and awk` depending on the operating system you're on, but `netstat`, `nmap`, `telnet`, `nslookup` and `traceroute` are a good start.
 * What's going on - It's always good to know what is currently happening on a system. What programs are running? How much memory is being used? How much space do you have left? Again, depending on your system there’s a number of ways to find out this information, but du, top and ps commands can help with this.
-* Getting around. `cd`, `ll`, `cp`, `mkdir`, `rm` 
+* Getting around. `cd`, `ll`, `cp`, `mkdir`, `rm`
 * Artifacts and packages - How do I install things?
 * Configuration management - Seems like it’s going to be a lot of work to run these commands all the time? Lots of people agreed, and there are tools for that too. These are tools that let you write instructions and figure out what commands need to run for you. Depending on your environment, you might be using one of these tools (or even multiple!) or you might not be, but they’re really good to learn - Puppet, Chef, Salt, Ansible.
 (Full disclosure I work at Puppet - the company behind one of those tools, guess which one!)
@@ -56,7 +56,7 @@ With that said, there are something that are pretty universally good to know:
 
 A lot to learn already huh? Probably wondering if there's some sort of classes or guides for this stuff.
 
-Sysadmin-ing is often seen as more of a vocation or a trade. For someone like me, who was used to being able to have a a "How to program in X" book on my lap and do a bit of reading, it was hard to know where to start. 
+Sysadmin-ing is often seen as more of a vocation or a trade. For someone like me, who was used to being able to have a a "How to program in X" book on my lap and do a bit of reading, it was hard to know where to start.
 
 ## Books
 
@@ -80,7 +80,7 @@ Outside of training, the best way of learning is watching someone doing it live.
 
 As someone used to an agile/XP background, one of my favourite things to do was to pair up when someone was working on an operations feature. I remember at standup there was an issue with performance on a production server that needed investigating. Sitting next to my paired sysadmin, watching how they effortlessly navigated the filesystem, watching what commands they used to diagnose the issue, how they looked through both official documentation, pinged others on chat or read serverfault answer pages, made a rough implementation of a solution, made a pull-request to change some of the Puppet code to fix the problem and got feedback. It was a pretty awesome process and I learnt a lot from that.
 
-If it's something like a super-high priority must-be-fixed-now problem, see if you can ask someone to do a post-mortem of what they did and ask questions on what tools and approaches they took. Maybe even on a more informal chat over coffee. 
+If it's something like a super-high priority must-be-fixed-now problem, see if you can ask someone to do a post-mortem of what they did and ask questions on what tools and approaches they took. Maybe even on a more informal chat over coffee.
 
 [Just remember to make sure that any post-mortem events are blameless!](https://codeascraft.com/2012/05/22/blameless-postmortems/)
 
@@ -90,7 +90,7 @@ Ok, so you've done some courses, you're getting familiar with a lot of sysadmin 
 
 ### Sandboxes
 
-See if you can setup a lab-like sandbox environment in a cloud provider or virtualisation tool. 
+See if you can setup a lab-like sandbox environment in a cloud provider or virtualisation tool.
 
 If you want to play in the sandbox, you're going to need some toys. The ones that are probably going to be the best are Vagrant and Docker:
 
@@ -100,7 +100,7 @@ Vagrant is a tool to run popular virtualization programs, such as VMWare Fusion 
 
 #### Docker
 
-Docker is the seen as the next step after virtualisation. It’s a little more complex to understand and a lot of the practises and tooling is still settling, but once you get the hang of it, you can create containers of environments in seconds, rather than the minutes that virtualization takes. 
+Docker is the seen as the next step after virtualisation. It’s a little more complex to understand and a lot of the practises and tooling is still settling, but once you get the hang of it, you can create containers of environments in seconds, rather than the minutes that virtualization takes.
 
 ## Pay it forward
 
@@ -119,7 +119,7 @@ Testing and concepts such as BDD are also becoming more relevant to operations t
 
 # Conclusion
 
-Hopefully you're on the right track to becoming a great sysadmin, helping your company keep its uptime up, its customers and/or users happy and learning a lot as you do. 
+Hopefully you're on the right track to becoming a great sysadmin, helping your company keep its uptime up, its customers and/or users happy and learning a lot as you do.
 
 Remember to pay it forward and remember that empathy shown to you when you get pinged with a request from one of the other newbies.
 

@@ -4,7 +4,7 @@ categories = ["Puppet", "Testing", "beaker", "open-source", "vDM30in30"]
 date = 2016-11-04T22:17:00Z
 description = ""
 draft = false
-image = "/images/2016/11/instacode.png"
+coverImage = "/images/2016/11/instacode.png"
 slug = "running-puppet-acceptance-tests-in-docker-in-travis"
 tags = ["Puppet", "Testing", "beaker", "open-source", "vDM30in30"]
 title = "Running Puppet acceptance tests in Docker in Travis"
@@ -15,7 +15,7 @@ title = "Running Puppet acceptance tests in Docker in Travis"
 
 One of the things that comes up a lot with Puppet code is testing, particularly acceptance testing. Just like with regular code, you want to make sure that changes to Puppet are not going to break the standard use-case for your module.
 
-Travis has been a boon for open-source testing. For a while, Travis was only for the syntax, linting and rspec tests. But in the last year they've added the ability to have Docker running in a Travis job. 
+Travis has been a boon for open-source testing. For a while, Travis was only for the syntax, linting and rspec tests. But in the last year they've added the ability to have Docker running in a Travis job.
 
 Docker containers aren't VMs, so you're not going to test everything you can do in Puppet (for example, I can't test my swapfile module with Docker as containers don't have swap). But for most modules, the standard Linux userspace stuff will work: installing packages, starting services, putting files on disk etc.
 
@@ -248,7 +248,7 @@ Disabling updates.puppetlabs.com by modifying hosts file to resolve updates to 1
 centos-7-x64 20:36:06$ echo '127.0.0.1  updates.puppetlabs.com
 ' >> /etc/hosts
 centos-7-x64 executed in 0.02 seconds
-centos-7-x64 20:36:06$ rpm --replacepkgs -Uvh http://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm 
+centos-7-x64 20:36:06$ rpm --replacepkgs -Uvh http://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
   warning:   /var/tmp/rpm-tmp.pKpDgh: Header V4 RSA/SHA1 Signature, key ID 4bd6ec30: NOKEY
   Retrieving http://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
   Preparing...                            ########################################
@@ -283,15 +283,15 @@ centos-7-x64 20:36:07$ yum -y  install puppet-agent-1.5.2
   --> Running transaction check
   ---> Package puppet-agent.x86_64 0:1.5.2-1.el7 will be installed
   --> Finished Dependency Resolution
-  
+
   Dependencies Resolved
-  
+
   ================================================================================
    Package            Arch         Version             Repository            Size
   ================================================================================
   Installing:
    puppet-agent       x86_64       1.5.2-1.el7         puppetlabs-pc1        23 M
-  
+
   Transaction Summary
   ================================================================================
   Install  1 Package
@@ -311,11 +311,11 @@ centos-7-x64 20:36:07$ yum -y  install puppet-agent-1.5.2
   Transaction test succeeded
   Running transaction
   Warning: RPMDB altered outside of yum.
-    Installing : puppet-agent-1.5.2-1.el7.x86_64                              1/1   
-    Verifying  : puppet-agent-1.5.2-1.el7.x86_64                              1/1   
-  
+    Installing : puppet-agent-1.5.2-1.el7.x86_64                              1/1
+    Verifying  : puppet-agent-1.5.2-1.el7.x86_64                              1/1
+
   Installed:
-    puppet-agent.x86_64 0:1.5.2-1.el7                                             
+    puppet-agent.x86_64 0:1.5.2-1.el7
   Complete!
 centos-7-x64 executed in 7.29 seconds
 centos-7-x64 20:36:14$ echo "/opt/puppetlabs/bin"
@@ -461,7 +461,7 @@ centos-7-x64 20:37:10$ /bin/sh -c ls\ /etc/redhat-release
   /etc/redhat-release
 centos-7-x64 executed in 0.02 seconds
 centos-7-x64 20:37:10$ /bin/sh -c cat\ /etc/redhat-release
-  CentOS Linux release 7.2.1511 (Core) 
+  CentOS Linux release 7.2.1511 (Core)
 centos-7-x64 executed in 0.02 seconds
 centos-7-x64 20:37:10$ /bin/sh -c uname\ -m
   x86_64
@@ -497,7 +497,7 @@ centos-7-x64 20:37:50$ puppet apply --verbose --detailed-exitcodes /tmp/apply_ma
   Info: Loading facts
   Notice: Compiled catalog for centos-7-x64.c.travis-ci-prod-4.internal in environment production in 0.50 seconds
   Info: Applying configuration version '1468615073'
-  Notice: /Stage[main]/Cockpit::Config/File[/etc/systemd/system/cockpit.socket.d/listen.conf]/content: 
+  Notice: /Stage[main]/Cockpit::Config/File[/etc/systemd/system/cockpit.socket.d/listen.conf]/content:
   --- /etc/systemd/system/cockpit.socket.d/listen.conf  2016-07-15 20:37:30.285583194 +0000
   +++ /tmp/puppet-file20160715-1448-1yaw5k6 2016-07-15 20:37:54.353668005 +0000
   @@ -1,4 +1,4 @@

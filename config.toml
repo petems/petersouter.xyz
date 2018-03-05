@@ -1,11 +1,11 @@
 baseURL = "https://petersouter.xyz/"
 languageCode = "en-us"
 defaultContentLanguage = "en-us"
-title = "petersouter"
+title = "https://petersouter.xyz"
 theme = "tranquilpeak"
 disqusShortname = "petersouter"
 googleAnalytics = ""
-paginate = 7
+paginate = 1
 canonifyurls = true
 
 [permalinks]

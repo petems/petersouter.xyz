@@ -4,7 +4,7 @@ categories = ["Puppet", "ghost", "docker", "blog"]
 date = 2015-12-13T00:38:29Z
 description = "How I setup my blog with docker-compose, allowing me to run ghost and nginx from a docker container and serve over HTTPS."
 draft = false
-image = "/images/2016/10/Compose.png"
+coverImage = "/images/2016/10/Compose.png"
 slug = "switching-to-hosting-ghost-on-docker"
 tags = ["Puppet", "ghost", "docker", "blog"]
 title = "Switching to hosting my blog on Docker"
@@ -15,11 +15,11 @@ I've noticed half of my posts on this blog have been about me fiddling with my b
 
 Like docker for example!
 
-![Docker](/content/images/2016/10/Engine.png)
+![Docker](/images/2016/10/Engine.png)
 
-Docker's something I've had some basic understanding about for a while. I've used it for testing, and I've got a vague idea how it works, but there were so many things to understand to get anything working. Just like a lot of new technologies, there's a lot of plugins, tools and extensions to understand to figure out whats going on. Do I use [Swarm](https://docs.docker.com/swarm/) or [Kubernetes](http://kubernetes.io/)? 
+Docker's something I've had some basic understanding about for a while. I've used it for testing, and I've got a vague idea how it works, but there were so many things to understand to get anything working. Just like a lot of new technologies, there's a lot of plugins, tools and extensions to understand to figure out whats going on. Do I use [Swarm](https://docs.docker.com/swarm/) or [Kubernetes](http://kubernetes.io/)?
 
-In the end, I ended up going with 
+In the end, I ended up going with
 [docker-compose](https://docs.docker.com/compose/), which leans more toward the simpler side. Since my setup is essentially just nginx and ghost, I went for the simplest solution!
 
 So after a bit of googling and a lot of trial and error, I got it working.
@@ -56,14 +56,14 @@ ghostblog:
   env_file:
     - ./config.env
   volumes:
-    - "./petemsGhost/content/themes:/usr/src/ghost/content/themes"
-    - "./petemsGhost/content/apps:/usr/src/ghost/content/apps"
-    - "./petemsGhost/content/images:/usr/src/ghost/content/images"
-    - "./petemsGhost/content/data:/usr/src/ghost/content/data"
+    - "./petemsGhost/themes:/usr/src/ghost/themes"
+    - "./petemsGhost/apps:/usr/src/ghost/apps"
+    - "./petemsGhost/images:/usr/src/ghost/images"
+    - "./petemsGhost/data:/usr/src/ghost/data"
     - "./petemsGhost/config:/var/lib/ghost"
 ```
 
-The magic bit is the link: when you link the containers, it adds an entry to `/etc/hosts` with the container name and IP. This means that any references to the container name get resolved properly. 
+The magic bit is the link: when you link the containers, it adds an entry to `/etc/hosts` with the container name and IP. This means that any references to the container name get resolved properly.
 
 ```
 $ docker exec -i -t petersouterblogcompose_ghost_nginx_1 bash

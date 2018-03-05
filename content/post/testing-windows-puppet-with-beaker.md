@@ -4,7 +4,7 @@ categories = ["Puppet", "Testing", "Tech", "beaker", "windows", "cygwin"]
 date = 2016-06-09T17:06:00Z
 description = "How to test Puppet on Windows machines (particularly Windows 2008/2012) with Beaker, using Bitvise instead of Cygwin"
 draft = false
-image = "/images/2016/10/108487-1.png"
+coverImage = "/images/2016/10/108487-1.png"
 slug = "testing-windows-puppet-with-beaker"
 tags = ["Puppet", "Testing", "Tech", "beaker", "windows", "cygwin"]
 title = "Testing Windows with Beaker without Cygwin"
@@ -37,15 +37,15 @@ require 'spec_helper_acceptance'
 describe 'windowsfeature' do
   context 'windows feature should be installed' do
     it 'should install .net 3.5 feature' do
-        
+
       pp = <<-PP
         windowsfeature { 'as-net-framework': }
       PP
-      
+
       apply_manifest(pp, :catch_failures => true)
       expect(apply_manifest(pp, :catch_failures => true).exit_code).to be_zero
     end
-    
+
     describe windows_feature('as-net-framework') do
       it { should be_installed.by('powershell') }
     end
@@ -66,7 +66,7 @@ apply_manifest(pp, :catch_failures => true)
 apply_manifest(pp, :catch_changes  => true)
 ```
 
-There's also the issue that some Windows boxes might have [out-dated SSL certificates](http://security.stackexchange.com/questions/76189/why-does-windows-ship-with-expired-ssl-certificates), meaning that you get an SSL fail when trying to install modules from the forge. 
+There's also the issue that some Windows boxes might have [out-dated SSL certificates](http://security.stackexchange.com/questions/76189/why-does-windows-ship-with-expired-ssl-certificates), meaning that you get an SSL fail when trying to install modules from the forge.
 
 You can solve this with some code that looks like this:
 
@@ -615,7 +615,7 @@ Finished in 8 minutes 55 seconds (files took 3 minutes 40.1 seconds to load)
 3 examples, 0 failures
 ```
 
-Wohoo! All set! 
+Wohoo! All set!
 
 ## The Future
 

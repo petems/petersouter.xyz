@@ -4,7 +4,7 @@ categories = ["personal", "fitness", "health", "gym", "data"]
 date = 2016-08-30T15:13:33Z
 description = ""
 draft = false
-image = "/images/2016/10/8410432441_05fd470325_z--2-.jpg"
+coverImage = "/images/2016/10/8410432441_05fd470325_z--2-.jpg"
 slug = "90-fitness-challenge-conclusion-and-starting-again"
 tags = ["personal", "fitness", "health", "gym", "data"]
 title = "90 Fitness Challenge - Conclusion and Starting again"
@@ -29,18 +29,18 @@ Ok, let's start over again...
 
 **What were the issues?**
 
-It's hard to say. All the stats seemed to point that everything was fine. Weight was going down, body fat was going down. 
+It's hard to say. All the stats seemed to point that everything was fine. Weight was going down, body fat was going down.
 
 Personally I think it was probably the easiest problem: Too many cheat days and Not enough exercise
 
 How can I solve this?
 
-I'm starting a new challenge starting from now. And I'm going for a much simpler 
+I'm starting a new challenge starting from now. And I'm going for a much simpler
 
-* Maintain a calorific deficit consistently. 
+* Maintain a calorific deficit consistently.
   * Aim for at least 90% of days a month under goal with MyFitnessPal.
   * No more excuses for cheat days: if I can't resist temptation, don't go! Or eat beforehand...
-* Gym at least 4 times a week: 
+* Gym at least 4 times a week:
   * 3 weightlifting sessions, one cardio. Running seems like a good option and something that's easy to see an improvement pretty fast. Couch to 10km seems like a good plan.
 * Sign-up for something like Crossfit: something where I can consistently go to a class and work my ass off to work up a sweat and notice changes.
 

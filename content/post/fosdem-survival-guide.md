@@ -4,7 +4,7 @@ categories = ["vDM30in30", "FOSDEM", "conferences", "personal", "Tech", "open-so
 date = 2016-11-21T12:58:00Z
 description = ""
 draft = false
-image = "/images/2016/11/2016-01-31-11.00.18.jpg"
+coverImage = "/images/2016/11/2016-01-31-11.00.18.jpg"
 slug = "fosdem-survival-guide"
 tags = ["vDM30in30", "FOSDEM", "conferences", "personal", "Tech", "open-source"]
 title = "FOSDEM Survival Guide"
@@ -56,7 +56,7 @@ I've always found it's good to get in a few talks early or just find a few backu
 
 ## Be sure to look at other meetups locally
 
-Since FOSDEM is a gathering of pretty much everyone in the open-source world, communities and organizations often organize dojos, user groups and the like before and after. 
+Since FOSDEM is a gathering of pretty much everyone in the open-source world, communities and organizations often organize dojos, user groups and the like before and after.
 
 Config Management Camp has so far been held just afterward, so if you're in the DevOps or config management space, it's a short trip to Ghent just afterward which I recommend.
 
@@ -68,7 +68,7 @@ Brussels has some awesome food and drink.
 
 ### Beers
 
-Belgium is famous for its beer. 
+Belgium is famous for its beer.
 
 But Belgian beer can be a lot stronger than the beer you're used to at home:
 
@@ -133,20 +133,20 @@ So, obviously there are stands for all the big names you can think of, like SUSE
 
 ## Meetup with community people
 
-FOSDEM is a free conference, on a weekend, focused on open-source, so there's a huge amount of people you can meet who you've probably spoken to in IRC, on mailing lists or in a pull-request. I've made friends with many Puppet and devops-y people from talking to people on IRC or Slack then meeing up with them at FOSDEM, even for a just a brief chat and a handshake thanks for that merged PR they had. 
+FOSDEM is a free conference, on a weekend, focused on open-source, so there's a huge amount of people you can meet who you've probably spoken to in IRC, on mailing lists or in a pull-request. I've made friends with many Puppet and devops-y people from talking to people on IRC or Slack then meeing up with them at FOSDEM, even for a just a brief chat and a handshake thanks for that merged PR they had.
 
 ## Witness or join the Key Signing Party
 
 If you want to watch a pretty unique event, go watch (or even participate in) the [key-signing party](https://fosdem.org/2017/keysigning/).
 
-I'll warn you, it takes a long time and requires a bit of prep. 
+I'll warn you, it takes a long time and requires a bit of prep.
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Key signing at <a href="https://twitter.com/hashtag/fosdem?src=hash">#fosdem</a> <a href="http://t.co/0vYhkg3ums">pic.twitter.com/0vYhkg3ums</a></p>&mdash; Albert Astals Cid (@tsdgeos) <a href="https://twitter.com/tsdgeos/status/429963024309698560">February 2, 2014</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 It's normally at least 20 or so people, greeting each other, checking ID then signing keys.
 
-So lets say each round of this loop takes 3 minutes, then for 20 people it's going to be at least an hour. 
+So lets say each round of this loop takes 3 minutes, then for 20 people it's going to be at least an hour.
 
 I think last year the whole process was about 2 hours.
 
@@ -159,4 +159,4 @@ Something about FOSDEM I find super draining, way more than any other conference
 
 I find that eating all the heavy food, plus the huge amount of people, plus lack of sleep, plus fine Belgian beers tends to leave one a little groggy by the second day.
 
-Don't be afraid to go find a quiet corner and recharge a bit, look away from a screen for an hour or so or listen to some music. 
+Don't be afraid to go find a quiet corner and recharge a bit, look away from a screen for an hour or so or listen to some music.

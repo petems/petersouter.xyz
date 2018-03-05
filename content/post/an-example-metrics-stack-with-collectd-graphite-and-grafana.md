@@ -4,7 +4,7 @@ categories = ["Puppet", "Tech", "open-source", "vDM30in30"]
 date = 2016-11-10T19:15:00Z
 description = ""
 draft = false
-image = "/images/2016/11/Screenshot-2016-11-15-20.19.48.png"
+coverImage = "/images/2016/11/Screenshot-2016-11-15-20.19.48.png"
 slug = "an-example-metrics-stack-with-collectd-graphite-and-grafana"
 tags = ["Puppet", "Tech", "open-source", "vDM30in30"]
 title = "An example metrics stack with Collectd, Graphite and Grafana"
@@ -13,15 +13,15 @@ title = "An example metrics stack with Collectd, Graphite and Grafana"
 
 #### Day 10 in the #vDM30in30
 
-One thing that often comes up is customers or people in Slack/IRC asking "How do I setup X?" I often end up making basic Vagrant stack, as all the examples on Github are either too out of date or broken. 
+One thing that often comes up is customers or people in Slack/IRC asking "How do I setup X?" I often end up making basic Vagrant stack, as all the examples on Github are either too out of date or broken.
 
 I try and pin as many dependencies as possible, and make it as easy as possible to deploy, usually doing all the work with a `vagrant up`.
 
-With that in mind, I picked up an a module after someone asked about a pretty common use-case example of setting up Collectd, Graphite and Grafana for systems tracking. 
+With that in mind, I picked up an a module after someone asked about a pretty common use-case example of setting up Collectd, Graphite and Grafana for systems tracking.
 
 It's been a long time since I last setup Graphite, but I remembered how most of it fit together.
 
-I made a basic Vagrant box, and did some basic bootstrapping to get Puppet and the modules I wanted installed with 
+I made a basic Vagrant box, and did some basic bootstrapping to get Puppet and the modules I wanted installed with
 [r10k](https://github.com/puppetlabs/r10k):
 
 ```ruby
@@ -188,10 +188,10 @@ At the end of it, boom, I had my working Grafana dashboard:
 ==> centos7: Username and password: admin:admin
 ```
 
-![](/content/images/2016/11/Screenshot-2016-11-15-20.06.37.png)
+![](/images/2016/11/Screenshot-2016-11-15-20.06.37.png)
 ##### Note the bump when I ran the file download
 
-![](/content/images/2016/11/Screenshot-2016-11-15-20.10.19.png)
+![](/images/2016/11/Screenshot-2016-11-15-20.10.19.png)
 ##### Note the jump when I ran stress
 
 One of the things I was curious about was how Graphite scaled, as it'd been 3 years since I'd last set it up in anger.
@@ -203,6 +203,6 @@ Jason Dixon, the person behind the and general Graphite blogger extraordinaire, 
 
 Which is awesome!
 
-Vagrant repo is available here, all you have to do is run `vagrant up`: 
+Vagrant repo is available here, all you have to do is run `vagrant up`:
 
 * https://github.com/petems/grafana-graphite-stack-puppet-profile

@@ -4,7 +4,7 @@ categories = ["vDM30in30", "Tech", "Puppet", "monitoring", "metrics"]
 date = 2016-11-12T11:30:00Z
 description = ""
 draft = false
-image = "/images/2016/11/3248419938_768ee915bf_o-1.png"
+coverImage = "/images/2016/11/3248419938_768ee915bf_o-1.png"
 slug = "jmxtrans-what-is-it-and-how-to-configure-it"
 tags = ["vDM30in30", "Tech", "Puppet", "monitoring", "metrics"]
 title = "jmxtrans: What is it and how to configure it"
@@ -15,7 +15,7 @@ title = "jmxtrans: What is it and how to configure it"
 
 I've been investigating getting metrics from the Java parts of Puppet.
 
-Puppetserver actually has a [dedicated endpoint now](https://docs.puppet.com/puppetserver/2.6/status-api/v1/services.html), but if you're on an earlier version you can actually extract the information straight from JMX. 
+Puppetserver actually has a [dedicated endpoint now](https://docs.puppet.com/puppetserver/2.6/status-api/v1/services.html), but if you're on an earlier version you can actually extract the information straight from JMX.
 
 I've been working on a Vagrant stack to demonstrate this, but I've not got it fully working yet, but I've made some good progress. I think there're just a few tweaks left.
 
@@ -25,7 +25,7 @@ In the meantime, let's talk JMX and jmxtrans.
 
 So JMX stands for [Java Management Extensions](https://en.wikipedia.org/wiki/Java_Management_Extensions), a well-established, but not widespread technology allowing to monitor and manage any JVM.
 
-At it's most basic level, it provides CPU, thread and memory monitoring. You can also configure custom metrics for it in the MBeanServer class. 
+At it's most basic level, it provides CPU, thread and memory monitoring. You can also configure custom metrics for it in the MBeanServer class.
 
 It's actually been around for a long time, Sun opened JSR 318 with the JMX spec in [December 1998](http://www.jcp.org/jsr/detail/3.jsp).
 
@@ -42,11 +42,11 @@ This is usually done with something like:
 -Dcom.sun.management.jmxremote.authenticate=false
 -Dcom.sun.management.jmxremote.ssl=false
 -Dcom.sun.management.jmxremote.port=1099
-``` 
+```
 
 The base tools for reading JMX are pretty crude but effective...such as JConsole:
 
-![](/content/images/2016/11/3248419938_768ee915bf_o.png)
+![](/images/2016/11/3248419938_768ee915bf_o.png)
 > Source: https://flic.kr/p/5X415j
 
 However, I'm more interested in getting those logs into monitoring, specifically a Graphite/Grafana stack.
@@ -57,7 +57,7 @@ I think the README explains it best:
 
 > This is effectively the missing connector between speaking to a JVM via JMX on one end and whatever logging / monitoring / graphing package that you can dream up on the other end.
 
-> ... 
+> ...
 
 > The core engine is very solid and there are writers for Graphite, StatsD, Ganglia, cacti/rrdtool, OpenTSDB, text files, and stdout. Feel free to suggest more on the discussion group or issue tracker.
 ###### Source: https://github.com/jmxtrans/jmxtrans/blob/master/README.md
@@ -71,7 +71,7 @@ Luckily the InfraCore team at Puppet had made a module to install it, and had so
 
 However, in my tests, I couldn't get it to work on CentOS 7. The culprit: a missing service file. The package only contained the older format with an init file located at `/etc/init.d/jmxtrans`.
 
-There's already an issue open asking 
+There's already an issue open asking
 [how to get it working on CentOS 7 and systemd systems](https://github.com/jmxtrans/jmxtrans/issues/485), and the user had posted the unit file they were using:
 
 ```
@@ -92,7 +92,7 @@ WantedBy=multi-user.target
 
 This seemed to work at first, but I usually check my Puppet code with a few common issues that pop-up like rebooting and enabling the service. On reboot, the service didn't run.
 
-This appears to be because 
+This appears to be because
 
 Jaria explains it well:
 
@@ -120,7 +120,7 @@ ExecStart=/usr/share/jmxtrans/bin/jmxtrans start
 WantedBy=multi-user.target
 ```
 
-This seems to work in my tests, even after a reboot. 
+This seems to work in my tests, even after a reboot.
 
 I opened a PR to get that merged into the InfraCore team module, and have a few other ideas for PR's to merge.
 

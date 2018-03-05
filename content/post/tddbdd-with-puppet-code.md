@@ -4,7 +4,7 @@ categories = ["Puppet", "TDD", "BDD", "Testing", "Tech"]
 date = 2015-02-18T13:53:44Z
 description = ""
 draft = false
-image = "/images/2016/10/4442144329_420389a614_z.jpg"
+coverImage = "/images/2016/10/4442144329_420389a614_z.jpg"
 slug = "tddbdd-with-puppet-code"
 tags = ["Puppet", "TDD", "BDD", "Testing", "Tech"]
 title = "TDD/BDD with Puppet code using rspec-puppet"
@@ -13,7 +13,7 @@ title = "TDD/BDD with Puppet code using rspec-puppet"
 
 > Header image: https://flic.kr/p/7Lx9Kk
 
-As someone who's started out in dev and ended up falling into ops, a lot of my approaches are heavily influenced by what I cut my teeth on early on. 
+As someone who's started out in dev and ended up falling into ops, a lot of my approaches are heavily influenced by what I cut my teeth on early on.
 
 Since I started out development Ruby and Rails, I learnt a lot about Test Driven Development. In fact, even before I did Rails, I was working a little on [cuke4duke](http://github.com/cucumber/cuke4duke), a JVM  Cucumber package.
 
@@ -31,9 +31,9 @@ Test Driven Development is sumarised by the idea of the R-G-R cycle: **Red-Green
 
 ### Wait, I thought you said BDD?
 
-BDD (behaviour driven development) is essentially TDD with more refinement. Or to put it another way "BDD is TDD *done right*". 
+BDD (behaviour driven development) is essentially TDD with more refinement. Or to put it another way "BDD is TDD *done right*".
 
-It's abstracting away the requirements so they don't have programmer specific language. 
+It's abstracting away the requirements so they don't have programmer specific language.
 
 BDD utilizes something called a "Ubiquitous Language," a body of knowledge that can be understood by both the developer and the customer. This ubiquitous language is used to shape and develop the requirements and testing needed, at the level of the customer's understanding.
 
@@ -79,21 +79,21 @@ Ultimatly, I'd prefer tests that are more repetitive that I can understand at a 
 
 ## Why it’s beneficial for Puppet
 
-So where does Puppet come in? 
+So where does Puppet come in?
 
 The main benefit of TDD is that you’re only coding what you need to. Puppet code normally has a longer feedback loop to figure out when something goes wrong:
 
 * You might be deploying it to a number of different servers, so you might have to wait until all your nodes report back before you can see any issues that have occured
 * Depending on the size of your organisation, you might not even have multiple test environments, so you want to make sure you're code has a level of testing on it before deployment so you don't block others with failing manifests. In addition to this, if you're a smaller organisation, you might not even have a test environment that fully reflects production (or in the worst case, no test environment at all!)
 
-It's common knowledge the faster bugs and problems are caught, the easier and cheaper they are to fix. 
+It's common knowledge the faster bugs and problems are caught, the easier and cheaper they are to fix.
 
-![Relative cost of a bugfix](/content/images/2016/10/Screen_Shot_2015_02_18_at_13_07_20.png)
+![Relative cost of a bugfix](/images/2016/10/Screen_Shot_2015_02_18_at_13_07_20.png)
 > Slide credit: Barry Boehm, “Equity Keynote Address” March 19, 2007.
 
 And this idea applies to Puppet code too. You want to catch issues as early as possible in the pipeline.
 
-TDD generally means there's a reduced debugging effort. When things go wrong and failures are detected, having smaller tests helps track down issues faster. 
+TDD generally means there's a reduced debugging effort. When things go wrong and failures are detected, having smaller tests helps track down issues faster.
 
 TDD is also said to be self-documenting: test cases with human-readble langague mean that someone looking at your specs should be able to  determine if the code is doing what it's supposed to and what the original itentions were.
 
@@ -109,12 +109,12 @@ She goes off to work on the module for the nginx installation.
 Lets say the code looks something like this:
 ```puppet
 class nginx {
- 
+
    package { "nginx":
     ensure => '1.6.0',
     before => File['/etc/nginx/sites-enabled/default'];
   }
-  
+
   service { 'nginx':
     ensure     => running,
     enable     => true,
@@ -171,15 +171,15 @@ So she now knows to write the minimum amount of code to get the test passing:
 ```puppet
 # nginx.pp
 class nginx {
- 
+
    package { ‘nginx’
-       ensure => ‘1.6.5-lua’, 
-   } 
-  
+       ensure => ‘1.6.5-lua’,
+   }
+
    file { ‘/etc/nginx/conf.d/webserver.conf’:
         ensure  => file,
         content => template(‘nginx/nginx.conf’)
-   }  
+   }
 
    service {‘nginx’:}
 
@@ -202,11 +202,11 @@ server {
   gzip_min_length  1000;
   gzip_proxied any;
   gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript application/javascript;
-  
+
   gzip_buffers 16 8k;
 
   keepalive_timeout 5;
-  
+
   location / {
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     proxy_set_header X-Forwarded-Proto $scheme;
@@ -222,7 +222,7 @@ server {
 }
 ```
 
-Looks like a job well done! She then sends a pull-request to be reviewed by the ops team to see if this is what they were looking for. 
+Looks like a job well done! She then sends a pull-request to be reviewed by the ops team to see if this is what they were looking for.
 
 ```
 13:56: (Susan): Hi, mind having a look at my PR?
@@ -319,21 +319,21 @@ This is a basic watch to run all the specs in a module, and it'll run the rake s
 
 This combined with something like the many [Guard notification tools out there](https://github.com/guard/guard/wiki/System-notifications) gives you something like this:
 
-![](/content/images/2016/10/guard-rspec-osx-notification.png)
+![](/images/2016/10/guard-rspec-osx-notification.png)
 > An example of Guard notify taken from http://jam.im/blog/2013/02/11/mac-osx-notifications-with-guard/
 
 This means your tests are constantly running in the background, and notifying you when things are green and red, speeding up your Red-Green-Refactor loop.
 
 ## Beyond TDD unit-tests...TDD acceptance tests?
 
-With Beaker, you're not just testing your Puppet code does what it *should* do, you're testing what it *will* do when actually executedon a real instance of your OS of choice. 
+With Beaker, you're not just testing your Puppet code does what it *should* do, you're testing what it *will* do when actually executedon a real instance of your OS of choice.
 
 The problem is spinning up a new machine is not super quick:
 
 * Vagrant VM's have a startup cost that makes the R-G-R loop slow
 * Spinning up a cloud instance can be faster (especially if the cloud instance offers SSD nodes!) but there's a cost assosiated.
 
-One potential solution is using Beaker's Docker support. Containers are much faster to provsion to run Puppet code on, and if setup correctly can give a fairly quick feedback loop of actual acceptance tests for your Puppet code. 
+One potential solution is using Beaker's Docker support. Containers are much faster to provsion to run Puppet code on, and if setup correctly can give a fairly quick feedback loop of actual acceptance tests for your Puppet code.
 
 I think I'll write a post about using beaker with TDD in the future.
 

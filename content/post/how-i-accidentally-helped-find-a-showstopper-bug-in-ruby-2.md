@@ -4,7 +4,7 @@ categories = ["Tech", "open-source", "vDM30in30"]
 date = 2016-11-03T23:49:00Z
 description = ""
 draft = false
-image = "/images/2016/11/Screenshot-2016-11-04-01.07.59.png"
+coverImage = "/images/2016/11/Screenshot-2016-11-04-01.07.59.png"
 slug = "how-i-accidentally-helped-find-a-showstopper-bug-in-ruby-2"
 tags = ["Tech", "open-source", "vDM30in30"]
 title = "How I accidentally helped find a showstopper bug in Ruby"
@@ -79,7 +79,7 @@ Eventually I realised the gem had been updated, and as the gem wasn't pinned in 
 
 However, it didn't look like an issue with our code. The test was written in the same way as all the tests I'd written. In fact, it looked like a bug with the mocking tool itself: mocha.
 
-So I did a bit of digging. I'd seen a blog post about 
+So I did a bit of digging. I'd seen a blog post about
 [ruby-stacktrace](https://github.com/jvns/ruby-stacktrace), a Rust tool that allows you to do a stacktrace on a Ruby process. Seemed like a perfect fit. With a bit of debugging with ruby-stacktrace, I could see the following where the hang was happening in Ruby:
 
 ```
@@ -97,6 +97,6 @@ To my surprise, James ended up figuring out the issue: it was a live one, a real
 
 https://bugs.ruby-lang.org/issues/12832
 
-Now identified, the issue was fixed in both Mocha and Ruby itself, and all was well. 
+Now identified, the issue was fixed in both Mocha and Ruby itself, and all was well.
 
 Honestly, I didn't understand the actual cause or issues why it happened, but I'm glad that I was a small part of helping fix a bug in Ruby!

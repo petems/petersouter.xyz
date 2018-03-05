@@ -4,7 +4,7 @@ categories = ["vDM30in30", "Puppet", "metrics"]
 date = 2016-11-15T02:56:00Z
 description = ""
 draft = false
-image = "/images/2016/11/Screenshot-2016-11-17-21.12.24-1.png"
+coverImage = "/images/2016/11/Screenshot-2016-11-17-21.12.24-1.png"
 slug = "making-a-puppetserver-metrics-stack"
 tags = ["vDM30in30", "Puppet", "metrics"]
 title = "JMX puppetserver metrics vagrant stack"
@@ -28,7 +28,7 @@ puppet_enterprise::profile::master::java_args:
   'Dcom.sun.management.jmxremote.port': '=1099'
   'Dcom.sun.management.jmxremote.authenticate': '=false'
   'Dcom.sun.management.jmxremote.ssl': '=false'
-``` 
+```
 
 This is hiera config, that sets Puppet Enterprise's specific Puppet code to configure puppetserver JAVA_ARGS, which will start the JMX service on 1099.
 
@@ -133,8 +133,8 @@ We let that setup and stew for a bit, and when complete, we should have the data
 
 It should look something like this:
 
-![Generic Java Information](/content/images/2016/11/Screenshot-2016-11-17-21.12.24.png)
+![Generic Java Information](/images/2016/11/Screenshot-2016-11-17-21.12.24.png)
 
-In the mean-time, if you're interested, a full Vagrant stack with it in action is avaliable here: 
+In the mean-time, if you're interested, a full Vagrant stack with it in action is avaliable here:
 
 * https://github.com/petems/pe-jmx-metrics-vagrant-stack/

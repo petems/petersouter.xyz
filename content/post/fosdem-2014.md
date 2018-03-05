@@ -4,24 +4,24 @@ categories = ["Tech", "FOSDEM", "meetups", "conferences"]
 date = 2014-03-01T02:55:00Z
 description = ""
 draft = false
-image = "/images/2016/10/BfYSvieIQAAYYzH.jpg"
+coverImage = "/images/2016/10/BfYSvieIQAAYYzH.jpg"
 slug = "fosdem-2014"
 tags = ["Tech", "FOSDEM", "meetups", "conferences"]
 title = "FOSDEM 2014"
 
 +++
 
-So, my I may have slightly miscalculated how early I needed to get to the airport for my flight to Brussels for [FOSDEM 2014](https://fosdem.org/2014/)... 
+So, my I may have slightly miscalculated how early I needed to get to the airport for my flight to Brussels for [FOSDEM 2014](https://fosdem.org/2014/)...
 
 I try to get to the airport super early, as I've managed to never miss a flight, I'm normally before checkin even opens. So, I look at my ticket and I mentally add in 2 hours before I need to get there and book a taxi. Somewhere along the line, I'd managed to do this 2 hour calculation twice. So I stayed up all night and got a lift from my friends place to Heathrow.
 
-Taxi Driver: "Err, I'm not sure if there's flights this early?" 
+Taxi Driver: "Err, I'm not sure if there's flights this early?"
 
 Me: "Nope, I've checked, it's defintly..." *looks at ticket* "...damnit"
 
 So, I ended up catching up on Boardwalk Empire for 3 hours. I couldn't even check in for 90 minutes...
 
-So, unsuprisignly, when I got to Brussels I was pretty much dead on my feet and slept through most of the day and missed the [beer meetup on the first day](https://fosdem.org/2014/practical/beerevent/), sad times! 
+So, unsuprisignly, when I got to Brussels I was pretty much dead on my feet and slept through most of the day and missed the [beer meetup on the first day](https://fosdem.org/2014/practical/beerevent/), sad times!
 
 Other than this slightly shaky start, it was probably one of the best event's I've ever been to. Loads of talks [on pretty much every subject under the sun](https://fosdem.org/2014/schedule/tracks/) (except Ruby suprisingly...) and everyone was super friendly, and it was pretty easy to just end up talking to people about new technolgy and open-source.
 
@@ -30,7 +30,7 @@ Other than this slightly shaky start, it was probably one of the best event's I'
 
 The popular rooms were rammed 24/7. Being an ops person, I was mainly interested in the Configuration Management track. However, it was pretty packed...
 
-![A bit Busy...](/content/images/2016/10/uxdkvi.jpg)
+![A bit Busy...](/images/2016/10/uxdkvi.jpg)
 
 That's the queue of people watching a talk, with every seat in the room filled. Pretty intense!
 

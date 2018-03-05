@@ -4,7 +4,7 @@ categories = ["Puppet", "Tech", "open-source", "vDM30in30"]
 date = 2016-11-05T20:55:00Z
 description = ""
 draft = false
-image = "/images/2016/11/Screenshot-2016-11-06-20.10.42-1.png"
+coverImage = "/images/2016/11/Screenshot-2016-11-06-20.10.42-1.png"
 slug = "system-administration-with-cockpit"
 tags = ["Puppet", "Tech", "open-source", "vDM30in30"]
 title = "System Administration with Cockpit"
@@ -20,42 +20,42 @@ RedHat are already using it as the main [way of interacting with RHEV](http://rh
 It includes a bunch of tooling for your standard sysadmin tasks:
 
 #### Restarting Services:
-![](/content/images/2016/11/Screenshot-2016-11-06-19.08.08.png)
+![](/images/2016/11/Screenshot-2016-11-06-19.08.08.png)
 
 #### Monitoring Disks:
-![](/content/images/2016/11/Screenshot-2016-11-06-19.14.32.png)
+![](/images/2016/11/Screenshot-2016-11-06-19.14.32.png)
 
 #### Monitoring Network:
-![](/content/images/2016/11/Screenshot-2016-11-06-19.13.19.png)
+![](/images/2016/11/Screenshot-2016-11-06-19.13.19.png)
 (You can see the spike where I downloaded a test file (`wget http://ipv4.download.thinkbroadband.com/100MB.zip`)
 
 #### Reading Logs:
-![](/content/images/2016/11/Screenshot-2016-11-06-19.09.24.png)
+![](/images/2016/11/Screenshot-2016-11-06-19.09.24.png)
 (You can see where I forgot to add sudo rules to my petems account)
 
 You even have a terminal to run commands on the system with:
-![](/content/images/2016/11/Screenshot-2016-11-06-19.12.11.png)
+![](/images/2016/11/Screenshot-2016-11-06-19.12.11.png)
 
-And on top of all that, it's login is based on SSH, with optional 2FA with tools like Google Authenticator, so it's fairly plug-in-and-play for most systems. 
+And on top of all that, it's login is based on SSH, with optional 2FA with tools like Google Authenticator, so it's fairly plug-in-and-play for most systems.
 
 You can even create new accounts for users from the Cockpit interface:
 
-![](/content/images/2016/11/Screenshot-2016-11-06-19.12.25.png)
+![](/images/2016/11/Screenshot-2016-11-06-19.12.25.png)
 
 #### Upcoming
 
 The development and feature planning for Cockpit is open (
 [they have a Trello board with a full roadmap](https://trello.com/b/mtBhMA1l/cockpit), and there's some interesting looking things coming up, such as built in container scanning with atomic:
 
-![](/content/images/2016/11/image-scanning.png)
+![](/images/2016/11/image-scanning.png)
 [Taken from the preview for the next Cockpit release](http://cockpit-project.org/blog/cockpit-122.html)
 
 Or debugging issues with Selinux:
 
-![](/content/images/2016/11/Screenshot-2016-11-06-20.10.42.png)
+![](/images/2016/11/Screenshot-2016-11-06-20.10.42.png)
 [SELinux Troublshooting feature page](https://github.com/cockpit-project/cockpit/wiki/Feature:-SELinux-Troubleshooting)
 
-But one of the most exciting elements is going to be it's integrations with containers. I can already see 
+But one of the most exciting elements is going to be it's integrations with containers. I can already see
 
 ### Try it yourself
 

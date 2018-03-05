@@ -4,7 +4,7 @@ categories = ["Testing", "Tech", "ruby"]
 date = 2013-11-28T12:00:00Z
 description = ""
 draft = false
-image = "/images/2016/10/5592629831_c79b801af5_z.jpg"
+coverImage = "/images/2016/10/5592629831_c79b801af5_z.jpg"
 slug = "capybara-not-just-for-ruby"
 tags = ["Testing", "Tech", "ruby"]
 title = "Capybara Smoketests: Not just for Ruby!"
@@ -113,17 +113,17 @@ This failure was a bit strange, as looking at the code, there clearly was a butt
 
 So I added in [capybara-screenshot](https://github.com/mattheworiordan/capybara-screenshot). This automatically produces an image and the raw HTML of a page when a test fails. Combine this with [Jenkins Artifacts](https://wiki.jenkins-ci.org/display/JENKINS/ArtifactDeployer+Plugin) like so:
 
-![Post Build archives](/content/images/2016/10/postbuild.png)
+![Post Build archives](/images/2016/10/postbuild.png)
 
 And you have a permanent copy of the raw HTML and a screenshot of the page on failure.
 
 So let's go back to that weird failure we were getting before:
 
-![Jenkins Screenshot](/content/images/2016/10/jenkins-1.png)
+![Jenkins Screenshot](/images/2016/10/jenkins-1.png)
 
 Clicking on the screenshot got me this:
 
-![Bad Gateway Fail](/content/images/2016/10/badgateway.png)
+![Bad Gateway Fail](/images/2016/10/badgateway.png)
 
 Turns out we were changing a deployment process at the time and the app had been stopped briefly to check something. We started it up again and the test went green. All sorted!
 

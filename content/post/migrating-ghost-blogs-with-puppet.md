@@ -4,7 +4,7 @@ categories = ["Puppet", "Tech", "nginx", "gandi", "ghost"]
 date = 2015-02-27T14:16:00Z
 description = ""
 draft = false
-image = "/images/2016/10/15944989872_b958dc5552_z.jpg"
+coverImage = "/images/2016/10/15944989872_b958dc5552_z.jpg"
 slug = "migrating-ghost-blogs-with-puppet"
 tags = ["Puppet", "Tech", "nginx", "gandi", "ghost"]
 title = "Migrating my blog to new Ghost and enabling HTTPS"
@@ -108,7 +108,7 @@ node /petersouter.co.uk/{
 
 Which worked like a charm.
 
-With this success I moved on to my second idea: SSL. 
+With this success I moved on to my second idea: SSL.
 
 My original SSL blocker was that it was going to be a lot of manual steps to set it up, and I only would enable SSL when I could configure it with Puppet. Now I had a puppet-ized the server server, it was easy enough to generate the certs, put them on the server, and make a small change to the role to enable them:
 

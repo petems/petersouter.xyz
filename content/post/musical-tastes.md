@@ -4,7 +4,7 @@ categories = ["personal", "vDM30in30", "music"]
 date = 2016-11-07T12:18:00Z
 description = ""
 draft = false
-image = "/images/2016/11/triphop.png"
+coverImage = "/images/2016/11/triphop.png"
 slug = "musical-tastes"
 tags = ["personal", "vDM30in30", "music"]
 title = "Musical Tastes"
@@ -15,7 +15,7 @@ title = "Musical Tastes"
 
 ## What I like...
 
-There's an old cliche, ["I'll listen to anything...except rap and country"](https://psmag.com/i-listen-to-everything-except-rap-and-country-music-28048a1168bf#.nkmz5aasw). 
+There's an old cliche, ["I'll listen to anything...except rap and country"](https://psmag.com/i-listen-to-everything-except-rap-and-country-music-28048a1168bf#.nkmz5aasw).
 
 I used to fall into this bucket, but then I actually realised that every genre has some amazing tracks and artists, so now I would describe my musical taste as pretty general. I tend toward the more hip-hop, electronic, easy-listening side. But since then I've broadened my horizons and will pretty much listen to anything.
 
@@ -29,7 +29,7 @@ Normally when I'm listening to music, I'm actually in a zone-out or coding mood.
 
 ## What I've been listening too
 
-So when I code I'm normally listening to more spacey sound. I want to phase out, get in my headspace and get into 
+So when I code I'm normally listening to more spacey sound. I want to phase out, get in my headspace and get into
 [flow](https://en.wikipedia.org/wiki/Flow_(psychology)).
 
 One cool trend that happened recently was the rise of **Chill Anime Vines**. Basically little vignettes of mainly 90's VHS quality anime clips, accompanied by trip-hop or spacey beats in 8 second loops.

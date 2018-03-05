@@ -4,7 +4,7 @@ categories = ["Puppet", "Tech", "vDM30in30", "hiera"]
 date = 2016-11-01T21:48:11Z
 description = ""
 draft = false
-image = "/images/2016/11/screenshot-1.png"
+coverImage = "/images/2016/11/screenshot-1.png"
 slug = "an-omnibus-install-for-hiera_explain"
 tags = ["Puppet", "Tech", "vDM30in30", "hiera"]
 title = "An Omnibus package for hiera_explain"
@@ -19,17 +19,17 @@ Luckily, Ben Ford, former PSE, now Education person at Puppet and generally awes
 
 # [hiera_explain](https://github.com/binford2k/hiera_explain)
 
-![hiera_explain in action](/content/images/2016/11/screenshot.png)
+![hiera_explain in action](/images/2016/11/screenshot.png)
 
 It's a way more verbose and explanatory way of doing everything, and the person I was working it loved it when I showed it on my test machine.
 
 However, the tool itself had a few issues that made it not so suitable for them:
 
 - The Customer was on CentOS 6, which still has Ruby 1.8.7. Meaning the code would have to have the backports gem added and/or a bunch of code fixed to work with 1.8.7
-- Since 1.8.7 is super, super EOL, you have to go through all the gems pinning them to versions that work with 1.8.7 
+- Since 1.8.7 is super, super EOL, you have to go through all the gems pinning them to versions that work with 1.8.7
 - Since the gem itself installs hiera and puppet as part of its tooling, it's easy to accidentally overwrite the (especially if you're using pre-AIO packages which have a standard bin path)
 - It makes a number of assumptions that you have a newer version of Puppet installed so has a few issues with older Puppet (I opened an issue to remind myself to go back and fix the things I found: https://github.com/binford2k/hiera_explain/issues/7)
- 
+
 I tried a few solutions, like vendoring the gems into the repository and playing around with bundler gemstubs. This was a pretty dull process that sucked up way more of my time than I'd like to admit.
 
 Eventually I just pulled the nuclear option: making an Omnibus package.
@@ -38,7 +38,7 @@ Eventually I just pulled the nuclear option: making an Omnibus package.
 
 Omnibus is Chef's solution for dependency hell with Ruby projects. Build a package that vendors _everything_. You end up with a fairly chunky package, but crucially: you don't have to worry about worrying about upstream Ruby versions and issues with gem management. It just installs everything to a given path.
 
-So, that's what I did: 
+So, that's what I did:
 
 ### https://github.com/petems/omnibus-hiera_explain/
 
@@ -120,7 +120,7 @@ I banged my head up against a pretty weird looking bug for a long time:
     from /usr/lib64/ruby/gems/2.3.0/gems/mixlib-shellout-2.2.6/lib/mixlib/shellout/unix.rb:316:in `fork'
 ```
 
-I even opened an issue for it https://github.com/chef/omnibus/issues/730 
+I even opened an issue for it https://github.com/chef/omnibus/issues/730
 
 It was really strange, I could see that patch file existed, but for some reason it couldn't find it when trying to build the package!
 
@@ -175,7 +175,7 @@ Hash lookup results:
    * hiera_hash('common') => Not a hash datatype in ["environments/testing/hieradata/RedHat.yaml"]
 ```
 
-From there, you can easily install the package temporarily on a test server. Since all of the gem and ruby requirements are kept under the `/opt/hiera_explain` path, you dont have to worry about conflicts. 
+From there, you can easily install the package temporarily on a test server. Since all of the gem and ruby requirements are kept under the `/opt/hiera_explain` path, you dont have to worry about conflicts.
 
 Then when you're finished, you can simply remove the package (or keep it for future debugging!)
 

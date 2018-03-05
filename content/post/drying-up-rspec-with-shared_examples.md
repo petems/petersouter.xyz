@@ -4,7 +4,7 @@ categories = ["vDM30in30", "Testing", "Puppet", "ruby"]
 date = 2016-11-17T11:46:00Z
 description = ""
 draft = false
-image = "/images/2016/11/Screenshot-2016-11-30-13.57.59.png"
+coverImage = "/images/2016/11/Screenshot-2016-11-30-13.57.59.png"
 slug = "drying-up-rspec-with-shared_examples"
 tags = ["vDM30in30", "Testing", "Puppet", "ruby"]
 title = "Drying up rspec with shared_examples"
@@ -25,7 +25,7 @@ What's the problem with copy-pasted code? It makes editing more difficult due to
 
 Duplication comes with an increased maintenance cost: duplication means more places to be updated when a change occurs, meaning a higher chance of human error when changing, and duplicated code often ends up forgotten or overlooked.
 
-[There's a good summary of the issue here](http://wiki.c2.com/?DontRepeatYourself) 
+[There's a good summary of the issue here](http://wiki.c2.com/?DontRepeatYourself)
 
 ## Meta-programming in Specs
 
@@ -51,7 +51,7 @@ describe ReminderMailer, type: :mailer do
                          suggested_projects: [])
       end
 
-      # How do I do this bit better?  
+      # How do I do this bit better?
       let(:mail) {
         if time_format == 'daily'
           ReminderMailer.daily(user)
@@ -63,7 +63,7 @@ describe ReminderMailer, type: :mailer do
 end
 ```
 
-However, this isn't super easy to maintain: I have to change the array and add more logic when new things get created. And what if I want to use this in multiple spec files? 
+However, this isn't super easy to maintain: I have to change the array and add more logic when new things get created. And what if I want to use this in multiple spec files?
 
 It's not ideal.
 
@@ -102,7 +102,7 @@ describe ReminderMailer, type: :mailer do
   describe 'daily' do
     let(:mail) { ReminderMailer.daily(user) }
 
-    it_behaves_like "a reminder mailer", 
+    it_behaves_like "a reminder mailer",
       subject: '[24 Pull Requests] Daily Reminder',
       body: 'today'
   end
@@ -110,7 +110,7 @@ describe ReminderMailer, type: :mailer do
   describe 'weekly' do
     let(:mail) { ReminderMailer.weekly(user) }
 
-    it_behaves_like "a reminder mailer", 
+    it_behaves_like "a reminder mailer",
       subject: '[24 Pull Requests] Weekly Reminder',
       body: 'week'
   end
@@ -125,7 +125,7 @@ What's great about this is, if a new email reminder for monthly was implemented,
 describe 'monthly' do
   let(:mail) { ReminderMailer.monthly(user) }
 
-  it_behaves_like "a reminder mailer", 
+  it_behaves_like "a reminder mailer",
     subject: '[24 Pull Requests] Monthly Reminder'
     body: 'monthly'
   end
@@ -624,7 +624,7 @@ shared_examples "RHEL package provider" do |provider_class, provider_name|
         current_version = '1.2'
         version = '1.0'
         resource[:ensure] = '1.0'
-        
+
 # etc etc
 ```
 

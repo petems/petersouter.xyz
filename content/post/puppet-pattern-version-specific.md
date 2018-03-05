@@ -4,7 +4,7 @@ categories = ["vDM30in30", "Puppet", "open-source"]
 date = 2016-11-29T15:30:00Z
 description = ""
 draft = false
-image = "/images/2016/11/17340332605_b13cf471ad_h.jpg"
+coverImage = "/images/2016/11/17340332605_b13cf471ad_h.jpg"
 slug = "puppet-pattern-version-specific"
 tags = ["vDM30in30", "Puppet", "open-source"]
 title = "A Puppet pattern for version specific config settings"
@@ -13,7 +13,7 @@ title = "A Puppet pattern for version specific config settings"
 
 #### Day 29 in the #vDM30in30
 
-> Image from https://flic.kr/p/sqiJKP 
+> Image from https://flic.kr/p/sqiJKP
 
 Let's talk about the lifecycle of a Puppet run.
 
@@ -41,7 +41,7 @@ Source: http://wiki.c2.com/?PrincipleOfLeastAstonishment
 
 According to POLA, if someone downloads the module and applies it, it should Just Work(TM). They shouldn't need to know about the different configuration settings for the version their running if they're using the defaults.
 
-The easiest solution would be to just put a note in the `README` saying "Make sure you use the latest version, otherwise this setting won't work". 
+The easiest solution would be to just put a note in the `README` saying "Make sure you use the latest version, otherwise this setting won't work".
 
 But that's not very friendly or good for new users, plus it breaks POLA.
 
@@ -58,7 +58,7 @@ A pattern I've seen to solve this is a combination of two things:
 
 The collectd was having this issue, as there were plugin settings that were only avaliable in collectd 5.5 onward.
 
-So, they added a custom fact to get the collectd version if installed. 
+So, they added a custom fact to get the collectd version if installed.
 
 Then they added parameter `$minimum_version` which defaulted to the minimum version in the package repository.
 

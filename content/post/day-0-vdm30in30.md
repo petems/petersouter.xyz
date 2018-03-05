@@ -4,7 +4,7 @@ categories = ["vDM30in30"]
 date = 2016-10-31T16:14:08Z
 description = ""
 draft = false
-image = "/images/2016/10/Screenshot-2016-10-31-16.14.00.png"
+coverImage = "/images/2016/10/Screenshot-2016-10-31-16.14.00.png"
 slug = "day-0-vdm30in30"
 tags = ["vDM30in30"]
 title = "Day 0: #vDM30in30"
@@ -29,4 +29,4 @@ Rules are pretty simple:
 
 So I decided to sign-up this year, as I've got a bunch of ideas and drafts that have been left half-done, and this is the perfect excuse to hold me accountable and get me blogging some more.
 
-So, here's me getting started early, with a Day 0 post before November actually starts! Looking forward to getting some good blogging going as the month goes on, a mix of Puppet and Devops stuff, some random thoughts about technology and fitness. Maybe even some personal stuff too! 
+So, here's me getting started early, with a Day 0 post before November actually starts! Looking forward to getting some good blogging going as the month goes on, a mix of Puppet and Devops stuff, some random thoughts about technology and fitness. Maybe even some personal stuff too!

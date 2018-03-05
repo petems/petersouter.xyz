@@ -4,7 +4,7 @@ categories = ["vDM30in30", "Tech", "Puppet"]
 date = 2016-11-11T13:24:00Z
 description = ""
 draft = false
-image = "/images/2016/11/Screenshot-2016-11-17-19.23.52.png"
+coverImage = "/images/2016/11/Screenshot-2016-11-17-19.23.52.png"
 slug = "puppetserver-caching"
 tags = ["vDM30in30", "Tech", "Puppet"]
 title = "puppetserver caching"
@@ -30,15 +30,15 @@ It can be a little confusing for people used to the old ways, as it's moved from
 
 This change brought with it huge performance increases, as Ruby and Passenger are hard to scale, wheras since both Clojure and JRuby run in the JVM, which you can generally through a load of memory at with heap settings and you're good to go.
 
-![Puppet Server be fast, yo!](/content/images/2016/11/Screenshot-2016-11-17-19.17.42.png)
+![Puppet Server be fast, yo!](/images/2016/11/Screenshot-2016-11-17-19.17.42.png)
 
-![Agents running faster](/content/images/2016/11/Screenshot-2016-11-17-19.19.47.png)
+![Agents running faster](/images/2016/11/Screenshot-2016-11-17-19.19.47.png)
 
 ## The manifest caching problem
 
 I was working with a customer who was on and older version of Puppet (3.3), but had upgraded to a newer release that featured puppetserver instead of passenger.
 
-They didn't have local VMs, so their old code deployment process was a dedicated compile master, which they then checked git code out and symlinked to the environment folder. 
+They didn't have local VMs, so their old code deployment process was a dedicated compile master, which they then checked git code out and symlinked to the environment folder.
 
 You would then point a canary node to the dedicated compile master, make a change locally to modules and manifests from their local copy of the code on the master, then run an agent test run, pointing to the compile master. Any change in the code on the master would be reflected immediately in catalogs.
 
@@ -64,9 +64,9 @@ The `environmenttimeout` of 0 is less performant, as the master recompiles catal
 
 ## Why unlimited?
 
-When doing a proper git deployment process, such as Puppet Enterprises code manager, r10k or some over version control workflow, the environment timeout should be set to unlimited. 
+When doing a proper git deployment process, such as Puppet Enterprises code manager, r10k or some over version control workflow, the environment timeout should be set to unlimited.
 
-This is because there's no point recompiling catalogs, checking for changes to code when we know the code shouldn't have been changed without a proper deploy process. The cache would be manually refreshed after the deployment process has occurred, such as a post recovery hook in r10k or automatically with code manager. 
+This is because there's no point recompiling catalogs, checking for changes to code when we know the code shouldn't have been changed without a proper deploy process. The cache would be manually refreshed after the deployment process has occurred, such as a post recovery hook in r10k or automatically with code manager.
 
 The endpoint is documented [here](https://docs.puppet.com/puppetserver/latest/admin-api/v1/environment-cache.html), and is automatically done with Puppet Enterprise Code Manager, but can be easily configured with an [r10k post-deploy hook](https://docs.puppet.com/pe/latest/r10k_custom.html#postrun).
 

@@ -4,7 +4,7 @@ categories = ["Puppet", "Tech", "config management", "open-source"]
 date = 2014-06-02T22:52:25Z
 description = ""
 draft = false
-image = "/images/2016/10/triage_a_thon.png"
+coverImage = "/images/2016/10/triage_a_thon.png"
 slug = "triage-a-thons-and-fixing-puppet"
 tags = ["Puppet", "Tech", "config management", "open-source"]
 title = "Triage-a-thons and Fixing Puppet"
@@ -21,9 +21,9 @@ I've ended up doing attending most of the Triages that have happened, as it's ea
 
 Plus there's normally cool prizes or t-shirts, which I'm a sucker for!
 
-![](/content/images/2016/10/triage.png)
+![](/images/2016/10/triage.png)
 
-The white whale issue that I'm still fiddling with is probably [an issue with duplicate package names in puppet.](https://tickets.puppetlabs.com/browse/PUP-1073). 
+The white whale issue that I'm still fiddling with is probably [an issue with duplicate package names in puppet.](https://tickets.puppetlabs.com/browse/PUP-1073).
 
 It's a live issue with Puppet that's affecting one of the projects I'm on, because we have two packages with the same name, one a pip package, the other an RPM installed by Yum. If you try to have a package with the same name as another, even with the different providers, Puppet throws a wobbly.
 

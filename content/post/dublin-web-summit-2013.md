@@ -3,7 +3,7 @@ author = "Peter Souter"
 date = 2013-11-14T12:00:00Z
 description = ""
 draft = false
-image = "/images/2016/10/10226806236_2915beec76_z.jpg"
+coverImage = "/images/2016/10/10226806236_2915beec76_z.jpg"
 slug = "dublin-web-summit-2013"
 title = "Dublin Web Summit 2013"
 
@@ -18,7 +18,7 @@ Met up with fellow Kainos-er [James Hughes](https://twitter.com/kouphax), who sh
 # Day 1
 After a quick walk down from our hotel, we pick up our badges and go in, and I was promptly blown away by the massive showfloor...
 
-![](/content/images/2016/10/10580850365_4c1eff1a80_z.jpg)
+![](/images/2016/10/10580850365_4c1eff1a80_z.jpg)
 https://flic.kr/p/h7ZCbz
 
 The noise, the people, everyone trying to catch your eye to tell you about their startup, people dressed up, videos playing everywhere, people trying to give you free stuff... all a bit overwhelming for 9am!
@@ -31,7 +31,7 @@ I quickly learnt that this is the main focus of the event: an insanely busy week
 
 The startups on show were pretty awesome, a lot of variety and everyone keen to show off their tech.
 
-![](/content/images/2016/10/10707930065_d214c01075.jpg)
+![](/images/2016/10/10707930065_d214c01075.jpg)
 https://flic.kr/p/hjdWxT
 
 I talked to a few people and signed up for a few things, but it made me glad I was there as an attendee rather than an exhibitor, it looked pretty stressful!
@@ -85,7 +85,7 @@ All the talks from the Development stage were [streamed and archived](http://new
 
 One of the best talks was [Fred George's](https://twitter.com/fgeorge52) talk on [MicroService Architecture](http://www.slideshare.net/fredgeorge/micro-service-architecure). I'd heard use of the term micro-services before, but mainly in the context of lightweight frameworks like Sinatra and Finagle. I'd never heard the implementation of them in a full system. The talk dealt with real-life application of a micro-service architecture on several large banking projects.
 
-![1 Million Dollars...](/content/images/2016/10/microservice.jpg)
+![1 Million Dollars...](/images/2016/10/microservice.jpg)
 
 Microservices as a concept really struck a chord with me. It felt similar to the unix philosophy: well-defined, small and de-coupled components building into a complex machine. You don't have to 'touch' too much of the application to make a change and it lets you iterate a lot faster. It seems like a really neat approach to manage the complexity of an application.
 
@@ -99,7 +99,7 @@ In fact, James did an excellent [blog post](http://yobriefca.se/blog/2013/04/29/
 
 [Richard Rodgers](https://twitter.com/rjrodger) talk on falling in love with technical debt was also extremely good. Whilst it had a bit of a bait of a troll-bait title, it was more of the reality of how to deal with technical debt.
 
-![Microservice Architecture](/content/images/2016/10/falling_in.jpg)
+![Microservice Architecture](/images/2016/10/falling_in.jpg)
 
 It's always a dream of devs dealing with a large and creaking codebase to say: "I wish I could throw all of this away and start again!". It's one of those things that sounds great, but if you do you quickly realise it's a bit of a Rose Tinted view to have. Technical debt normally spins out of all the edge cases you needed to fix to get your application working with real users, and you'll probably end up just shifting that debt back in as you write them all again.
 
@@ -107,25 +107,25 @@ Worse, you quickly realise you're pretty close to where you started, the old cod
 
 Anyway, the focus of the talk was that you couldn't avoid technical debt, so better to mitigate debt, rather than the impossible task of avoiding it. And one of the suggested methods? Microservices.
 
-![Technical debt microservices](/content/images/2016/10/technical_debt_micro.jpg)
+![Technical debt microservices](/images/2016/10/technical_debt_micro.jpg)
 
 James also showed how his Node.js microservice framework [he developed](http://senecajs.org/) worked, which looks pretty cool and reminded me that Node was one of those things I have on my to-do list of things to learn...
 
-There were some other great talks that I missed but heard good things about, like **Chad Fowlers** talk on Disposable Components (services are like cells in a body: constantly dying and being replaced, yet the whole system continues to run) and Andreea Wade's talk **Developing Communities - a Coder, a Painter and a Builder Walk into a Bar about** increasing diversity on tech teams, in terms of both people and ideas. 
+There were some other great talks that I missed but heard good things about, like **Chad Fowlers** talk on Disposable Components (services are like cells in a body: constantly dying and being replaced, yet the whole system continues to run) and Andreea Wade's talk **Developing Communities - a Coder, a Painter and a Builder Walk into a Bar about** increasing diversity on tech teams, in terms of both people and ideas.
 
 After that, I drifted toward the main stage for some of the keynotes and interviews. The biggest was probably Tony Hawk, the grandfather of mainstream skating, interviewed by Kevin Rose.
 
-![Tony Hawk](/content/images/2016/10/tony_hawk.jpg)
+![Tony Hawk](/images/2016/10/tony_hawk.jpg)
 
 Sadly, no ["LATE 360 SHOVE-IT TO BONELESS"](http://www.homestarrunner.com/tgs5.html) but, Tony Hawk talked about his life, his [charity work and foundation](http://tonyhawkfoundation.org/), and how the original concept of the PS1 Tony Hawk game had digitally modeled Bruce Willis skating around a post-apocalyptic wasteland...so a bit different from the final product really!
 
 The day drew to an end, and so on to the night summit. This consisted of a whole street of bars and pubs that had been taken over in the name of the summit, providing free drinks all night to attendees.
 
-![Night Summit Inside](/content/images/2016/10/night_summit.jpg)
+![Night Summit Inside](/images/2016/10/night_summit.jpg)
 
 Needless to say, it was insanely busy...
 
-![Night Summit Outside](/content/images/2016/10/night_summit_inside.jpg)
+![Night Summit Outside](/images/2016/10/night_summit_inside.jpg)
 
 ## Day 2
 
@@ -133,16 +133,16 @@ So, after a little worse-for-wear after the drinks the night before, I managed t
 
 ## Practicing Failure: Gamedays on the Obama Campaign
 
-![](/content/images/2016/10/gamedays.png)
+![](/images/2016/10/gamedays.png)
 
-Dylan Richard explained how he got his systems (and in the process, his team!) battle-hardened, and able to handle the technical challenges of Barack Obama's 2012 re-election. As he put it *“Technology does not win an election, but you can lose because of it.”*. 
+Dylan Richard explained how he got his systems (and in the process, his team!) battle-hardened, and able to handle the technical challenges of Barack Obama's 2012 re-election. As he put it *“Technology does not win an election, but you can lose because of it.”*.
 
 Regardless of your political leanings, Obama's tech-team knocked it out of the park compared to Mitt Romney's [failure to launch.](http://arstechnica.com/information-technology/2012/11/inside-team-romneys-whale-of-an-it-meltdown/).
 
 Dylan came up with two tenants to avoiding failure on a project:
 
 * Don’t let it fail
-* When it does, [deal with it](/content/images/2013/Nov/CupiM.gif)
+* When it does, [deal with it](/images/2013/Nov/CupiM.gif)
 
 The first one sounds obvious, but it's more about avoiding failure in the first place. He said the biggest issue was to get the shareholders to explain what mattered the most. He basically summed it up to the stakeholders as: *"No features are cool enough to not have a working app"*
 
@@ -166,9 +166,9 @@ Immediately after was Gary O’Connor from the BBC.
 
 So in 2012 and the Olympics coming, the BBC had a mandate to move a number of services into the cloud. They started off with several pilot projects as a proof of concept and after they got all the major stakeholders on board, adopt it as a standard practise going forward.
 
-![](/content/images/2016/10/bbc.png)
+![](/images/2016/10/bbc.png)
 
-It was kind of interesting that apparently there wasn't much of a scala footprint at the BBC team, but one person thought he could improve the approach taken on CBeebies, went away, spiked it in Play and proved that it was a good approach and got it signed off. It's always nice when someone can trial and approach, prove it's business value and get it implemented. 
+It was kind of interesting that apparently there wasn't much of a scala footprint at the BBC team, but one person thought he could improve the approach taken on CBeebies, went away, spiked it in Play and proved that it was a good approach and got it signed off. It's always nice when someone can trial and approach, prove it's business value and get it implemented.
 
 He then talked a little about why they chose CouchDB over MongoDB and the general architectural approaches the team took in projects.
 

@@ -4,7 +4,7 @@ categories = ["vDM30in30", "Tech", "Puppet"]
 date = 2016-11-23T07:55:00Z
 description = ""
 draft = false
-image = "/images/2016/11/7275336890_35ebd02683_k.jpg"
+coverImage = "/images/2016/11/7275336890_35ebd02683_k.jpg"
 slug = "the-puppet-resource-abstraction-layer-ral-explained-part-2"
 tags = ["vDM30in30", "Tech", "Puppet"]
 title = "The Puppet Resource Abstraction Layer (RAL) Explained: Part 2"
@@ -33,11 +33,11 @@ Let's look at how the RAL will manage this:
 
 * We've given the type as package.
 * I'm running this on a RHEL7 system, so the default provider is yum.
-* yum is a "child" provider of rpm: it uses the RPM command to check if the package is installed on the system. 
+* yum is a "child" provider of rpm: it uses the RPM command to check if the package is installed on the system.
 * This is a lot faster than running "yum info", as it doesn't make any internet calls, and won't fail if a yumrepo is failing.
 * The install command however, will be `yum install`.
 
-So previously we talked about how Puppet uses the RAL to both read and modify the state of resources on a system. 
+So previously we talked about how Puppet uses the RAL to both read and modify the state of resources on a system.
 
 Both getting and setting.
 
@@ -101,7 +101,7 @@ private
   end
 ```
 
-So basically it's a regex on the output, then turns those bits from the regex into the given fields. 
+So basically it's a regex on the output, then turns those bits from the regex into the given fields.
 
 These hashes become the current state of the resource.
 
@@ -122,7 +122,7 @@ So it uses the RAL to fetch the current state:
 * Tree isn't here...
 * So we need tree to be installed
 
-The Yum provider then specifies the command required to install. 
+The Yum provider then specifies the command required to install.
 
 There's a lot of logic here:
 
@@ -207,7 +207,7 @@ Debug: Executing: '/usr/bin/yum -d 0 -e 0 -y install tree'
 Notice: /Stage[main]/Main/Package[tree]/ensure: created
 ```
 
-Ta-dah, installed. 
+Ta-dah, installed.
 
 ## Another example
 

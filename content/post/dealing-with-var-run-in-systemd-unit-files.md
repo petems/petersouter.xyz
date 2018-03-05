@@ -4,7 +4,7 @@ categories = ["vDM30in30", "open-source", "systemd"]
 date = 2016-11-28T15:20:00Z
 description = ""
 draft = false
-image = "/images/2016/11/21010813392_4ff8e6b7e2_o.png"
+coverImage = "/images/2016/11/21010813392_4ff8e6b7e2_o.png"
 slug = "dealing-with-var-run-in-systemd-unit-files"
 tags = ["vDM30in30", "open-source", "systemd"]
 title = "Dealing with /var/run in systemd unit files"
@@ -23,8 +23,8 @@ ExecStartPre=/usr/bin/chown -R jmxtrans:jmxtrans /run/jmxtrans/
 ```
 
 I took the idea from a blog by [Jari Turkia](https://blog.hqcodeshop.fi/archives/93-Handling-varrun-with-systemd.html).
- 
-However, I made the rookie mistake of not checking the comments to see if things had changed and there was a better way, since the original post was written in 2013. 
+
+However, I made the rookie mistake of not checking the comments to see if things had changed and there was a better way, since the original post was written in 2013.
 
 [In March 2014](https://github.com/systemd/systemd/commit/e66cf1a3f94fff48a572f6dbd19b43c9bcf7b8c7), there was a new new `RuntimeDirectory` setting. It was made exactly for this use-case:
 
@@ -118,6 +118,6 @@ Nov 30 13:29:04 debian-redis-test systemd[1]: PID file
 /var/run/redis/redis-server.pid not readable (yet?) after start-post.
 ```
 
-I would assume this would affect the upstream debian package, but for some reason it's not... but I thought it would be a good idea to add that field to the systemd unit file anyways. Plus it gives me an excuse to open my first Debian bug: 
+I would assume this would affect the upstream debian package, but for some reason it's not... but I thought it would be a good idea to add that field to the systemd unit file anyways. Plus it gives me an excuse to open my first Debian bug:
 
 https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=846350

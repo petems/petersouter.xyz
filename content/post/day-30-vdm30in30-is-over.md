@@ -3,13 +3,13 @@ author = "Peter Souter"
 date = 2016-11-30T20:29:27Z
 description = ""
 draft = false
-image = "/images/2016/11/Screenshot-2016-11-30-20.29.21.png"
+coverImage = "/images/2016/11/Screenshot-2016-11-30-20.29.21.png"
 slug = "day-30-vdm30in30-is-over"
 title = "Day 30 vdm30in30 is over!"
 
 +++
 
-Well, here it is, Day 30 of the `#vdm30in30`. 
+Well, here it is, Day 30 of the `#vdm30in30`.
 
 Here's some stats on the last 30 days of posts:
 
@@ -17,8 +17,8 @@ Here's some stats on the last 30 days of posts:
 * **213,374** Characters
 * **238** Sentences
 * **29** Paragraphs
-* **1 hr 25 mins** Reading Time 
-* **2 hrs 10 mins** Speaking Time 
+* **1 hr 25 mins** Reading Time
+* **2 hrs 10 mins** Speaking Time
 
 Most used words:
 
@@ -37,15 +37,15 @@ Not sure how accurate that is because there's a lot of code snippets in there, b
 
 ## How did it go?
 
-Honestly, it was sort of stressful a lot of the time. 
+Honestly, it was sort of stressful a lot of the time.
 
-Thinking of a good topic, then getting a rough idea into a blog post and posting it is hard to do, every day for 30 days straight. 
+Thinking of a good topic, then getting a rough idea into a blog post and posting it is hard to do, every day for 30 days straight.
 
 For most of the month I was 3 or 4 posts behind and desperately catching up.
 
 It forced me to write up a bunch of semi-formed ideas for blogs in the super early stages, as I was getting more behind, forcing them out to the surface and it was a great way of picking up a bunch of half-completed blogs I had in drafts for months.
 
-My post on the Puppet RAL, which was intended to be a single post but bloated out into 4 posts helped. 
+My post on the Puppet RAL, which was intended to be a single post but bloated out into 4 posts helped.
 
 Plus a load of issues I actually worked on during the weekday ended up being good topics for blogs also, such as the work on JMX, debugging Puppet and sigkill, all of which came out of conversations with customers or people from the community.
 

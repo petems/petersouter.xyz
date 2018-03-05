@@ -4,7 +4,7 @@ categories = ["vDM30in30", "Tech"]
 date = 2016-11-19T12:47:00Z
 description = ""
 draft = false
-image = "/images/2016/11/Screenshot-2016-11-26-14.07.25-1.png"
+coverImage = "/images/2016/11/Screenshot-2016-11-26-14.07.25-1.png"
 slug = "making-docs-fun-with-dash"
 tags = ["vDM30in30", "Tech"]
 title = "Making Docs fun with Dash"
@@ -41,7 +41,7 @@ I have:
 
 There's also a bunch of User Contributed docs from the community:
 
-![](/content/images/2016/11/Screenshot-2016-11-26-14.07.25.png)
+![](/images/2016/11/Screenshot-2016-11-26-14.07.25.png)
 
 I have:
 
@@ -53,7 +53,7 @@ Using Dash for documentation is great for a bunch of reasons:
 
 ## Documentation search isn't always great
 
-Depending on the stack used for hosting the docs, finding what you want isn't always great. 
+Depending on the stack used for hosting the docs, finding what you want isn't always great.
 
 The indexing for Dash seems top-notch, you can search for the documentation in seconds.
 
@@ -65,7 +65,7 @@ There have been times when I've not been able to get online. Maybe I don't have 
 
 The most useful thing for me is that Dash has a ton of integrations with other applications.
 
-![](/content/images/2016/11/Screenshot-2016-11-26-14.00.22.png)
+![](/images/2016/11/Screenshot-2016-11-26-14.00.22.png)
 
 The ones I use the most in my work are...
 
@@ -74,7 +74,7 @@ The ones I use the most in my work are...
 You can press `Ctrl+H` in a file with Sublime, and it will do a context search using the type of code in the file plus a search for that entry.
 
 For example, if I wanted to know about a package in Puppet:
-![](/content/images/2016/11/dash_sublime-1.gif)
+![](/images/2016/11/dash_sublime-1.gif)
 
 https://github.com/farcaller/DashDoc
 
@@ -84,7 +84,7 @@ If you quickly want to search, there's an official Alfred workflow.
 
 So searching is as quick as `CMD+Space+"dash..."`
 
-![](/content/images/2016/11/dash_alfred.gif)
+![](/images/2016/11/dash_alfred.gif)
 
 https://github.com/Kapeli/Dash-Alfred-Workflow
 
@@ -92,15 +92,15 @@ https://github.com/Kapeli/Dash-Alfred-Workflow
 
 You can search from a terminal using the uri form `open dash://`
 
-![](/content/images/2016/11/dash_terminal.gif)
+![](/images/2016/11/dash_terminal.gif)
 
-The format is: dash://{query}. 
+The format is: dash://{query}.
 
-You can also include an optional keyword: dash://{keyword}:{query}. 
+You can also include an optional keyword: dash://{keyword}:{query}.
 
 Example: `open dash://ruby:puts`
 
-![](/content/images/2016/11/dash_terminal_2-1.gif)
+![](/images/2016/11/dash_terminal_2-1.gif)
 
 https://kapeli.com/dash_guide#dashURLScheme
 
@@ -112,7 +112,7 @@ So, **Dash is OSX only**, but the developer has happily said [he'll make the cor
 
 > * I’ve got a lot to add to Dash on macOS and I can’t focus on any other platform
 > * I’m a complete novice when it comes to developing for any other platform, so I wouldn’t do a great job
-> 
+>
 I am actively looking for developers of other platforms (iOS, Android, Windows or Linux) that would like to work on a Dash-like app, as their own project and for their own profit.
 
 Which is pretty cool, as you can get the same workflows on non-OSX platforms.

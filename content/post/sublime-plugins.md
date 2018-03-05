@@ -4,7 +4,7 @@ categories = ["vDM30in30", "open-source", "Tech"]
 date = 2016-11-27T21:44:00Z
 description = ""
 draft = false
-image = "/images/2016/11/Screenshot-2016-11-30-10.20.06.png"
+coverImage = "/images/2016/11/Screenshot-2016-11-30-10.20.06.png"
 slug = "sublime-plugins"
 tags = ["vDM30in30", "open-source", "Tech"]
 title = "Sublime Plugins"
@@ -47,7 +47,7 @@ Over my years of using it, I've ended up with some settings and plugins that I'v
 }
 ```
 
-Nothing super interesting here. 
+Nothing super interesting here.
 
 The main interesting parts:
 
@@ -86,7 +86,7 @@ The other is just an easy way to close multiple tabs at once.
 
 I already mentioned this in my Dash blog post, basically ou can press `Ctrl+H` in a file with Sublime, and it will do a context search using the type of code in the file plus a search for that entry.
 
-![](/content/images/2016/11/dash_sublime-1.gif)
+[](/images/2016/11/dash_sublime-1.gif)
 
 https://github.com/farcaller/DashDoc
 
@@ -98,7 +98,7 @@ Really useful for a quick visual indicator what's new Git-wise.
 
 This is actually built into most new editors these days, such as Atom and Visual Studio Code.
 
-![](/content/images/2016/11/sublime_gitgutter.gif)
+![](/images/2016/11/sublime_gitgutter.gif)
 
 https://github.com/jisaacks/GitGutter
 
@@ -106,15 +106,15 @@ https://github.com/jisaacks/GitGutter
 
 > Shows the git commit history for one or more lines of code. Essentially it performs a git blame on the selected line(s) of code, and then performs a git show on the resulting commit(s).
 
-![](/content/images/2016/11/sublime_commit_msg-1.gif)
+![](/images/2016/11/sublime_commit_msg-1.gif)
 
 ### JSONLint
 
-JSON-linting with sublime, highlighting invalid JSON. 
+JSON-linting with sublime, highlighting invalid JSON.
 
 Really useful for catching those trailing commas or forgotten quotes.
 
-![](/content/images/2016/11/sublime_json_lint.gif)
+![](/images/2016/11/sublime_json_lint.gif)
 
 https://bitbucket.org/hmml/jsonlint
 
@@ -124,7 +124,7 @@ https://bitbucket.org/hmml/jsonlint
 
 Adds a bunch of much-needed options to the sidebar, expands search options and adds features like the ability to "Open With.." with a specified list of applications
 
-![](/content/images/2016/11/Screenshot-2016-11-30-10.03.08.png)
+![](/images/2016/11/Screenshot-2016-11-30-10.03.08.png)
 
 https://github.com/SideBarEnhancements-org/SideBarEnhancements/
 
@@ -132,7 +132,7 @@ https://github.com/SideBarEnhancements-org/SideBarEnhancements/
 
 Automatically generates yardoc for Ruby
 
-![](/content/images/2016/11/sublime_yardgen.gif)
+![](/images/2016/11/sublime_yardgen.gif)
 
 You just click over your method, press `Ctrl+Enter` and it'll automatically generate documentation for your Ruby code.
 
