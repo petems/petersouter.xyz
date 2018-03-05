@@ -1,0 +1,83 @@
+defaults: &defaults
+  working_directory: /tmp/petersouter.xyz
+  environment:
+    - SOURCE_DIR: /tmp/petersouter.xyz/public
+    - S3_BUCKET: petersouter.xyz
+    - S3_REGION: us-east-1
+    - DEV_URL: http://dev.petersouter.xyz
+
+
+version: 2
+jobs:
+  build:
+    <<: *defaults
+    docker:
+      - image: jguyomard/hugo-builder:0.33
+    steps:
+      - checkout
+      - run:
+          name: Download submodules for our theme
+          command: git submodule sync && git submodule update --init
+      - run:
+          name: Compile site
+          command: |
+            if [ $CIRCLE_BRANCH = 'master' ]; then
+                /usr/local/bin/hugo --destination "$SOURCE_DIR"
+            fi
+            if [ $CIRCLE_BRANCH = 'dev' ]; then
+                /usr/local/bin/hugo --destination "$SOURCE_DIR" --baseURL $DEV_URL
+            fi
+      - run:
+          name: Persist .s3deploy.yml for upload
+          command: cp .circleci/.s3deploy.yml /tmp/petersouter.xyz/
+      - persist_to_workspace:
+          root: /tmp/petersouter.xyz
+          paths:
+            - public
+            - .s3deploy.yml
+
+  upload-prod:
+    <<: *defaults
+    docker:
+      - image: clburlison/s3deploy
+    steps:
+      - attach_workspace:
+          at: /tmp/petersouter.xyz
+      - run:
+          name: Upload to s3
+          command: /usr/local/bin/s3deploy -source="$SOURCE_DIR" -region="$S3_REGION" -bucket="$S3_BUCKET"
+
+  upload-dev:
+    <<: *defaults
+    docker:
+      - image: clburlison/s3deploy
+    # CircleCI doesn't do composition from default env vars with this override properly
+    environment:
+      - SOURCE_DIR: /tmp/petersouter.xyz/public
+      - S3_BUCKET: dev.petersouter.xyz
+      - S3_REGION: us-east-1
+    steps:
+      - attach_workspace:
+          at: /tmp/petersouter.xyz
+      - run:
+          name: Upload to s3
+          command: /usr/local/bin/s3deploy -source="$SOURCE_DIR" -region="$S3_REGION" -bucket="$S3_BUCKET"
+
+
+workflows:
+  version: 2
+  build-and-upload:
+    jobs:
+      - build
+      - upload-prod:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
+      - upload-dev:
+          requires:
+            - build
+          filters:
+            branches:
+              only: dev
