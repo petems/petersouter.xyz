@@ -12,6 +12,13 @@ title = "How to use Vault with Hiera 5 for secret management with Puppet"
 
 +++
 
+# EDIT:
+
+> So, this blog was linked by DevOps Weekly #379, and seems to have climbed the SEO ranking
+for Hiera and Vault, but I've learn a lot and have some general changes since then.
+
+> I did a [webinar on the subject](https://www.hashicorp.com/resources/hashicorp-vault-with-puppet-hiera-5-for-secret-management) I'll be writing an updated version of how to use Vault and Hiera soon, and link it here.
+
 Although I don't work at Puppet anymore, it's still my favourite config management
 software, and I use it for the management of machines under my control, including
 my home storage server and several MacBooks.
