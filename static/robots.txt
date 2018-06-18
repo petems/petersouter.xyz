@@ -1,4 +1,4 @@
-Sitemap: https://clburlison.com/sitemap.xml
+Sitemap: https://petersouter.xyz/sitemap.xml
 
 User-agent: *
 Disallow: /archives/
