@@ -21,3 +21,6 @@ hugo_cache
 *.terraform*
 *.tfstate*
 .vscode/launch.json
+
+# Image optimisation
+opti*.log
