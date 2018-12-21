@@ -28,7 +28,7 @@ Remember, naming is hard!
 
 It can be a little confusing for people used to the old ways, as it's moved from the Ruby stack to JRuby/Clojure, and there one of the things that can come up is the differences with caching.
 
-This change brought with it huge performance increases, as Ruby and Passenger are hard to scale, wheras since both Clojure and JRuby run in the JVM, which you can generally through a load of memory at with heap settings and you're good to go.
+This change brought with it huge performance increases, as Ruby and Passenger are hard to scale, whereas since both Clojure and JRuby run in the JVM, which you can generally through a load of memory at with heap settings and you're good to go.
 
 ![Puppet Server be fast, yo!](/images/2016/11/Screenshot-2016-11-17-19.17.42.png)
 

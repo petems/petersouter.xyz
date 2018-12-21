@@ -18,7 +18,7 @@ Today is my last day at Puppet.
 
 Puppet has been a huge part of my life for almost 7 years. It all started
 way back in 2011, when I was working at Simply Business. We'd just done a big
-shift to continous deployment. We had a fully working deployment pipeline, but
+shift to continuous deployment. We had a fully working deployment pipeline, but
 our ops workflows were starting to creak a bit at the seams. We started a new
 project to start managing the sytems with Puppet in an agentless model, and I was
 hooked.

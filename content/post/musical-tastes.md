@@ -25,7 +25,7 @@ I do have to admit a lot of this is because of a streak of playing Rock Band and
 
 Slowly I've basically stopped listening to music when I commute and travel, preferring podcasts or audiobooks. I find I'm normally in the mood for learning when I'm travelling, and I get bored with tracks too early if I listen to music.
 
-Normally when I'm listening to music, I'm actually in a zone-out or coding mood. I'm looking for something to allow me to phase out of the real world a bit. There's a pop-psycology term called [firegazing](http://www.smithsonianmag.com/science-nature/fire-good-make-human-inspiration-happen-132494650/?no-ist), and I feel that particularly is true when I'm coding or flicking around the internet.
+Normally when I'm listening to music, I'm actually in a zone-out or coding mood. I'm looking for something to allow me to phase out of the real world a bit. There's a pop-psychology term called [firegazing](http://www.smithsonianmag.com/science-nature/fire-good-make-human-inspiration-happen-132494650/?no-ist), and I feel that particularly is true when I'm coding or flicking around the internet.
 
 ## What I've been listening too
 

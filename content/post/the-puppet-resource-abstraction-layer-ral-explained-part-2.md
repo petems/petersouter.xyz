@@ -197,7 +197,7 @@ def install
   end
 ```
 
-This is some serious Swan leg kicking. There's a lot of logic here, for the more complex use case of a package on Yum, but making sure it works on the various versions of Yum avaliable, including RHEL 4 and 5.
+This is some serious Swan leg kicking. There's a lot of logic here, for the more complex use case of a package on Yum, but making sure it works on the various versions of Yum available, including RHEL 4 and 5.
 
 The logic is broken down thusly: We haven't specified a version, so we don't need to check what version to install. Simply run `yum install tree` with the default options specified
 

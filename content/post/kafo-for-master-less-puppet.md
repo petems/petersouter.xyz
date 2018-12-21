@@ -17,7 +17,7 @@ One of the things I came away from 4 days of open-source and configuration manag
 
 "I need to get back into IRC", I thought.
 
-But I didn't want to just download mIRC. I wanted to do it the cool ops way! So I asked [Rob](https://twitter.com/lazzurs), who was the person who recomended FOSDEM to me in the first place ([and spoke at it in 2009](https://www.youtube.com/watch?v=OvnruVIXQEY)) and showed me his prefered pattern to get IRC working:
+But I didn't want to just download mIRC. I wanted to do it the cool ops way! So I asked [Rob](https://twitter.com/lazzurs), who was the person who recommended FOSDEM to me in the first place ([and spoke at it in 2009](https://www.youtube.com/watch?v=OvnruVIXQEY)) and showed me his preferred pattern to get IRC working:
 
 * Set up a server as a bouncebox, something fairly disposable: this means your personal IP isn't on display when you connect/disconnect from channels
 * Install [Irssi](http://www.irssi.org/), [screen](http://www.gnu.org/software/screen/) and [mosh](http://mosh.mit.edu/)

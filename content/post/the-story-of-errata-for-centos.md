@@ -98,7 +98,7 @@ Regardless, the main project to do this is Steve Meier's CEFS Project [CentOS Er
 
 Steve provides a parsed `errata.xml` file generated from the centos-announce mailing lists and the scripts you need to import them in to your spacewalk server. His script will download the information directly from CEFS and then inject it into Spacewalk
 
-There's a similar script by David Nutter that does the scraping itself (rather than get it from CEFS) called `centos-errata.py`. avaliable [here](http://www.bioss.ac.uk/people/davidn/spacewalk-stuff/0.7/).
+There's a similar script by David Nutter that does the scraping itself (rather than get it from CEFS) called `centos-errata.py`. available [here](http://www.bioss.ac.uk/people/davidn/spacewalk-stuff/0.7/).
 
 Regardless of how you do it, there's a number of blogs showing how they get Errata into CentOS using the scripts:
 
@@ -132,7 +132,7 @@ These is the simplest of solutions, and doesn't actually involve `UPDATEINFO.XML
 
 Instead of messing with your actual `yumrepos` or setting up Spacewalk, it simply grabs the security announcements, compares with what you have installed locally, then sends the message to STDOUT or emails you.
 
-It's avaliable [here](https://github.com/wied03/centos-package-cron).
+It's available [here](https://github.com/wied03/centos-package-cron).
 
 ### vulns
 
@@ -142,4 +142,4 @@ For CentOS, it's basically a wrapper around the `yum-changelog-plugin`. Essentia
 
 I played around with it, but it's a fairly complex app and it's fairly new (open-sourced in 2016) so I'm not so sure about it yet... but from my basic testing it did what it said on the tin.
 
-It's avaliable [here](https://github.com/future-architect/vuls)
+It's available [here](https://github.com/future-architect/vuls)

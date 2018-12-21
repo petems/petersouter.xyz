@@ -17,7 +17,7 @@ So, I discussed in my previous blog post how I was trying to automate my Vault a
 
 ## Understanding Vault
 
-As I've been working with customers and the community on the HashiCorp stack, I've been beginning to understand the core philosphies behind a lot of the products.
+As I've been working with customers and the community on the HashiCorp stack, I've been beginning to understand the core philosophies behind a lot of the products.
 
 Mitchell gave a great presentation on Vault's 0.10 release at the London HashiCorp User Group a few months ago, and there was a slide in there that really helped me understand how Vault works:
 
@@ -341,9 +341,9 @@ Then, we apply!
 
 For the next steps, we need some manual intervention
 
-## Initalizing and Unsealing Vault
+## Initializing and Unsealing Vault
 
-The cloud-init script for Vault will install the binary, but Vault still needs to be initialized and unsealed. We've already exported the `VAULT_ADDR` command we need to run from the Terraform output, so we can initalize this pretty easily! Either locally or on the machine itself.
+The cloud-init script for Vault will install the binary, but Vault still needs to be initialized and unsealed. We've already exported the `VAULT_ADDR` command we need to run from the Terraform output, so we can initialize this pretty easily! Either locally or on the machine itself.
 
 ```
 $ vault operator init
@@ -427,7 +427,7 @@ bound_region="europe-west2"
 
 There we go. We now have:
 
-* An initalized vault instance
+* An initialized vault instance
 * One secret in the K/V store
 * A policy for access to that one secret called `reader`
 * An auth policy tied to that `reader` policy that uses GCP IAM tied to a particular region

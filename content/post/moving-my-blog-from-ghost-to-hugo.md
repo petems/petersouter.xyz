@@ -15,7 +15,7 @@ title = "Migrating my blog from Ghost to Hugo"
 The main piece of tech that I maintain myself is this blog, so I usually find
 time to play with it, try new technology such as Docker.
 
-Unsuprisingly, this has led it to be a little over-engineered, and I wanted something
+Unsurprisingly, this has led it to be a little over-engineered, and I wanted something
 simpler. Why was I trying to figure out how to configure a database in a container
 for a blog that only I was maintaining? I didn't need CMS-like functionality, if anything
 I needed a static site.

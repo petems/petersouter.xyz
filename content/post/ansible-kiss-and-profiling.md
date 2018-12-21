@@ -124,7 +124,7 @@ server3   : ok=4    changed=3    unreachable=0    failed=0
 
 (The `PLAY RECAP` section isn't native, I've installed the I've installed the [ansible-profile](https://github.com/jlafon/ansible-profile), which profiles how long playbook commands are taking.)
 
-So it's taking about about 2 seconds to run each command, which is pretty much how long running a bash script would've taken. However, if I use the --fork option, or define a fork number in ansible.cfg, it'll run the commands in parralel, giving a much needed speed boost:
+So it's taking about about 2 seconds to run each command, which is pretty much how long running a bash script would've taken. However, if I use the --fork option, or define a fork number in ansible.cfg, it'll run the commands in parallel, giving a much needed speed boost:
 
 ```
 PLAY [all] ********************************************************************

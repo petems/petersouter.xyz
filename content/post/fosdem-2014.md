@@ -23,7 +23,7 @@ So, I ended up catching up on Boardwalk Empire for 3 hours. I couldn't even chec
 
 So, unsuprisignly, when I got to Brussels I was pretty much dead on my feet and slept through most of the day and missed the [beer meetup on the first day](https://fosdem.org/2014/practical/beerevent/), sad times!
 
-Other than this slightly shaky start, it was probably one of the best event's I've ever been to. Loads of talks [on pretty much every subject under the sun](https://fosdem.org/2014/schedule/tracks/) (except Ruby suprisingly...) and everyone was super friendly, and it was pretty easy to just end up talking to people about new technolgy and open-source.
+Other than this slightly shaky start, it was probably one of the best event's I've ever been to. Loads of talks [on pretty much every subject under the sun](https://fosdem.org/2014/schedule/tracks/) (except Ruby surprisingly...) and everyone was super friendly, and it was pretty easy to just end up talking to people about new technology and open-source.
 
 <blockquote class="twitter-tweet" lang="en"><p>Packed house <a href="https://twitter.com/search?q=%23FOSDEM&amp;src=hash">#FOSDEM</a> <a href="http://t.co/5oQRQyQBFk">pic.twitter.com/5oQRQyQBFk</a></p>&mdash; Peter Souter (@PeterSouter) <a href="https://twitter.com/PeterSouter/statuses/429551422599094272">February 1, 2014</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>

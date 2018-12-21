@@ -135,6 +135,6 @@ It should look something like this:
 
 ![Generic Java Information](/images/2016/11/Screenshot-2016-11-17-21.12.24.png)
 
-In the mean-time, if you're interested, a full Vagrant stack with it in action is avaliable here:
+In the mean-time, if you're interested, a full Vagrant stack with it in action is available here:
 
 * https://github.com/petems/pe-jmx-metrics-vagrant-stack/

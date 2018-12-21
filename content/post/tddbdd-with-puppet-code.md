@@ -69,7 +69,7 @@ If you expect everyone to be running this over and over in a red-green loop, the
 
 * Tests should be easy to run
 
-If you want people to follow a new design-pattern or appraoch, the tests should have a low barrier to entry to run. Either a rake task to run the suite, or CI to constantly check that you're tests are green are good at this.
+If you want people to follow a new design-pattern or approach, the tests should have a low barrier to entry to run. Either a rake task to run the suite, or CI to constantly check that you're tests are green are good at this.
 
 * Tests should be easy to write and read
 
@@ -83,7 +83,7 @@ So where does Puppet come in?
 
 The main benefit of TDD is that you’re only coding what you need to. Puppet code normally has a longer feedback loop to figure out when something goes wrong:
 
-* You might be deploying it to a number of different servers, so you might have to wait until all your nodes report back before you can see any issues that have occured
+* You might be deploying it to a number of different servers, so you might have to wait until all your nodes report back before you can see any issues that have occurred
 * Depending on the size of your organisation, you might not even have multiple test environments, so you want to make sure you're code has a level of testing on it before deployment so you don't block others with failing manifests. In addition to this, if you're a smaller organisation, you might not even have a test environment that fully reflects production (or in the worst case, no test environment at all!)
 
 It's common knowledge the faster bugs and problems are caught, the easier and cheaper they are to fix.
@@ -99,7 +99,7 @@ TDD is also said to be self-documenting: test cases with human-readble langague 
 
 Say I'm looking at the specs of a module, and it states that the manifest should install a certain package on RedHat 6 and 7, but it doesn't work on RedHat 7, I know that that was in the original spec of the module, and it's a bug that needs to be fixed.
 
-## Basic Theoritical Example of it in action
+## Basic Theoretical Example of it in action
 
 Susan comes into the office. She's a developer who's helping out the ops team write Puppet code and she goes to one of the teams planning sessions. There’s some discussions about lua package with Nginx. Susan says "I can help with that". They write out a basic story and log it in Jira with the requirements:
 
@@ -140,7 +140,7 @@ spec/classes/
 0 directories, 1 file
 ```
 
-Oh, but unfortunatly there's only a simple spec to see if the code compiles:
+Oh, but unfortunately there's only a simple spec to see if the code compiles:
 
 ```puppet
 require 'spec_helper'
@@ -331,7 +331,7 @@ With Beaker, you're not just testing your Puppet code does what it *should* do, 
 The problem is spinning up a new machine is not super quick:
 
 * Vagrant VM's have a startup cost that makes the R-G-R loop slow
-* Spinning up a cloud instance can be faster (especially if the cloud instance offers SSD nodes!) but there's a cost assosiated.
+* Spinning up a cloud instance can be faster (especially if the cloud instance offers SSD nodes!) but there's a cost associated.
 
 One potential solution is using Beaker's Docker support. Containers are much faster to provsion to run Puppet code on, and if setup correctly can give a fairly quick feedback loop of actual acceptance tests for your Puppet code.
 

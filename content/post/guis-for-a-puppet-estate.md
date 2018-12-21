@@ -64,6 +64,6 @@ http://puppetexplorer.io/
 
 This was a pretty cool project by Dalen, [Puppet MVP 2014](https://puppet.com/blog/contributor-summit-puppetconf-2014-edition).
 
-It has a pretty neat live search function using puppetdbquery. So you can do searches accross your estate with information from PuppetDB, so like `processorcount=4 or processorcount=8 and kernel=Linux` to get all your 4 and 8 core Linux machines, and show the latest runs and such.
+It has a pretty neat live search function using puppetdbquery. So you can do searches across your estate with information from PuppetDB, so like `processorcount=4 or processorcount=8 and kernel=Linux` to get all your 4 and 8 core Linux machines, and show the latest runs and such.
 
 Side-node: Puppet ended up rolling the core concept of ideas from puppetdbquery into Puppet internally into the [Puppet Query Language (PQL)](https://docs.puppet.com/puppetdb/4.0/api/query/v4/pql.html)

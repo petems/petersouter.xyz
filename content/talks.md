@@ -32,7 +32,7 @@ And we'll talk about some application specific options for some of most popular 
 
 ### Lock it Down - Securing your Puppet Infrastructure
 
-* Config Management Camp 2016 - Febuary 2-3
+* Config Management Camp 2016 - February 2-3
 * https://www.slideshare.net/petems/lock-it-down
 
 Puppet is an awesome tool to automate the configuration of your infrastructure, but it's also a potential attack vector. In this talk, we'll discuss some common patterns and changes you can make to harden your Puppet infrastructure, from the basic good practises such as data abstraction in modules, to some advanced customisation you might need in a high-security setup.

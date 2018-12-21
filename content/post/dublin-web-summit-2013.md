@@ -9,7 +9,7 @@ title = "Dublin Web Summit 2013"
 
 +++
 
-A month ago I had the pleasure of going to the Dublin Web Summit. Unfortunately, I managed to get Conference Flu that took me out of commision for a few days, followed by a busy few weeks of work (and other conferences!) so I didn't get a chance to talk about my time there. There was a crazy amount of stuff to see and do, so I'll see if I can get down as much as I remember over a month later!
+A month ago I had the pleasure of going to the Dublin Web Summit. Unfortunately, I managed to get Conference Flu that took me out of commission for a few days, followed by a busy few weeks of work (and other conferences!) so I didn't get a chance to talk about my time there. There was a crazy amount of stuff to see and do, so I'll see if I can get down as much as I remember over a month later!
 
 Jumped on a flight after work on the Tuesday and arrived fairly late to Dublin airport. They actually had a stand for the summit in the arrivals area to the event, and the taxi driver who took me to the hotel said he'd been taking fare's all day from people. Really showed the size of the event!
 
@@ -79,7 +79,7 @@ So after that, I mainly stuck to the developer stage, with occasional breaks to 
 
 ## Developer Stage
 
-All the talks from the Development stage were [streamed and archived](http://new.livestream.com/websummit/DeveloperStage2013/videos/33616803) and I'd recomend checking them out.
+All the talks from the Development stage were [streamed and archived](http://new.livestream.com/websummit/DeveloperStage2013/videos/33616803) and I'd recommend checking them out.
 
 ### Microservice Architecture
 

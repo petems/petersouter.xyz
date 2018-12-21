@@ -40,11 +40,11 @@ So, I created a basic Vagrant repo to configure an example proof of concept.
 
 To start with, Vault gets installed and started by default on the Puppetserver node.
 
-In the real world, you'd want this on a seperate dedicated instance, but I'm keeping things simpler.
+In the real world, you'd want this on a separate dedicated instance, but I'm keeping things simpler.
 
 The local port 8200 gets forwarded to the Vagrant VM to port 8200.
 
-After the inital provisioning is done, we initialise vault:
+After the initial provisioning is done, we initialise vault:
 
 ```
 $ VAULT_ADDR='http://127.0.0.1:8200' vault init

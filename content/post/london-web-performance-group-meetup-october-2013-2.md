@@ -17,7 +17,7 @@ So, I've just come back from the October London Web Performance Group meetup, an
 
 They're not exhaustive notes, as there was a lot of specific references and diagrams, which will be better served by the slides themselves, which I'll link if I can get a copy.
 
-So, the theme for the October was High performance infrastructure, run by David Mytton from Server Density. I thought the name rang a bell, and it just occured to me I remember reading many moons ago his blog posts about Mongo (particularly about the changes from 2.0 to 2.2) on the [Server Density blog](https://blog.serverdensity.com)
+So, the theme for the October was High performance infrastructure, run by David Mytton from Server Density. I thought the name rang a bell, and it just occurred to me I remember reading many moons ago his blog posts about Mongo (particularly about the changes from 2.0 to 2.2) on the [Server Density blog](https://blog.serverdensity.com)
 
 ## Where do performance issues come from in Infrastructure?
 

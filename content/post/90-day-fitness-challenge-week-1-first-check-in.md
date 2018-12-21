@@ -35,6 +35,6 @@ More noticeable is that my 500 and 200 swing time has dropped significantly:
 
 I feel like my 500 Swing time jumped a lot at first as I got used to it, but seems to be evening out at about 21 minutes. My 500 Swing time peaked at 5:55, and it's been a real struggle to get it lower than that. My increased time is normally because I gas myself out trying to push myself to beat the 500 swing time.
 
-Also, swings are now incredibly boring. It's definetly more of a mental thing than a physical thing at this point. The Kettlebell no longer feels heavy. My forearms are screaming by the end, but I can do 135 swings in a row.
+Also, swings are now incredibly boring. It's definitely more of a mental thing than a physical thing at this point. The Kettlebell no longer feels heavy. My forearms are screaming by the end, but I can do 135 swings in a row.
 
 Next check-in will be Week 8, I should have finished my 10'000 Swing challenge by then, I'll probably move on to 24kg swings 200 a day with a standard powerlifting routine, just for some variety before the last 30 days.

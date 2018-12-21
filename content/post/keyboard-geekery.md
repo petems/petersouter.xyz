@@ -58,7 +58,7 @@ And one of the weirder parts of my keyboard collection, [a key switch tester.](h
 
 Wait what?
 
-Ok, that last one's a bit of a weird one. It's a small board with a tester for Keyboard keys. there are a number of different styles of mecahnical keyboard keys out there, and this allows you to test a variety of the most popular ones:
+Ok, that last one's a bit of a weird one. It's a small board with a tester for Keyboard keys. there are a number of different styles of mechanical keyboard keys out there, and this allows you to test a variety of the most popular ones:
 
 It comes with 6 switch types:
 
@@ -75,7 +75,7 @@ It's a good way to test out what keys feel the best for you before shelling out 
 
 ![](/images/2016/11/41NX93T7DZL.jpg)
 
-It's ranked 4 in Slant's [recomended keyboards for programming](https://www.slant.co/topics/1150/~keyboard-for-programming)
+It's ranked 4 in Slant's [recommended keyboards for programming](https://www.slant.co/topics/1150/~keyboard-for-programming)
 
 I saw a cheap second-hand one going for £60 on eBay Buy-it-now. Since all the other HHKB's I'd seen on eBay were in the £100-150 range, I thought worst come's to worst, I could sell it.
 

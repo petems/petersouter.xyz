@@ -56,7 +56,7 @@ A pattern I've seen to solve this is a combination of two things:
 
 ## A Collectd example
 
-The collectd was having this issue, as there were plugin settings that were only avaliable in collectd 5.5 onward.
+The collectd was having this issue, as there were plugin settings that were only available in collectd 5.5 onward.
 
 So, they added a custom fact to get the collectd version if installed.
 
@@ -80,7 +80,7 @@ This goes something like this:
 So this configuration setting will only be set if the version of collectd is 5.5 or above:
 
 * If the package wasn't installed on the run, then the `minimum_version` parameter is used and compared to see if greater or equal to 5.5
-* If the package is installed, the fact is avaliable and that is compared to see if greater or equal to 5.5
+* If the package is installed, the fact is available and that is compared to see if greater or equal to 5.5
 
 ## Redis
 

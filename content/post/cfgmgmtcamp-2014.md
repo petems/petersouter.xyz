@@ -25,7 +25,7 @@ The event started out with 3 keynotes in cronoligical order of config management
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
-After that, it was a breakout into the seperate rooms for tools represented. I ended up spending most of my time in the Puppet room.
+After that, it was a breakout into the separate rooms for tools represented. I ended up spending most of my time in the Puppet room.
 
 <blockquote class="twitter-tweet" lang="en"><p><a href="https://twitter.com/hashtag/Puppet?src=hash">#Puppet</a> community room filling up at <a href="https://twitter.com/hashtag/cfgmgmtcamp?src=hash">#cfgmgmtcamp</a>, should be a fun afternoon <a href="http://t.co/Gy9Sfuoljy">pic.twitter.com/Gy9Sfuoljy</a></p>&mdash; Nat Morris (@natmorris) <a href="https://twitter.com/natmorris/statuses/430327241164083200">February 3, 2014</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
