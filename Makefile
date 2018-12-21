@@ -9,3 +9,12 @@ opt-jpg:
 	echo `date` >> ./jpegoptim.log
 	find ./static/ -iname '*.jpg' -print0 | \
 	 xargs -0 jpegoptim --max=90 --preserve --totals --all-progressive >> ./jpegoptim.log
+
+spellcheck:
+	@echo 'Running spellcheck with autofix'
+	docker run \
+	 -v $(CURDIR):/scripts \
+	 --workdir=/scripts \
+	 nickg/misspell:latest \
+	 misspell -w -source=text content/
+	@echo 'Completed spellcheck'
