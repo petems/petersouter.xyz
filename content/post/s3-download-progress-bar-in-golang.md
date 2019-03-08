@@ -4,11 +4,11 @@ categories = ["Golang", "Coding", "Tech"]
 date = 2019-03-07T11:14:19Z
 description = ""
 draft = false
-thumbnailImage = "/images/2019/01/golang_stdin_750.png"
-coverImage = "/images/2019/01/golang_stdin.png"
-slug = "testing-and-mocking-stdin-with-golang"
+thumbnailImage = "/images/2019/03/s3_progressbar_750.png"
+coverImage = "/images/2019/03/s3_progressbar.png"
+slug = "s3-download-progress-bar-in-golang"
 tags = ["Tech", "Blog", "AWS", "Golang", "S3"]
-title = "Testing and mocking stdin in Golang"
+title = "S3 Download Progress Bar in Golang"
 +++
 
 # S3 Download Progress Bar in Golang
@@ -37,7 +37,7 @@ After doing some digging, someone else had a similar request: "[service/s3/s3man
 
 Looking at the code referenced, it looked like they'd got something working:
 
-```go
+```
   bar := pb.New64(size).SetUnits(pb.U_BYTES)
 
   if d.showProgress {
@@ -93,7 +93,7 @@ Now I understood, and it helped me understand how interface writing in Golang wo
 
 There was wone bit of the code I didn't understand:
 
-```golang
+```
 if _, err := downloader.Download(writer, params); err != nil {
         if reqErr, ok := err.(awserr.RequestFailure); ok {
             if reqErr.StatusCode() == 304 {
@@ -108,7 +108,7 @@ if _, err := downloader.Download(writer, params); err != nil {
 
 I didn't want the 304 logic to test if it was already downloaded, so I did a little repurposing, and ended up with this:
 
-```go
+```
 bucket, key := parseS3Uri(s3Uri)
 
   filename := parseFilename(key)
@@ -156,7 +156,7 @@ bucket, key := parseS3Uri(s3Uri)
 
 This worked perfectly, and in action, it looks something like this:
 
-```prompt
+```
 s3commander cp s3://hc-oss-test/go-getter/folder/main.tf .
  7 B / 7 B [=======================================] 100.00% 0s
 Downloaded main.tf
@@ -170,7 +170,7 @@ The maintainers asked to remove the dependancy on the `pb` package, as they want
 
 So after a bit of refeactoring, I ended up with this:
 
-```go
+```
 // progressWriter tracks the download progress of a file from S3 to a file
 // as the writeAt method is called, the byte size is added to the written total,
 // and then a log is printed of the written percentage from the total size
@@ -254,7 +254,7 @@ filename := parseFilename(key)
 
 Which gives a noisier output (as it writes every time a bite is written) but works without external depedencies:
 
-```prompt
+```
 2019/02/22 12:59:15 File size:35943530 downloaded:16360 percentage:0%
 2019/02/22 12:59:15 File size:35943530 downloaded:16988 percentage:0%
 2019/02/22 12:59:15 File size:35943530 downloaded:33348 percentage:0%
