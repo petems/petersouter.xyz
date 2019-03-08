@@ -39,7 +39,7 @@ jobs:
           at: /tmp/petersouter.xyz
       - run:
           name: Upload to s3
-          command: /usr/local/bin/go3up -source="$SOURCE_DIR" -region="$S3_REGION" -bucket="$S3_BUCKET"
+          command: /usr/local/bin/go3up -source="$SOURCE_DIR" -region="$S3_REGION" -bucket="$S3_BUCKET" --verbose
 
 workflows:
   version: 2
