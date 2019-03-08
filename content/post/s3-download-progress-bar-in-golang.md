@@ -69,7 +69,7 @@ Looking at the code referenced, it looked like they'd got something working:
   }
 ```
 
-Honestly, I didn't really get how it was working... but the name of the Github user rang a bell... and I realised he was actually one of my colleagues at HashiCorp on the Packer team, Matt Whooker!
+Honestly, I didn't really get how it was working... but the name of the Github user rang a bell... and I realised he was actually one of my colleagues at HashiCorp on the Packer team, Matt Hooker!
 
 So I cheated a little and asked him to explain how it worked. His explanation helped a lot:
 
