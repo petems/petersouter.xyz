@@ -27,7 +27,7 @@ Unsurprisignly, there's a ton of existing code on Github for an AWS CLI tool in 
 
 So I forked off the original `fasts3` code and made a new project called [s3mini](https://github.com/petems/s3mini).
 
-However, the code from fasts3 wasn't perfect: the way that `cp` worked wasn't 1:1 with the `aws` Python CLI - It didn't have a progress bar of the downloads occuring.
+However, the code from fasts3 wasn't perfect: the way that `cp` worked wasn't 1:1 with the `aws` Python CLI - It didn't have a progress bar of the downloads occurring.
 
 Not so bad if you were only downloading smaller files, but the terminal would be omniously empty whilst larger files were downloading.
 
@@ -166,7 +166,7 @@ Downloaded main.tf
 
 Now I'd done the digging, I wanted to help out the next person who was doing this. [So I contributed an example back to the aws-sdk-go repo using the `pb` package](https://github.com/aws/aws-sdk-go/pull/2456)
 
-The maintainers asked to remove the dependancy on the `pb` package, as they wanted the code not to pull in external packages if possible, which makes sense.
+The maintainers asked to remove the dependency on the `pb` package, as they wanted the code not to pull in external packages if possible, which makes sense.
 
 So after a bit of refeactoring, I ended up with this:
 
@@ -249,10 +249,10 @@ filename := parseFilename(key)
     panic(err)
   }
 
-  log.Printf("File downloaded! Avaliable at: %s", filename)
+  log.Printf("File downloaded! Available at: %s", filename)
 ```
 
-Which gives a noisier output (as it writes every time a bite is written) but works without external depedencies:
+Which gives a noisier output (as it writes every time a bite is written) but works without external dependencies:
 
 ```
 2019/02/22 12:59:15 File size:35943530 downloaded:16360 percentage:0%

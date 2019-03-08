@@ -13,7 +13,7 @@ title = "Testing and mocking stdin in Golang"
 
 # Testing and mocking stdin in Golang
 
-I've been playing around with [cobra](https://github.com/spf13/cobra) recently, as it's an awesome libary for CLI applications. I always like CLI apps for learning a language, so I've been tinkering with a CLI app to interact with Terraform Enterprise's API, which will force me to talking to external APIs, interpret the result and displaying it to the user.
+I've been playing around with [cobra](https://github.com/spf13/cobra) recently, as it's an awesome library for CLI applications. I always like CLI apps for learning a language, so I've been tinkering with a CLI app to interact with Terraform Enterprise's API, which will force me to talking to external APIs, interpret the result and displaying it to the user.
 
 ## Testing, testing, 123
 
@@ -678,4 +678,4 @@ At this point, we would be pretty close to integration testing level, so we prob
 
 ## Conclusion
 
-This has given me a good understanding of mocking external calls in Golang. My code is avaliable here: https://github.com/petems/passwordgetter
+This has given me a good understanding of mocking external calls in Golang. My code is available here: https://github.com/petems/passwordgetter
