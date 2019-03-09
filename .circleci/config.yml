@@ -11,7 +11,7 @@ jobs:
   build:
     <<: *defaults
     docker:
-      - image: jguyomard/hugo-builder:0.50
+      - image: monachus/hugo:v0.54.0-3
     steps:
       - checkout
       - run:
@@ -21,7 +21,7 @@ jobs:
           name: Persist .go3up.json for upload
           command: cp .circleci/.go3up.json /tmp/petersouter.xyz/
       - run:
-          name: Persist .go3up.json for upload
+          name: Persist .go3up.txt for upload
           command: cp .circleci/.go3up.txt /tmp/petersouter.xyz/
       - persist_to_workspace:
           root: /tmp/petersouter.xyz
