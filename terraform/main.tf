@@ -126,17 +126,17 @@ resource "aws_cloudfront_distribution" "website_distribution" {
   origin {
     # START: For PrettyURLS
     domain_name = "${var.s3_bucket_name}.s3-website-${var.region}.amazonaws.com"
-    origin_id   = "myS3Origin"
+    origin_id = "myS3Origin"
 
     custom_origin_config {
       origin_protocol_policy = "http-only"
-      http_port              = "80"
-      https_port             = "443"
-      origin_ssl_protocols   = ["TLSv1", "TLSv1.1", "TLSv1.2"]
+      http_port = "80"
+      https_port = "443"
+      origin_ssl_protocols = ["TLSv1", "TLSv1.1", "TLSv1.2"]
     }
 
     custom_header {
-      name  = "User-Agent"
+      name = "User-Agent"
       value = "${var.content-secret}"
     }
 
@@ -160,25 +160,25 @@ resource "aws_cloudfront_distribution" "website_distribution" {
     }
   }
 
-  enabled             = true
-  is_ipv6_enabled     = true
-  comment             = "Website CloudFront distribution"
+  enabled = true
+  is_ipv6_enabled = true
+  comment = "Website CloudFront distribution"
   default_root_object = "index.html"
 
   aliases = ["${var.dns_record}", "${var.alt_dns_record}"]
 
   custom_error_response {
-    error_code            = "404"
+    error_code = "404"
     error_caching_min_ttl = "360"
-    response_code         = "200"
-    response_page_path    = "/404.html"
+    response_code = "200"
+    response_page_path = "/404.html"
   }
 
   default_cache_behavior {
-    allowed_methods  = ["GET", "HEAD"]
-    cached_methods   = ["GET", "HEAD"]
+    allowed_methods = ["GET", "HEAD"]
+    cached_methods = ["GET", "HEAD"]
     target_origin_id = "myS3Origin"
-    compress         = true
+    compress = true
 
     forwarded_values {
       query_string = false
@@ -189,15 +189,15 @@ resource "aws_cloudfront_distribution" "website_distribution" {
     }
 
     viewer_protocol_policy = "redirect-to-https"
-    min_ttl                = 120                 # 2min
-    default_ttl            = 120                 # 2min
-    max_ttl                = 300                 # 5min
+    min_ttl = 120 # 2min
+    default_ttl = 120 # 2min
+    max_ttl = 300 # 5min
   }
 
   viewer_certificate {
-    acm_certificate_arn      = "${var.ssl_cert_arn}"
+    acm_certificate_arn = "${var.ssl_cert_arn}"
     minimum_protocol_version = "TLSv1.2_2018"
-    ssl_support_method       = "sni-only"            # Warning: Not using SNI costs $600/mo, so use SNI
+    ssl_support_method = "sni-only" # Warning: Not using SNI costs $600/mo, so use SNI
   }
 }
 
@@ -224,24 +224,24 @@ data "aws_route53_zone" "main" {
 
 resource "aws_route53_record" "dns" {
   zone_id = "${data.aws_route53_zone.main.zone_id}"
-  name    = "${var.dns_record}."
-  type    = "A"
+  name = "${var.dns_record}."
+  type = "A"
 
   alias {
-    name                   = "${aws_cloudfront_distribution.website_distribution.domain_name}"
-    zone_id                = "${aws_cloudfront_distribution.website_distribution.hosted_zone_id}"
+    name = "${aws_cloudfront_distribution.website_distribution.domain_name}"
+    zone_id = "${aws_cloudfront_distribution.website_distribution.hosted_zone_id}"
     evaluate_target_health = false
   }
 }
 
 resource "aws_route53_record" "alt-dns" {
   zone_id = "${data.aws_route53_zone.main.zone_id}"
-  name    = "${var.alt_dns_record}."
-  type    = "A"
+  name = "${var.alt_dns_record}."
+  type = "A"
 
   alias {
-    name                   = "${aws_cloudfront_distribution.website_distribution.domain_name}"
-    zone_id                = "${aws_cloudfront_distribution.website_distribution.hosted_zone_id}"
+    name = "${aws_cloudfront_distribution.website_distribution.domain_name}"
+    zone_id = "${aws_cloudfront_distribution.website_distribution.hosted_zone_id}"
     evaluate_target_health = false
   }
 }
