@@ -2,47 +2,8 @@ provider "aws" {
   region = "${var.region}"
 }
 
-resource "aws_iam_user" "circleci" {
-  name = "circleci"
-  path = "/"
-}
-
-resource "aws_iam_access_key" "circleci" {
-  user = "${aws_iam_user.circleci.name}"
-}
-
-resource "aws_iam_user_policy" "circleci" {
-  name = "circleci"
-  user = "${aws_iam_user.circleci.name}"
-
-  policy = <<EOF
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Action": [
-          "s3:ListBucket",
-          "s3:GetBucketLocation"
-      ],
-      "Resource": ["arn:aws:s3:::${var.s3_bucket_name}"]
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
-        "s3:PutObject",
-        "s3:PutObjectAcl",
-        "s3:GetObject",
-        "s3:DeleteObject"
-      ],
-      "Resource": ["arn:aws:s3:::${var.s3_bucket_name}/*"]
-    }
-  ]
-}
-EOF
-}
-
 resource "aws_s3_bucket" "website" {
+  acl    = "public-read"
   bucket = "${var.s3_bucket_name}"
 
   logging {
@@ -201,16 +162,6 @@ resource "aws_cloudfront_distribution" "website_distribution" {
   }
 }
 
-output "access_key_id" {
-  value = "${aws_iam_access_key.circleci.id}"
-}
-
-# This is plan text and scary town!! Make sure you know what this means.
-# You definitely want to be careful with your terraform state.
-output "access_key_secret" {
-  value = "${aws_iam_access_key.circleci.secret}"
-}
-
 output "cloudfront_dns_name" {
   value = "${aws_cloudfront_distribution.website_distribution.domain_name}"
 }
@@ -225,18 +176,6 @@ data "aws_route53_zone" "main" {
 resource "aws_route53_record" "dns" {
   zone_id = "${data.aws_route53_zone.main.zone_id}"
   name = "${var.dns_record}."
-  type = "A"
-
-  alias {
-    name = "${aws_cloudfront_distribution.website_distribution.domain_name}"
-    zone_id = "${aws_cloudfront_distribution.website_distribution.hosted_zone_id}"
-    evaluate_target_health = false
-  }
-}
-
-resource "aws_route53_record" "alt-dns" {
-  zone_id = "${data.aws_route53_zone.main.zone_id}"
-  name = "${var.alt_dns_record}."
   type = "A"
 
   alias {

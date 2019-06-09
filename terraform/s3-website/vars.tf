@@ -1,11 +1,11 @@
-variable "s3_bucket_name" {
-  type    = "string"
-  default = "petersouter.xyz"
-}
-
 variable "region" {
   type    = "string"
   default = "eu-west-1"
+}
+
+variable "s3_bucket_name" {
+  type    = "string"
+  default = "petersouter.xyz"
 }
 
 variable "ssl_cert_arn" {
@@ -32,6 +32,6 @@ variable "alt_dns_record" {
 
 variable "content-secret" {
   type        = "string"
-  description = "Litteraly just a random string. Used to restrict s3 read access so CF is used."
+  description = "Literally just a random string. Used to restrict s3 read access so CF is used."
   default     = "1c3ae050-8446-45a8-8d1f-3ae92dc543c3"
 }
