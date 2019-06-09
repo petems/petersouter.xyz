@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "${var.region}"
+  region = var.region
 }
 
 resource "aws_iam_user" "circleci" {
@@ -8,12 +8,12 @@ resource "aws_iam_user" "circleci" {
 }
 
 resource "aws_iam_access_key" "circleci" {
-  user = "${aws_iam_user.circleci.name}"
+  user = aws_iam_user.circleci.name
 }
 
 resource "aws_iam_user_policy" "circleci" {
   name = "circleci"
-  user = "${aws_iam_user.circleci.name}"
+  user = aws_iam_user.circleci.name
 
   policy = <<EOF
 {
@@ -40,14 +40,16 @@ resource "aws_iam_user_policy" "circleci" {
   ]
 }
 EOF
+
 }
 
 output "access_key_id" {
-  value = "${aws_iam_access_key.circleci.id}"
+  value = aws_iam_access_key.circleci.id
 }
 
 # This is plan text and scary town!! Make sure you know what this means.
 # You definitely want to be careful with your terraform state.
 output "access_key_secret" {
-  value = "${aws_iam_access_key.circleci.secret}"
+  value = aws_iam_access_key.circleci.secret
 }
+
