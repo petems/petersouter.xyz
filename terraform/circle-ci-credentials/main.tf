@@ -43,13 +43,3 @@ EOF
 
 }
 
-output "access_key_id" {
-  value = aws_iam_access_key.circleci.id
-}
-
-# This is plan text and scary town!! Make sure you know what this means.
-# You definitely want to be careful with your terraform state.
-output "access_key_secret" {
-  value = aws_iam_access_key.circleci.secret
-}
-
