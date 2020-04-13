@@ -31,7 +31,7 @@ But I wanted to do something more indulgent, something with baked, rich with a l
 
 Answer: Yes they did - Käsespätzle!
 
-![](/images/2020/04/2015_0718_Käsespätzle_Sölden.jpg)
+![](/images/2020/04/2015_0718_Kasespatzle_Solden.jpg)
 > Taken from [WikiMedia](https://commons.wikimedia.org/wiki/File:2015_0718_K%C3%A4sesp%C3%A4tzle_S%C3%B6lden.jpg)
 
 For the recipe, I used one from [Daring Gourmet](https://www.daringgourmet.com/kaesespaetzle-swabian-german-macaroni-and-cheese/), but it's pretty much what you expect: layer spetzl with cheese and caramelized onion in pan, then bake until the cheese on top is golden brown. 
