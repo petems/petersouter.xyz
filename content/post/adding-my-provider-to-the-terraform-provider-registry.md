@@ -36,9 +36,14 @@ go mod vendor
 
 Then run my tests. I had a few failures as the error messages had changed between versions, but that was easily resolved:
 
-```diff
-- ExpectError: regexp.MustCompile("invalid or unknown key: this_doesnt_exist"),
-+ ExpectError: regexp.MustCompile("An argument named \"this_doesnt_exist\" is not expected here."),
+```go
+ ExpectError: regexp.MustCompile("invalid or unknown key: this_doesnt_exist"),
+```
+
+became
+
+```go
+ ExpectError: regexp.MustCompile("An argument named \"this_doesnt_exist\" is not expected here."),
 ```
 
 ## Step 2: Validation and Cleanup
@@ -49,14 +54,13 @@ Terraform has a ValidateFunc parameter for checking data, which you can provide 
 
 So for my resolver URL, we can use `IsURLWithHTTPorHTTPS`:
 
-`func IsURLWithHTTPorHTTPS(i interface{}, k string) (_ []string, errors []error)`
-> IsURLWithHTTPorHTTPS is a SchemaValidateFunc which tests if the provided value is of type string and a valid HTTP or HTTPS URL
-> https://godoc.org/github.com/hashicorp/terraform-plugin-sdk/helper/validation#IsURLWithHTTPorHTTPS
+> - IsURLWithHTTPorHTTPS is a SchemaValidateFunc which tests if the provided value is of type string and a valid HTTP or HTTPS URL
+> - https://godoc.org/github.com/hashicorp/terraform-plugin-sdk/helper/validation#IsURLWithHTTPorHTTPS
 
 We can then add that to the "resolver" schema in the provider:
 
-```golang
-  resolver": &schema.Schema{
+```go
+  "resolver": &schema.Schema{
     Type:        schema.TypeString,
     Optional:    true,
     Default:     "https://checkip.amazonaws.com/",
@@ -70,7 +74,7 @@ We can then add that to the "resolver" schema in the provider:
 
 All good right? Wrong!
 
-```
+```shell
 ==> Checking that code complies with gofmt requirements...
 go test -i $(go list ./... |grep -v 'vendor') || exit 1
 echo $(go list ./... |grep -v 'vendor') | \
@@ -106,7 +110,7 @@ That's when I rememebered that the Terraform team released the Terraform SDK lat
 
 Luckily, it's super easy to move to the SDK with the migration tool:
 
-```
+```prompt
 $ go install github.com/hashicorp/tf-sdk-migrator
 $ tf-sdk-migrator check
 Checking Go runtime version ...
@@ -124,16 +128,26 @@ All constraints satisfied. Provider can be migrated to the new SDK.
 
 It actually simplfies the go.mod file a lot as well:
 
-```diff
+```go
 go 1.14
 
 require (
--  github.com/hashicorp/go-hclog v0.8.0 // indirect
+  github.com/hashicorp/go-hclog v0.8.0 // indirect
+  github.com/hashicorp/hcl v1.0.0 // indirect
+  github.com/hashicorp/hil v0.0.0-20190212132231-97b3a9cdfa93 // indirect
+  github.com/hashicorp/terraform v0.12.0
+  github.com/mitchellh/go-homedir v1.1.0 // indirect
+)
+```
+
+became
+
+```go
+go 1.14
+
+require (
    github.com/hashicorp/hcl v1.0.0 // indirect
--  github.com/hashicorp/hil v0.0.0-20190212132231-97b3a9cdfa93 // indirect
--  github.com/hashicorp/terraform v0.12.0
--  github.com/mitchellh/go-homedir v1.1.0 // indirect
-+  github.com/hashicorp/terraform-plugin-sdk v1.7.0
+   github.com/hashicorp/terraform-plugin-sdk v1.7.0
 )
 ```
 
@@ -152,8 +166,8 @@ I ended up simplifying this a lot into two features: Client timeout and address 
 
 Client timeout was pretty simple, just needed to add an extra option and then add a timeout to the http client:
 
-```golang
-var netClient = &http.Client{
+```go
+  var netClient = &http.Client{
     Timeout: time.Duration(clientTimeout) * time.Millisecond,
   }
 
@@ -169,7 +183,7 @@ It's actually pretty important because by default Go's HTTP Client [has an unlim
 
 Again, mostly a pretty simple option: add a boolean option to check if the response given from the resolver is a real IP:
 
-```golang
+```go
   if v, ok := d.GetOkExists("validate_ip"); ok {
     if v.(bool) {
       ipParse := net.ParseIP(ip)
@@ -184,7 +198,7 @@ Again, mostly a pretty simple option: add a boolean option to check if the respo
 
 I refactored the tests and made sure I had 100% test coverage. I already was using httptest, so it was mostly just adding additional paths to my `httptest.Server`:
 
-```golang
+```go
 func setUpMockHTTPServer() *httptest.Server {
   Server := httptest.NewServer(
     http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
@@ -211,7 +225,7 @@ So we can just add extra pathing for our new test cases
 
 Just needed to add a response that sleeps and set the timeout limit lower than 2000ms
 
-```golang
+```go
 } else if r.URL.Path == "/meta_timeout.txt" {
   time.Sleep(2000 * time.Millisecond)
   w.WriteHeader(http.StatusOK)
@@ -223,7 +237,7 @@ Just needed to add a response that sleeps and set the timeout limit lower than 2
 
 This one wasn't a use case I needed, but hijacking seems to fail in different ways, so it was nice to add a bit of fuzz
 
-```golang
+```go
   w.WriteHeader(http.StatusNotFound)
   } else if r.URL.Path == "/meta_hijack.txt" {
     w.WriteHeader(100)
@@ -252,7 +266,7 @@ With some help from a StackOverflow answer:
 
 So, just adding this was enough to get 100% test coverage:
 
-```
+```go
 bodyErrorServer := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
   w.Header().Set("Content-Length", "1")
 }))
@@ -280,7 +294,7 @@ Adding documentation was fairly simple (although I ended up forgetting)
 
 Creating a Github release was also fairly straightforward, as Github automatically creates a release when you create a git tag:
 
-```
+```prompt
 git tag v0.1.0
 git push --tags
 ```
@@ -289,7 +303,7 @@ git push --tags
 
 Again, mostly fairly simple, first we add a action config file:
 
-```
+```yaml
 # This GitHub action can publish assets for release when a tag is created.
 # Currently its setup to run on any tag that matches the pattern "v*" (ie. v0.1.0).
 #
@@ -369,7 +383,7 @@ Now for the final test: Actually using it in our code!
 
 From Terraform 0.13 onward, we can now specify:
 
-```terraform
+```go
 terraform {
   required_providers {
     extip = {
@@ -390,7 +404,7 @@ output "external_ip_from_aws" {
 
 Then when we do a terraform init...
 
-```
+```prompt
 
 Initializing the backend...
 
@@ -418,7 +432,7 @@ We can see we're downloading the binary from the Registry and checking it was si
 
 Then we run the code to see that everythings good:
 
-```
+```prompt
 data.extip.external_ip_from_aws: Refreshing state...
 
 An execution plan has been generated and is shown below.
