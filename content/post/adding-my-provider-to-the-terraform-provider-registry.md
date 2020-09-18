@@ -263,11 +263,13 @@ With some help from a StackOverflow answer:
 
 > The easiest way is to generate an invalid HTTP response from the test handler.
 > How to do that? There are many ways, a simple one is to "lie" about the content length:
+>
 > ```go
 > handler := func(w http.ResponseWriter, r *http.Request) {
 >    w.Header().Set("Content-Length", "1")
 > }
 > ```
+>
 > This handler tells it has 1 byte body, but actually it sends none. So at the other end (the client) when attempting to read 1 byte from it, obviously that won't succeed, and will result in the following error:
 > `Unable to read from body unexpected EOF`
 
