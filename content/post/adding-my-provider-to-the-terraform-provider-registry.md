@@ -31,7 +31,7 @@ There were some changes required if you had [complex data structures](https://ww
 
 All I needed to do was move to newer Terraform:
 
-```prompt
+```shell
 go get github.com/hashicorp/terraform@v0.12.0
 go mod tidy
 go mod vendor
@@ -81,7 +81,7 @@ We can then add that to the "resolver" schema in the provider:
 
 All good right? Wrong!
 
-```prompt
+```shell
 ==> Checking that code complies with gofmt requirements...
 go test -i $(go list ./... |grep -v 'vendor') || exit 1
 echo $(go list ./... |grep -v 'vendor') | \
@@ -117,7 +117,7 @@ That's when I rememebered that the Terraform team released the Terraform SDK lat
 
 Luckily, it's super easy to move to the SDK with the migration tool:
 
-```prompt
+```shell
 $ go install github.com/hashicorp/tf-sdk-migrator
 $ tf-sdk-migrator check
 Checking Go runtime version ...
@@ -263,7 +263,7 @@ With some help from a StackOverflow answer:
 
 > The easiest way is to generate an invalid HTTP response from the test handler.
 > How to do that? There are many ways, a simple one is to "lie" about the content length:
-> ```
+> ```go
 > handler := func(w http.ResponseWriter, r *http.Request) {
 >    w.Header().Set("Content-Length", "1")
 > }
@@ -299,7 +299,7 @@ There doesn't seem to be an easy way to auto-generate docs from the schema in co
 
 Creating a Github release was also fairly straightforward, as Github automatically creates a release when you create a git tag:
 
-```prompt
+```shell
 git tag v0.1.0
 git push --tags
 ```
@@ -433,11 +433,15 @@ And then add the public key to the Registry so it can verify the signing is vali
 
 ### Push a release
 
-You can see it builds a release for several different Operating Systems and architectures:
+Whenever we tag a release with a valid semantic version, a new release will be triggered by the Github Action:
+
+![](/images/2020/09/github-action-page.png)
+
+Which will then add the binaries to the release version:
 
 ![](/images/2020/09/github-release-page.png)
 
-From there, it'll be in the registry no issues:
+From there, it'll be in the registry with no issues:
 
 ![](/images/2020/09/registry-page.png)
 
@@ -447,7 +451,7 @@ Now for the final test: Actually using it in our code!
 
 From Terraform 0.13 onward, we can now specify:
 
-```go
+```hcl
 terraform {
   required_providers {
     extip = {
@@ -468,7 +472,7 @@ output "external_ip_from_aws" {
 
 Then when we do a terraform init...
 
-```prompt
+```shell
 
 Initializing the backend...
 
@@ -493,13 +497,13 @@ commands will detect it and remind you to do so if necessary.
 ```
 
 
-We can see we're downloading the binary from the Registry and checking it was signed correctly, 
+We can see we're downloading the binary from the Registry and checking it was signed correctly.
 
-You'll notice that the Key ID (1E81AE5659BD2F20) matches the public key from the screenshot earlier, so working as intended.
+You'll also notice that the Key ID (`1E81AE5659BD2F20`) matches the public key from the screenshot earlier, so working as intended.
 
 Then we run the code to see that everythings good:
 
-```prompt
+```shell
 $ terraform apply
 data.extip.external_ip_from_aws: Refreshing state...
 
