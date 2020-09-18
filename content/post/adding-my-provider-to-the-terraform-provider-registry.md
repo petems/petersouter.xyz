@@ -4,37 +4,42 @@ categories = ["Tech", "Blog", "Terraform", "Golang"]
 date = 2020-09-17T13:28:00Z
 description = ""
 draft = false
-thumbnailImage = "/images/2018/07/golang_http_750.png"
-coverImage = "/images/2018/07/golang_http.png"
+thumbnailImage = "/images/2020/09/registry-page.png"
+coverImage = "/images/2020/09/registry-page-cover.png"
 slug = "adding-my-provider-to-the-terraform-provider-registry"
 tags = ["Tech", "Blog", "Terraform", "Golang"]
 title = "Adding my Provider to the Terraform Provider Registry"
 +++
 
-# Adding my Provider to the Terraform Provider Registry
+I've blogged previously about my tinkering with my own [Terraform provider for fetching external IPs](/content/post/writing-and-playing-with-custom-terraform-providers.md)
 
-I've blogged previously about my tinkering with my own Terraform provider for fetching external IPs: extip
+One of the more fiddly parts I found when using a custom provider is how to use it with the rest of your Terraform code. You could either bundle it with [terraform-bundle](), or add it as [git submodules to the repo you run your code in](https://support.hashicorp.com/hc/en-us/articles/360016992613-Using-custom-and-community-providers-in-Terraform-Cloud-and-Enterprise).
 
-One of the more fiddly parts of using a custom provider is how to use it with the rest of your Terraform code. You could either bundle it with terraform-bundle, or add it as git submodules to the repo you run your code in. B
+Neither are particularly ideal, as you're either having to create a new bundle every time a new release occurs or have to wrangle with git submodules and increase the site of your code repository by containing binaries.
 
 ## Terraform Provider Registry
 
-Luckily the good folks on the Terraform Engineering team have thought of this, and have now extended the Terraform Registry to host Providers as well as modules.
+Luckily the good folks on the Terraform Engineering team have thought of this, and have now [extended the Terraform Registry to host Providers as well as modules](https://www.hashicorp.com/blog/providers-in-the-hashicorp-terraform-registry-now-live).
+
+So I thought I'd try and push my `extip` module to the Registry
 
 ## Step 1: Upgrade
 
-It'd been a while since I'd tinkered on my repo, so there were some cleanup tasks I needed to get around to. First was to update it to use Terraform 0.12.
+It'd been a while since I'd tinkered on my repo, so there were some cleanup tasks I needed to get around to. First was to update it to use Terraform 0.12
 
+There were some changes required if you had [complex data structures](https://www.terraform.io/docs/extend/terraform-0.12-compatibility.html#configuration-syntax-changes), but luckily since my provider was so simple I didn't need to do that. 
 
-There were some changes required if you had complex data structures, but since I didn't, all I needed to do was move to newer Terraform:
+All I needed to do was move to newer Terraform:
 
-```
+```prompt
 go get github.com/hashicorp/terraform@v0.12.0
 go mod tidy
 go mod vendor
 ```
 
-Then run my tests. I had a few failures as the error messages had changed between versions, but that was easily resolved:
+Then run my tests to check that things were still working.
+
+I had a few failures as the error messages had changed between versions, but that was easily resolved:
 
 ```go
  ExpectError: regexp.MustCompile("invalid or unknown key: this_doesnt_exist"),
@@ -48,11 +53,13 @@ became
 
 ## Step 2: Validation and Cleanup
 
-Freshly moved to 0.12, I was looking to add some clenaup and some validation for parameters. For example, I knew that there were helper methods for common validation steps for parameters, so why not validate that the URL being given for the resolver is a real URL?
+Freshly moved to 0.12, I was looking to add some clenaup and some basic sanity-checking validation.
 
-Terraform has a ValidateFunc parameter for checking data, which you can provide a method to check it.
+For example, I knew that there were helper methods for common validation steps for parameters, so why not validate that the URL being given for the resolver is a real URL?
 
-So for my resolver URL, we can use `IsURLWithHTTPorHTTPS`:
+Terraform has a `ValidateFunc` parameter for checking data, which you can provide a method to check it.
+
+So to check my resolver URL, we can use `IsURLWithHTTPorHTTPS`:
 
 > - IsURLWithHTTPorHTTPS is a SchemaValidateFunc which tests if the provided value is of type string and a valid HTTP or HTTPS URL
 > - https://godoc.org/github.com/hashicorp/terraform-plugin-sdk/helper/validation#IsURLWithHTTPorHTTPS
@@ -74,7 +81,7 @@ We can then add that to the "resolver" schema in the provider:
 
 All good right? Wrong!
 
-```shell
+```prompt
 ==> Checking that code complies with gofmt requirements...
 go test -i $(go list ./... |grep -v 'vendor') || exit 1
 echo $(go list ./... |grep -v 'vendor') | \
@@ -99,7 +106,7 @@ Uh... what?
 
 I only found reference in this Github issue: https://github.com/hashicorp/terraform-plugin-sdk/issues/268
 
-Essentially you're not able to import both Terraform core and the SDK validator.
+Essentially you're not able to import both Terraform core and the SDK validator at the same time.
 
 That's when I rememebered that the Terraform team released the Terraform SDK late last year, and you no longer need to import Terraform itself
 
@@ -196,7 +203,7 @@ Again, mostly a pretty simple option: add a boolean option to check if the respo
 
 ## Step 5: Additional Testing
 
-I refactored the tests and made sure I had 100% test coverage. I already was using httptest, so it was mostly just adding additional paths to my `httptest.Server`:
+I refactored the tests and made sure I had 100% test coverage. I already was using [httptest](https://golang.org/pkg/net/http/httptest/), so it was mostly just adding additional paths to my `httptest.Server`:
 
 ```go
 func setUpMockHTTPServer() *httptest.Server {
@@ -274,21 +281,19 @@ bodyErrorServer := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWrite
 defer bodyErrorServer.Close()
 ```
 
-(For some reason, when I put it as a response from a path it won't error, but when setting it as a response to any request it does)
+Side note: For some reason, when I put it as a response from a path it won't error, but when setting it as a response to any request it does... I'll follow up on that later
 
 ## Step 6: Registry Pipeline Steps
 
 So at this point, I think the provider is as ready as it'll ever be, feature and testing-wise, so we just need to get ready for the Terraform Registry.
 
-Based on the steps from the Publishing Providers guide, I needed to do the following:
-
-https://www.terraform.io/docs/registry/providers/publishing.html
+Based on the steps from the [Publishing Providers guide](https://www.terraform.io/docs/registry/providers/publishing.html), I needed to do the following:
 
 ### Add documentation
 
-* Add a Github action to publish it to the registry
+Adding documentation was fairly simple, and you just need to add a `docs/` directory with the documentation needed
 
-Adding documentation was fairly simple (although I ended up forgetting)
+There doesn't seem to be an easy way to auto-generate docs from the schema in code, but I'm going to see if that's possible in the future to make this step easier.
 
 ### Create a Github release 
 
@@ -299,9 +304,9 @@ git tag v0.1.0
 git push --tags
 ```
 
-### Push the Release with a GitHub Action
+### Build the Release as an artifact with a GitHub Action
 
-Again, mostly fairly simple, first we add a action config file:
+Again, mostly fairly simple, first we add a Github action config file for `goreleaser`:
 
 ```yaml
 # This GitHub action can publish assets for release when a tag is created.
@@ -353,21 +358,80 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
+Then we add the `goreleaser` config for a Terraform provider:
+
+```yaml
+# Visit https://goreleaser.com for documentation on how to customize this
+# behavior.
+before:
+  hooks:
+    # this is just an example and not a requirement for provider building/publishing
+    - go mod tidy
+builds:
+- env:
+    # goreleaser does not work with CGO, it could also complicate
+    # usage by users in CI/CD systems like Terraform Cloud where
+    # they are unable to install libraries.
+    - CGO_ENABLED=0
+  mod_timestamp: '{{ .CommitTimestamp }}'
+  flags:
+    - -trimpath
+  ldflags:
+    - '-s -w -X main.version={{.Version}} -X main.commit={{.Commit}}'
+  goos:
+    - freebsd
+    - windows
+    - linux
+    - darwin
+  goarch:
+    - amd64
+    - '386'
+    - arm
+    - arm64
+  ignore:
+    - goos: darwin
+      goarch: '386'
+  binary: '{{ .ProjectName }}_v{{ .Version }}'
+archives:
+- format: zip
+  name_template: '{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}'
+checksum:
+  name_template: '{{ .ProjectName }}_{{ .Version }}_SHA256SUMS'
+  algorithm: sha256
+signs:
+  - artifacts: checksum
+    args:
+      # if you are using this is a GitHub action or some other automated pipeline, you 
+      # need to pass the batch flag to indicate its not interactive.
+      - "--batch"
+      - "--local-user"
+      - "{{ .Env.GPG_FINGERPRINT }}" # set this environment variable for your signing key
+      - "--output"
+      - "${signature}"
+      - "--detach-sign"
+      - "${artifact}"
+release:
+  # If you want to manually examine the release before its live, uncomment this line:
+  # draft: true
+changelog:
+  skip: true
+```
+
 ### Signing the release
 
 We need to add a GPG key to the repository and Registry so we can sign the release.
 
 I ended up generating a new key via Keybase and using that (via the steps given [in this blog](https://blog.scottlowe.org/2017/09/06/using-keybase-gpg-macos/))
 
-From there we add in the `GPG_PRIVATE_KEY` value to the repo under it's "Secrets" so we can sign the release
+From there we add in the `GPG_PRIVATE_KEY` value to the repo under it's "Secrets" so we can sign the release:
 
-And then add the public key from the Private key we used earlier on to our repo on the Registry so it can verify the signing is valid:
+![](/images/2020/09/adding-gpg-as-secret.png)
+
+And then add the public key to the Registry so it can verify the signing is valid:
 
 ![](/images/2020/09/provider-signing-keys.png)
 
 ### Push a release
-
-I actually forgot to do the documentation, but I cut a release and it pushed with no issues.
 
 You can see it builds a release for several different Operating Systems and architectures:
 
@@ -428,11 +492,15 @@ rerun this command to reinitialize your working directory. If you forget, other
 commands will detect it and remind you to do so if necessary.
 ```
 
-We can see we're downloading the binary from the Registry and checking it was signed correctly
+
+We can see we're downloading the binary from the Registry and checking it was signed correctly, 
+
+You'll notice that the Key ID (1E81AE5659BD2F20) matches the public key from the screenshot earlier, so working as intended.
 
 Then we run the code to see that everythings good:
 
 ```prompt
+$ terraform apply
 data.extip.external_ip_from_aws: Refreshing state...
 
 An execution plan has been generated and is shown below.
@@ -468,4 +536,4 @@ Outputs:
 external_ip_from_aws = 158.146.25.170
 ```
 
-So there we have it: A fully released provider avaliable on the public registry. 
+So there we have it: A fully released provider avaliable on the public registry.
