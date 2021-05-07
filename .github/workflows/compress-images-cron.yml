@@ -26,3 +26,5 @@ jobs:
           branch-suffix: timestamp
           commit-message: Compressed Images
           body: ${{ steps.calibre.outputs.markdown }}
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
