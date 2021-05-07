@@ -12,3 +12,5 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: 'Fixes by misspell-fixer'
         title: 'Typos fix by misspell-fixer'
+      env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
