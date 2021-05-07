@@ -7,10 +7,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: sobolevn/misspell-fixer-action@master
-    - uses: peter-evans/create-pull-request@v2.4.4
+    - uses: peter-evans/create-pull-request@master
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: 'Fixes by misspell-fixer'
         title: 'Typos fix by misspell-fixer'
-      env:
-          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
