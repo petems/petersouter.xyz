@@ -9,7 +9,7 @@ on:
 jobs:
   deploy:
     name: 'hugo/s3-deploy'
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
@@ -19,7 +19,7 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: '${hugo_version}'
+          hugo-version: '0.124.1'
 
       - name: Build
         run: hugo --minify
