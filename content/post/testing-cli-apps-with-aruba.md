@@ -1,7 +1,7 @@
 +++
 author = "Peter Souter"
 categories = ["Tech", "Blog", "Terraform", "Puppet"]
-date = 2024-04-04T13:28:00Z
+date = 2024-04-09T13:28:00Z
 description = ""
 draft = false
 thumbnailImage = "/images/2024/04/aruba.png"
