@@ -542,4 +542,4 @@ Outputs:
 external_ip_from_aws = 158.146.25.170
 ```
 
-So there we have it: A fully released provider avaliable on the public registry.
+So there we have it: A fully released provider available on the public registry.

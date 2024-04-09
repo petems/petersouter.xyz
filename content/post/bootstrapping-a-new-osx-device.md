@@ -19,7 +19,7 @@ It lead me to think about my experience with developer bootstrapping in the OSX 
 
 ## Cliffnotes OSX Bootstrapping History
 
-When I was a fresh-faced new engineer (way back in **2011**), my first proper onboarding experience was a mix of scripts and crusty wiki pages that I was manually going through . I'd literally never touched a Macbook befoer and I think it took me almost 2 weeks to get my machine to a point where I could even run a basic version of the full stack for the platform. 
+When I was a fresh-faced new engineer (way back in **2011**), my first proper onboarding experience was a mix of scripts and crusty wiki pages that I was manually going through . I'd literally never touched a Macbook before and I think it took me almost 2 weeks to get my machine to a point where I could even run a basic version of the full stack for the platform. 
 
 I was at a company that was slap-bang in the middle of going through a number of huge transformations, but the main application I was working on was a legacy Java app that was due to be deprecated sooner rather than later. This lead to a bit of a catch-22 where the scripts to get it up and running were fairly creaky, but also the team didnt think it a good use of time trying to fix and improve the bootstrap process. 
 
@@ -112,7 +112,7 @@ In 2015 I ended up joining Puppet as a company. I was working as a Pro Services 
 
 ## Enter Strap
 
-It turns out, the issues around complexity in debugging Puppet and a tendancy to have to just run it a few times before it works were actually being shared by the place that created Boxen in the first place. 
+It turns out, the issues around complexity in debugging Puppet and a tendency to have to just run it a few times before it works were actually being shared by the place that created Boxen in the first place. 
 
 Mike Mcquaid was working at Github and noticed the same issues:
 
@@ -128,7 +128,7 @@ Strap basically reduced the complexity of Boxen overall by pairing it down to it
 - Fetch the users specific dotfiles and scripts they have control over and run them
 - Install a list of brew packages specific to the end user from a brewfile
 
-With Strap, there was no hard dependancy on Puppet, users could easily leverage their existing dotfiles and scripts, and the applications they needed to be installed could be listed at the user or project level with Homebrew Brewfiles.
+With Strap, there was no hard dependency on Puppet, users could easily leverage their existing dotfiles and scripts, and the applications they needed to be installed could be listed at the user or project level with Homebrew Brewfiles.
 
 This would've been fine as a vanilla shell script that required some tweaks, but one of the neat features was Strap had a small Sinatra app that would tie into Github's API. 
 
@@ -165,9 +165,9 @@ From here, Strap will do a 6 things:
  
 - Set some baseline system level settings (Enable Full Disk Encryption, Force Screensaver with Password, adds "Found this computer?" message to login scren etc)
 - Install the minimal requirements to install homebrew: Xcode Command Line Tools and agreeing to it's license
-- Configure git to use the API token from the script for authenticaion 
+- Configure git to use the API token from the script for authentication 
 - Download and install Homebrew itself
-- Fetch and run dotfiles (if avaliable) from `https://github.com/$STRAP_GITHUB_USER/dotfiles`
+- Fetch and run dotfiles (if available) from `https://github.com/$STRAP_GITHUB_USER/dotfiles`
 - Do a Brew install against a brewfile from `https://github.com/$STRAP_GITHUB_USER/homebrew-brewfile`
 
 ## First teethings... Dotfiles
@@ -241,7 +241,7 @@ I did some work originally creating a Terraform provider to do this, but since I
 
 What I did end up doing is one of my favourite development hobbies: creating a little CLI tool that has a very specialised task for my requirements. In this case, configuring ssh_config files on the command-line without overwriting previous configuration. 
 
-I’d already forked and build on a [go-sshconfig](https://github.com/petems/go-sshconfig) library that I’d used in the initial work for the Terraform provider, so I’d already got a lot of the logic working, and I’ve fallen in love with using golang for self-contained CLI tools because of the ease of packaging (espeically compared to my previous experiences with Ruby and gems) and the amount of well-supported libraries and CLI usecases.
+I’d already forked and build on a [go-sshconfig](https://github.com/petems/go-sshconfig) library that I’d used in the initial work for the Terraform provider, so I’d already got a lot of the logic working, and I’ve fallen in love with using golang for self-contained CLI tools because of the ease of packaging (especially compared to my previous experiences with Ruby and gems) and the amount of well-supported libraries and CLI usecases.
 
 Enter: [sck](https://github.com/petems/sck)
 
