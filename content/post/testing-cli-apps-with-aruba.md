@@ -134,7 +134,7 @@ Some of these are using the in-built Aruba matchers, such as `the output should 
 
 If we do a `bundle exec cucumber .` run, we should get prompted on which ones to create:
 
-```prompt
+```shell
 $ bundle exec cucumber features/no_argument.feature
 Using the default profile...
 Feature: Version Command
@@ -194,7 +194,7 @@ end
 
 Now we run it again...
 
-```prompt
+```shell
 $ bundle exec cucumber features/no_argument.feature
 Using the default profile...
 Feature: Version Command
