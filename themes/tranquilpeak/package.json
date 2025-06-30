@@ -30,7 +30,7 @@
   "homepage": "https://github.com/kakawait/hugo-tranquilpeak-theme",
   "devDependencies": {
     "eslint": "^9.0.0",
-    "eslint-config-google": "0.13.0",
+    "eslint-config-google": "0.14.0",
     "grunt": "1.6.1",
     "grunt-cli": "^1.5.0",
     "grunt-contrib-clean": "2.0.1",
