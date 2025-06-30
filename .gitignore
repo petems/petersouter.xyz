@@ -24,3 +24,5 @@ hugo_cache
 
 # Image optimisation
 *opti*.log
+.vercel
+/.pnpm-store
