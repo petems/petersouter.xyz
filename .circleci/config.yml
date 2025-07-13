@@ -6,17 +6,17 @@ defaults: &defaults
     - S3_REGION: eu-west-1
 
 
-version: 2
+version: 2.1
 jobs:
   build:
     <<: *defaults
     docker:
-      - image: monachus/hugo:v0.54.0-3
+      - image: klakegg/hugo:0.111.3-ext
     steps:
       - checkout
       - run:
           name: Compile site
-          command: /usr/local/bin/hugo --destination "$SOURCE_DIR"
+          command: hugo --destination "$SOURCE_DIR"
       - run:
           name: Persist .go3up.json for upload
           command: cp .circleci/.go3up.json /tmp/petersouter.xyz/
@@ -42,7 +42,6 @@ jobs:
           command: /usr/local/bin/go3up -source="$SOURCE_DIR" -region="$S3_REGION" -bucket="$S3_BUCKET" --verbose
 
 workflows:
-  version: 2
   build-and-upload:
     jobs:
       - build
