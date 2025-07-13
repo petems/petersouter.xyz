@@ -5,8 +5,14 @@ title = "Angels && Daemons - https://petersouter.xyz"
 theme = "tranquilpeak"
 disqusShortname = "petersouter"
 googleAnalytics = ""
-paginate = 1
+[pagination]
+pagerSize = 1
 canonifyurls = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 
 [permalinks]
   post = "/:title/"
