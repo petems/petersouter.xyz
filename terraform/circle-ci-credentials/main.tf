@@ -1,6 +1,6 @@
 provider "aws" {
   region  = var.region
-  version = "2.49.0"
+  version = "2.70.4"
 }
 
 resource "aws_iam_user" "circleci" {
