@@ -30,9 +30,19 @@ variable "alt_dns_record" {
   default = "www.petersouter.xyz"
 }
 
-variable "content-secret" {
+variable "content_secret" {
   type        = string
-  description = "Literally just a random string. Used to restrict s3 read access so CF is used."
+  description = "Random string used to restrict S3 read access so CloudFront is used"
   default     = "1c3ae050-8446-45a8-8d1f-3ae92dc543c3"
+}
+
+variable "tags" {
+  type        = map(string)
+  description = "Tags to apply to all resources"
+  default = {
+    Environment = "production"
+    Project     = "website"
+    ManagedBy   = "terraform"
+  }
 }
 
