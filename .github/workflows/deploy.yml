@@ -1,0 +1,84 @@
+name: Build and Upload Site
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+env:
+  SOURCE_DIR: ${{ github.workspace }}/public
+  S3_BUCKET: petersouter.xyz
+  S3_REGION: eu-west-1
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Hugo 0.54.0
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.54.0'
+          extended: true
+
+      - name: Compile site
+        run: hugo --destination "${SOURCE_DIR}"
+
+      - name: Persist go3up manifests (if present)
+        run: |
+          if [ -f .circleci/.go3up.json ]; then cp .circleci/.go3up.json .; fi
+          if [ -f .circleci/.go3up.txt ]; then cp .circleci/.go3up.txt .; fi
+
+      - name: Upload site artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: ${{ env.SOURCE_DIR }}
+
+      - name: Upload go3up manifests
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: go3up-manifests
+          path: |
+            .go3up.json
+            .go3up.txt
+          if-no-files-found: ignore
+
+  upload-prod:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download site artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: site
+          path: ${{ env.SOURCE_DIR }}
+
+      - name: Download go3up manifests
+        uses: actions/download-artifact@v4
+        with:
+          name: go3up-manifests
+          path: ./
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.S3_REGION }}
+
+      - name: Upload to S3 with go3up
+        uses: docker://petems/go3up:latest
+        with:
+          args: -source="${{ env.SOURCE_DIR }}" -region="${{ env.S3_REGION }}" -bucket="${{ env.S3_BUCKET }}" --verbose
+
+
+
+

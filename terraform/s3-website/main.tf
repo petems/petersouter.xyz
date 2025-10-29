@@ -3,29 +3,61 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "website" {
-  acl    = "public-read"
   bucket = var.s3_bucket_name
+}
 
-  logging {
-    target_bucket = var.s3_bucket_name
-    target_prefix = "log/"
+resource "aws_s3_bucket_website_configuration" "website" {
+  bucket = aws_s3_bucket.website.id
+
+  index_document {
+    suffix = "index.html"
   }
 
-  website {
-    index_document = "index.html"
-    error_document = "404.html"
+  error_document {
+    key = "404.html"
+  }
 
-    routing_rules = <<EOF
-[{
-    "Condition": {
-        "KeyPrefixEquals": "/"
-    },
-    "Redirect": {
-        "ReplaceKeyWith": "index.html"
+  routing_rule {
+    condition {
+      key_prefix_equals = "/"
     }
-}]
-EOF
+    redirect {
+      replace_key_with = "index.html"
+    }
+  }
+}
 
+resource "aws_s3_bucket_logging" "website" {
+  bucket = aws_s3_bucket.website.id
+
+  target_bucket = aws_s3_bucket.website.id
+  target_prefix = "log/"
+}
+
+# ACL configuration using grant blocks for public-read access
+resource "aws_s3_bucket_acl" "website" {
+  bucket = aws_s3_bucket.website.id
+
+  access_control_policy {
+    grant {
+      grantee {
+        id   = "80dccb758071c1453c1611cc8985731453cc48ce0db8758d1e899cb83bc6475e"
+        type = "CanonicalUser"
+      }
+      permission = "FULL_CONTROL"
+    }
+
+    grant {
+      grantee {
+        type = "Group"
+        uri  = "http://acs.amazonaws.com/groups/global/AllUsers"
+      }
+      permission = "READ"
+    }
+
+    owner {
+      id = "80dccb758071c1453c1611cc8985731453cc48ce0db8758d1e899cb83bc6475e"
+    }
   }
 }
 
