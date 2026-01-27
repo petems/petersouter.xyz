@@ -35,6 +35,14 @@ jobs:
       # go3up configuration files (.go3up.json, .go3up.txt) are in repository root
       # and will be automatically discovered by go3up
 
+      - name: Restore go3up cache
+        uses: actions/cache@v4
+        with:
+          path: .go3up.txt
+          key: go3up-cache-${{ github.sha }}
+          restore-keys: |
+            go3up-cache-
+
       - name: Configure AWS credentials via OIDC
         uses: aws-actions/configure-aws-credentials@v4
         with:
@@ -56,6 +64,13 @@ jobs:
             /usr/local/bin/go3up -source="$SOURCE_DIR" -region="$S3_REGION" -bucket="$S3_BUCKET" --verbose
         # go3up reads the temporary OIDC credentials from environment variables
         # AWS_SESSION_TOKEN proves these are temporary credentials, not static keys
+
+      - name: Save go3up cache
+        uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: .go3up.txt
+          key: go3up-cache-${{ github.sha }}
 
       - name: Deployment complete
         run: |
