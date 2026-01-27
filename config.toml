@@ -5,7 +5,6 @@ title = "Angels && Daemons - https://petersouter.xyz"
 theme = "tranquilpeak"
 disqusShortname = "petersouter"
 googleAnalytics = ""
-canonifyurls = true
 
 [pagination]
   pagerSize = 1
