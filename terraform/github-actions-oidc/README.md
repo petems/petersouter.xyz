@@ -48,7 +48,7 @@ name: Deploy to S3
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
 
 permissions:
   id-token: write   # Required for OIDC
@@ -100,7 +100,7 @@ Add these secrets to your GitHub repository:
 | `s3_bucket_name` | S3 bucket name | `petersouter.xyz` |
 | `project_name` | Project name for resource naming | `petersouter-website` |
 | `environment` | Environment name | `production` |
-| `github_repository` | GitHub repo in format `owner/repo` | `petersouter/petersouter.xyz` |
+| `github_repository` | GitHub repo in format `owner/repo` | `petems/petersouter.xyz` |
 | `enable_cloudfront_invalidation` | Enable CloudFront invalidation | `false` |
 | `cloudfront_distribution_id` | CloudFront distribution ID | `""` |
 

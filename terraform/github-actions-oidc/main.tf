@@ -28,10 +28,9 @@ resource "aws_iam_openid_connect_provider" "github" {
     "sts.amazonaws.com",
   ]
 
-  thumbprint_list = [
-    "6938fd4d98bab03faadb97b34396831e3780aea1",
-    "1c58a3a8518e8759bf075b76b750d4f2df264fcd"
-  ]
+  # Note: thumbprint_list is not required when using AWS provider v5.81.0+
+  # AWS now validates OIDC providers via root CAs automatically
+  # Current provider version: 5.100.0
 
   tags = {
     Name = "github-actions-oidc"
