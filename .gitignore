@@ -16,6 +16,7 @@ resume/index.html
 # Hugo
 public
 hugo_cache
+.hugo_build.lock
 
 # CI
 *.terraform*
