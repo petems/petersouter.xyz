@@ -11,6 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+        with:
+          submodules: true
       - uses: amondnet/vercel-action@v41.1.4
         with:
          vercel-token: ${{ secrets.VERCEL_TOKEN }}
