@@ -88,7 +88,7 @@ The deployment uses AWS OIDC for secure, temporary credentials:
 - No static AWS access keys required
 - Temporary credentials generated per workflow run
 - IAM role: `petersouter-website-github-actions-role`
-- Terraform config: `terraform/circle-ci-credentials/`
+- Terraform config: `terraform/github-actions-oidc/`
 
 ## Architecture
 
