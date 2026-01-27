@@ -37,14 +37,16 @@ jobs:
           cp .circleci/.go3up.json .
           cp .circleci/.go3up.txt .
 
-      - name: Configure AWS credentials
+      - name: Configure AWS credentials via OIDC
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
           aws-region: ${{ env.S3_REGION }}
           role-session-name: github-actions-deploy-${{ github.run_id }}
+        # This action uses OIDC to assume the IAM role and exports temporary credentials
+        # as environment variables (AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_SESSION_TOKEN)
 
-      - name: Upload to S3 using go3up
+      - name: Upload to S3 using go3up with OIDC credentials
         run: |
           docker run --rm \
             -v $(pwd):/workspace \
@@ -54,6 +56,8 @@ jobs:
             -e AWS_SESSION_TOKEN \
             petems/go3up \
             /usr/local/bin/go3up -source="$SOURCE_DIR" -region="$S3_REGION" -bucket="$S3_BUCKET" --verbose
+        # go3up reads the temporary OIDC credentials from environment variables
+        # AWS_SESSION_TOKEN proves these are temporary credentials, not static keys
 
       - name: Deployment complete
         run: |
