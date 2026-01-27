@@ -32,10 +32,8 @@ jobs:
       - name: Build site
         run: hugo --destination "$SOURCE_DIR"
 
-      - name: Copy go3up configuration files
-        run: |
-          cp .circleci/.go3up.json .
-          cp .circleci/.go3up.txt .
+      # go3up configuration files (.go3up.json, .go3up.txt) are in repository root
+      # and will be automatically discovered by go3up
 
       - name: Configure AWS credentials via OIDC
         uses: aws-actions/configure-aws-credentials@v4

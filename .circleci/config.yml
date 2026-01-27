@@ -1,6 +1,7 @@
 # ⚠️ DEPRECATED: This CircleCI configuration is no longer used
 # The site now deploys via GitHub Actions (.github/workflows/deploy.yml)
 # This file is kept for reference only
+# Note: go3up config files (.go3up.json, .go3up.txt) moved to repository root
 # Migration completed: 2026-01-27
 
 defaults: &defaults
