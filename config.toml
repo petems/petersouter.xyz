@@ -85,7 +85,7 @@ ignoreLogs = ['warning-goldmark-raw-html']
   weight = 4
   identifier = "talks"
   name = "Talks"
-  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-presentation\"></i>"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-comment\"></i>"
   url = "/talks"
 
 [[menu.misc]]
