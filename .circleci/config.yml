@@ -1,3 +1,8 @@
+# ⚠️ DEPRECATED: This CircleCI configuration is no longer used
+# The site now deploys via GitHub Actions (.github/workflows/deploy.yml)
+# This file is kept for reference only
+# Migration completed: 2026-01-27
+
 defaults: &defaults
   working_directory: /tmp/petersouter.xyz
   environment:
