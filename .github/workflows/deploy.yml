@@ -2,7 +2,9 @@ name: Deploy to S3
 
 on:
   push:
-    branches: [ master ]
+    branches:
+      - master
+      - feat/migrate-to-github-actions-from-circleci  # Temporary: for testing
 
 permissions:
   id-token: write   # Required for OIDC authentication
