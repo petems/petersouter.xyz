@@ -5,6 +5,7 @@ title = "Angels && Daemons - https://petersouter.xyz"
 theme = "tranquilpeak"
 disqusShortname = "petersouter"
 googleAnalytics = ""
+ignoreLogs = ['warning-goldmark-raw-html']
 
 [pagination]
   pagerSize = 1
@@ -18,7 +19,7 @@ googleAnalytics = ""
   category = "categories"
   archive = "archives"
 
-[author]
+[params.author]
   name = "Peter Souter"
   bio = "Just some guy y'know?"
   job = "Technical Account Manager"
