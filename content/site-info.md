@@ -1,6 +1,6 @@
 ---
 title: Site Information
-modified: "01-27-2026"
+modified: "2026-01-27"
 aliases:
 - /about/site-info/
 comments:       false
