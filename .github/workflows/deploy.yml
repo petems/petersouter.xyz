@@ -1,0 +1,63 @@
+name: Deploy to S3
+
+on:
+  push:
+    branches: [ master ]
+
+permissions:
+  id-token: write   # Required for OIDC authentication
+  contents: read
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      SOURCE_DIR: public
+      S3_BUCKET: petersouter.xyz
+      S3_REGION: eu-west-1
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+          fetch-depth: 0
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.54.0'
+
+      - name: Build site
+        run: hugo --destination "$SOURCE_DIR"
+
+      # go3up configuration files (.go3up.json, .go3up.txt) are in repository root
+      # and will be automatically discovered by go3up
+
+      - name: Configure AWS credentials via OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: ${{ env.S3_REGION }}
+          role-session-name: github-actions-deploy-${{ github.run_id }}
+        # This action uses OIDC to assume the IAM role and exports temporary credentials
+        # as environment variables (AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_SESSION_TOKEN)
+
+      - name: Upload to S3 using go3up with OIDC credentials
+        run: |
+          docker run --rm \
+            -v $(pwd):/workspace \
+            -w /workspace \
+            -e AWS_ACCESS_KEY_ID \
+            -e AWS_SECRET_ACCESS_KEY \
+            -e AWS_SESSION_TOKEN \
+            petems/go3up \
+            /usr/local/bin/go3up -source="$SOURCE_DIR" -region="$S3_REGION" -bucket="$S3_BUCKET" --verbose
+        # go3up reads the temporary OIDC credentials from environment variables
+        # AWS_SESSION_TOKEN proves these are temporary credentials, not static keys
+
+      - name: Deployment complete
+        run: |
+          echo "✅ Deployment completed successfully!"
+          echo "Website URL: https://petersouter.xyz"
