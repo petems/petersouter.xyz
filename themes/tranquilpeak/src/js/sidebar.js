@@ -155,10 +155,11 @@
       // and prevent multiple click on the close button with `.processing` class
       if (this.$sidebar.hasClass('pushed') && !this.$sidebar.hasClass('processing')) {
         // Swipe the sidebar to the left
-        this.$sidebar.addClass('processing').removeClass('pushed processing');
+        this.$sidebar.addClass('processing').removeClass('pushed');
         // go back to the default overflow
         setTimeout(function() {
           self.$body.css('overflow-x', 'auto');
+          self.$sidebar.removeClass('processing');
         }, 255);
       }
     },
