@@ -3,10 +3,14 @@ languageCode = "en-uk"
 defaultContentLanguage = "en-uk"
 title = "Angels && Daemons - https://petersouter.xyz"
 theme = "tranquilpeak"
-disqusShortname = "petersouter"
 googleAnalytics = ""
-paginate = 1
-canonifyurls = true
+ignoreLogs = ['warning-goldmark-raw-html']
+
+[services.disqus]
+  shortname = "petersouter"
+
+[pagination]
+  pagerSize = 1
 
 [permalinks]
   post = "/:title/"
@@ -17,7 +21,7 @@ canonifyurls = true
   category = "categories"
   archive = "archives"
 
-[author]
+[params.author]
   name = "Peter Souter"
   bio = "Just some guy y'know?"
   job = "Technical Account Manager"
@@ -83,7 +87,7 @@ canonifyurls = true
   weight = 4
   identifier = "talks"
   name = "Talks"
-  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-presentation\"></i>"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-comment\"></i>"
   url = "/talks"
 
 [[menu.misc]]
