@@ -14,11 +14,18 @@ let activeFilters = {
  * @param {HTMLElement} label - The label element that was clicked
  */
 function toggleFilterGroup(label) {
+  if (!label || !label.parentElement) {
+    return;
+  }
+
   const filterGroup = label.parentElement;
   const filterContent = filterGroup.querySelector('.filter-content');
 
   filterGroup.classList.toggle('collapsed');
-  filterContent.classList.toggle('collapsed');
+
+  if (filterContent) {
+    filterContent.classList.toggle('collapsed');
+  }
 }
 
 /**
