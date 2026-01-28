@@ -1,0 +1,283 @@
+talks:
+  - title: "Untaggling Strings: Getting CI Visibility for Vox Pupuli Tests"
+    date: 2026-02-03
+    conference: "Config Management Camp"
+    year: 2026
+    topics:
+      - CI/CD
+      - Testing
+      - Vox Pupuli
+      - Observability
+    description: "Exploring continuous integration visibility and testing strategies for the Vox Pupuli community projects, focusing on improving test observability and debugging capabilities."
+    url: "https://cfp.cfgmgmtcamp.org/ghent2026/talk/98XRKP/"
+
+  - title: "CI/CD Observability, Metrics and DORA: Shifting Left and Cleaning Up!"
+    date: 2026-02-03
+    conference: "Config Management Camp"
+    year: 2026
+    topics:
+      - CI/CD
+      - Observability
+      - DORA Metrics
+      - DevOps
+    description: "A deep dive into CI/CD observability, DORA metrics implementation, and how to shift left on quality while improving your deployment pipelines and cleaning up technical debt."
+    url: "https://cfp.cfgmgmtcamp.org/ghent2026/talk/UTCKK9/"
+
+  - title: "CI/CD Observability, Metrics and DORA: Shifting Left and Cleaning Up!"
+    date: 2025-10-22
+    conference: "TestCon Europe"
+    year: 2025
+    topics:
+      - CI/CD
+      - Observability
+      - DORA Metrics
+      - Performance
+      - Testing
+    description: "A deep dive into CI/CD observability, DORA metrics implementation, and how to shift left on quality while improving your deployment pipelines and cleaning up technical debt."
+    url: "https://events.pinetool.ai/3498/#sessions/112207"
+
+  - title: "InfraCoding: Testing Infrastructure as Code"
+    date: 2020-10-20
+    conference: "TestCon Europe"
+    year: 2020
+    topics:
+      - Testing
+      - Infrastructure as Code
+      - Quality Assurance
+      - Automation
+      - Terraform
+    description: "Exploring testing strategies and best practices for Infrastructure as Code, covering unit testing, integration testing, and ensuring quality in automated infrastructure deployments with Terraform."
+    video_url: "https://youtu.be/bVDzzFZmsGs"
+    slides_url: "https://testcon.lt/wp-content/uploads/2019/11/Peter-Souter-InfraCoding-with-Terraform-Writing-Tests-for-Infrastructure-as-Code.pdf"
+    url: "https://testcon.lt/2019/peter-souter/index.html"
+
+  - title: "Head in the Clouds: Testing Infra as Code"
+    date: 2020-02-03
+    conference: "Config Management Camp"
+    year: 2020
+    topics:
+      - Testing
+      - Infrastructure as Code
+      - Cloud
+      - Terraform
+    description: "Exploring cloud-based testing strategies for Infrastructure as Code, including best practices for testing Terraform and other IaC tools in cloud environments."
+    slides_url: "https://www.slideshare.net/slideshow/head-in-the-clouds-testing-infra-as-code-config-management-2020/226804869"
+    video_url: "https://youtu.be/wYEffa1q6eU"
+    url: "https://cfp.cfgmgmtcamp.org/2020/talk/M3QX7K/"
+
+  - title: "Security in a DevOps World"
+    date: 2019-11-14
+    conference: "DevOps.lt"
+    year: 2019
+    topics:
+      - Security
+      - DevOps
+      - DevSecOps
+      - Best Practices
+    description: "Examining security challenges and solutions in modern DevOps practices, including how to integrate security into the development lifecycle and maintain security in fast-paced environments. Treats security like fire safety - something everyone should know the basics about, with automated security testing."
+    slides_url: "https://devopspro.lt/2019/wp-content/uploads/2019/04/Peter-Souter-Security-in-a-DevOps-World-min.pdf"
+    url: "https://devopspro.lt/2019/peter-souter/index.html"
+
+  - title: "Now Witness the Firepower of This Fully Automated and Immutable Vault Cluster"
+    date: 2019-09-09
+    conference: "HashiConf US"
+    year: 2019
+    topics:
+      - Vault
+      - Automation
+      - HashiCorp
+      - Infrastructure
+      - Consul
+    description: "Demonstrating how to build and manage a fully automated, immutable HashiCorp Vault cluster with high availability, disaster recovery, and automated operations."
+    video_url: "https://www.youtube.com/watch?v=rBLWu1xKgvw"
+    url: "https://www.hashicorp.com/en/resources/now-witness-the-firepower-of-this-fully-automated-and-immutable-vault-cluster"
+
+  - title: "I don't know what I'm Doing: A newbie guide for Golang for DevOps"
+    date: 2019-02-04
+    conference: "Config Management Camp"
+    year: 2019
+    topics:
+      - Golang
+      - DevOps
+      - Programming
+      - Learning
+    description: "A beginner-friendly guide to getting started with Golang from a DevOps perspective, covering common pitfalls, useful patterns, and practical tips for DevOps engineers learning Go."
+    slides_url: "https://www.slideshare.net/slideshow/i-dont-know-what-im-doing-a-newbie-guide-for-golang-for-devops/130592493"
+    video_url: "https://www.youtube.com/watch?v=DLI4mHmq6W8"
+    url: "https://cfgmgmtcamp.org/ghent2019/schedule/tuesday/gonewbie/"
+
+  - title: "Consul Connect - Modern Service Networking with Service Mesh"
+    date: 2018-09-24
+    conference: "EPAM SEC"
+    year: 2018
+    topics:
+      - Service Mesh
+      - Consul
+      - Networking
+      - HashiCorp
+    description: "A service mesh is necessary for organizations adopting microservices and dynamic cloud-native infrastructure. We will look at Connect, a significant new feature in Consul that provides secure service-to-service communication."
+    slides_url: "https://www.slideshare.net/petems/consul-connect-epam-sec-22nd-september-2018"
+    url: "https://wearecommunity.io/events/v4rgK8iTQC/talks/20184"
+
+  - title: "Monitoring Consul and Vault"
+    date: 2018-05-24
+    conference: "HashiCorp London User Group"
+    year: 2018
+    topics:
+      - Monitoring
+      - Consul
+      - Vault
+      - HashiCorp
+    description: "This talk will show how to securely run Vault in the cloud, and be able to access those secrets securely from multiple differing cloud platforms."
+    slides_url: "https://www.slideshare.net/petems/monitoring-a-vault-and-consul-cluster-24th-may-2018"
+    url: "https://www.meetup.com/London-HashiCorp-User-Group/events/250577901/"
+
+  - title: "How to Use HashiCorp Vault with Hiera 5 for Secret Management with Puppet"
+    date: 2018-05-23
+    conference: "HashiCorp Webinar"
+    year: 2018
+    topics:
+      - Vault
+      - Puppet
+      - Secrets Management
+      - HashiCorp
+    description: "Peter Souter demonstrates how to use HashiCorp Vault for secrets management while using Puppet as the configuration management software."
+    video_url: "https://www.hashicorp.com/resources/hashicorp-vault-with-puppet-hiera-5-for-secret-management"
+    url: "https://www.hashicorp.com/en/resources/hashicorp-vault-with-puppet-hiera-5-for-secret-management"
+
+  - title: "Provisioning vs Configuration Management Deployment vs Orchestration - A rose by any other name..."
+    date: 2018-02-03
+    conference: "FOSDEM"
+    year: 2018
+    topics:
+      - DevOps
+      - Terminology
+      - Best Practices
+    description: "There's a lot of confusion around the differences between the various terms used when talking about configuring systems. In this talk, we're going to boil down the core of each term and talk about the approaches used and where things cross over."
+    url: "https://archive.fosdem.org/2018/schedule/event/deployment_provisioning_orchestration/"
+
+  - title: "Secret Management in the world of Infrastructure as Code"
+    date: 2017-06-28
+    conference: "DevOpsDays Amsterdam"
+    year: 2017
+    topics:
+      - Security
+      - Secrets Management
+      - Infrastructure as Code
+      - DevOps
+    description: "Config management tools have revolutionized how machines are managed. However, IaC is not a free lunch: having all your infrastructure information in one place can lead to some uncomfortable security pitfalls."
+    slides_url: "https://assets.devopsdays.org/events/2017/amsterdam/presentations/Peter_Souter-Secret_Management_in_the_world_of_Infrastructure_as_Code.pdf"
+    video_url: "https://youtu.be/N_FpvLcdUpw"
+    url: "https://devopsdays.org/events/2017-amsterdam/program/peter-souter/"
+
+  - title: "Keeping Secrets in your Infrastructure as Code"
+    date: 2017-05-17
+    conference: "Continuous Lifecycle London"
+    year: 2017
+    topics:
+      - Security
+      - Secrets Management
+      - Infrastructure as Code
+    description: "We're going to talk about best practices for keeping your secrets in infrastructure as code, detecting plaintext credentials in your code, how Puppet handles secrets and what to do when credentials get leaked."
+    video_url: "https://www.youtube.com/watch?v=-zCcIulWxWE"
+
+  - title: "Maintaining Level 8"
+    date: 2017-04-04
+    conference: "HumanOps London"
+    year: 2017
+    topics:
+      - Ergonomics
+      - Health
+      - Operations
+    description: "Your most important piece of equipment is yourself, so I will be taking us through the basics of good ergonomics at our desks and how I have put this into practice throughout his career."
+    slides_url: "https://www.slideshare.net/petems/maintaining-layer-8-75196679"
+    url: "https://www.meetup.com/HumanOps-London/events/238066537"
+
+  - title: "Compliance and auditing with Puppet"
+    date: 2017-02-06
+    conference: "Config Management Camp"
+    year: 2017
+    topics:
+      - Compliance
+      - Puppet
+      - Auditing
+    description: "Puppet is a perfect fit for compliance: you model desired compliant state, continually enforce it and have a full audit path of when changes occur and what lead to the drift."
+    slides_url: "https://www.slideshare.net/petems/compliance-and-auditing-with-puppet"
+    url: "https://cfgmgmtcamp.org/ghent2017/schedule/"
+
+  - title: "Knee deep in the undef: Tales from refactoring old Puppet codebases"
+    date: 2017-02-06
+    conference: "Config Management Camp"
+    year: 2017
+    topics:
+      - Puppet
+      - Refactoring
+      - Best Practices
+    description: "As Puppet pushes into it's second decade, there are several organisations out there that have been using Puppet for a long time. We'll be talking about how to make sure that your Puppet code is healthy for the next decade."
+    slides_url: "https://www.slideshare.net/slideshow/knee-deep-in-the-undef-tales-from-refactoring-old-puppet-codebases/71872627"
+    url: "https://archive.cfgmgmtcamp.eu/gent-2017/schedule/"
+
+  - title: "Compliance and auditing with Puppet"
+    date: 2017-01-30
+    conference: "FOSDEM"
+    year: 2017
+    topics:
+      - Compliance
+      - Puppet
+      - Auditing
+      - Security
+    description: "Puppet is a perfect fit for compliance: you model desired compliant state, continually enforce it and have a full audit path of when changes occur and what lead to the drift. Discussing best practices for using Puppet for compliance and keeping auditors happy."
+    slides_url: "https://archive.fosdem.org/2017/schedule/event/is_it_safe/attachments/slides/1606/export/events/attachments/is_it_safe/slides/1606/Is_it_safe____How_compliance_and_auditing_fit_with_Config_Managment.pdf"
+    url: "https://archive.fosdem.org/2017/schedule/event/is_it_safe/"
+    video_url: "https://video.fosdem.org/2017/UA2.220/is_it_safe.mp4"
+
+  - title: "Nice and Secure: Good OpSec Hygiene With Puppet!"
+    date: 2016-10-17
+    conference: "PuppetConf"
+    year: 2016
+    topics:
+      - Security
+      - Puppet
+      - OpSec
+    description: "Puppet is a great first step to making your environment more secure. We're going to talk about making sure security is part of your workflow, best practise with hardening your Puppet architecture, and secrets management."
+    slides_url: "https://www.slideshare.net/PuppetLabs/puppetconf-2016-nice-and-secure-good-opsec-hygiene-with-puppet-peter-souter-puppet"
+    video_url: "https://www.youtube.com/watch?v=JwuXUxSCDGY"
+    url: "https://puppetconf2016.sched.com/event/6fjZ/nice-and-secure-good-opsec-hygiene-with-puppet-peter-souter-puppet"
+
+  - title: "Lock it Down - Securing your Puppet Infrastructure"
+    date: 2016-02-02
+    conference: "Config Management Camp"
+    year: 2016
+    topics:
+      - Security
+      - Puppet
+      - Infrastructure
+    description: "Puppet is an awesome tool to automate the configuration of your infrastructure, but it's also a potential attack vector. In this talk, we'll discuss some common patterns and changes you can make to harden your Puppet infrastructure."
+    slides_url: "https://www.slideshare.net/petems/lock-it-down"
+    url: "https://cfgmgmtcamp.org/ghent2016/schedule/"
+
+  - title: "Hardening Your Config Management - Security and Attack Vectors in Config Management"
+    date: 2016-01-30
+    conference: "FOSDEM"
+    year: 2016
+    topics:
+      - Security
+      - Config Management
+      - Puppet
+    description: "Configuration management is a great tool for helping with hardening and securing servers. But with any addition of new technology comes a new attack vector: Who watches the watchers?"
+    slides_url: "https://www.slideshare.net/petems/hardening-your-config-management-security-and-attack-vectors-in-config-management"
+    video_url: "https://video.fosdem.org/2016/ua2220/hardening-your-config-management.mp4"
+    url: "https://archive.fosdem.org/2016/schedule/event/hardening_config_management/"
+
+  - title: "Testing servers like software"
+    date: 2014-07-28
+    conference: "Infracoders"
+    year: 2014
+    topics:
+      - Testing
+      - Infrastructure as Code
+      - Puppet
+      - ServerSpec
+    description: "Exploring how to apply software testing principles to server infrastructure, covering test-driven development for infrastructure code, using tools like ServerSpec, and ensuring quality in automated server configurations."
+    slides_url: "https://www.slideshare.net/slideshow/testing-servers-like-software/38028094"
+    url: "https://skillsmatterblog.wordpress.com/2014/07/28/this-week-at-skills-matter-28-july-01-august/"
