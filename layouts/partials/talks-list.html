@@ -1,0 +1,367 @@
+{{ $talks := .Site.Data.talks.talks }}
+
+<!-- Extract unique years, conferences, and topics for filters -->
+{{ $years := slice }}
+{{ $conferences := slice }}
+{{ $topics := slice }}
+
+{{ range $talks }}
+  {{ $years = $years | append .year }}
+  {{ $conferences = $conferences | append .conference }}
+  {{ range .topics }}
+    {{ $topics = $topics | append . }}
+  {{ end }}
+{{ end }}
+
+{{ $years = $years | uniq | sort | collections.Reverse }}
+{{ $conferences = $conferences | uniq | sort }}
+{{ $topics = $topics | uniq | sort }}
+
+<style>
+.talks-filters {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: #f5f5f5;
+  border-radius: 8px;
+}
+
+.filter-group {
+  margin-bottom: 1rem;
+}
+
+.filter-group label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.filter-group label:hover {
+  color: #4a90e2;
+}
+
+.filter-group label::before {
+  content: '▼ ';
+  display: inline-block;
+  transition: transform 0.2s;
+}
+
+.filter-group.collapsed label::before {
+  transform: rotate(-90deg);
+}
+
+.filter-content {
+  max-height: 1500px;
+  overflow: hidden;
+  transition: max-height 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.filter-content.collapsed {
+  max-height: 0;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.filter-tag {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  margin: 0.25rem;
+  background: #fff;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 1.9rem !important;
+}
+
+.filter-tag:hover {
+  border-color: #4a90e2;
+  background: #f0f7ff;
+}
+
+.filter-tag.active {
+  background: #4a90e2;
+  color: white;
+  border-color: #4a90e2;
+}
+
+.filter-tag.clear {
+  background: #e74c3c;
+  color: white;
+  border-color: #e74c3c;
+}
+
+.filter-tag.clear:hover {
+  background: #c0392b;
+  border-color: #c0392b;
+}
+
+.talk-item {
+  margin: 2rem 0;
+  padding: 2rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out, opacity 0.4s ease-in-out, transform 0.4s ease-in-out, max-height 0.4s ease-in-out, margin 0.4s ease-in-out;
+  opacity: 1;
+  transform: translateY(0);
+  max-height: 2000px;
+  overflow: hidden;
+}
+
+.talk-item.hidden {
+  opacity: 0;
+  transform: translateY(-20px);
+  max-height: 0;
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  border: none;
+}
+
+.talk-item:hover {
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.talk-header {
+  margin-bottom: 1rem;
+}
+
+.talk-title {
+  font-size: 2.95rem !important;
+  font-weight: bold;
+  margin-top: 0 !important;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+.talk-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.talk-badge {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 1.65rem !important;
+  font-weight: 500;
+}
+
+.talk-year {
+  background: #3498db;
+  color: white;
+}
+
+.talk-conference {
+  background: #9b59b6;
+  color: white;
+}
+
+.talk-topic {
+  background: #e8f4f8;
+  color: #2c3e50;
+  border: 1px solid #3498db;
+}
+
+.talk-description {
+  margin: 1rem 0;
+  color: #555;
+  line-height: 1.6;
+}
+
+.talk-links {
+  margin-top: 1rem;
+}
+
+.talk-links a {
+  margin-right: 1rem;
+  text-decoration: none;
+  color: #4a90e2;
+  font-weight: 500;
+}
+
+.talk-links a:hover {
+  text-decoration: underline;
+}
+
+.results-count {
+  margin: 1rem 0;
+  font-style: italic;
+  color: #666;
+}
+</style>
+
+<div class="talks-container">
+  <!-- Top Filters: Year and Conference -->
+  <div class="talks-filters">
+    <div class="filter-group collapsed">
+      <label onclick="toggleFilterGroup(this)">Filter by Year:</label>
+      <div class="filter-content collapsed">
+        <span class="filter-tag clear" onclick="clearFilters()">Clear All</span>
+        {{ range $years }}
+          <span class="filter-tag year-filter" data-year="{{ . }}" onclick="toggleFilter(this, 'year')">{{ . }}</span>
+        {{ end }}
+      </div>
+    </div>
+
+    <div class="filter-group collapsed">
+      <label onclick="toggleFilterGroup(this)">Filter by Conference:</label>
+      <div class="filter-content collapsed">
+        {{ range $conferences }}
+          <span class="filter-tag conference-filter" data-conference="{{ . }}" onclick="toggleFilter(this, 'conference')">{{ . }}</span>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+
+  <div class="results-count">
+    Showing <span id="visible-count">{{ len $talks }}</span> of {{ len $talks }} talks
+  </div>
+
+  <!-- Talks List -->
+  <div class="talks-list">
+    {{ range $talks }}
+      <div class="talk-item"
+           data-year="{{ .year }}"
+           data-conference="{{ .conference }}"
+           data-topics="{{ delimit .topics "," }}">
+
+        <div class="talk-header">
+          <h3 class="talk-title">{{ .title }}</h3>
+
+          <div class="talk-meta">
+            <span class="talk-badge talk-year">{{ .year }}</span>
+            <span class="talk-badge talk-conference">{{ .conference }}</span>
+            {{ if .date }}
+              <span class="talk-badge" style="background: #95a5a6; color: white;">
+                {{ dateFormat "January 2" .date }}
+              </span>
+            {{ end }}
+          </div>
+
+          <div class="talk-meta">
+            {{ range .topics }}
+              <span class="talk-badge talk-topic">{{ . }}</span>
+            {{ end }}
+          </div>
+        </div>
+
+        {{ if .description }}
+          <div class="talk-description">{{ .description }}</div>
+        {{ end }}
+
+        <div class="talk-links">
+          {{ if .url }}
+            <a href="{{ .url }}" target="_blank">Event Page →</a>
+          {{ end }}
+          {{ if .slides_url }}
+            <a href="{{ .slides_url }}" target="_blank">Slides →</a>
+          {{ end }}
+          {{ if .video_url }}
+            <a href="{{ .video_url }}" target="_blank">Video →</a>
+          {{ end }}
+        </div>
+      </div>
+    {{ end }}
+  </div>
+
+  <!-- Topic Filters (Below List) -->
+  <div class="talks-filters">
+    <div class="filter-group collapsed">
+      <label onclick="toggleFilterGroup(this)">Filter by Topic:</label>
+      <div class="filter-content collapsed">
+        {{ range $topics }}
+          <span class="filter-tag topic-filter" data-topic="{{ . }}" onclick="toggleFilter(this, 'topic')">{{ . }}</span>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+let activeFilters = {
+  year: new Set(),
+  conference: new Set(),
+  topic: new Set()
+};
+
+function toggleFilterGroup(label) {
+  const filterGroup = label.parentElement;
+  const filterContent = filterGroup.querySelector('.filter-content');
+
+  filterGroup.classList.toggle('collapsed');
+  filterContent.classList.toggle('collapsed');
+}
+
+function toggleFilter(element, type) {
+  const value = element.dataset[type];
+
+  if (activeFilters[type].has(value)) {
+    activeFilters[type].delete(value);
+    element.classList.remove('active');
+  } else {
+    activeFilters[type].add(value);
+    element.classList.add('active');
+  }
+
+  applyFilters();
+}
+
+function clearFilters() {
+  activeFilters = {
+    year: new Set(),
+    conference: new Set(),
+    topic: new Set()
+  };
+
+  document.querySelectorAll('.filter-tag').forEach(tag => {
+    tag.classList.remove('active');
+  });
+
+  applyFilters();
+}
+
+function applyFilters() {
+  const talks = document.querySelectorAll('.talk-item');
+  let visibleCount = 0;
+
+  talks.forEach(talk => {
+    const talkYear = talk.dataset.year;
+    const talkConference = talk.dataset.conference;
+    const talkTopics = talk.dataset.topics.split(',');
+
+    let show = true;
+
+    // Check year filter
+    if (activeFilters.year.size > 0 && !activeFilters.year.has(talkYear)) {
+      show = false;
+    }
+
+    // Check conference filter
+    if (activeFilters.conference.size > 0 && !activeFilters.conference.has(talkConference)) {
+      show = false;
+    }
+
+    // Check topic filter (match any topic)
+    if (activeFilters.topic.size > 0) {
+      const hasMatchingTopic = talkTopics.some(topic =>
+        activeFilters.topic.has(topic.trim())
+      );
+      if (!hasMatchingTopic) {
+        show = false;
+      }
+    }
+
+    if (show) {
+      talk.classList.remove('hidden');
+      visibleCount++;
+    } else {
+      talk.classList.add('hidden');
+    }
+  });
+
+  document.getElementById('visible-count').textContent = visibleCount;
+}
+</script>
