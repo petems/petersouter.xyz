@@ -4,5 +4,5 @@
       "HUGO_VERSION": "0.152.2"
     }
   },
-  "buildCommand": "hugo --minify --environment vercel"
+  "buildCommand": "./build.sh"
 }
