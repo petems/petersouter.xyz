@@ -1,0 +1,11 @@
+<!-- Custom highlight.js language extensions -->
+{{ if eq .Site.Params.syntaxHighlighter "highlight.js" }}
+  <!-- Load Terraform language (requires manual registration) -->
+  <script type="text/javascript" src="//cdn.jsdelivr.net/gh/highlightjs/highlightjs-terraform/terraform.min.js"></script>
+  <!-- Load Gherkin language (auto-registers) -->
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.1.0/build/languages/gherkin.min.js"></script>
+  <script type="text/javascript">
+    // Register Terraform language (Gherkin auto-registers on load)
+    hljs.registerLanguage('terraform', window.hljsDefineTerraform);
+  </script>
+{{ end }}
