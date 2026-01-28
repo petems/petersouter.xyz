@@ -254,13 +254,13 @@
 
         <div class="talk-links">
           {{ if .url }}
-            <a href="{{ .url }}" target="_blank">Event Page →</a>
+            <a href="{{ .url }}" target="_blank" rel="noopener noreferrer">Event Page →</a>
           {{ end }}
           {{ if .slides_url }}
-            <a href="{{ .slides_url }}" target="_blank">Slides →</a>
+            <a href="{{ .slides_url }}" target="_blank" rel="noopener noreferrer">Slides →</a>
           {{ end }}
           {{ if .video_url }}
-            <a href="{{ .video_url }}" target="_blank">Video →</a>
+            <a href="{{ .video_url }}" target="_blank" rel="noopener noreferrer">Video →</a>
           {{ end }}
         </div>
       </div>
@@ -280,88 +280,4 @@
   </div>
 </div>
 
-<script>
-let activeFilters = {
-  year: new Set(),
-  conference: new Set(),
-  topic: new Set()
-};
-
-function toggleFilterGroup(label) {
-  const filterGroup = label.parentElement;
-  const filterContent = filterGroup.querySelector('.filter-content');
-
-  filterGroup.classList.toggle('collapsed');
-  filterContent.classList.toggle('collapsed');
-}
-
-function toggleFilter(element, type) {
-  const value = element.dataset[type];
-
-  if (activeFilters[type].has(value)) {
-    activeFilters[type].delete(value);
-    element.classList.remove('active');
-  } else {
-    activeFilters[type].add(value);
-    element.classList.add('active');
-  }
-
-  applyFilters();
-}
-
-function clearFilters() {
-  activeFilters = {
-    year: new Set(),
-    conference: new Set(),
-    topic: new Set()
-  };
-
-  document.querySelectorAll('.filter-tag').forEach(tag => {
-    tag.classList.remove('active');
-  });
-
-  applyFilters();
-}
-
-function applyFilters() {
-  const talks = document.querySelectorAll('.talk-item');
-  let visibleCount = 0;
-
-  talks.forEach(talk => {
-    const talkYear = talk.dataset.year;
-    const talkConference = talk.dataset.conference;
-    const talkTopics = talk.dataset.topics.split(',');
-
-    let show = true;
-
-    // Check year filter
-    if (activeFilters.year.size > 0 && !activeFilters.year.has(talkYear)) {
-      show = false;
-    }
-
-    // Check conference filter
-    if (activeFilters.conference.size > 0 && !activeFilters.conference.has(talkConference)) {
-      show = false;
-    }
-
-    // Check topic filter (match any topic)
-    if (activeFilters.topic.size > 0) {
-      const hasMatchingTopic = talkTopics.some(topic =>
-        activeFilters.topic.has(topic.trim())
-      );
-      if (!hasMatchingTopic) {
-        show = false;
-      }
-    }
-
-    if (show) {
-      talk.classList.remove('hidden');
-      visibleCount++;
-    } else {
-      talk.classList.add('hidden');
-    }
-  });
-
-  document.getElementById('visible-count').textContent = visibleCount;
-}
-</script>
+<script src="/js/talks-filter.js"></script>

@@ -27,3 +27,6 @@ hugo_cache
 *opti*.log
 .vercel
 /.pnpm-store
+
+# Testing
+coverage
