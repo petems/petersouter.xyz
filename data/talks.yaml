@@ -128,7 +128,7 @@ talks:
       - Consul
       - Vault
       - HashiCorp
-    description: "This talk will show how to securely run Vault in the cloud, and be able to access those secrets securely from multiple differing cloud platforms."
+    description: "This talk will show how to securely run Vault in the cloud and access those secrets securely from multiple differing cloud platforms."
     slides_url: "https://www.slideshare.net/petems/monitoring-a-vault-and-consul-cluster-24th-may-2018"
     url: "https://www.meetup.com/London-HashiCorp-User-Group/events/250577901/"
 
@@ -189,7 +189,7 @@ talks:
       - Ergonomics
       - Health
       - Operations
-    description: "Your most important piece of equipment is yourself, so I will be taking us through the basics of good ergonomics at our desks and how I have put this into practice throughout his career."
+    description: "Your most important piece of equipment is yourself — I'll walk through the basics of good desk ergonomics and how I've put them into practice throughout my career."
     slides_url: "https://www.slideshare.net/petems/maintaining-layer-8-75196679"
     url: "https://www.meetup.com/HumanOps-London/events/238066537"
 
@@ -201,7 +201,7 @@ talks:
       - Compliance
       - Puppet
       - Auditing
-    description: "Puppet is a perfect fit for compliance: you model desired compliant state, continually enforce it and have a full audit path of when changes occur and what lead to the drift."
+    description: "Puppet is a perfect fit for compliance: you model desired compliant state, continually enforce it and have a full audit path of when changes occur and what led to the drift."
     slides_url: "https://www.slideshare.net/petems/compliance-and-auditing-with-puppet"
     url: "https://cfgmgmtcamp.org/ghent2017/schedule/"
 
@@ -226,7 +226,7 @@ talks:
       - Puppet
       - Auditing
       - Security
-    description: "Puppet is a perfect fit for compliance: you model desired compliant state, continually enforce it and have a full audit path of when changes occur and what lead to the drift. Discussing best practices for using Puppet for compliance and keeping auditors happy."
+    description: "Puppet is a perfect fit for compliance: you model desired compliant state, continually enforce it and have a full audit path of when changes occur and what led to the drift. Discussing best practices for using Puppet for compliance and keeping auditors happy."
     slides_url: "https://archive.fosdem.org/2017/schedule/event/is_it_safe/attachments/slides/1606/export/events/attachments/is_it_safe/slides/1606/Is_it_safe____How_compliance_and_auditing_fit_with_Config_Managment.pdf"
     url: "https://archive.fosdem.org/2017/schedule/event/is_it_safe/"
     video_url: "https://video.fosdem.org/2017/UA2.220/is_it_safe.mp4"
