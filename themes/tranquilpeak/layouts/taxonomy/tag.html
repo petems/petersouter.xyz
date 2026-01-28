@@ -10,9 +10,10 @@
         class="{{ with .Params.coverimage }}hasCover{{ end }}
                {{ if eq .Params.covermeta "out" }}hasCoverMetaOut{{ else }}hasCoverMetaIn{{ end }}
                {{ with .Params.coverCaption }}hasCoverCaption{{ end }}">
+        {{ $mainSections := (site.Params.mainSections | default site.MainSections | default (slice "post")) }}
         {{ if or (not (isset .Site.Params "tagPagination")) (.Site.Params.tagPagination) }}
           <section class="postShorten-group main-content-wrap">
-            {{ $paginator := .Paginate (where .Data.Pages "Type" "in" site.Params.mainSections) }}
+            {{ $paginator := .Paginate (where .Data.Pages "Type" "in" $mainSections) }}
             {{ range $paginator.Pages }}
               {{ .Render "summary" }}
             {{ end }}
@@ -23,7 +24,7 @@
             <form id="filter-form" action="#">
               <input name="date" type="text" class="form-control input--xlarge" placeholder="{{ i18n "global.search_date" }}" autofocus="autofocus">
             </form>
-            {{ partial "archive-post.html" (where .Data.Pages "Type" "in" site.Params.mainSections) }}
+            {{ partial "archive-post.html" (where .Data.Pages "Type" "in" $mainSections) }}
           </div>
         {{ end }}
         {{ partial "footer.html" . }}

@@ -9,7 +9,8 @@
                {{ if eq .Params.covermeta "out" }}hasCoverMetaOut{{ else }}hasCoverMetaIn{{ end }}
                {{ with .Params.coverCaption }}hasCoverCaption{{ end }}">
         <section class="postShorten-group main-content-wrap">
-          {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" site.Params.mainSections ) }}
+          {{ $mainSections := (site.Params.mainSections | default site.MainSections | default (slice "post")) }}
+          {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" $mainSections ) }}
           {{ range $paginator.Pages }}
             {{ .Render "summary" }}
           {{ end }}
