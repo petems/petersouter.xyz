@@ -6,6 +6,14 @@ theme = "tranquilpeak"
 googleAnalytics = ""
 ignoreLogs = ['warning-goldmark-raw-html']
 
+[author]
+  name = "Peter Souter"
+  bio = "Just some guy y'know?"
+  job = "Technical Account Manager"
+  location = "London, UK"
+  gravatarEmail = "p.morsou@gmail.com"
+  twitter = "petersouter"
+
 [services.disqus]
   shortname = "petersouter"
 
