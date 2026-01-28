@@ -60,8 +60,8 @@ How can I migrate my current version? Please read [CHANGELOG.md](https://github.
 **Integrated services:**
 
 - Disqus
-- Gitlak
-- Google analytics
+- Gitalk
+- Google Analytics
 - Gravatar
 - Facebook Insights
 

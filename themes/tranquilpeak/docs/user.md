@@ -458,8 +458,8 @@ googleAnalytics =
 
 | Variable | Description |
 |----------|-------------|
-| googleAnalytics | Your Google analystics web property ID : UA-XXXXX-X |
-| async | Load Google analytics asynchronously |
+| googleAnalytics | Your Google Analytics web property ID : UA-XXXXX-X |
+| async | Load Google Analytics asynchronously |
 
 ##### Gravatar
 
@@ -670,7 +670,7 @@ Use:
 
 Hugo Tranquilpeak theme provides a shortcode for adding table of content inside your content.
 
-syntgax:
+syntax:
 ```
 {{< toc >}}
 ```
