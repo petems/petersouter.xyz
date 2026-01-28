@@ -36,9 +36,14 @@
           document.getElementById('gitalk').innerHTML = 'Gitalk comments not available by default when the website is previewed locally.';
           return;
         }
+        // SECURITY WARNING: Gitalk requires a server-side proxy to handle OAuth authentication
+        // securely. The OAuth clientSecret should NEVER be exposed in client-side code.
+        // Please set up a proxy service (like https://github.com/Rob--W/cors-anywhere or
+        // https://github.com/settings-center/gitalk-proxy) to handle the OAuth flow.
+        // Configure the proxy URL in your Gitalk options.
         new Gitalk({
           clientID: '{{ .Site.Params.comment.gitalk.clientId }}',
-          clientSecret: '{{ .Site.Params.comment.gitalk.clientSecret }}',
+          // clientSecret removed for security - use a proxy service instead
           repo: '{{ .Site.Params.comment.gitalk.repo }}',
           owner: '{{ .Site.Params.comment.gitalk.owner }}',
           admin: ['{{ .Site.Params.comment.gitalk.owner }}'],

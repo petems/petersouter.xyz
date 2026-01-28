@@ -139,7 +139,7 @@ Contains all images of the theme.
 |archives-filter.js|Filter posts by using their date on archives page : `/archives`|
 |categories-filter.js|Filter posts by using their categories on archives page : `/categories`|
 |codeblock-resizer.js|Resize code blocks to fit the screen width|
-|fancybox.js.js|Run Fancybox plugin|
+|fancybox.js|Run Fancybox plugin|
 |header.js|Hide the header when the user scrolls down, and show it when he scrolls up|
 |image-gallery.js|Resize all images of an image-gallery|
 |post-bottom-bar.js|Hide the post bottom bar when the post footer is visible by the user, and vice versa|

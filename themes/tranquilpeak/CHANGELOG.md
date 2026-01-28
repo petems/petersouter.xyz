@@ -9,7 +9,7 @@ All notable changes to this project will be documented in this file.
 ## [0.5.2-BETA](https://github.com/kakawait/hugo-tranquilpeak-theme/milestone/25) - 08 sep 2021
 
 - Fix gitalk (really does not work on previous version) ([#504](https://github.com/kakawait/hugo-tranquilpeak-theme/issues/504) and [#507](https://github.com/kakawait/hugo-tranquilpeak-theme/issues/507)) (thank you @duval1024)
-- Replace Google+ with Linkedin as default in exampleSite ([#489](https://github.com/kakawait/hugo-tranquilpeak-theme/issues/489)) (thank you @stiliajohny)
+- Replace Google+ with LinkedIn as default in exampleSite ([#489](https://github.com/kakawait/hugo-tranquilpeak-theme/issues/489)) (thank you @stiliajohny)
 - Fix i18n files (missing keys or wrong key names) and aria-label translation ([#479](https://github.com/kakawait/hugo-tranquilpeak-theme/issues/479) and [#503](https://github.com/kakawait/hugo-tranquilpeak-theme/issues/503))
 - Add Finnish lang ([#500](https://github.com/kakawait/hugo-tranquilpeak-theme/issues/500)) (thank you @ronjakoi)
 - Support gallery title with spaces ([#292](https://github.com/kakawait/hugo-tranquilpeak-theme/issues/292))
@@ -25,11 +25,11 @@ All notable changes to this project will be documented in this file.
 
 ## [0.5.0-BETA](https://github.com/kakawait/hugo-tranquilpeak-theme/milestone/5) - 14 aug 2021
 
-### Forwords
+### Foreword
 
 > Theme activities were pretty low since 2019. I maintain the theme on my free time and in 2019 I became a dad. You may (or not) understand that it was hard for me to find time to maintain the project.
 >
-> I recently find a great motiviation to re-maintain with more frequent updates and releases!
+> I recently find a great motivation to re-maintain with more frequent updates and releases!
 >Some big changes will comes to try to use latest Hugo's improvements and features.
 > The goal is to release the `1.0.0` for the end of this year.
 

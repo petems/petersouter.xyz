@@ -140,15 +140,15 @@
   translation: "Diesen Beitrag teilen"
 
 - id: "post.gallery"
-  translation: "Gallerie"
+  translation: "Galerie"
 
 ## POST.IMAGE ##
 
 - id: "post.image.one"
-  translation: "bild"
+  translation: "Bild"
 
 - id: "post.image.other"
-  translation: "{n} bild"
+  translation: "{n} Bilder"
 
 ## FOOTER ##
 - id: "footer.all_rights_reserved"

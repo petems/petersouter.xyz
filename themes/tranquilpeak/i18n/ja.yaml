@@ -145,10 +145,10 @@
 ## POST.IMAGE ##
 
 - id: "post.image.one"
-  translation: "偶像"
+  translation: "1 枚の画像"
 
 - id: "post.image.other"
-  translation: "{n} イメージ"
+  translation: "{n} 枚の画像"
 
 ## FOOTER ##
 - id: "footer.all_rights_reserved"

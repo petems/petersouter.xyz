@@ -145,14 +145,14 @@
 ## POST.IMAGE ##
 
 - id: "post.image.one"
-  translation: "imagen"
+  translation: "imagem"
 
 - id: "post.image.other"
   translation: "{n} imagens"
 
 ## FOOTER ##
 - id: "footer.all_rights_reserved"
-  translation: "All Rights Reserved"
+  translation: "Todos os Direitos Reservados"
 
 ## DATE ##
 - id: "date.month.january"

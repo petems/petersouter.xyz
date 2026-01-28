@@ -145,7 +145,7 @@
 ## POST.IMAGE ##
 
 - id: "post.image.one"
-  translation: "imágen"
+  translation: "imagen"
 
 - id: "post.image.other"
   translation: "{n} imágenes"
