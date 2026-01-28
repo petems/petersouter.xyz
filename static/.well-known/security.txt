@@ -1,0 +1,3 @@
+Contact: https://github.com/petems/petersouter.xyz/security/advisories/new
+Expires: 2027-01-27T00:00:00.000Z
+Preferred-Languages: en

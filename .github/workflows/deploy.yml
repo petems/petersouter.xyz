@@ -19,7 +19,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           submodules: true
           fetch-depth: 0
@@ -27,7 +27,8 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: '0.54.0'
+          hugo-version: '0.152.2'
+          extended: true
 
       - name: Build site
         run: hugo --destination "$SOURCE_DIR"
@@ -36,7 +37,7 @@ jobs:
       # and will be automatically discovered by go3up
 
       - name: Restore go3up cache
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: .go3up.txt
           key: go3up-cache-${{ github.sha }}
@@ -44,7 +45,7 @@ jobs:
             go3up-cache-
 
       - name: Configure AWS credentials via OIDC
-        uses: aws-actions/configure-aws-credentials@v4
+        uses: aws-actions/configure-aws-credentials@v5
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
           aws-region: ${{ env.S3_REGION }}
@@ -66,7 +67,7 @@ jobs:
         # AWS_SESSION_TOKEN proves these are temporary credentials, not static keys
 
       - name: Save go3up cache
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v5
         if: always()
         with:
           path: .go3up.txt
