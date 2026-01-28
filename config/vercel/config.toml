@@ -1,0 +1,13 @@
+# Vercel preview deployment configuration
+# This overrides settings from the root config.toml for Vercel deployments
+# to ensure assets load correctly on preview URLs
+
+# Use the Vercel deployment URL as base (set by Vercel automatically)
+# Vercel sets HUGO_BASEURL based on deployment URL
+# baseURL will be: https://[deployment-hash]-[project].vercel.app
+
+# Disable canonifyURLs to allow relative URLs
+canonifyurls = false
+
+# Use relative URLs for all assets to avoid CORS issues
+relativeURLs = true
