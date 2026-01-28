@@ -49,7 +49,7 @@ talks:
     description: "Exploring testing strategies and best practices for Infrastructure as Code, covering unit testing, integration testing, and ensuring quality in automated infrastructure deployments with Terraform."
     video_url: "https://youtu.be/bVDzzFZmsGs"
     slides_url: "https://testcon.lt/wp-content/uploads/2019/11/Peter-Souter-InfraCoding-with-Terraform-Writing-Tests-for-Infrastructure-as-Code.pdf"
-    url: "https://github.com/petems/https://testcon.lt/2019/peter-souter/index.html"
+    url: "https://testcon.lt/2019/peter-souter/index.html"
 
   - title: "Head in the Clouds: Testing Infra as Code"
     date: 2020-02-03
@@ -202,7 +202,7 @@ talks:
       - Puppet
       - Auditing
     description: "Puppet is a perfect fit for compliance: you model desired compliant state, continually enforce it and have a full audit path of when changes occur and what lead to the drift."
-    slides_url: "http://www.slideshare.net/petems/compliance-and-auditing-with-puppet"
+    slides_url: "https://www.slideshare.net/petems/compliance-and-auditing-with-puppet"
     url: "https://cfgmgmtcamp.org/ghent2017/schedule/"
 
   - title: "Knee deep in the undef: Tales from refactoring old Puppet codebases"
@@ -266,7 +266,7 @@ talks:
       - Puppet
     description: "Configuration management is a great tool for helping with hardening and securing servers. But with any addition of new technology comes a new attack vector: Who watches the watchers?"
     slides_url: "https://www.slideshare.net/petems/hardening-your-config-management-security-and-attack-vectors-in-config-management"
-    video_url: "http://video.fosdem.org/2016/ua2220/hardening-your-config-management.mp4"
+    video_url: "https://video.fosdem.org/2016/ua2220/hardening-your-config-management.mp4"
     url: "https://archive.fosdem.org/2016/schedule/event/hardening_config_management/"
 
   - title: "Testing servers like software"
