@@ -1,11 +1,28 @@
 <!-- Custom highlight.js language extensions -->
 {{ if eq .Site.Params.syntaxHighlighter "highlight.js" }}
-  <!-- Load Terraform language (requires manual registration) -->
-  <script type="text/javascript" src="//cdn.jsdelivr.net/gh/highlightjs/highlightjs-terraform/terraform.min.js"></script>
-  <!-- Load Gherkin language (auto-registers) -->
-  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.1.0/build/languages/gherkin.min.js"></script>
+  <!-- Load Terraform language from maintained fork (requires manual registration) -->
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/@taga3s/highlightjs-terraform@1.0.6/dist/terraform.min.js"></script>
+  <!-- Load Gherkin language (auto-registers) - updated to latest version -->
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/gherkin.min.js"></script>
   <script type="text/javascript">
-    // Register Terraform language (Gherkin auto-registers on load)
-    hljs.registerLanguage('terraform', window.hljsDefineTerraform);
+    // Register Terraform language with error handling
+    (function() {
+      try {
+        // Check if language is already registered
+        if (hljs.getLanguage('terraform')) {
+          console.log('Terraform language already registered');
+          return;
+        }
+        // Check if the Terraform module loaded successfully
+        if (typeof window.hljsDefineTerraform === 'undefined') {
+          console.error('Terraform highlight.js module failed to load');
+          return;
+        }
+        hljs.registerLanguage('terraform', window.hljsDefineTerraform);
+        console.log('Terraform language registered successfully');
+      } catch (e) {
+        console.error('Error registering Terraform language:', e);
+      }
+    })();
   </script>
 {{ end }}

@@ -30,7 +30,7 @@
   <div class="postShorten-wrap">
     {{ if and (.Scratch.Get "thumbnailImage") (eq (.Scratch.Get "thumbnailImagePosition") "top")}}
       {{ with .Params.link }}
-        <a href="{{ . | absURL }}" aria-label="{{ if i18n "global.open_post" }}{{ i18n "global.open_post" }}: {{ $.Title }}{{ end }}" target="_blank">
+        <a href="{{ . | absURL }}" aria-label="{{ if i18n "global.open_post" }}{{ i18n "global.open_post" }}: {{ $.Title }}{{ end }}" target="_blank" rel="noopener noreferrer">
       {{ else }}
         <a href="{{ .Permalink }}" aria-label="{{ if i18n "global.open_post" }}{{ i18n "global.open_post" }}: {{ .Title }}{{ end }}">
       {{ end }}
@@ -42,7 +42,7 @@
     <div class="postShorten-header">
       <h1 class="postShorten-title">
       {{ with .Params.link }}
-        <a class="link-unstyled" href="{{ . | absURL }}" aria-label="{{ if i18n "global.open_post" }}{{ i18n "global.open_post" }}: {{ $.Title }}{{ end }}" target="_blank">
+        <a class="link-unstyled" href="{{ . | absURL }}" aria-label="{{ if i18n "global.open_post" }}{{ i18n "global.open_post" }}: {{ $.Title }}{{ end }}" target="_blank" rel="noopener noreferrer">
       {{ else }}
         <a class="link-unstyled" href="{{ .Permalink }}" aria-label="{{ if i18n "global.open_post" }}{{ i18n "global.open_post" }}: {{ .Title }}{{ end }}">
       {{ end }}
@@ -59,7 +59,7 @@
       {{ end }}
       <p>
         {{ with .Params.link }}
-          <a href="{{ . | absURL }}" class="postShorten-excerpt_link link" aria-label="{{ if i18n "global.open_post" }}{{ i18n "global.open_post" }}: {{ $.Title }}{{ end }}" target="_blank">{{ i18n "post.read_more" }}</a>
+          <a href="{{ . | absURL }}" class="postShorten-excerpt_link link" aria-label="{{ if i18n "global.open_post" }}{{ i18n "global.open_post" }}: {{ $.Title }}{{ end }}" target="_blank" rel="noopener noreferrer">{{ i18n "post.read_more" }}</a>
         {{ else }}
           <a href="{{ .Permalink }}" class="postShorten-excerpt_link link" aria-label="{{ if i18n "global.open_post" }}{{ i18n "global.open_post" }}: {{ .Title }}{{ end }}">{{ i18n "post.read_more" }}</a>
         {{ end }}
@@ -73,7 +73,7 @@
   </div>
   {{ if and (.Scratch.Get "thumbnailImage") (ne (.Scratch.Get "thumbnailImagePosition") "top")}}
     {{ with .Params.link }}
-      <a href="{{ . | absURL }}" aria-label="{{ if i18n "global.open_post" }}{{ i18n "global.open_post" }}: {{ $.Title }}{{ end }}" target="_blank">
+      <a href="{{ . | absURL }}" aria-label="{{ if i18n "global.open_post" }}{{ i18n "global.open_post" }}: {{ $.Title }}{{ end }}" target="_blank" rel="noopener noreferrer">
     {{ else }}
       <a href="{{ .Permalink }}" aria-label="{{ if i18n "global.open_post" }}{{ i18n "global.open_post" }}: {{ .Title }}{{ end }}">
     {{ end }}

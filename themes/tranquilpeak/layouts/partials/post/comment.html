@@ -26,6 +26,23 @@
       })();
     </script>
   {{ else if .Site.Params.comment.gitalk.enable }}
+    <!--
+    CRITICAL SECURITY WARNING:
+    Gitalk requires embedding the OAuth clientSecret in client-side JavaScript,
+    which is a serious security vulnerability. Anyone can view the page source
+    and extract the secret to impersonate your application.
+
+    RECOMMENDED ACTIONS:
+    1. Immediately rotate your GitHub OAuth application's client secret
+    2. Consider alternatives:
+       - Use a server-side OAuth proxy (e.g., serverless function)
+       - Switch to Utterances (uses GitHub Issues without requiring client secrets)
+       - Switch to Giscus (uses GitHub Discussions with GitHub App authentication)
+       - Use a different commenting system
+
+    If you must use Gitalk, implement a server-side proxy for OAuth token exchange
+    and never commit the clientSecret to your repository.
+    -->
     <div id="gitalk">
       <noscript>Please enable JavaScript to view the comments powered by Gitalk.</noscript>
     </div>
@@ -41,6 +58,11 @@
         // Please set up a proxy service (like https://github.com/Rob--W/cors-anywhere or
         // https://github.com/settings-center/gitalk-proxy) to handle the OAuth flow.
         // Configure the proxy URL in your Gitalk options.
+        console.warn(
+          'SECURITY WARNING: Gitalk is configured without clientSecret. ' +
+          'Please set up a server-side OAuth proxy to handle authentication securely. ' +
+          'See HTML comments for details.'
+        );
         new Gitalk({
           clientID: '{{ .Site.Params.comment.gitalk.clientId }}',
           // clientSecret removed for security - use a proxy service instead
