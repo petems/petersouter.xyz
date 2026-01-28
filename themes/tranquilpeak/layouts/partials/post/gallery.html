@@ -11,6 +11,7 @@
         {{ range $index, $element := .Params.gallery }}
           {{ $image := findRE "[^\\s\"']+|\"([^\"]*)\"|'([^']*)'" $element }}
           {{ $imageLength := len $image }}
+          {{ if gt $imageLength 0 }}
           <div class="photo-box">
             <a class="photo-box-inner fancybox"
                data-fancybox="gallery-{{ $.File.UniqueID }}"
@@ -23,6 +24,7 @@
               {{ end }}
             </a>
           </div>
+          {{ end }}
         {{ end }}
       </div>
     </div>
