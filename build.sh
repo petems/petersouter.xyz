@@ -4,12 +4,12 @@
 
 set -e
 
-if [ -n "$VERCEL_URL" ]; then
-  # Use the Vercel-provided URL (works for both preview and production)
-  echo "Building with baseURL: https://$VERCEL_URL"
+if [ -n "$VERCEL_URL" ] && [ "$VERCEL_ENV" = "preview" ]; then
+  # Use the Vercel-provided URL for preview deployments only
+  echo "Building preview with baseURL: https://$VERCEL_URL"
   hugo --minify --baseURL "https://$VERCEL_URL"
 else
-  # Local build - use production URL from config.toml
+  # Production or local build - use production URL from config.toml
   echo "Building with default baseURL from config.toml"
   hugo --minify
 fi
