@@ -4,11 +4,11 @@
   <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/styles/night-owl.min.css">
   <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/highlight.min.js" crossorigin="anonymous"></script>
   <script type="text/javascript" src="//cdn.jsdelivr.net/gh/highlightjs/highlightjs-terraform/terraform.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/languages/gherkin.min.js"></script>
   <script type="text/javascript">
     hljs.registerLanguage('terraform', window.hljsDefineTerraform);
     hljs.initHighlightingOnLoad();
   </script>
-<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.0/build/highlight.min.js"></script>
 {{ else if eq .Site.Params.syntaxHighlighter "prism.js" }}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js" integrity="sha512-UOoJElONeUNzQbbKQbjldDf9MwOHqxNz49NNJJ1d90yp+X9edsHyJoAs6O4K19CZGaIdjI5ohK+O2y5lBTW6uQ==" crossorigin="anonymous"></script>
 {{ end }}
