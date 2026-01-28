@@ -1,56 +1,70 @@
 <script type="application/ld+json">
 {{ if eq .Section "posts" }}
+{{- $keywords := slice -}}
+{{- with .Keywords -}}
+  {{- $keywords = . -}}
+{{- end -}}
+{{- if .Site.Params.keywords -}}
+  {{- $keywords = $keywords | append .Site.Params.keywords -}}
+{{- end -}}
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": {{ .Title }},
-  {{ if .Params.coverimage }}
-  "image": {{ .Params.coverImage | absURL }},
-  {{ else if .Params.thumbnailImage }}
-  "image": {{ .Params.thumbnailImage | absURL }},
-  {{ end }}
-  "datePublished": {{ .PublishDate }},
-  "dateModified": {{ .Lastmod }},
+  "headline": {{ .Title | jsonify }},
+  {{- if .Params.coverimage }}
+  "image": {{ .Params.coverImage | absURL | jsonify }},
+  {{- else if .Params.thumbnailImage }}
+  "image": {{ .Params.thumbnailImage | absURL | jsonify }},
+  {{- end }}
+  "datePublished": {{ .PublishDate | time.Format "2006-01-02T15:04:05Z07:00" | jsonify }},
+  "dateModified": {{ .Lastmod | time.Format "2006-01-02T15:04:05Z07:00" | jsonify }},
   "author": {
     "@type": "Person",
-    "name": {{ .Site.Params.author.name }},
-    {{ with ($.Scratch.Get "authorPicture") }}
-    "image": {{ . }}
-    {{ end }}
+    "name": {{ .Site.Params.author.name | jsonify }}
+    {{- with ($.Scratch.Get "authorPicture") }},
+    "image": {{ . | jsonify }}
+    {{- end }}
   },
-  "mainEntityOfPage": { 
+  "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "{{ .Permalink }}" 
+    "@id": {{ .Permalink | jsonify }}
   },
   "publisher": {
     "@type": "Organization",
-    "name": {{ .Site.Title }},
-    {{ with ($.Scratch.Get "authorPicture") }}
+    "name": {{ .Site.Title | jsonify }}
+    {{- with ($.Scratch.Get "authorPicture") }},
     "logo": {
       "@type": "ImageObject",
-      "url": {{ . }}
+      "url": {{ . | jsonify }}
     }
-    {{ end }}
+    {{- end }}
   },
-  "description": {{ .Summary | plainify | safeHTML }},
-  "keywords": [{{ with .Keywords }}{{ delimit . ", " }}{{ end }}{{ if .Site.Params.keywords }}, {{ delimit .Site.Params.keywords ", " }}{{ end }}]
+  "description": {{ .Summary | plainify | jsonify }},
+  "keywords": {{ $keywords | jsonify }}
 }
-{{ else }}
-{  
-  "@context":"http://schema.org",
-  "@type":"Website",
-  "@id":"{{ .Site.BaseURL }}",
+{{- else -}}
+{{- $keywords := slice -}}
+{{- with .Keywords -}}
+  {{- $keywords = . -}}
+{{- end -}}
+{{- if .Site.Params.keywords -}}
+  {{- $keywords = $keywords | append .Site.Params.keywords -}}
+{{- end -}}
+{
+  "@context": "https://schema.org",
+  "@type": "Website",
+  "@id": {{ .Site.BaseURL | jsonify }},
   "author": {
     "@type": "Person",
-    "name": {{ .Site.Params.author.name }},
-    {{ with ($.Scratch.Get "authorPicture") }}
-    "image": {{ . }}
-    {{ end }}
+    "name": {{ .Site.Params.author.name | jsonify }}
+    {{- with ($.Scratch.Get "authorPicture") }},
+    "image": {{ . | jsonify }}
+    {{- end }}
   },
-  "name":"{{ .Site.Title }}",
-  "description":"{{ if .Description }}{{ .Description }}{{ else if .IsPage }}{{ .Summary }}{{ else }}{{ .Site.Params.description }}{{ end }}",
-  "url":"{{ .Permalink }}",
-  "keywords":"[{{ with .Keywords }}{{ delimit . ", " }}{{ end }}{{ if .Site.Params.keywords }}, {{ delimit .Site.Params.keywords ", " }}{{ end }}]"
+  "name": {{ .Site.Title | jsonify }},
+  "description": {{ if .Description }}{{ .Description | jsonify }}{{ else if .IsPage }}{{ .Summary | jsonify }}{{ else }}{{ .Site.Params.description | jsonify }}{{ end }},
+  "url": {{ .Permalink | jsonify }},
+  "keywords": {{ $keywords | jsonify }}
 }
-{{ end }}
+{{- end }}
 </script>
