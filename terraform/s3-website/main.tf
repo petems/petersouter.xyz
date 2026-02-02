@@ -3,29 +3,38 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "website" {
-  acl    = "public-read"
   bucket = var.s3_bucket_name
+}
 
-  logging {
-    target_bucket = var.s3_bucket_name
-    target_prefix = "log/"
+resource "aws_s3_bucket_acl" "website" {
+  bucket = aws_s3_bucket.website.id
+  acl    = "public-read"
+}
+
+resource "aws_s3_bucket_logging" "website" {
+  bucket        = aws_s3_bucket.website.id
+  target_bucket = var.s3_bucket_name
+  target_prefix = "log/"
+}
+
+resource "aws_s3_bucket_website_configuration" "website" {
+  bucket = aws_s3_bucket.website.id
+
+  index_document {
+    suffix = "index.html"
   }
 
-  website {
-    index_document = "index.html"
-    error_document = "404.html"
+  error_document {
+    key = "404.html"
+  }
 
-    routing_rules = <<EOF
-[{
-    "Condition": {
-        "KeyPrefixEquals": "/"
-    },
-    "Redirect": {
-        "ReplaceKeyWith": "index.html"
+  routing_rule {
+    condition {
+      key_prefix_equals = "/"
     }
-}]
-EOF
-
+    redirect {
+      replace_key_with = "index.html"
+    }
   }
 }
 
