@@ -61,15 +61,193 @@ The next approach was obvious: OTel instrumentation. OTel is a first class citiz
 
 So, I implemented tracing and enhanced metrics directly in the application code using the OpenTelemetry Java SDK. I manually initialize the OpenTelemetry SDK within the Flink operators, configured an OTLP gRPC exporter and did some quick local testing to make sure the spans and traces were being sent.
 
+### Adding OpenTelemetry Dependencies
+
+First, I added the necessary OpenTelemetry dependencies to the project's `pom.xml`:
+
+```xml
+<!-- OpenTelemetry Core -->
+<dependency>
+    <groupId>io.opentelemetry</groupId>
+    <artifactId>opentelemetry-api</artifactId>
+    <version>1.34.1</version>
+</dependency>
+<dependency>
+    <groupId>io.opentelemetry</groupId>
+    <artifactId>opentelemetry-sdk</artifactId>
+    <version>1.34.1</version>
+</dependency>
+
+<!-- OTLP Exporter -->
+<dependency>
+    <groupId>io.opentelemetry</groupId>
+    <artifactId>opentelemetry-exporter-otlp</artifactId>
+    <version>1.34.1</version>
+</dependency>
+
+<!-- Semantic Conventions -->
+<dependency>
+    <groupId>io.opentelemetry.semconv</groupId>
+    <artifactId>opentelemetry-semconv</artifactId>
+    <version>1.23.1-alpha</version>
+</dependency>
+```
+
 The next thing I thought of was trace and log correlation: making sure that the logs contained trace IDs so we can easily correlate logs with any traces that are created. Since MSF is locked down, we can't do anything fancy and it uses CloudWatch natively, and [logging levels have performance implications](https://docs.aws.amazon.com/managed-flink/latest/java/cloudwatch-logs.html). 
 
 Luckily OTel has already thought of this, and there is an `AwsXrayIdGenerator` to make trace IDs compatible with AWS X-Ray. This is only necessary if you want traces to appear in X-Ray/ServiceLens. For Datadog correlation, you just need to inject the trace IDs you generate into your logs. Also, X-Ray now accepts W3C trace IDs when using a recent ADOT Collector or CloudWatch agent, which can simplify this decision. See [AWS X-Ray W3C trace ID support](https://aws.amazon.com/about-aws/whats-new/2023/10/aws-x-ray-w3c-format-trace-ids-distributed-tracing/) for details.
 
 ## Claude does the heavy lifting
 
-Honestly, I'm not a Java expert (last time I was serious about it I was in university about 16 years ago!) so I booted up trusty Claude Code and let it rip. 
+Honestly, I'm not a Java expert (last time I was serious about it I was in university about 16 years ago!) so I booted up trusty Claude Code and let it rip.
 
 The main things I would guide it along with were making sure it was locally testable, and making sure the configuration to deploy things was quickly done and repeatable with Terraform.
+
+### Implementation Details
+
+Here's how we actually implemented the tracing. The full code is available in the [msf-flink-aws-datadog-sandbox repository](https://github.com/petems/msf-flink-aws-datadog-sandbox).
+
+#### Initializing OpenTelemetry
+
+The `TracingModule` class handles OpenTelemetry SDK initialization with the OTLP gRPC exporter:
+
+```java
+public class TracingModule {
+    private static final Logger LOGGER = LoggerFactory.getLogger(TracingModule.class);
+
+    public static TracingModule create() {
+        String otlpEndpoint = System.getenv("OTEL_EXPORTER_OTLP_ENDPOINT");
+        String serviceName = System.getenv("OTEL_SERVICE_NAME");
+
+        // Configure OTLP gRPC exporter
+        OtlpGrpcSpanExporter spanExporter = OtlpGrpcSpanExporter.builder()
+            .setEndpoint(otlpEndpoint)
+            .build();
+
+        // Build tracer provider with batch span processor
+        SdkTracerProvider tracerProvider = SdkTracerProvider.builder()
+            .addSpanProcessor(BatchSpanProcessor.builder(spanExporter).build())
+            .setResource(Resource.create(Attributes.of(
+                ResourceAttributes.SERVICE_NAME, serviceName
+            )))
+            .build();
+
+        // Initialize OpenTelemetry SDK with W3C trace context propagation
+        OpenTelemetry openTelemetry = OpenTelemetrySdk.builder()
+            .setTracerProvider(tracerProvider)
+            .setPropagators(ContextPropagators.create(
+                W3CTraceContextPropagator.getInstance()
+            ))
+            .build();
+
+        LOGGER.info("TracingModule initialized with endpoint: {}", otlpEndpoint);
+        return new TracingModule(openTelemetry, tracerProvider);
+    }
+}
+```
+
+In your Flink job's main method, you configure the OTLP settings from application properties and initialize the tracing module:
+
+```java
+public class BasicStreamingJob {
+    public static void main(String[] args) throws Exception {
+        // Load application properties
+        ParameterTool applicationProperties = loadApplicationProperties(args);
+
+        // Configure OTLP settings from properties
+        configureOtelFromProperties(applicationProperties);
+
+        // Initialize tracing module
+        TracingModule tracingModule = TracingModule.create();
+        LOGGER.info("Application started with tracing enabled: {}",
+                    tracingModule.isEnabled());
+
+        // ... rest of Flink job setup
+    }
+
+    private static void configureOtelFromProperties(ParameterTool properties) {
+        // Set system properties for OTLP configuration
+        String endpoint = properties.get("otel.exporter.otlp.endpoint");
+        String serviceName = properties.get("otel.service.name");
+
+        System.setProperty("OTEL_EXPORTER_OTLP_ENDPOINT", endpoint);
+        System.setProperty("OTEL_SERVICE_NAME", serviceName);
+    }
+}
+```
+
+#### Creating Spans for Each Record
+
+The `TracedProcessFunction` wraps your Flink processing logic with automatic span creation:
+
+```java
+public abstract class TracedProcessFunction<I, O>
+        extends ProcessFunction<I, O> {
+
+    private final Tracer tracer;
+
+    @Override
+    public void processElement(I record, Context ctx, Collector<O> out)
+            throws Exception {
+        // Create span for this record
+        Span span = tracer.spanBuilder(getSpanName())
+            .setSpanKind(SpanKind.INTERNAL)
+            .startSpan();
+
+        try (Scope scope = span.makeCurrent()) {
+            // Add attributes
+            span.setAttribute("job.name", getRuntimeContext().getJobName());
+            span.setAttribute("operator.name",
+                            getRuntimeContext().getTaskName());
+
+            // Call your processing logic
+            processRecord(record, ctx, out);
+
+            span.setStatus(StatusCode.OK);
+        } catch (Exception e) {
+            span.recordException(e);
+            span.setStatus(StatusCode.ERROR);
+            throw e;
+        } finally {
+            span.end();
+        }
+    }
+
+    protected abstract void processRecord(I record, Context ctx,
+                                         Collector<O> out) throws Exception;
+    protected abstract String getSpanName();
+}
+```
+
+#### Log-Trace Correlation
+
+Since MSF uses a fixed JSON log format that excludes custom MDC fields, we inject trace context directly into log messages:
+
+```java
+import io.opentelemetry.api.trace.Span;
+import io.opentelemetry.api.trace.SpanContext;
+
+protected void logWithTraceContext(String message, Object... args) {
+    Span currentSpan = Span.current();
+    SpanContext spanContext = currentSpan.getSpanContext();
+
+    if (spanContext.isValid()) {
+        // Append trace identifiers to log message
+        LOGGER.info(message + " [trace_id={} span_id={}]",
+                    ArrayUtils.addAll(args,
+                                     spanContext.getTraceId(),
+                                     spanContext.getSpanId()));
+    } else {
+        LOGGER.info(message, args);
+    }
+}
+
+// Usage in your operator:
+logWithTraceContext("Processing record with key: {}", key);
+// Output: Processing record with key: 12345 [trace_id=abc123... span_id=def456...]
+```
+
+On the Datadog side, configure a log pipeline with a grok parser to extract the trace_id from the message field, and Datadog will automatically correlate logs with traces.
 
 ### Final Architecture Overview
 
@@ -87,6 +265,19 @@ I configured a private DNS entry (e.g., `otel-collector.local`) in Route 53 poin
 
 For log-trace correlation, I inject trace context directly into log messages since we can't provide a custom root log4j configuration, and then use CloudWatch Logs forwarding via Kinesis Firehose to send logs to Datadog where they automatically correlate with traces.
 
+## Known Unknowns
+
+The Trade-offs: What We Don't Know Yet
+While this architecture solves the visibility gap, it’s important to acknowledge that it introduces new variables into your streaming pipeline:
+
+Performance Overhead: Manual instrumentation via the OTel SDK is generally efficient, but in a high-throughput Flink environment, every microsecond counts. I haven’t performed extensive benchmarking to see how much backpressure the OTLP gRPC export might introduce under extreme load (e.g., millions of events per second).
+
+The "Double-Serialization" Tax: Because we are manually creating spans within the operator code rather than using a bytecode-level agent, there is a slight CPU cost associated with trace generation and serialization that Flink isn't "aware" of.
+
+Network Reliability: By sending traces to an external Fargate-hosted collector via a Load Balancer, we’ve added a network hop. If the collector becomes a bottleneck, you risk either losing traces or—depending on your OTel configuration—slowing down your Flink operators.
+
+Maintenance Burden: Unlike a native integration, you now own the lifecycle of the ADOT Collector and the custom instrumentation code. When Flink or OTel versions upgrade, you'll need to test for breaking changes manually.
+
 ## Lessons Learned
 
 Looking back, this project taught me an important lesson about working with fully-managed services: sometimes the path forward isn't about finding the "right" configuration, but about understanding the fundamental constraints and adapting your approach accordingly. The solution requires more upfront work than simply attaching an agent or modifying a config file—you're now managing infrastructure (the Fargate collector), networking (VPC peering, security groups, DNS), and manual instrumentation in your code.
@@ -98,5 +289,7 @@ If you're facing similar challenges with MSF observability, I hope this journey 
 ---
 
 **Sources:**
+- [msf-flink-aws-datadog-sandbox GitHub Repository](https://github.com/petems/msf-flink-aws-datadog-sandbox) - Complete working implementation with Terraform infrastructure
 - [Datadog Java Tracer Documentation](https://docs.datadoghq.com/tracing/trace_collection/dd_libraries/java/)
 - [Tutorial: Enable Tracing for a Java Application in Containers](https://docs.datadoghq.com/tracing/guide/tutorial-enable-java-containers/)
+- [AWS Managed Service for Apache Flink Examples](https://github.com/aws-samples/amazon-managed-service-for-apache-flink-examples)
