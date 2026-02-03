@@ -13,13 +13,30 @@ title = "Implementing distributed tracing in Amazon Managed Service for Apache F
 
 As a Sales Engineer at Datadog, I'm often asked to look into the sharp edges and unknowns of Datadog and how it works with other platforms.
 
-So, when a customer reached out asking how to get distributed tracing working in their Amazon Managed Service for Apache Flink (MSF) applications, I had to go look up two things. 
+So, when a customer reached out asking how to get distributed tracing working in their Amazon Managed Service for Apache Flink (MSF) applications, I had to go look up two things.
 
 One... what is Flink?
 
 Two... what is MSF?
 
-## Flink
+## TL;DR: The Challenge
+
+If you're running streaming workloads on Amazon Managed Service for Apache Flink and need distributed tracing, you'll quickly discover that **all the standard approaches don't work**:
+
+- ❌ **No Java agent attachment** - MSF controls the JVM startup, so you can't inject `-javaagent` flags
+- ❌ **No sidecar containers** - AWS manages the runtime environment completely
+- ❌ **No flink-conf.yaml access** - Configuration changes require opening support tickets, not quick iteration
+- ❌ **No native tracing** - CloudWatch gives you basic metrics and logs, but no way to follow a record's journey through your pipeline
+
+For teams processing millions of events across multiple operators, this visibility gap makes debugging performance bottlenecks nearly impossible. You can see *that* something is slow, but not *why* or *where*.
+
+**The solution?** Manual instrumentation with OpenTelemetry, a centralized ADOT Collector on ECS Fargate, and creative workarounds for log-trace correlation. It requires more upfront work than a typical integration, but it's the only path to real observability in MSF's constrained environment.
+
+This post walks through the journey of implementing distributed tracing in MSF, including working code examples from the [msf-flink-aws-datadog-sandbox repository](https://github.com/petems/msf-flink-aws-datadog-sandbox).
+
+## Background: What Are We Even Working With?
+
+### Flink
 
 Apache Flink is an open-source distributed processing engine for stateful computations over unbounded and bounded data streams. It is designed for high-throughput, low-latency, and exactly-once processing guarantees, making it a popular choice for real-time analytics applications. Flink can run in a variety of environments, including cloud-managed services like Amazon MSF, and is known for its scalability and fault tolerance.
 
@@ -27,7 +44,7 @@ It already has support for a number of different tool options, including Datadog
 
 The standard pattern for Flink observability is well-established: configure your metrics reporters and trace exporters in flink-conf.yaml, maybe add a sidecar OpenTelemetry Collector, attach a Java agent, and you're done.
 
-## MSF (Amazon Managed Service for Apache Flink)
+### MSF (Amazon Managed Service for Apache Flink)
 
 Ok, so Amazon has a SaaS-ified version of Flink that is a lot more specific. So what does that offer out of the box?
 
