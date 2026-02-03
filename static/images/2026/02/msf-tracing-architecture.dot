@@ -1,0 +1,66 @@
+digraph MSF_Tracing_Architecture {
+    rankdir=TB;
+    node [shape=box, style=rounded, fontname="Arial"];
+    edge [fontname="Arial", fontsize=10];
+
+    // Legend as a table node in top right
+    legend [shape=none, margin=0, label=<<table border="1" cellborder="0" cellspacing="0" cellpadding="8" bgcolor="white">
+        <tr><td colspan="2" bgcolor="lightgray"><b>Legend</b></td></tr>
+        <tr><td><font color="red"><b>━━━━</b></font></td><td align="left">Trace/Metrics Path</td></tr>
+        <tr><td><font color="green"><b>╌╌╌╌</b></font></td><td align="left">Log Path</td></tr>
+        <tr><td><font color="blue"><b>┄┄┄┄</b></font></td><td align="left">VPC Boundary</td></tr>
+    </table>>];
+
+    // Define subgraphs for VPC boundaries
+    subgraph cluster_vpc {
+        label="AWS VPC";
+        style=dashed;
+        color=blue;
+        fontsize=14;
+
+        subgraph cluster_msf {
+            label="Amazon Managed Service for Apache Flink";
+            style=filled;
+            color=lightblue;
+            fontsize=12;
+
+            MSF [label="Flink Application\n(with OpenTelemetry SDK\n+ AwsXrayIdGenerator)", shape=box3d, fillcolor=lightyellow, style=filled];
+        }
+
+        subgraph cluster_fargate {
+            label="ECS Fargate Service";
+            style=filled;
+            color=lightgreen;
+            fontsize=12;
+
+            NLB [label="Network Load Balancer\n(port 4317)", shape=cylinder, fillcolor=lightcyan, style=filled];
+            ADOT [label="ADOT Collector\n(OTLP gRPC receiver\n+ Datadog exporter)", shape=box3d, fillcolor=lightyellow, style=filled];
+        }
+
+        R53 [label="Route 53\nPrivate DNS\n(otel-collector.local)", shape=ellipse, fillcolor=pink, style=filled];
+
+        SG1 [label="Security Group\n(MSF → Fargate:4317)", shape=note, fillcolor=wheat, style=filled];
+    }
+
+    // External services
+    Datadog [label="Datadog\n(Traces + Metrics)", shape=box, fillcolor=mediumpurple, style="filled,rounded"];
+    CloudWatch [label="CloudWatch Logs", shape=box, fillcolor=orange, style="filled,rounded"];
+    Firehose [label="Kinesis Firehose", shape=cylinder, fillcolor=orange, style=filled];
+
+    // Position legend in top right with external services
+    {rank=same; Datadog; legend;}
+
+    // Connections
+    MSF -> R53 [label="1. DNS lookup"];
+    R53 -> NLB [label="2. Resolves to NLB"];
+    MSF -> NLB [label="3. OTLP/gRPC\n(traces + metrics)", color=red, penwidth=2];
+    NLB -> ADOT [label="4. Forward traffic"];
+    ADOT -> Datadog [label="5. Export traces\n+ metrics", color=red, penwidth=2];
+
+    MSF -> CloudWatch [label="6. Application logs\n(with trace context)", color=green, penwidth=2, style=dashed];
+    CloudWatch -> Firehose [label="7. Log stream", color=green, penwidth=2, style=dashed];
+    Firehose -> Datadog [label="8. Log forwarding\n(auto-correlation)", color=green, penwidth=2, style=dashed];
+
+    SG1 -> MSF [style=invis];
+    SG1 -> NLB [style=invis];
+}
