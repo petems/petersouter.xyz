@@ -282,6 +282,184 @@ I configured a private DNS entry (e.g., `otel-collector.local`) in Route 53 poin
 
 For log-trace correlation, I inject trace context directly into log messages since we can't provide a custom root log4j configuration, and then use CloudWatch Logs forwarding via Kinesis Firehose to send logs to Datadog where they automatically correlate with traces.
 
+### Infrastructure as Code: Terraform Configuration
+
+Since Claude helped me iterate quickly, I made sure everything was deployable via Terraform. Here are the key pieces:
+
+#### ADOT Collector on ECS Fargate
+
+The ADOT Collector runs as an ECS Fargate task with the official AWS image:
+
+```hcl
+resource "aws_ecs_task_definition" "otlp_collector" {
+  family                   = "otlp-collector"
+  network_mode             = "awsvpc"
+  requires_compatibilities = ["FARGATE"]
+  cpu                      = "256"
+  memory                   = "512"
+
+  container_definitions = jsonencode([{
+    name  = "otel-collector"
+    image = "public.ecr.aws/aws-observability/aws-otel-collector:latest"
+
+    portMappings = [
+      { containerPort = 4317, protocol = "tcp" },  # OTLP gRPC
+      { containerPort = 4318, protocol = "tcp" },  # OTLP HTTP
+      { containerPort = 13133, protocol = "tcp" }  # Health check
+    ]
+
+    environment = [
+      {
+        name  = "DD_API_KEY"
+        valueFrom = aws_secretsmanager_secret.datadog_api_key.arn
+      }
+    ]
+
+    logConfiguration = {
+      logDriver = "awslogs"
+      options = {
+        "awslogs-group"         = aws_cloudwatch_log_group.otlp_collector.name
+        "awslogs-region"        = var.aws_region
+        "awslogs-stream-prefix" = "ecs"
+      }
+    }
+  }])
+}
+
+resource "aws_ecs_service" "otlp_collector" {
+  name            = "otlp-collector"
+  cluster         = aws_ecs_cluster.main.id
+  task_definition = aws_ecs_task_definition.otlp_collector.arn
+  desired_count   = 1
+  launch_type     = "FARGATE"
+
+  network_configuration {
+    subnets          = aws_subnet.private[*].id
+    security_groups  = [aws_security_group.otlp_collector.id]
+    assign_public_ip = false
+  }
+
+  service_registries {
+    registry_arn = aws_service_discovery_service.otlp_collector.arn
+  }
+}
+```
+
+#### Service Discovery with AWS Cloud Map
+
+Instead of a Network Load Balancer, we use AWS Cloud Map for service discovery, which provides a simpler DNS-based approach:
+
+```hcl
+resource "aws_service_discovery_private_dns_namespace" "local" {
+  name        = "local"
+  description = "Private DNS namespace for service discovery"
+  vpc         = aws_vpc.main.id
+}
+
+resource "aws_service_discovery_service" "otlp_collector" {
+  name = "otel-collector"
+
+  dns_config {
+    namespace_id = aws_service_discovery_private_dns_namespace.local.id
+
+    dns_records {
+      ttl  = 10
+      type = "A"
+    }
+
+    routing_policy = "MULTIVALUE"
+  }
+
+  health_check_custom_config {
+    failure_threshold = 1
+  }
+}
+```
+
+This creates the `otel-collector.local` DNS name that our Flink application uses to reach the collector.
+
+#### Security Groups
+
+The security groups are straightforward - allow OTLP gRPC traffic from Flink to the collector:
+
+```hcl
+# Allow inbound OTLP gRPC on collector
+resource "aws_vpc_security_group_ingress_rule" "otlp_collector_grpc_from_flink" {
+  security_group_id = aws_security_group.otlp_collector.id
+  description       = "Allow OTLP gRPC from Flink application"
+
+  from_port                    = 4317
+  to_port                      = 4317
+  ip_protocol                  = "tcp"
+  referenced_security_group_id = aws_security_group.flink_app.id
+}
+
+# Allow outbound OTLP gRPC from Flink
+resource "aws_vpc_security_group_egress_rule" "flink_to_otlp" {
+  security_group_id = aws_security_group.flink_app.id
+  description       = "Allow OTLP gRPC to collector"
+
+  from_port                    = 4317
+  to_port                      = 4317
+  ip_protocol                  = "tcp"
+  referenced_security_group_id = aws_security_group.otlp_collector.id
+}
+
+# Allow collector to reach Datadog
+resource "aws_vpc_security_group_egress_rule" "otlp_collector_to_internet" {
+  security_group_id = aws_security_group.otlp_collector.id
+  description       = "Allow HTTPS to Datadog"
+
+  from_port   = 443
+  to_port     = 443
+  ip_protocol = "tcp"
+  cidr_ipv4   = "0.0.0.0/0"
+}
+```
+
+#### MSF Application Configuration
+
+The MSF application receives the OTLP endpoint through application properties:
+
+```hcl
+resource "aws_kinesisanalyticsv2_application" "flink_app" {
+  name                   = var.application_name
+  runtime_environment    = "FLINK-1_20"
+  service_execution_role = aws_iam_role.flink_app.arn
+
+  application_configuration {
+    application_code_configuration {
+      code_content {
+        s3_content_location {
+          bucket_arn = aws_s3_bucket.flink_app.arn
+          file_key   = aws_s3_object.app_jar.key
+        }
+      }
+      code_content_type = "ZIPFILE"
+    }
+
+    environment_properties {
+      property_group {
+        property_group_id = "OtelConfig"
+
+        property_map = {
+          "otel.exporter.otlp.endpoint"  = "http://otel-collector.local:4317"
+          "otel.service.name"            = var.application_name
+          "otel.deployment.environment"  = var.environment
+        }
+      }
+    }
+
+    vpc_configuration {
+      security_group_ids = [aws_security_group.flink_app.id]
+      subnet_ids         = aws_subnet.private[*].id
+    }
+  }
+}
+```
+
+The application code loads these properties at startup and configures the OpenTelemetry SDK accordingly.
+
 ## Known Unknowns: The Trade-offs
 
 While this architecture solves the visibility gap, it's important to acknowledge that it introduces new variables into your streaming pipeline:
