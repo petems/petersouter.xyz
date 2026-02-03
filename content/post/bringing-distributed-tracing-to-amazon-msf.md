@@ -11,7 +11,7 @@ tags = ["AWS", "Flink", "Distributed Tracing", "OpenTelemetry", "Datadog", "MSF"
 title = "Implementing distributed tracing in Amazon Managed Service for Apache Flink (MSF)"
 +++
 
-As a Sales Engineer at Datadog, often times I'm asked to look into the sharp edges and unknowns of Datadog. How it works with.
+As a Sales Engineer at Datadog, I'm often asked to look into the sharp edges and unknowns of Datadog and how it works with other platforms.
 
 So, when a customer reached out asking how to get distributed tracing working in their Amazon Managed Service for Apache Flink (MSF) applications, I had to go look up two things. 
 
@@ -23,31 +23,31 @@ Two... what is MSF?
 
 Apache Flink is an open-source distributed processing engine for stateful computations over unbounded and bounded data streams. It is designed for high-throughput, low-latency, and exactly-once processing guarantees, making it a popular choice for real-time analytics applications. Flink can run in a variety of environments, including cloud-managed services like Amazon MSF, and is known for its scalability and fault tolerance.
 
-It already has support for a number of different tool options, including Datadog for metrics, OTel Tracing and a bunch of other options. Ok, that seems all great, nothing too unusual there, there's existing Datadog integrations for it, everythings documented.
+It already has support for a number of different tool options, including Datadog for metrics, OpenTelemetry (OTel) tracing, and a bunch of other options. That all seems great; there are existing Datadog integrations for it, and everything's documented.
 
 The standard pattern for Flink observability is well-established: configure your metrics reporters and trace exporters in flink-conf.yaml, maybe add a sidecar OpenTelemetry Collector, attach a Java agent, and you're done.
 
 ## MSF (Amazon Managed Service for Apache Flink)
 
-Ok, so Amazon have a SaaS-ified version of Flink that is a lot more specific. So what does that offer out of the box?
+Ok, so Amazon has a SaaS-ified version of Flink that is a lot more specific. So what does that offer out of the box?
 
-AWS's native MSF tooling provides basic CloudWatch metrics (throughput, latency, checkpoints) and log collection, but both are severely limited compared to what you'd expect from a modern observability stack. There's no distributed tracing at all—you can see that records are flowing through your pipeline, but you have no way to follow a single record's journey from source to sink or understand how long each operator takes to process it.
+AWS's native MSF tooling provides basic CloudWatch metrics (throughput, latency, checkpoints) and log collection, but both are limited compared to what you'd expect from a modern observability stack. You can tune [metrics reporting levels](https://docs.aws.amazon.com/managed-flink/latest/java/cloudwatch-logs-levels.html) and emit [custom metrics](https://docs.aws.amazon.com/managed-flink/latest/java/monitoring-metrics-custom.html), but there's no distributed tracing by default—you can see that records are flowing through your pipeline, but you have no way to follow a single record's journey from source to sink or understand how long each operator takes to process it.
 
 The metrics lack the dimensionality needed for deep performance analysis; you get aggregate numbers but can't slice by custom tags or business dimensions. Log correlation with traces is non-existent, so when something goes wrong, you're left manually searching through CloudWatch logs trying to piece together what happened. For a complex streaming application processing millions of events across multiple operators, this visibility gap makes debugging performance issues or understanding request flows nearly impossible. The native tooling tells you that something is slow, but not why or where in your pipeline the bottleneck exists. My customer needed real observability, not just basic monitoring.
 
 ## The Problem
 
-What I quickly discovered was that MSF's fully-managed nature imposes strict constraints that make traditional Flink observability patterns impossible: no access to `flink-conf.yaml`, no sidecar containers, and no easy way to attach Java agents. Every standard approach I tried hit a wall built by AWS's managed service architecture.
+What I quickly discovered was that MSF's fully-managed nature imposes strict constraints that make traditional Flink observability patterns impractical: no direct access to `flink-conf.yaml`, no sidecar containers, and no easy way to attach Java agents. You can [view configured settings](https://docs.aws.amazon.com/managed-flink/latest/java/viewing-modifiable-settings.html) and request changes through support, but that isn't the same as editing configs locally and iterating quickly. Every standard approach I tried hit a wall built by AWS's managed service architecture.
 
-## Getting Started: A "Hello World" M SF App
+## Getting Started: A "Hello World" MSF App
 
-So if I was going to get started figuring out where to go, I needed a getting started app. Amazon have a github repo with some examples here: https://github.com/aws-samples/amazon-managed-service-for-apache-flink-examples/tree/main/java
+So if I was going to get started figuring out where to go, I needed a getting started app. Amazon has a GitHub repo with some examples here: https://github.com/aws-samples/amazon-managed-service-for-apache-flink-examples/tree/main/java
 
-So I grabbed the getting started version of this to start with, so I had a known quantity of MSF as a baseline. Then I looked at some of the approaches it has to see if there's any prior-art I could use for metrics and traces. Nothing specific came up, but it did have a Prometheus sink, so clearly it was possible, so I kep that up my sleeve as a backup option specifically.
+So I grabbed the getting started version of this to start with, so I had a known quantity of MSF as a baseline. Then I looked at some of the approaches it has to see if there's any prior art I could use for metrics and traces. Nothing specific came up, but it did have a Prometheus sink, so clearly it was possible, so I kept that up my sleeve as a backup option.
 
 ## The Datadog Java Agent Approach (Spoiler: It Didn't Work)
 
-Lets start by my initial approach, sticking with the company line: Datadog's native Java APM tracing.  
+Let's start with my initial approach, sticking with the company line: Datadog's native Java APM tracing.  
 
 However, [the Datadog Java tracer requires](https://docs.datadoghq.com/tracing/trace_collection/dd_libraries/java/) using the `-javaagent:/path/to/dd-java-agent.jar` flag at JVM startup, before the `-jar` argument. Added to this, the Datadog agent [is typically added as a sidecar in containerized environments](https://docs.datadoghq.com/tracing/guide/tutorial-enable-java-containers/), enabling automatic tracing without code changes.
 
@@ -57,19 +57,19 @@ This means there's no way to inject the `-javaagent` flag into the startup comma
 
 ## oTel Is A First Class Citizen
 
-The next approach was obivous: oTel instrumentation. oTel is a first class citizen for Datadog anyways, and we can easily get it into Datadog anyways. Plus we already have prior art within Flink on how to to oTel instrumentation anyways.
+The next approach was obvious: OTel instrumentation. OTel is a first class citizen for Datadog, and we can easily get it into Datadog. Plus we already have prior art within Flink on how to do OTel instrumentation.
 
 So, I implemented tracing and enhanced metrics directly in the application code using the OpenTelemetry Java SDK. I manually initialize the OpenTelemetry SDK within the Flink operators, configured an OTLP gRPC exporter and did some quick local testing to make sure the spans and traces were being sent.
 
-The next thing I thought of was Trace and Log correlation: Making sure that the logs contained trace_id's so we can easily sync up the logs to any traces that are created. Since MSF is a locked down version, we can't do anything fancy and it uses Cloudwatch natively. 
+The next thing I thought of was trace and log correlation: making sure that the logs contained trace IDs so we can easily correlate logs with any traces that are created. Since MSF is locked down, we can't do anything fancy and it uses CloudWatch natively, and [logging levels have performance implications](https://docs.aws.amazon.com/managed-flink/latest/java/cloudwatch-logs.html). 
 
-Luckily oTel has already thought of this, and there is a an `AwsXrayIdGenerator` method to ensure trace IDs are compatible with AWS X-Ray for CloudWatch correlation.
+Luckily OTel has already thought of this, and there is an `AwsXrayIdGenerator` to make trace IDs compatible with AWS X-Ray. This is only necessary if you want traces to appear in X-Ray/ServiceLens. For Datadog correlation, you just need to inject the trace IDs you generate into your logs. Also, X-Ray now accepts W3C trace IDs when using a recent ADOT Collector or CloudWatch agent, which can simplify this decision. See [AWS X-Ray W3C trace ID support](https://aws.amazon.com/about-aws/whats-new/2023/10/aws-x-ray-w3c-format-trace-ids-distributed-tracing/) for details.
 
-## Claude does the heavy lfiting
+## Claude does the heavy lifting
 
-Honestly here, I'm not a Java expert (last time I really was serious about it I was In unversity about 16 years ago!) so I booted up trusty Claude Code and let it rip. 
+Honestly, I'm not a Java expert (last time I was serious about it I was in university about 16 years ago!) so I booted up trusty Claude Code and let it rip. 
 
-The main things I would guide it along with, was making sure it was locally testable, but also making sure the configuration to deploy things was quickly done and repeatable with Terraform.
+The main things I would guide it along with were making sure it was locally testable, and making sure the configuration to deploy things was quickly done and repeatable with Terraform.
 
 ### Final Architecture Overview
 
@@ -85,7 +85,7 @@ But here's the critical architectural piece: the OpenTelemetry exporter can't se
 
 I configured a private DNS entry (e.g., `otel-collector.local`) in Route 53 pointing to the Fargate service's Network Load Balancer, and ensured the security groups allow traffic on port 4317 (OTLP gRPC) from the MSF application's security group to the Fargate collector's security group. The ADOT Collector is configured with the Datadog exporter, so traces flow from Flink → ADOT Collector (Fargate) → Datadog, giving us full distributed tracing without any agent attachment.
 
-For log-trace correlation, I inject trace context directly into log messages since we can't modify the root log4j configuration, and then use CloudWatch Logs forwarding via Kinesis Firehose to send logs to Datadog where they automatically correlate with traces.
+For log-trace correlation, I inject trace context directly into log messages since we can't provide a custom root log4j configuration, and then use CloudWatch Logs forwarding via Kinesis Firehose to send logs to Datadog where they automatically correlate with traces.
 
 ## Lessons Learned
 
