@@ -56,17 +56,6 @@ jobs:
       - name: Build site
         run: hugo --destination "$SOURCE_DIR"
 
-      # go3up configuration files (.go3up.json, .go3up.txt) are in repository root
-      # and will be automatically discovered by go3up
-
-      - name: Restore go3up cache
-        uses: actions/cache@v5
-        with:
-          path: .go3up.txt
-          key: go3up-cache-${{ github.sha }}
-          restore-keys: |
-            go3up-cache-
-
       - name: Configure AWS credentials via OIDC
         uses: aws-actions/configure-aws-credentials@v5
         with:
@@ -76,25 +65,21 @@ jobs:
         # This action uses OIDC to assume the IAM role and exports temporary credentials
         # as environment variables (AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_SESSION_TOKEN)
 
-      - name: Upload to S3 using go3up with OIDC credentials
+      - name: Install s5cmd
         run: |
-          docker run --rm \
-            -v $(pwd):/workspace \
-            -w /workspace \
-            -e AWS_ACCESS_KEY_ID \
-            -e AWS_SECRET_ACCESS_KEY \
-            -e AWS_SESSION_TOKEN \
-            petems/go3up \
-            /usr/local/bin/go3up -source="$SOURCE_DIR" -region="$S3_REGION" -bucket="$S3_BUCKET" --verbose
-        # go3up reads the temporary OIDC credentials from environment variables
-        # AWS_SESSION_TOKEN proves these are temporary credentials, not static keys
+          curl -L https://github.com/peak/s5cmd/releases/latest/download/s5cmd_$(uname -s)_$(uname -m | sed 's/x86_64/amd64/').tar.gz | tar xz
+          sudo mv s5cmd /usr/local/bin/
+          s5cmd version
 
-      - name: Save go3up cache
-        uses: actions/cache/save@v5
-        if: always()
-        with:
-          path: .go3up.txt
-          key: go3up-cache-${{ github.sha }}
+      - name: Sync to S3 using s5cmd with OIDC credentials
+        run: |
+          s5cmd --log=info sync \
+            --delete \
+            "$SOURCE_DIR/*" \
+            "s3://$S3_BUCKET/"
+        # s5cmd uses AWS credentials from environment variables (set by configure-aws-credentials action)
+        # --delete removes files from S3 that don't exist in source
+        # --log=info provides visibility into what's being uploaded
 
       - name: Deployment complete
         run: |

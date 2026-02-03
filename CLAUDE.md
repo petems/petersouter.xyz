@@ -60,7 +60,7 @@ The project includes several utility targets in the Makefile:
 
 ## GitHub Actions Commands
 
-The site deploys automatically via GitHub Actions when code is pushed to `master`.
+The site deploys automatically via GitHub Actions when code is pushed to `master`. The deployment uses `s5cmd` for fast, efficient S3 synchronization.
 
 ### Viewing Deployments
 
@@ -125,8 +125,8 @@ If switching to ugly URLs, modify both `config.toml` and `terraform/s3-website/m
 **GitHub Actions** (Primary):
 - Workflow defined in `.github/workflows/deploy.yml`
 - Triggers on push to `master` branch
-- Uses Hugo v0.54.0 for building
-- Deploys to S3 using `go3up` with MD5 caching
+- Uses Hugo for building
+- Deploys to S3 using `s5cmd` for fast synchronization
 - Authentication via OIDC (no static AWS keys)
 - View deployments: https://github.com/petems/petersouter.xyz/actions
 
