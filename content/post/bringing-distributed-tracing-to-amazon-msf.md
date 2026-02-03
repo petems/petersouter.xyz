@@ -265,18 +265,25 @@ I configured a private DNS entry (e.g., `otel-collector.local`) in Route 53 poin
 
 For log-trace correlation, I inject trace context directly into log messages since we can't provide a custom root log4j configuration, and then use CloudWatch Logs forwarding via Kinesis Firehose to send logs to Datadog where they automatically correlate with traces.
 
-## Known Unknowns
+## Known Unknowns: The Trade-offs
 
-The Trade-offs: What We Don't Know Yet
-While this architecture solves the visibility gap, it’s important to acknowledge that it introduces new variables into your streaming pipeline:
+While this architecture solves the visibility gap, it's important to acknowledge that it introduces new variables into your streaming pipeline:
 
-Performance Overhead: Manual instrumentation via the OTel SDK is generally efficient, but in a high-throughput Flink environment, every microsecond counts. I haven’t performed extensive benchmarking to see how much backpressure the OTLP gRPC export might introduce under extreme load (e.g., millions of events per second).
+### Performance Overhead
 
-The "Double-Serialization" Tax: Because we are manually creating spans within the operator code rather than using a bytecode-level agent, there is a slight CPU cost associated with trace generation and serialization that Flink isn't "aware" of.
+Manual instrumentation via the OTel SDK is generally efficient, but in a high-throughput Flink environment, every microsecond counts. I haven't performed extensive benchmarking to see how much backpressure the OTLP gRPC export might introduce under extreme load (e.g., millions of events per second).
 
-Network Reliability: By sending traces to an external Fargate-hosted collector via a Load Balancer, we’ve added a network hop. If the collector becomes a bottleneck, you risk either losing traces or—depending on your OTel configuration—slowing down your Flink operators.
+### The "Double-Serialization" Tax
 
-Maintenance Burden: Unlike a native integration, you now own the lifecycle of the ADOT Collector and the custom instrumentation code. When Flink or OTel versions upgrade, you'll need to test for breaking changes manually.
+Because we are manually creating spans within the operator code rather than using a bytecode-level agent, there is a slight CPU cost associated with trace generation and serialization that Flink isn't "aware" of.
+
+### Network Reliability
+
+By sending traces to an external Fargate-hosted collector via a Load Balancer, we've added a network hop. If the collector becomes a bottleneck, you risk either losing traces or—depending on your OTel configuration—slowing down your Flink operators.
+
+### Maintenance Burden
+
+Unlike a native integration, you now own the lifecycle of the ADOT Collector and the custom instrumentation code. When Flink or OTel versions upgrade, you'll need to test for breaking changes manually.
 
 ## Lessons Learned
 
