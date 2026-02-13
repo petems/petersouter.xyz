@@ -19,13 +19,27 @@ keywords:
 #thumbnailImage: //example.com/image.jpg
 ---
 
-It's been far too long since I've posted anything here. 2025 was an incredibly busy year, and while I've been spending a lot of time tweaking things on the edges, it felt great to finally get back on the horse and speak again at TestCon 2025.
+Well... it's been far too long since I've posted anything here!
 
-<!--more-->
+I feel like I say this every year, but this seemed _especially_ so in 2025. As always it was very eventful:
+
+* Jumped on the agentic coding bandwagon once Claude Code was released
+* Finally got back on the conference-speaking horse with a talk at TestCon 2025
+* Travel, so much travel!
+* So many side projects and things I was tweaking, with my tinkering ways accelerated by the new GenAI world...
 
 ## The Realization
 
-Looking at my backlog recently, I realized I've been spreading myself too thin across various projects. It makes more sense to prioritize updating this website—it's been a while, and a lot has changed. The Terraform setup is several years old at this point, and the CircleCI deployment configuration is getting pretty crusty. Time to modernize.
+Looking at my backlog recently, I realized I've been spreading myself too thin across various projects. I'm not quite getting into the depths of deep burnout, and I'm enjoying what I've delivered and learnt, I realised it makes more sense to bump up this website to the top of the pile: it's been a while, and a lot has changed with the setup:
+
+* The Terraform setup is several years old at this point, with both the AWS provider and Terraform itself massively changed
+* CircleCI has stumbled and fell a long way since when I originally deployed everything, and Github Actions is the new king to the easy-to-setup CICD roost
+* The actual authentication of AWS that Terraform and the various tools to sync the website content into the remote S3 bucket are also both out of date and not following best practise. There's defintely some improvements we can make there with OpenID Connect
+* The Hugo release (0.5!) and the theme are also pretty old at this point, and causing both incomaptibilities and missing out on a bunch of new Hugo features
+
+## Yakshaves Everywhere
+
+Various blockers to get stuff done etc -
 
 ## The Website Updates
 
