@@ -18,7 +18,7 @@ However, everything reaches a tipping point, and in 2025 I think I was teetering
 
 So when 2026 rolled around, in that brief lull and New Year introspection, I made a commitment: Let's do some legwork to avoid me having to sheepishly write another navel-gazing blogpost in 2027 where I wonder where the year's gone...
 
-# Environmental Scaffolding
+## Environmental Scaffolding
 
 Let's start with some foundational ideas:
 
@@ -27,6 +27,8 @@ Let's start with some foundational ideas:
 - If in doubt, do the minimum you need to do to **Do The Damn Thing**
 
 So with that in mind, here's my first post of 2026. Boom, one deadline down.
+
+## The Stakes
 
 For my next trick, I'm making the following public commitment with a specific deadline:
 
