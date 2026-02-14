@@ -115,7 +115,7 @@ The current deployment pipeline uses a Docker container (`petems/go3up`) to uplo
 -         path: .go3up.txt
 -         key: go3up-cache-${{ github.sha }}
 +     - name: Deploy to S3
-+       run: hugo deploy --maxDeletes -1
++       run: hugo deploy  # Uses default maxDeletes=256; increase after verifying initial deploy
 ```
 
 ### 3. Clean up go3up artifacts

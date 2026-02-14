@@ -10,7 +10,7 @@ Hugo's Goldmark renderer (default since v0.60.0) supports render hooks -- templa
 
 **Current gaps the site has:**
 1. **External links**: Open in the same tab, no `rel="noopener noreferrer"` for security
-2. **Images**: No lazy loading, no width/height attributes (causes layout shift), no alt text enforcement
+2. **Images**: No lazy loading, no width/height attributes (causes layout shift), no alt text enforcement or fallback
 3. **Headings**: No anchor links for deep linking / sharing specific sections
 
 Render hooks fix all of these declaratively.
@@ -36,13 +36,13 @@ mkdir -p layouts/_default/_markup/
 ```html
 <a href="{{ .Destination | safeURL }}"
   {{- with .Title }} title="{{ . }}"{{ end }}
-  {{- if strings.HasPrefix .Destination "http" }} target="_blank" rel="noopener noreferrer"{{ end }}>
+  {{- if or (strings.HasPrefix .Destination "http") (strings.HasPrefix .Destination "//") }} target="_blank" rel="noopener noreferrer"{{ end }}>
   {{- .Text | safeHTML -}}
 </a>
 ```
 
 **What this does:**
-- External links (starting with `http`) open in a new tab
+- External links (starting with `http` or `//`) open in a new tab
 - `rel="noopener noreferrer"` prevents tab-napping attacks
 - Internal links behave normally
 - Link titles are preserved
@@ -52,10 +52,15 @@ mkdir -p layouts/_default/_markup/
 **`layouts/_default/_markup/render-image.html`:**
 
 ```html
+{{ $alt := .Text }}
+{{ if not $alt }}
+  {{ warnidf "image-missing-alt" "Missing alt text for image: %s" .Destination }}
+  {{ $alt = path.BaseName .Destination | humanize }}
+{{ end }}
 <figure>
   <img src="{{ .Destination | safeURL }}"
     {{- with .Title }} title="{{ . }}"{{ end }}
-    alt="{{ .Text }}"
+    alt="{{ $alt }}"
     loading="lazy"
     decoding="async" />
   {{- with .Title }}
@@ -69,7 +74,7 @@ mkdir -p layouts/_default/_markup/
 - Adds `loading="lazy"` for deferred loading of off-screen images
 - Adds `decoding="async"` to prevent image decoding from blocking rendering
 - Renders image titles as `<figcaption>` for better semantics
-- Preserves alt text for accessibility
+- **Enforces alt text**: If no alt text is provided, emits a build warning and generates a fallback from the filename (e.g., `diagram.png` becomes `Diagram`). This surfaces missing alt text during development while keeping the build working.
 
 ### 4. Add heading render hook
 
@@ -78,14 +83,14 @@ mkdir -p layouts/_default/_markup/
 ```html
 <h{{ .Level }} id="{{ .Anchor }}">
   {{- .Text | safeHTML -}}
-  <a class="heading-anchor" href="#{{ .Anchor }}" aria-label="Anchor">#</a>
+  <a class="heading-anchor" href="#{{ .Anchor }}" aria-label="Link to section: {{ .PlainText }}">#</a>
 </h{{ .Level }}>
 ```
 
 **What this does:**
 - Adds anchor links to all headings (`#` suffix)
 - Enables deep linking (e.g., `https://petersouter.xyz/my-post/#my-heading`)
-- Uses `aria-label` for screen reader accessibility
+- Uses a descriptive `aria-label` (e.g., "Link to section: Getting Started") for screen readers
 - The anchor link can be styled via CSS (e.g., hidden until hover)
 
 ### 5. Add CSS for heading anchors
@@ -127,7 +132,7 @@ Medium -- creating the hook templates is quick, but visual testing across all 67
 
 - **Image rendering changes**: Posts that embed images with specific HTML structure may look different when wrapped in `<figure>`. Posts using raw HTML for images (not Markdown `![]()` syntax) are unaffected by the hook.
 - **Theme CSS conflicts**: The tranquilpeak theme has its own styling for images, links, and headings. The new `<figure>` wrapper and heading anchors may need CSS adjustments to integrate with the theme's visual design.
-- **External link detection**: The `strings.HasPrefix .Destination "http"` check catches most external links but not protocol-relative URLs (`//example.com`). These are rare in practice.
+- **External link detection**: The link hook detects both `http`/`https` and protocol-relative URLs (`//example.com`). Other edge cases (e.g., `mailto:`, `tel:`) are intentionally treated as internal links (no `target="_blank"`).
 - **RSS feed impact**: Render hooks apply to RSS output too. The anchor links in headings and lazy loading attributes will appear in the feed. This is generally desirable but should be verified.
 
 ## Validation

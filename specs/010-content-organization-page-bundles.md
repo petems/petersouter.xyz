@@ -92,8 +92,8 @@ for post in content/post/*.md; do
   # Create the bundle directory
   mkdir -p "$dir"
 
-  # Move the post
-  mv "$post" "$dir/index.md"
+  # Move the post (git mv preserves history)
+  git mv "$post" "$dir/index.md"
 
   echo "Migrated: $slug"
 done
@@ -101,9 +101,11 @@ done
 
 Image migration requires mapping each post's frontmatter image paths to the correct source files, which is more complex and may need to be done semi-manually or with a more sophisticated script.
 
-### Phase 3: Update frontmatter image references
+### Phase 3: Update image references (frontmatter and body)
 
-**Before (absolute path to `static/`):**
+Both frontmatter fields and inline Markdown image links need to be updated.
+
+**Frontmatter -- before (absolute path to `static/`):**
 ```toml
 +++
 coverImage = "/images/2016/10/screenshot.png"
@@ -111,12 +113,33 @@ thumbnailImage = "/images/2016/10/screenshot-thumb.png"
 +++
 ```
 
-**After (relative path to co-located resource):**
+**Frontmatter -- after (relative path to co-located resource):**
 ```toml
 +++
 coverImage = "screenshot.png"
 thumbnailImage = "screenshot-thumb.png"
 +++
+```
+
+**Body Markdown -- before:**
+```markdown
+Here is a diagram of the architecture:
+
+![Architecture diagram](/images/2016/10/diagram.png)
+```
+
+**Body Markdown -- after:**
+```markdown
+Here is a diagram of the architecture:
+
+![Architecture diagram](diagram.png)
+```
+
+All `![alt](/images/...)` references in the post body must be updated to use bundle-relative paths. A grep can identify these:
+
+```bash
+# Find all inline image references in content that use absolute paths
+grep -rn '!\[.*\](/images/' content/post/
 ```
 
 ### Phase 4: Update templates to use page resources
@@ -197,7 +220,7 @@ High -- this is a significant restructuring:
 ## Risks
 
 - **Broken image links**: Every image reference must be updated. A single missed reference means a broken image.
-- **URL changes**: Post URLs should NOT change if the directory name matches the original slug. Hugo uses the directory name for page bundles. Verify: `content/post/my-post/index.md` produces the same URL as `content/post/my-post.md`.
+- **URL changes**: Post URLs should NOT change if the directory name matches the original slug. Hugo uses the directory name for page bundles. Verify: `content/post/my-post/index.md` produces the same URL as `content/post/my-post.md`. **Important caveat**: Posts that use `slug`, `url`, or `aliases` in their frontmatter override directory-based URL resolution. The migration script should preserve these fields and verify the final URL matches. Audit all posts for these frontmatter keys before migrating to catch any edge cases.
 - **Theme compatibility**: The tranquilpeak theme's templates may expect images at specific paths. Templates that resolve cover images, thumbnails, and gallery images must all be updated.
 - **Git history**: Moving files in git loses per-file history unless using `git mv`. The migration should use `git mv` where possible.
 - **Duplicate images**: If the same image is referenced by multiple posts, it should remain in `assets/images/` rather than being duplicated.
