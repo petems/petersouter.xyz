@@ -1,6 +1,7 @@
 +++
 author = "Peter Souter"
 categories = ["Tech"]
+tags = ["vDM30in30"]
 date = 2016-10-31T16:14:08Z
 description = ""
 draft = false
