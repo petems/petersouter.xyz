@@ -300,6 +300,10 @@ This is a personal blog, but if you notice issues:
 2. Create a new issue with details
 3. Submit a pull request if you have a fix
 
+## Acknowledgements
+
+This project was heavily inspired by [clburlison.com](https://github.com/clburlison/clburlison.com).
+
 ## License
 
 Content is personal and copyrighted. Code and configuration are available for reference.
