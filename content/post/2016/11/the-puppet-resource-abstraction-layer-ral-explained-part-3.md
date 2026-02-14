@@ -1,12 +1,12 @@
 +++
 author = "Peter Souter"
-categories = ["vDM30in30", "Puppet", "Tech"]
+categories = ["Tech"]
 date = 2016-11-24T10:47:00Z
 description = ""
 draft = false
 coverImage = "/images/2016/11/24919340383_4b331f2a0c_k.jpg"
 slug = "the-puppet-resource-abstraction-layer-ral-explained-part-3"
-tags = ["vDM30in30", "Puppet", "Tech"]
+tags = ["vDM30in30", "Puppet"]
 title = "The Puppet Resource Abstraction Layer (RAL) Explained: Part 3"
 
 +++

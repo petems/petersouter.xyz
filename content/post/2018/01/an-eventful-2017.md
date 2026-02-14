@@ -1,6 +1,6 @@
 +++
 author = "Peter Souter"
-categories = ["Personal"]
+categories = ["Career"]
 date = 2018-01-01T16:14:08Z
 description = "Wow, I didn't blog at all in 2017"
 draft = false

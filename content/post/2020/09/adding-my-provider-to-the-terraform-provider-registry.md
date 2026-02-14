@@ -1,13 +1,13 @@
 +++
 author = "Peter Souter"
-categories = ["Tech", "Blog", "Terraform", "Golang"]
+categories = ["Tech"]
 date = 2020-09-17T13:28:00Z
 description = ""
 draft = false
 thumbnailImage = "/images/2020/09/registry-page.png"
 coverImage = "/images/2020/09/registry-page-cover.png"
 slug = "adding-my-provider-to-the-terraform-provider-registry"
-tags = ["Tech", "Blog", "Terraform", "Golang"]
+tags = ["Blog", "Terraform", "Golang"]
 title = "Adding my Provider to the Terraform Provider Registry"
 +++
 

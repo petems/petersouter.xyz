@@ -1,12 +1,12 @@
 +++
 author = "Peter Souter"
-categories = ["vDM30in30", "Tech", "Puppet"]
+categories = ["Tech"]
 date = 2016-11-22T17:03:00Z
 description = "An explanation of the Puppet Resource Abstraction Layer (RAL): what it is, how it works, and how to write your own interfaces to it"
 draft = false
 coverImage = "/images/2016/11/turtle.png"
 slug = "the-puppet-resource-abstraction-layer-ral-explained-part-1"
-tags = ["vDM30in30", "Tech", "Puppet"]
+tags = ["vDM30in30", "Puppet"]
 title = "The Puppet Resource Abstraction Layer (RAL) Explained: Part 1"
 
 +++

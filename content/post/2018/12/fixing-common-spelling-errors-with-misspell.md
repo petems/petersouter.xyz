@@ -1,13 +1,13 @@
 +++
 author = "Peter Souter"
-categories = ["Tech", "Blog"]
+categories = ["Tech"]
 date = 2018-12-22T12:07:00Z
 description = ""
 draft = false
 thumbnailImage = "/images/2018/12/misspell_750.png"
 coverImage = "/images/2018/12/misspell.png"
 slug = "fixing-common-spelling-errors-with-misspell"
-tags = ["Tech", "Blog"]
+tags = ["Blog"]
 title = "Fixing common spelling errors with misspell"
 +++
 

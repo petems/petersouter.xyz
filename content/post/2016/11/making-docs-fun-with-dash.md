@@ -1,12 +1,12 @@
 +++
 author = "Peter Souter"
-categories = ["vDM30in30", "Tech"]
+categories = ["Tech"]
 date = 2016-11-19T12:47:00Z
 description = ""
 draft = false
 coverImage = "/images/2016/11/Screenshot-2016-11-26-14.07.25-1.png"
 slug = "making-docs-fun-with-dash"
-tags = ["vDM30in30", "Tech"]
+tags = ["vDM30in30"]
 title = "Making Docs fun with Dash"
 
 +++

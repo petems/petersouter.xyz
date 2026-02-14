@@ -1,12 +1,12 @@
 +++
 author = "Peter Souter"
-categories = ["personal", "fitness", "data", "kettlebells"]
+categories = ["Personal"]
 date = 2016-06-16T22:27:25Z
 description = ""
 draft = false
 coverImage = "/images/2016/10/Screenshot-2016-06-16-23.11.34-1.png"
 slug = "90-day-fitness-challenge"
-tags = ["personal", "fitness", "data", "kettlebells"]
+tags = ["Fitness", "Data", "Kettlebells"]
 title = "90 Day Fitness Challenge - Week 1 - First check-in"
 
 +++

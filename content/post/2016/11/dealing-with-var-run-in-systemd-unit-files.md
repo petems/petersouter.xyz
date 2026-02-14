@@ -1,12 +1,12 @@
 +++
 author = "Peter Souter"
-categories = ["vDM30in30", "open-source", "systemd"]
+categories = ["Tech"]
 date = 2016-11-28T15:20:00Z
 description = ""
 draft = false
 coverImage = "/images/2016/11/21010813392_4ff8e6b7e2_o.png"
 slug = "dealing-with-var-run-in-systemd-unit-files"
-tags = ["vDM30in30", "open-source", "systemd"]
+tags = ["vDM30in30", "Open-Source", "Systemd"]
 title = "Dealing with /var/run in systemd unit files"
 
 +++

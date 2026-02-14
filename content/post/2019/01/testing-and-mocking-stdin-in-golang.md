@@ -1,13 +1,13 @@
 +++
 author = "Peter Souter"
-categories = ["Golang", "Testing", "Coding", "Tech"]
+categories = ["Tech"]
 date = 2019-01-13T13:53:44Z
 description = ""
 draft = false
 thumbnailImage = "/images/2019/01/golang_stdin_750.png"
 coverImage = "/images/2019/01/golang_stdin.png"
 slug = "testing-and-mocking-stdin-with-golang"
-tags = ["Tech", "Blog", "Terraform", "Golang"]
+tags = ["Blog", "Terraform", "Golang"]
 title = "Testing and mocking stdin in Golang"
 +++
 

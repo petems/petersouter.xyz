@@ -1,12 +1,12 @@
 +++
 author = "Peter Souter"
-categories = ["vDM30in30", "Tech", "Puppet"]
+categories = ["Tech"]
 date = 2016-11-11T13:24:00Z
 description = ""
 draft = false
 coverImage = "/images/2016/11/Screenshot-2016-11-17-19.23.52.png"
 slug = "puppetserver-caching"
-tags = ["vDM30in30", "Tech", "Puppet"]
+tags = ["vDM30in30", "Puppet"]
 title = "puppetserver caching"
 
 +++

@@ -1,12 +1,12 @@
 +++
 author = "Peter Souter"
-categories = ["Puppet", "Tech", "open-source", "vDM30in30"]
+categories = ["Tech"]
 date = 2016-11-10T19:15:00Z
 description = ""
 draft = false
 coverImage = "/images/2016/11/Screenshot-2016-11-15-20.19.48.png"
 slug = "an-example-metrics-stack-with-collectd-graphite-and-grafana"
-tags = ["Puppet", "Tech", "open-source", "vDM30in30"]
+tags = ["Puppet", "Open-Source", "vDM30in30"]
 title = "An example metrics stack with Collectd, Graphite and Grafana"
 
 +++

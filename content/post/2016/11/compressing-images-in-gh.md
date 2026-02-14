@@ -1,12 +1,12 @@
 +++
 author = "Peter Souter"
-categories = ["Tech", "ghost", "vDM30in30"]
+categories = ["Tech"]
 date = 2016-11-09T20:48:00Z
 description = ""
 draft = false
 coverImage = "/images/2016/11/optimised.png"
 slug = "compressing-images-in-gh"
-tags = ["Tech", "ghost", "vDM30in30"]
+tags = ["Ghost", "vDM30in30"]
 title = "Compressing images in Ghost blog"
 
 +++

@@ -1,13 +1,13 @@
 +++
 author = "Peter Souter"
-categories = ["Tech", "Blog", "Terraform", "Puppet"]
+categories = ["Tech"]
 date = 2020-02-12T12:07:00Z
 description = ""
 draft = false
 thumbnailImage = "/images/2020/02/Vault-Agent-Auto-Auth_750.png"
 coverImage = "/images/2020/02/Vault-Agent-Auto-Auth.png"
 slug = "vault-caching-with-autoauth-and-puppet"
-tags = ["Tech", "Blog", "Terraform", "Puppet"]
+tags = ["Blog", "Terraform", "Puppet"]
 title = "Vault Caching with Auto-Auth and Puppet"
 +++
 

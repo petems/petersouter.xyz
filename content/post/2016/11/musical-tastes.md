@@ -1,12 +1,12 @@
 +++
 author = "Peter Souter"
-categories = ["personal", "vDM30in30", "music"]
+categories = ["Personal", "Music"]
 date = 2016-11-07T12:18:00Z
 description = ""
 draft = false
 coverImage = "/images/2016/11/triphop.png"
 slug = "musical-tastes"
-tags = ["personal", "vDM30in30", "music"]
+tags = ["vDM30in30"]
 title = "Musical Tastes"
 
 +++

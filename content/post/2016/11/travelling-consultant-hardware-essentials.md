@@ -1,12 +1,12 @@
 +++
 author = "Peter Souter"
-categories = ["vDM30in30", "personal", "travel"]
+categories = ["Personal", "Travel"]
 date = 2016-11-18T22:46:00Z
 description = ""
 draft = false
 coverImage = "/images/2016/11/fromthetop-1.png"
 slug = "travelling-consultant-hardware-essentials"
-tags = ["vDM30in30", "personal", "travel"]
+tags = ["vDM30in30"]
 title = "Travelling Consultant Hardware Essentials"
 
 +++

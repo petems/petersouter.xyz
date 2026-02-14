@@ -1,12 +1,12 @@
 +++
 author = "Peter Souter"
-categories = ["Puppet", "Tech"]
+categories = ["Tech"]
 date = 2014-02-08T23:08:33Z
 description = ""
 draft = false
 coverImage = "/images/2016/10/3241979402_cf45705f7d_o.png"
 slug = "kafo-for-master-less-puppet"
-tags = ["Puppet", "Tech"]
+tags = ["Puppet"]
 title = "Irssi, Mosh and Kafo: An awesome IRC combo"
 
 +++

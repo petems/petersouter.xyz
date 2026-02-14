@@ -1,12 +1,12 @@
 +++
 author = "Peter Souter"
-categories = ["vDM30in30", "FOSDEM", "conferences", "personal", "Tech", "open-source"]
+categories = ["Tech", "Travel"]
 date = 2016-11-21T12:58:00Z
 description = ""
 draft = false
 coverImage = "/images/2016/11/2016-01-31-11.00.18.jpg"
 slug = "fosdem-survival-guide"
-tags = ["vDM30in30", "FOSDEM", "conferences", "personal", "Tech", "open-source"]
+tags = ["vDM30in30", "FOSDEM", "Conferences", "Open-Source"]
 title = "FOSDEM Survival Guide"
 
 +++

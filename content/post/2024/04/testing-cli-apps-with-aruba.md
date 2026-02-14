@@ -1,13 +1,13 @@
 +++
 author = "Peter Souter"
-categories = ["Tech", "Blog", "Terraform", "Puppet"]
+categories = ["Tech"]
 date = 2024-04-09T13:28:00Z
 description = ""
 draft = false
 thumbnailImage = "/images/2024/04/aruba.png"
 coverImage = "/images/2024/04/aruba-cover.png"
 slug = "testing-cli-apps-with-aruba"
-tags = ["Tech", "Blog", "Ruby", "Testing"]
+tags = ["Blog", "Ruby", "Testing"]
 title = "Testing CLI apps with Aruba (Ruby or Not)"
 +++
 

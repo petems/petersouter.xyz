@@ -1,6 +1,6 @@
 +++
 author = "Peter Souter"
-categories = ["Personal", "Career"]
+categories = ["Career"]
 date = 2018-02-19T13:09:08Z
 description = "Old jobs and new jobs"
 draft = false

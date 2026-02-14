@@ -1,13 +1,13 @@
 +++
 author = "Peter Souter"
-categories = ["Tech", "Blog", "Vault"]
+categories = ["Tech"]
 date = 2018-08-12T22:10:09Z
 description = "Demonstrating the GCE Auth method for Vault"
 draft = false
 thumbnailImage = "/images/2018/07/vault_gcp_iam_750.png"
 coverImage = "/images/2018/07/vault_gcp_iam.jpg"
 slug = "gcp-auth-for-vault"
-tags = ["Tech", "GCE", "Vault"]
+tags = ["GCE", "Vault"]
 title = "Demonstrating the GCE Auth method for Vault"
 +++
 

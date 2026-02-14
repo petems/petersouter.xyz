@@ -1,12 +1,12 @@
 +++
 author = "Peter Souter"
-categories = ["vDM30in30", "Puppet", "metrics"]
+categories = ["Tech"]
 date = 2016-11-15T02:56:00Z
 description = ""
 draft = false
 coverImage = "/images/2016/11/Screenshot-2016-11-17-21.12.24-1.png"
 slug = "making-a-puppetserver-metrics-stack"
-tags = ["vDM30in30", "Puppet", "metrics"]
+tags = ["vDM30in30", "Puppet", "Metrics"]
 title = "JMX puppetserver metrics vagrant stack"
 
 +++

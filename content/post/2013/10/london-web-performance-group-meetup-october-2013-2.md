@@ -1,12 +1,12 @@
 +++
 author = "Peter Souter"
-categories = ["Tech", "meetup", "performance"]
+categories = ["Tech"]
 date = 2013-10-15T11:00:00Z
 description = ""
 draft = false
 coverImage = "/images/2016/10/web_perf_oct-4.jpeg"
 slug = "london-web-performance-group-meetup-october-2013-2"
-tags = ["Tech", "meetup", "performance"]
+tags = ["Meetups", "Performance"]
 title = "London Web Performance Group meetup - October 2013"
 
 +++

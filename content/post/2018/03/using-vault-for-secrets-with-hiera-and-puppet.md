@@ -1,13 +1,13 @@
 +++
 author = "Peter Souter"
-categories = ["Tech", "Blog", "Puppet", "Vault"]
+categories = ["Tech"]
 date = 2018-03-19T17:07:00Z
 description = "How to use Vault with Hiera 5 for secret management with Puppet"
 draft = false
 thumbnailImage = "/images/2018/03/hiera-vault-750.png"
 coverImage = "/images/2018/03/hiera-vault.png"
 slug = "using-vault-for-secrets-with-hiera-and-puppet"
-tags = ["Tech", "Vagrant", "Vault", "Puppet"]
+tags = ["Vagrant", "Vault", "Puppet"]
 title = "How to use Vault with Hiera 5 for secret management with Puppet"
 
 +++

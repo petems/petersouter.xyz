@@ -1,12 +1,12 @@
 +++
 author = "Peter Souter"
-categories = ["Tech", "FOSDEM", "meetups", "conferences"]
+categories = ["Tech", "Travel"]
 date = 2014-03-01T02:55:00Z
 description = ""
 draft = false
 coverImage = "/images/2016/10/BfYSvieIQAAYYzH.jpg"
 slug = "fosdem-2014"
-tags = ["Tech", "FOSDEM", "meetups", "conferences"]
+tags = ["FOSDEM", "Meetups", "Conferences"]
 title = "FOSDEM 2014"
 
 +++

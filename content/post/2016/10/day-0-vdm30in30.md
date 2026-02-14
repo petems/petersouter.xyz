@@ -1,12 +1,12 @@
 +++
 author = "Peter Souter"
-categories = ["vDM30in30"]
+categories = ["Tech"]
+tags = ["vDM30in30"]
 date = 2016-10-31T16:14:08Z
 description = ""
 draft = false
 coverImage = "/images/2016/10/Screenshot-2016-10-31-16.14.00.png"
 slug = "day-0-vdm30in30"
-tags = ["vDM30in30"]
 title = "Day 0: #vDM30in30"
 
 +++

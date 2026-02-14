@@ -1,12 +1,12 @@
 +++
 author = "Peter Souter"
-categories = ["Puppet", "Tech", "nginx", "gandi", "ghost"]
+categories = ["Tech"]
 date = 2015-02-27T14:16:00Z
 description = ""
 draft = false
 coverImage = "/images/2016/10/15944989872_b958dc5552_z.jpg"
 slug = "migrating-ghost-blogs-with-puppet"
-tags = ["Puppet", "Tech", "nginx", "gandi", "ghost"]
+tags = ["Puppet", "Nginx", "Gandi", "Ghost"]
 title = "Migrating my blog to new Ghost and enabling HTTPS"
 
 +++

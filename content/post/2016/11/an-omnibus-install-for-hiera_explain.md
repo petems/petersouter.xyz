@@ -1,12 +1,12 @@
 +++
 author = "Peter Souter"
-categories = ["Puppet", "Tech", "vDM30in30", "hiera"]
+categories = ["Tech"]
 date = 2016-11-01T21:48:11Z
 description = ""
 draft = false
 coverImage = "/images/2016/11/screenshot-1.png"
 slug = "an-omnibus-install-for-hiera_explain"
-tags = ["Puppet", "Tech", "vDM30in30", "hiera"]
+tags = ["Puppet", "vDM30in30", "Hiera"]
 title = "An Omnibus package for hiera_explain"
 
 +++
