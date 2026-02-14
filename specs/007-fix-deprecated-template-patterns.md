@@ -104,7 +104,7 @@ If the theme remains vendored (not migrated to Hugo Modules per Spec 006), these
 
 ```diff
 - {{ $.Scratch.SetInMap (printf "%s" (delimit (first (add $index 1) $categories) "/")) $page.File.UniqueID $page }}
-+ {{ $.Store.SetInMap (printf "%s" (delimit (first (add $index 1) $categories) "/")) $page.File.ContentBaseName $page }}
++ {{ $.Store.SetInMap (printf "%s" (delimit (first (add $index 1) $categories) "/")) $page.RelPermalink $page }}
 ```
 
 ### Phase 4: Fix `.Page.` prefix (1 occurrence, theme only)
