@@ -68,8 +68,10 @@ mv static/images/* assets/images/
 {{ if $img }}
   {{ $jpg := $img.Resize "800x q85" }}
   {{ $webp := $img.Resize "800x webp q85" }}
+  {{ $avif := $img.Resize "800x avif q75" }}
 
   <picture>
+    <source srcset="{{ $avif.RelPermalink }}" type="image/avif">
     <source srcset="{{ $webp.RelPermalink }}" type="image/webp">
     <img
       src="{{ $jpg.RelPermalink }}"
@@ -98,6 +100,7 @@ mv static/images/* assets/images/
 {{ $img := resources.Get $src }}
 {{ if $img }}
   {{ $sizes := slice 400 600 800 1200 }}
+  {{ $avifSrcset := slice }}
   {{ $webpSrcset := slice }}
   {{ $jpgSrcset := slice }}
 
@@ -105,14 +108,20 @@ mv static/images/* assets/images/
     {{ if le . $img.Width }}
       {{ $resized := $img.Resize (printf "%dx q85" .) }}
       {{ $webp := $img.Resize (printf "%dx webp q85" .) }}
+      {{ $avif := $img.Resize (printf "%dx avif q75" .) }}
       {{ $jpgSrcset = $jpgSrcset | append (printf "%s %dw" $resized.RelPermalink .) }}
       {{ $webpSrcset = $webpSrcset | append (printf "%s %dw" $webp.RelPermalink .) }}
+      {{ $avifSrcset = $avifSrcset | append (printf "%s %dw" $avif.RelPermalink .) }}
     {{ end }}
   {{ end }}
 
   {{ $default := $img.Resize "800x q85" }}
 
   <picture>
+    <source
+      srcset="{{ delimit $avifSrcset ", " }}"
+      sizes="(max-width: 800px) 100vw, 800px"
+      type="image/avif">
     <source
       srcset="{{ delimit $webpSrcset ", " }}"
       sizes="(max-width: 800px) 100vw, 800px"
@@ -147,8 +156,10 @@ Extend the render hook from Spec 008 to process images through Hugo Pipes:
 {{ if $img }}
   {{ $default := $img.Resize "800x q85" }}
   {{ $webp := $img.Resize "800x webp q85" }}
+  {{ $avif := $img.Resize "800x avif q75" }}
   <figure>
     <picture>
+      <source srcset="{{ $avif.RelPermalink }}" type="image/avif">
       <source srcset="{{ $webp.RelPermalink }}" type="image/webp">
       <img
         src="{{ $default.RelPermalink }}"
@@ -240,7 +251,7 @@ Recommend doing this incrementally:
 
 ## Risks
 
-- **Build time increase**: Processing hundreds of images adds build time. Hugo caches results in `resources/_gen/`, so subsequent builds are fast, but the first build after migration may take several minutes.
+- **Build time increase**: Processing hundreds of images adds build time, especially AVIF encoding which is significantly slower than WebP. Hugo caches results in `resources/_gen/`, so subsequent builds are fast, but the first build after migration may take several minutes. Consider generating AVIF only for key images (covers, thumbnails) if full-site AVIF generation is too slow.
 - **Image path breakage**: Moving from `static/` to `assets/` requires updating all image references. A missing update means a broken image.
 - **Cover image handling**: The tranquilpeak theme has its own cover image rendering in `layouts/partials/post/header-cover.html`. This template must also be updated to use `resources.Get` instead of direct paths.
 - **Gallery images**: Posts using the `gallery` frontmatter field need special handling since galleries reference multiple images.
@@ -261,8 +272,9 @@ du -sh static/images/    # Before (should be empty after migration)
 du -sh assets/images/    # Source images
 du -sh resources/_gen/   # Generated variants
 
-# Check WebP output
+# Check WebP and AVIF output
 file resources/_gen/images/**/*.webp | head
+file resources/_gen/images/**/*.avif | head
 
 # Run Lighthouse audit
 # Score should improve for "Serve images in next-gen formats" and "Properly size images"
