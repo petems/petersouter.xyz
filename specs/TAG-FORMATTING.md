@@ -10,7 +10,7 @@ Tags on the /tags/ archives page look messy due to inconsistent capitalization (
 
 Capitalize all tags to Title Case in frontmatter, preserving acronyms. Since we're already touching every post for category differentiation (Phase 2), this adds minimal overhead.
 
-**Canonical tag list (55 tags, Title Cased):**
+**Canonical tag list (45 tags, Title Cased):**
 
 | Current | Canonical | Notes |
 |---|---|---|
@@ -22,7 +22,6 @@ Capitalize all tags to Title Case in frontmatter, preserving acronyms. Since we'
 | `cfgmgmtcamp` | `CfgMgmtCamp` | Event name |
 | `conferences` | `Conferences` | |
 | `config management` | `Config Management` | |
-| `Cooking` | `Cooking` | Already correct |
 | `cygwin` | `Cygwin` | |
 | `data` | `Data` | |
 | `devops` | `DevOps` | Standard casing |
@@ -42,12 +41,10 @@ Capitalize all tags to Title Case in frontmatter, preserving acronyms. Since we'
 | `meetup`/`meetups` | `Meetups` | Standardize to plural |
 | `metrics` | `Metrics` | |
 | `monitoring` | `Monitoring` | |
-| `music` | `Music` | |
 | `New Year` | `New Year` | Already correct |
 | `nginx` | `Nginx` | |
 | `open-source` | `Open-Source` | |
 | `performance` | `Performance` | |
-| `personal`/`Personal` | `Personal` | Fix inconsistency |
 | `Puppet` | `Puppet` | Already correct |
 | `ruby`/`Ruby` | `Ruby` | Fix inconsistency |
 | `S3` | `S3` | Acronym, keep |
@@ -56,10 +53,8 @@ Capitalize all tags to Title Case in frontmatter, preserving acronyms. Since we'
 | `systemd` | `Systemd` | |
 | `Talks` | `Talks` | Already correct |
 | `TDD` | `TDD` | Acronym, keep |
-| `Tech` | `Tech` | Already correct |
 | `Terraform` | `Terraform` | Already correct |
 | `Testing` | `Testing` | Already correct |
-| `travel` | `Travel` | |
 | `Vagrant` | `Vagrant` | Already correct |
 | `Vault` | `Vault` | Already correct |
 | `vDM30in30` | `vDM30in30` | Keep original - hashtag |
@@ -75,6 +70,8 @@ Currently tags and categories are identical in ~55 of 60 posts. Change categorie
 
 **Category set:** `Tech`, `Personal`, `Career`, `Cooking`, `Travel`, `Music`
 
+**Non-duplication rule:** A post's tags must not duplicate any of its categories. Tags should be more specific than broad category names. The five category names (`Tech`, `Personal`, `Cooking`, `Travel`, `Music`) have been removed from the canonical tag list in Phase 1 for this reason. If a post previously used one of these as a tag, it should either be dropped (when covered by the category) or replaced with a more specific tag.
+
 **Category assignment by post:**
 
 | Post | Categories | Tags (keep/update per Phase 1) |
@@ -82,10 +79,10 @@ Currently tags and categories are identical in ~55 of 60 posts. Change categorie
 | Posts about Puppet, Terraform, Docker, testing, tools, systems, monitoring, etc. | `Tech` | Keep specific tech tags |
 | Posts about fitness, health, gym, kettlebells | `Personal` | Keep specific fitness/health tags |
 | `an-eventful-2017.md`, `end-of-an-era.md` | `Career` | Keep existing tags |
-| `kasespatzle-making.md` | `Cooking` | `Cooking` |
+| `kasespatzle-making.md` | `Cooking` | _(none — covered by category)_ |
 | `dublin-web-summit-2013.md`, conference travel posts | `Tech`, `Travel` | Conference-related tags |
 | `travelling-consultant-hardware-essentials.md` | `Personal`, `Travel` | Keep existing tags |
-| `musical-tastes.md` | `Personal`, `Music` | `Music`, `vDM30in30` |
+| `musical-tastes.md` | `Personal`, `Music` | `vDM30in30` |
 | `fosdem-survival-guide.md` | `Tech`, `Travel` | FOSDEM, Conferences, etc. |
 
 **Detailed mapping (all 62 posts):**
@@ -109,7 +106,7 @@ Two posts have no tags or categories:
    - Categories: `["Personal"]`
 
 2. **`dublin-web-summit-2013.md`**
-   - Tags: `["Conferences", "Meetups", "Tech"]`
+   - Tags: `["Conferences", "Meetups", "DevOps"]`
    - Categories: `["Tech", "Travel"]`
 
 ---
