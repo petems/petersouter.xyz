@@ -1,6 +1,6 @@
 +++
 author = "Peter Souter"
-categories = ["Tech", "Blog", "Puppet", "Vault"]
+categories = ["Tech"]
 date = 2018-03-19T17:07:00Z
 description = "How to use Vault with Hiera 5 for secret management with Puppet"
 draft = false

@@ -1,6 +1,6 @@
 +++
 author = "Peter Souter"
-categories = ["Tech", "Blog", "Terraform", "Golang"]
+categories = ["Tech"]
 date = 2020-09-17T13:28:00Z
 description = ""
 draft = false

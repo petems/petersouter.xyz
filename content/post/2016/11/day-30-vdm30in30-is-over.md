@@ -6,6 +6,8 @@ draft = false
 coverImage = "/images/2016/11/Screenshot-2016-11-30-20.29.21.png"
 slug = "day-30-vdm30in30-is-over"
 title = "Day 30 vdm30in30 is over!"
+categories = ["Personal"]
+tags = ["vDM30in30", "Blog"]
 
 +++
 

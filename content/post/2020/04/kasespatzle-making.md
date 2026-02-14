@@ -1,6 +1,6 @@
 +++
 author = "Peter Souter"
-categories = ["Personal", "Cooking"]
+categories = ["Cooking"]
 date = 2020-04-13T13:14:08Z
 description = "Making Käsespätzle"
 draft = false

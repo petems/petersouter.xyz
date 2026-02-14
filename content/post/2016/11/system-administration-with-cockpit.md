@@ -1,12 +1,12 @@
 +++
 author = "Peter Souter"
-categories = ["Puppet", "Tech", "open-source", "vDM30in30"]
+categories = ["Tech"]
 date = 2016-11-05T20:55:00Z
 description = ""
 draft = false
 coverImage = "/images/2016/11/Screenshot-2016-11-06-20.10.42-1.png"
 slug = "system-administration-with-cockpit"
-tags = ["Puppet", "Tech", "open-source", "vDM30in30"]
+tags = ["Puppet", "Tech", "Open-Source", "vDM30in30"]
 title = "System Administration with Cockpit"
 
 +++

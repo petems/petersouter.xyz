@@ -1,12 +1,12 @@
 +++
 author = "Peter Souter"
-categories = ["Tech", "open-source", "vDM30in30"]
+categories = ["Tech"]
 date = 2016-11-03T23:49:00Z
 description = ""
 draft = false
 coverImage = "/images/2016/11/Screenshot-2016-11-04-01.07.59.png"
 slug = "how-i-accidentally-helped-find-a-showstopper-bug-in-ruby-2"
-tags = ["Tech", "open-source", "vDM30in30"]
+tags = ["Tech", "Open-Source", "vDM30in30"]
 title = "How I accidentally helped find a showstopper bug in Ruby"
 
 +++

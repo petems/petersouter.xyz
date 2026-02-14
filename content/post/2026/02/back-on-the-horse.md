@@ -1,11 +1,11 @@
 +++
 author = "Peter Souter"
-categories = ["personal", "tech"]
+categories = ["Personal"]
 date = 2026-02-12T09:52:16Z
 description = "A post about avoiding burnout and building external accountability for blogging in 2026."
 draft = false
 slug = "back-on-the-horse-refocusing-on-what-matters-in-2026"
-tags = ["blogging", "ai", "productivity", "burnout", "speaking"]
+tags = ["Blogging", "AI", "Productivity", "Burnout", "Speaking"]
 title = "Back on the Horse: Refocusing on What Matters in 2026"
 keywords = ["blogging", "ai burnout", "productivity", "testcon", "website updates"]
 thumbnailImage = "/images/2026/02/bikes-landscape.jpg"

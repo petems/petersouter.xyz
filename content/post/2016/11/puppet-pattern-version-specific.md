@@ -1,12 +1,12 @@
 +++
 author = "Peter Souter"
-categories = ["vDM30in30", "Puppet", "open-source"]
+categories = ["Tech"]
 date = 2016-11-29T15:30:00Z
 description = ""
 draft = false
 coverImage = "/images/2016/11/17340332605_b13cf471ad_h.jpg"
 slug = "puppet-pattern-version-specific"
-tags = ["vDM30in30", "Puppet", "open-source"]
+tags = ["vDM30in30", "Puppet", "Open-Source"]
 title = "A Puppet pattern for version specific config settings"
 
 +++

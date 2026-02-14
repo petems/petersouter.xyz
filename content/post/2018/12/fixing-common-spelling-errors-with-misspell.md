@@ -1,6 +1,6 @@
 +++
 author = "Peter Souter"
-categories = ["Tech", "Blog"]
+categories = ["Tech"]
 date = 2018-12-22T12:07:00Z
 description = ""
 draft = false

@@ -1,6 +1,6 @@
 +++
 author = "Peter Souter"
-categories = ["Tech", "Blog", "Vault"]
+categories = ["Tech"]
 date = 2018-08-12T22:10:09Z
 description = "Demonstrating the GCE Auth method for Vault"
 draft = false

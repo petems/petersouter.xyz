@@ -1,12 +1,12 @@
 +++
 author = "Peter Souter"
-categories = ["vDM30in30", "open-source", "Tech"]
+categories = ["Tech"]
 date = 2016-11-27T21:44:00Z
 description = ""
 draft = false
 coverImage = "/images/2016/11/Screenshot-2016-11-30-10.20.06.png"
 slug = "sublime-plugins"
-tags = ["vDM30in30", "open-source", "Tech"]
+tags = ["vDM30in30", "Open-Source", "Tech"]
 title = "Sublime Plugins"
 
 +++

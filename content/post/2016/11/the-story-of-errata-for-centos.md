@@ -1,12 +1,12 @@
 +++
 author = "Peter Souter"
-categories = ["vDM30in30", "Tech", "sysadmin"]
+categories = ["Tech"]
 date = 2016-11-14T16:57:00Z
 description = ""
 draft = false
 coverImage = "/images/2016/11/45-0.png"
 slug = "the-story-of-errata-for-centos"
-tags = ["vDM30in30", "Tech", "sysadmin"]
+tags = ["vDM30in30", "Tech", "SysAdmin"]
 title = "The Story of Errata for CentOS"
 
 +++

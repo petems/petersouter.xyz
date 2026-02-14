@@ -1,6 +1,6 @@
 +++
 author = "Peter Souter"
-categories = ["Puppet", "Tech"]
+categories = ["Tech"]
 date = 2014-02-08T23:08:33Z
 description = ""
 draft = false

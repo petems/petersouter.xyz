@@ -1,12 +1,12 @@
 +++
 author = "Peter Souter"
-categories = ["vDM30in30", "Puppet", "open-source"]
+categories = ["Tech"]
 date = 2016-11-16T14:34:00Z
 description = ""
 draft = false
 coverImage = "/images/2016/11/dashboard-1.png"
 slug = "guis-for-a-puppet-estate"
-tags = ["vDM30in30", "Puppet", "open-source"]
+tags = ["vDM30in30", "Puppet", "Open-Source"]
 title = "GUI's for a Puppet estate"
 
 +++

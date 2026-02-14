@@ -1,6 +1,6 @@
 +++
 author = "Peter Souter"
-categories = ["Tech", "Blog"]
+categories = ["Tech"]
 date = 2018-03-02T12:47:00Z
 description = "Moving from Ghost to Hugo"
 draft = false

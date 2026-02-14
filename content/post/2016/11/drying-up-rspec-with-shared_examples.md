@@ -1,12 +1,12 @@
 +++
 author = "Peter Souter"
-categories = ["vDM30in30", "Testing", "Puppet", "ruby"]
+categories = ["Tech"]
 date = 2016-11-17T11:46:00Z
 description = ""
 draft = false
 coverImage = "/images/2016/11/Screenshot-2016-11-30-13.57.59.png"
 slug = "drying-up-rspec-with-shared_examples"
-tags = ["vDM30in30", "Testing", "Puppet", "ruby"]
+tags = ["vDM30in30", "Testing", "Puppet", "Ruby"]
 title = "Drying up rspec with shared_examples"
 
 +++

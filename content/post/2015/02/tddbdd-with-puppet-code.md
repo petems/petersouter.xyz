@@ -1,6 +1,6 @@
 +++
 author = "Peter Souter"
-categories = ["Puppet", "TDD", "BDD", "Testing", "Tech"]
+categories = ["Tech"]
 date = 2015-02-18T13:53:44Z
 description = ""
 draft = false
