@@ -6,7 +6,7 @@ description = ""
 draft = false
 coverImage = "/images/2016/11/triphop.png"
 slug = "musical-tastes"
-tags = ["Personal", "vDM30in30", "Music"]
+tags = ["vDM30in30"]
 title = "Musical Tastes"
 
 +++

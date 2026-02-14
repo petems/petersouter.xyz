@@ -6,7 +6,7 @@ description = ""
 draft = false
 coverImage = "/images/2016/10/4442144329_420389a614_z.jpg"
 slug = "tddbdd-with-puppet-code"
-tags = ["Puppet", "TDD", "BDD", "Testing", "Tech"]
+tags = ["Puppet", "TDD", "BDD", "Testing"]
 title = "TDD/BDD with Puppet code using rspec-puppet"
 
 +++

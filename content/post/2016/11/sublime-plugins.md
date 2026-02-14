@@ -6,7 +6,7 @@ description = ""
 draft = false
 coverImage = "/images/2016/11/Screenshot-2016-11-30-10.20.06.png"
 slug = "sublime-plugins"
-tags = ["vDM30in30", "Open-Source", "Tech"]
+tags = ["vDM30in30", "Open-Source"]
 title = "Sublime Plugins"
 
 +++

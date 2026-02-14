@@ -6,7 +6,7 @@ description = "How to test Puppet on Windows machines (particularly Windows 2008
 draft = false
 coverImage = "/images/2016/10/108487-1.png"
 slug = "testing-windows-puppet-with-beaker"
-tags = ["Puppet", "Testing", "Tech", "Beaker", "Windows", "Cygwin"]
+tags = ["Puppet", "Testing", "Beaker", "Windows", "Cygwin"]
 title = "Testing Windows with Beaker without Cygwin"
 
 +++

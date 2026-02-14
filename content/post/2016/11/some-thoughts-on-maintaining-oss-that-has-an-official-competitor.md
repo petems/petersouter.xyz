@@ -6,7 +6,7 @@ description = ""
 draft = false
 coverImage = "/images/2016/11/Screenshot-2016-11-02-23.38.22.png"
 slug = "some-thoughts-on-maintaining-oss-that-has-an-official-competitor"
-tags = ["Tech", "Open-Source", "vDM30in30"]
+tags = ["Open-Source", "vDM30in30"]
 title = "Some thoughts on maintaining OSS that has an official \"competitor\""
 
 +++

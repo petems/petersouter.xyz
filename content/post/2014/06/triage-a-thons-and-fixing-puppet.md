@@ -6,7 +6,7 @@ description = ""
 draft = false
 coverImage = "/images/2016/10/triage_a_thon.png"
 slug = "triage-a-thons-and-fixing-puppet"
-tags = ["Puppet", "Tech", "Config Management", "Open-Source"]
+tags = ["Puppet", "Config Management", "Open-Source"]
 title = "Triage-a-thons and Fixing Puppet"
 
 +++

@@ -6,7 +6,7 @@ description = ""
 draft = false
 coverImage = "/images/2016/10/15944989872_b958dc5552_z.jpg"
 slug = "migrating-ghost-blogs-with-puppet"
-tags = ["Puppet", "Tech", "Nginx", "Gandi", "Ghost"]
+tags = ["Puppet", "Nginx", "Gandi", "Ghost"]
 title = "Migrating my blog to new Ghost and enabling HTTPS"
 
 +++

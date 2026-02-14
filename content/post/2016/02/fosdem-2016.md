@@ -6,7 +6,7 @@ description = ""
 draft = false
 coverImage = "/images/2016/10/24445631829_4e2e715900_z.jpg"
 slug = "fosdem-2016"
-tags = ["Tech", "FOSDEM", "Talks", "Config Management"]
+tags = ["FOSDEM", "Talks", "Config Management"]
 title = "FOSDEM 2016"
 
 +++

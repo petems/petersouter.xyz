@@ -7,7 +7,7 @@ draft = false
 thumbnailImage = "/images/2018/07/golang_http_750.png"
 coverImage = "/images/2018/07/golang_http.png"
 slug = "writing-and-playing-with-custom-terraform-providers"
-tags = ["Tech", "Blog", "Terraform", "Golang"]
+tags = ["Blog", "Terraform", "Golang"]
 title = "Writing and playing with custom Terraform Providers"
 +++
 

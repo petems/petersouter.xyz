@@ -6,7 +6,7 @@ description = ""
 draft = false
 coverImage = "/images/2016/11/7275336890_35ebd02683_k.jpg"
 slug = "the-puppet-resource-abstraction-layer-ral-explained-part-2"
-tags = ["vDM30in30", "Tech", "Puppet"]
+tags = ["vDM30in30", "Puppet"]
 title = "The Puppet Resource Abstraction Layer (RAL) Explained: Part 2"
 
 +++

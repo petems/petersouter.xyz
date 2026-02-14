@@ -6,7 +6,7 @@ description = "Like a lot of people in tech, I wasn't exactly the pinnacle of he
 draft = false
 coverImage = "/images/2016/10/Screenshot-2016-10-06-23.12.28.png"
 slug = "fitter-and-healthier"
-tags = ["Personal", "Fitness", "Health", "Gym"]
+tags = ["Fitness", "Health", "Gym"]
 title = "Getting fitter and healthier in 90 days...with data!"
 
 +++

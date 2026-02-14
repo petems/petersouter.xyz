@@ -7,7 +7,7 @@ draft = false
 thumbnailImage = "/images/2020/04/device-on-pot-750.jpg"
 coverImage = "/images/2020/04/device-on-pot.jpg"
 slug = "kasespatzle-making"
-tags = ["Cooking"]
+tags = []
 title = "Making Käsespätzle"
 
 +++

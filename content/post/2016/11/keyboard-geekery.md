@@ -6,7 +6,7 @@ description = ""
 draft = false
 coverImage = "/images/2016/11/Switch_Tester_1__11977.1455787922.1280.1280--1--1.png"
 slug = "keyboard-geekery"
-tags = ["vDM30in30", "Personal", "Tech"]
+tags = ["vDM30in30"]
 title = "Keyboard Geekery"
 
 +++

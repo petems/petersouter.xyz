@@ -7,7 +7,7 @@ coverImage = "/images/2016/10/10226806236_2915beec76_z.jpg"
 slug = "dublin-web-summit-2013"
 title = "Dublin Web Summit 2013"
 categories = ["Tech", "Travel"]
-tags = ["Conferences", "Meetups", "Tech"]
+tags = ["Conferences", "Meetups", "DevOps"]
 
 +++
 

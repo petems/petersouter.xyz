@@ -6,7 +6,7 @@ description = ""
 draft = false
 coverImage = "/images/2016/10/3241979402_cf45705f7d_o.png"
 slug = "kafo-for-master-less-puppet"
-tags = ["Puppet", "Tech"]
+tags = ["Puppet"]
 title = "Irssi, Mosh and Kafo: An awesome IRC combo"
 
 +++

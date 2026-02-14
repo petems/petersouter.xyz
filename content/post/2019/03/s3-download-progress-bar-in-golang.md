@@ -7,7 +7,7 @@ draft = false
 thumbnailImage = "/images/2019/03/s3_progressbar_750.png"
 coverImage = "/images/2019/03/s3_progressbar.png"
 slug = "s3-download-progress-bar-in-golang"
-tags = ["Tech", "Blog", "AWS", "Golang", "S3"]
+tags = ["Blog", "AWS", "Golang", "S3"]
 title = "S3 Download Progress Bar in Golang"
 +++
 
