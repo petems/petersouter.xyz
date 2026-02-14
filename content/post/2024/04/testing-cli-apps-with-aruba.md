@@ -7,7 +7,7 @@ draft = false
 thumbnailImage = "/images/2024/04/aruba.png"
 coverImage = "/images/2024/04/aruba-cover.png"
 slug = "testing-cli-apps-with-aruba"
-tags = ["Tech", "Blog", "Ruby", "Testing"]
+tags = ["Blog", "Ruby", "Testing"]
 title = "Testing CLI apps with Aruba (Ruby or Not)"
 +++
 

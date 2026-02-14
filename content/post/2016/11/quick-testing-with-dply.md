@@ -6,7 +6,7 @@ description = ""
 draft = false
 coverImage = "/images/2016/11/Screenshot-2016-11-29-21.30.40-1.png"
 slug = "quick-testing-with-dply"
-tags = ["vDM30in30", "Tech"]
+tags = ["vDM30in30"]
 title = "Quickly testing with dply.co"
 
 +++

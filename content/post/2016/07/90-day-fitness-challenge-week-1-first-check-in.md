@@ -6,7 +6,7 @@ description = ""
 draft = false
 coverImage = "/images/2016/10/Screenshot-2016-07-04-23.52.27.png"
 slug = "90-day-fitness-challenge-week-1-first-check-in"
-tags = ["Personal", "Fitness", "Health", "Gym", "Data", "Kettlebells"]
+tags = ["Fitness", "Health", "Gym", "Data", "Kettlebells"]
 title = "90 Day Fitness Challenge - Week 4 - 33% Check-in"
 
 +++

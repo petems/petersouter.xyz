@@ -6,7 +6,7 @@ description = ""
 draft = false
 coverImage = "/images/2016/11/optimised.png"
 slug = "compressing-images-in-gh"
-tags = ["Tech", "Ghost", "vDM30in30"]
+tags = ["Ghost", "vDM30in30"]
 title = "Compressing images in Ghost blog"
 
 +++

@@ -6,7 +6,7 @@ description = ""
 draft = false
 coverImage = "/images/2016/11/Screenshot-2016-11-15-20.19.48.png"
 slug = "an-example-metrics-stack-with-collectd-graphite-and-grafana"
-tags = ["Puppet", "Tech", "Open-Source", "vDM30in30"]
+tags = ["Puppet", "Open-Source", "vDM30in30"]
 title = "An example metrics stack with Collectd, Graphite and Grafana"
 
 +++

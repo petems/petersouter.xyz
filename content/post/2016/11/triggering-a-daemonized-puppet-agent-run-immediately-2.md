@@ -6,7 +6,7 @@ description = ""
 draft = false
 coverImage = "/images/2016/11/usr1.png"
 slug = "triggering-a-daemonized-puppet-agent-run-immediately-2"
-tags = ["vDM30in30", "Puppet", "Tech", "SysAdmin"]
+tags = ["vDM30in30", "Puppet", "SysAdmin"]
 title = "Triggering a daemonized puppet agent with SIGUSR1"
 
 +++

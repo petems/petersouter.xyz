@@ -6,7 +6,7 @@ description = ""
 draft = false
 coverImage = "/images/2016/11/3248419938_768ee915bf_o-1.png"
 slug = "jmxtrans-what-is-it-and-how-to-configure-it"
-tags = ["vDM30in30", "Tech", "Puppet", "Monitoring", "Metrics"]
+tags = ["vDM30in30", "Puppet", "Monitoring", "Metrics"]
 title = "jmxtrans: What is it and how to configure it"
 
 +++

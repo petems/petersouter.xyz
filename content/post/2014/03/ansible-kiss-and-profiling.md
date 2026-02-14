@@ -6,7 +6,7 @@ description = ""
 draft = false
 coverImage = "/images/2016/10/8505316460_78d0abaf5b_z.jpg"
 slug = "ansible-kiss-and-profiling"
-tags = ["Tech", "Config Management", "Ansible"]
+tags = ["Config Management", "Ansible"]
 title = "Ansible: Keep it Simple!"
 
 +++

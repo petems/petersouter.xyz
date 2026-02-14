@@ -6,7 +6,7 @@ description = ""
 draft = false
 coverImage = "/images/2016/11/45-0.png"
 slug = "the-story-of-errata-for-centos"
-tags = ["vDM30in30", "Tech", "SysAdmin"]
+tags = ["vDM30in30", "SysAdmin"]
 title = "The Story of Errata for CentOS"
 
 +++

@@ -81,7 +81,7 @@ Currently tags and categories are identical in ~55 of 60 posts. Change categorie
 | `an-eventful-2017.md`, `end-of-an-era.md` | `Career` | Keep existing tags |
 | `kasespatzle-making.md` | `Cooking` | _(none — covered by category)_ |
 | `dublin-web-summit-2013.md`, conference travel posts | `Tech`, `Travel` | Conference-related tags |
-| `travelling-consultant-hardware-essentials.md` | `Personal`, `Travel` | Keep existing tags |
+| `travelling-consultant-hardware-essentials.md` | `Personal`, `Travel` | `vDM30in30` |
 | `musical-tastes.md` | `Personal`, `Music` | `vDM30in30` |
 | `fosdem-survival-guide.md` | `Tech`, `Travel` | FOSDEM, Conferences, etc. |
 

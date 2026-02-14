@@ -6,7 +6,7 @@ description = ""
 draft = false
 coverImage = "/images/2016/10/5592629831_c79b801af5_z.jpg"
 slug = "capybara-not-just-for-ruby"
-tags = ["Testing", "Tech", "Ruby"]
+tags = ["Testing", "Ruby"]
 title = "Capybara Smoketests: Not just for Ruby!"
 
 +++

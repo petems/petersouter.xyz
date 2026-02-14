@@ -6,7 +6,7 @@ description = ""
 draft = false
 coverImage = "/images/2016/11/Screenshot-2016-11-06-20.10.42-1.png"
 slug = "system-administration-with-cockpit"
-tags = ["Puppet", "Tech", "Open-Source", "vDM30in30"]
+tags = ["Puppet", "Open-Source", "vDM30in30"]
 title = "System Administration with Cockpit"
 
 +++

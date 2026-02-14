@@ -7,7 +7,7 @@ draft = false
 thumbnailImage = "/images/2018/03/ghost-export-750.png"
 coverImage = "/images/2018/03/ghost-export.png"
 slug = "moving-my-blog-from-ghost-to-hugo"
-tags = ["Tech", "Blog", "Terraform", "Hugo"]
+tags = ["Blog", "Terraform", "Hugo"]
 title = "Migrating my blog from Ghost to Hugo"
 
 +++

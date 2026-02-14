@@ -6,7 +6,7 @@ description = ""
 draft = false
 coverImage = "/images/2016/11/marmo.png"
 slug = "debugging-puppet-issues"
-tags = ["Puppet", "Tech", "vDM30in30"]
+tags = ["Puppet", "vDM30in30"]
 title = "Debugging Puppet Issues"
 
 +++

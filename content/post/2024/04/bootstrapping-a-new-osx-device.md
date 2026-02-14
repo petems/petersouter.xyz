@@ -7,7 +7,7 @@ draft = false
 thumbnailImage = "/images/2024/04/osx-strap.png"
 coverImage = "/images/2024/04/osx-strap-cover.png"
 slug = "bootstrapping-a-new-osx-device"
-tags = ["Tech", "Blog", "Terraform", "Puppet"]
+tags = ["Blog", "Terraform", "Puppet"]
 title = "Bootstrapping a new OSX device: A Brief History and Current Approach"
 +++
 

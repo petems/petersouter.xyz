@@ -6,7 +6,7 @@ description = ""
 draft = false
 coverImage = "/images/2016/10/web_perf_oct-4.jpeg"
 slug = "london-web-performance-group-meetup-october-2013-2"
-tags = ["Tech", "Meetups", "Performance"]
+tags = ["Meetups", "Performance"]
 title = "London Web Performance Group meetup - October 2013"
 
 +++
