@@ -12,4 +12,4 @@ Standards: HTML5, CSS3
 Components: Hugo, Tranquilpeak Theme
 Hosting: AWS S3, CloudFront CDN
 Deployment: GitHub Actions
-Tools: go3up, Hugo v0.54.0
+Tools: go3up, Hugo v0.155.3
