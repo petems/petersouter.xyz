@@ -130,11 +130,6 @@ If switching to ugly URLs, modify both `config.toml` and `terraform/s3-website/m
 - Authentication via OIDC (no static AWS keys)
 - View deployments: https://github.com/petems/petersouter.xyz/actions
 
-**CircleCI** (Deprecated):
-- Legacy configuration remains in `.circleci/config.yml`
-- No longer actively used for deployments
-- Will be removed in future cleanup
-
 **Vercel Previews**:
 - Preview deployments for pull requests
 - Configured in `.github/workflows/deploy-vercel-preview.yml`
