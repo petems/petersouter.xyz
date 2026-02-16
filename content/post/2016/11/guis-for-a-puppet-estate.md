@@ -37,7 +37,7 @@ But honestly, Puppet Enterprise is really good. Even from when I began at Puppet
 
 I even run it at home, so that's a real endorsement!
 
-![Puppet Enterprise](/images/2016/11/Screenshot-2016-11-22-17.28.47.png)
+![Puppet Enterprise configuration management overview dashboard](/images/2016/11/puppet-enterprise-configuration-management-overview.png)
 
 https://puppet.com/download-puppet-enterprise
 

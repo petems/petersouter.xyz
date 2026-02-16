@@ -4,7 +4,7 @@ categories = ["Tech"]
 date = 2016-11-05T20:55:00Z
 description = ""
 draft = false
-coverImage = "/images/2016/11/Screenshot-2016-11-06-20.10.42-1.png"
+coverImage = "/images/2016/11/cockpit-selinux-access-control-overview.png"
 slug = "system-administration-with-cockpit"
 tags = ["Puppet", "Open-Source", "vDM30in30"]
 title = "System Administration with Cockpit"
@@ -20,27 +20,27 @@ RedHat are already using it as the main [way of interacting with RHEV](http://rh
 It includes a bunch of tooling for your standard sysadmin tasks:
 
 #### Restarting Services:
-![](/images/2016/11/Screenshot-2016-11-06-19.08.08.png)
+![Cockpit services dashboard listing system services and their status](/images/2016/11/cockpit-services-dashboard.png)
 
 #### Monitoring Disks:
-![](/images/2016/11/Screenshot-2016-11-06-19.14.32.png)
+![Cockpit storage dashboard showing filesystem usage and storage logs](/images/2016/11/cockpit-storage-dashboard.png)
 
 #### Monitoring Network:
-![](/images/2016/11/Screenshot-2016-11-06-19.13.19.png)
+![Cockpit networking dashboard showing traffic spikes and interface stats](/images/2016/11/cockpit-networking-traffic-dashboard.png)
 (You can see the spike where I downloaded a test file (`wget http://ipv4.download.thinkbroadband.com/100MB.zip`)
 
 #### Reading Logs:
-![](/images/2016/11/Screenshot-2016-11-06-19.09.24.png)
+![Cockpit logs view with system and sudo log entries](/images/2016/11/cockpit-logs-dashboard.png)
 (You can see where I forgot to add sudo rules to my petems account)
 
 You even have a terminal to run commands on the system with:
-![](/images/2016/11/Screenshot-2016-11-06-19.12.11.png)
+![Cockpit web terminal running a simple shell command](/images/2016/11/cockpit-terminal-tool.png)
 
 And on top of all that, it's login is based on SSH, with optional 2FA with tools like Google Authenticator, so it's fairly plug-in-and-play for most systems.
 
 You can even create new accounts for users from the Cockpit interface:
 
-![](/images/2016/11/Screenshot-2016-11-06-19.12.25.png)
+![Cockpit accounts page showing local user accounts](/images/2016/11/cockpit-accounts-page.png)
 
 #### Upcoming
 
@@ -52,7 +52,7 @@ The development and feature planning for Cockpit is open (
 
 Or debugging issues with Selinux:
 
-![](/images/2016/11/Screenshot-2016-11-06-20.10.42.png)
+![Cockpit SELinux Access Control panel listing denied events](/images/2016/11/cockpit-selinux-access-control-panel.png)
 [SELinux Troublshooting feature page](https://github.com/cockpit-project/cockpit/wiki/Feature:-SELinux-Troubleshooting)
 
 But one of the most exciting elements is going to be it's integrations with containers. I can already see

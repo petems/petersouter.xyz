@@ -4,7 +4,7 @@ categories = ["Tech"]
 date = 2016-11-15T02:56:00Z
 description = ""
 draft = false
-coverImage = "/images/2016/11/Screenshot-2016-11-17-21.12.24-1.png"
+coverImage = "/images/2016/11/grafana-puppetserver-jmx-overview-dashboard-cover.png"
 slug = "making-a-puppetserver-metrics-stack"
 tags = ["vDM30in30", "Puppet", "Metrics"]
 title = "JMX puppetserver metrics vagrant stack"
@@ -133,7 +133,7 @@ We let that setup and stew for a bit, and when complete, we should have the data
 
 It should look something like this:
 
-![Generic Java Information](/images/2016/11/Screenshot-2016-11-17-21.12.24.png)
+![Grafana dashboard with Puppet Server thread count and heap memory metrics](/images/2016/11/grafana-puppetserver-jmx-overview-dashboard.png)
 
 In the mean-time, if you're interested, a full Vagrant stack with it in action is available here:
 
