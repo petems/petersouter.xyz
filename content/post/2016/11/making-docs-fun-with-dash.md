@@ -4,7 +4,7 @@ categories = ["Tech"]
 date = 2016-11-19T12:47:00Z
 description = ""
 draft = false
-coverImage = "/images/2016/11/Screenshot-2016-11-26-14.07.25-1.png"
+coverImage = "/images/2016/11/dply-beta-homepage-copy.png"
 slug = "making-docs-fun-with-dash"
 tags = ["vDM30in30"]
 title = "Making Docs fun with Dash"
@@ -41,7 +41,7 @@ I have:
 
 There's also a bunch of User Contributed docs from the community:
 
-![](/images/2016/11/Screenshot-2016-11-26-14.07.25.png)
+![](/images/2016/11/dply-beta-homepage.png)
 
 I have:
 
@@ -65,7 +65,7 @@ There have been times when I've not been able to get online. Maybe I don't have 
 
 The most useful thing for me is that Dash has a ton of integrations with other applications.
 
-![](/images/2016/11/Screenshot-2016-11-26-14.00.22.png)
+![](/images/2016/11/mac-developer-apps-grid.png)
 
 The ones I use the most in my work are...
 

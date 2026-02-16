@@ -153,7 +153,7 @@ Theoretically I could log into Github by manually typing my password from memory
 Rectangle is a window manager for OSX that allows you to move applications around your screen with keyboard shortcuts. I’ve found I often go an manually install it from the website before I bootstrap as I’m so conditioned to moving windows with it at this point that it’s a pain moving application windows around manually. Rectangle I think is the 2nd or 3rd iteration, previously I used SnagIt and 	
 
 ### Click the "Authorize Strap" button on Github
-![](/images/2024/04/strap-screenshot.png)
+![](/images/2024/04/strap-install-instructions.png)
 
 I think technically I don’t even need to do this, as all of my relevant repos are public, so there’s no need for authentication, but it probably helps with rate-limits and honestly, its two extra clicks so it’s not a huge deal.
 

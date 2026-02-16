@@ -4,7 +4,7 @@ categories = ["Tech"]
 date = 2016-11-02T23:38:49Z
 description = ""
 draft = false
-coverImage = "/images/2016/11/Screenshot-2016-11-02-23.38.22.png"
+coverImage = "/images/2016/11/github-tugboat-repo-page.png"
 slug = "some-thoughts-on-maintaining-oss-that-has-an-official-competitor"
 tags = ["Open-Source", "vDM30in30"]
 title = "Some thoughts on maintaining OSS that has an official \"competitor\""
@@ -23,7 +23,7 @@ I cut my teeth on a lot of new Ruby testing and techniques, like
 
 Apparently over 3 years I've made 8,109 additions, 2,550 removals and 188 commits. It's probably the most work longest I've worked on any single project in my open-source career, and I'm proud of the amount of people who I've helped.
 
-![Commits](/images/2016/11/Screenshot-2016-11-02-23.23.53.png)
+![Commits](/images/2016/11/git-awards-contribution-graph.png)
 
 However, I've not had much chance to contribute recently. I've been busy with work and other things, and since then there's been a lot of hiring over at DigitalOcean recently and tooling up. In fact, they've actually got a "competitor" tool as it were:
 [doctl](https://github.com/digitalocean/doctl).

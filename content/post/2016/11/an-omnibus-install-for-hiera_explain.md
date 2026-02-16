@@ -4,7 +4,7 @@ categories = ["Tech"]
 date = 2016-11-01T21:48:11Z
 description = ""
 draft = false
-coverImage = "/images/2016/11/screenshot-1.png"
+coverImage = "/images/2016/11/hiera-explain-terminal-output-copy.png"
 slug = "an-omnibus-install-for-hiera_explain"
 tags = ["Puppet", "vDM30in30", "Hiera"]
 title = "An Omnibus package for hiera_explain"
@@ -19,7 +19,7 @@ Luckily, Ben Ford, former PSE, now Education person at Puppet and generally awes
 
 # [hiera_explain](https://github.com/binford2k/hiera_explain)
 
-![hiera_explain in action](/images/2016/11/screenshot.png)
+![hiera_explain in action](/images/2016/11/hiera-explain-terminal-output.png)
 
 It's a way more verbose and explanatory way of doing everything, and the person I was working it loved it when I showed it on my test machine.
 

@@ -4,7 +4,7 @@ categories = ["Personal"]
 date = 2016-06-16T22:27:25Z
 description = ""
 draft = false
-coverImage = "/images/2016/10/Screenshot-2016-06-16-23.11.34-1.png"
+coverImage = "/images/2016/10/swing-time-500-with-dates-copy.png"
 slug = "90-day-fitness-challenge"
 tags = ["Fitness", "Data", "Kettlebells"]
 title = "90 Day Fitness Challenge - Week 1 - First check-in"
@@ -27,7 +27,7 @@ SO I'm going to stick to a routine that's:
 
 So I went to the data. Looking back over my weight loss for the last two years, the most I lost consistently was when I was doing a kettlebell routine:
 
-![](/images/2016/10/Screenshot-2016-06-16-23.11.34.png)
+![](/images/2016/10/swing-time-500-with-dates.png)
 
 4.0kg weight lost over 3 months, not too shabby!
 

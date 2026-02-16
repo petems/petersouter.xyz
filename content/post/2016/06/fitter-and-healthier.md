@@ -4,7 +4,7 @@ categories = ["Personal"]
 date = 2016-06-06T10:58:48Z
 description = "Like a lot of people in tech, I wasn't exactly the pinnacle of health..."
 draft = false
-coverImage = "/images/2016/10/Screenshot-2016-10-06-23.12.28.png"
+coverImage = "/images/2016/10/dexa-body-scan-front.png"
 slug = "fitter-and-healthier"
 tags = ["Fitness", "Health", "Gym"]
 title = "Getting fitter and healthier in 90 days...with data!"
@@ -41,7 +41,7 @@ I kinda just floundered, I was still making progress but not exactly what I want
 
 The DEXA scan was actually pretty interesting. I won't post the whole thing, but it was pretty interesting the breakdown of individual body segments and where I was muscle-wise:
 
-![](/images/2016/10/Screenshot-2016-05-31-16.48.42.png)
+![](/images/2016/10/weight-trend-jul-nov-2014.png)
 
 So, 22% BF, pretty far of the Fitbit scale of 16% body-fat!
 
