@@ -1,20 +1,16 @@
----
-title: "My 2026 Blogging Plans"
-date: 2026-02-16
-draft: false
-thumbnailImage: /images/2026/02/long-exposure-new-york-skyline.jpg
-coverImage: /images/2026/02/long-exposure-new-york-skyline-cover.jpg
-categories:
-- meta
-- blogging
-tags:
-- blogging
-- conferences
-- speaking
-- genai
-- hugo
-- obsidian
----
++++
+author = "Peter Souter"
+categories = ["Meta", "Blogging"]
+date = 2026-02-16T00:00:00Z
+description = "My content roadmap for 2026: conference speaking, GenAI topics, blog infrastructure updates, and personal goals."
+draft = false
+slug = "my-2026-blogging-plans"
+tags = ["Blogging", "Conferences", "Speaking", "GenAI", "Hugo", "Obsidian"]
+title = "My 2026 Blogging Plans"
+keywords = ["blogging", "2026", "conferences", "testcon", "cfgmgmtcamp", "fosdem", "genai", "mcp", "hugo", "obsidian"]
+thumbnailImage = "/images/2026/02/long-exposure-new-york-skyline.jpg"
+coverImage = "/images/2026/02/long-exposure-new-york-skyline-cover.jpg"
++++
 
 I've got a lot of ideas of what I want to post about in 2026, a mix of plans for the future and catching up on the things I was meant to be posting about in 2025.
 
