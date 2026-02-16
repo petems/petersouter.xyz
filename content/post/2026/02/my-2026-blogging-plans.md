@@ -2,6 +2,7 @@
 title: "My 2026 Blogging Plans"
 date: 2026-02-16
 draft: false
+coverImage: /images/2026/02/long-exposure-new-york-skyline.jpg
 categories:
 - meta
 - blogging
