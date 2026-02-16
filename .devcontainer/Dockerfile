@@ -8,7 +8,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 # VARIANT can be either 'hugo' for the standard version or 'hugo_extended' for the extended version.
 ARG VARIANT=hugo
 # VERSION can be either 'latest' or a specific version number
-ARG VERSION=0.54.0
+ARG VERSION=0.155.3
 
 # Download Hugo
 RUN case ${VERSION} in \
