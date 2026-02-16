@@ -4,7 +4,7 @@ categories = ["Tech"]
 date = 2016-11-11T13:24:00Z
 description = ""
 draft = false
-coverImage = "/images/2016/11/Screenshot-2016-11-17-19.23.52.png"
+coverImage = "/images/2016/11/puppet-server-threadpool-architecture.png"
 slug = "puppetserver-caching"
 tags = ["vDM30in30", "Puppet"]
 title = "puppetserver caching"
@@ -30,9 +30,9 @@ It can be a little confusing for people used to the old ways, as it's moved from
 
 This change brought with it huge performance increases, as Ruby and Passenger are hard to scale, whereas since both Clojure and JRuby run in the JVM, which you can generally through a load of memory at with heap settings and you're good to go.
 
-![Puppet Server be fast, yo!](/images/2016/11/Screenshot-2016-11-17-19.17.42.png)
+![Puppet Server be fast, yo!](/images/2016/11/puppetconf-average-request-response-time.png)
 
-![Agents running faster](/images/2016/11/Screenshot-2016-11-17-19.19.47.png)
+![Agents running faster](/images/2016/11/puppetconf-agent-run-time-2000-agents.png)
 
 ## The manifest caching problem
 

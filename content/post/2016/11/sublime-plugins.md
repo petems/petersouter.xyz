@@ -124,7 +124,7 @@ https://bitbucket.org/hmml/jsonlint
 
 Adds a bunch of much-needed options to the sidebar, expands search options and adds features like the ability to "Open With.." with a specified list of applications
 
-![](/images/2016/11/Screenshot-2016-11-30-10.03.08.png)
+![](/images/2016/11/dash-docsets-downloads-tab.png)
 
 https://github.com/SideBarEnhancements-org/SideBarEnhancements/
 

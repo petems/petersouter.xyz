@@ -88,7 +88,7 @@ The main benefit of TDD is that you’re only coding what you need to. Puppet co
 
 It's common knowledge the faster bugs and problems are caught, the easier and cheaper they are to fix.
 
-![Relative cost of a bugfix](/images/2016/10/Screen_Shot_2015_02_18_at_13_07_20.png)
+![Relative cost of a bugfix](/images/2016/10/stackoverflow-reputation-graph.png)
 > Slide credit: Barry Boehm, “Equity Keynote Address” March 19, 2007.
 
 And this idea applies to Puppet code too. You want to catch issues as early as possible in the pipeline.

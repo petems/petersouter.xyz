@@ -4,7 +4,7 @@ categories = ["Personal"]
 date = 2016-07-04T23:03:30Z
 description = ""
 draft = false
-coverImage = "/images/2016/10/Screenshot-2016-07-04-23.52.27.png"
+coverImage = "/images/2016/10/swing-time-500-axis-tooltip.png"
 slug = "90-day-fitness-challenge-week-1-first-check-in"
 tags = ["Fitness", "Health", "Gym", "Data", "Kettlebells"]
 title = "90 Day Fitness Challenge - Week 4 - 33% Check-in"
@@ -23,15 +23,15 @@ So anyways, story so far:
 
 My weight has dropped by about a kilo in a month, and according to my super inaccurate scales, my bodyfat has dropped too:
 
-![](/images/2016/10/Screenshot-2016-07-04-22-00-24.png)
+![](/images/2016/10/swing-time-200-plot-area-tooltip.png)
 
 I see a bit of a visual difference visceral fat size. Lines are a little deeper and more defined maybe? Hard to say. 1.8% seems a little unlikely, but I could imagine 0.5-1%.
 
 More noticeable is that my 500 and 200 swing time has dropped significantly:
 
-![200 Swing Time](/images/2016/10/Screenshot-2016-07-04-23-53-20.png)
+![200 Swing Time](/images/2016/10/swing-time-500-chart.png)
 
-![500 Swing Time](/images/2016/10/Screenshot-2016-07-04-23-53-26.png)
+![500 Swing Time](/images/2016/10/lean-vs-fat-june-2016.png)
 
 I feel like my 500 Swing time jumped a lot at first as I got used to it, but seems to be evening out at about 21 minutes. My 500 Swing time peaked at 5:55, and it's been a real struggle to get it lower than that. My increased time is normally because I gas myself out trying to push myself to beat the 500 swing time.
 

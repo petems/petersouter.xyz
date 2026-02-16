@@ -4,7 +4,7 @@ categories = ["Tech"]
 date = 2016-11-26T21:20:00Z
 description = ""
 draft = false
-coverImage = "/images/2016/11/Screenshot-2016-11-29-21.30.40-1.png"
+coverImage = "/images/2016/11/sublime-open-with-macdown-menu-copy.png"
 slug = "quick-testing-with-dply"
 tags = ["vDM30in30"]
 title = "Quickly testing with dply.co"
@@ -18,7 +18,7 @@ https://dply.co/
 
 ## What is it?
 
-![](/images/2016/11/Screenshot-2016-11-29-21.30.40.png)
+![](/images/2016/11/sublime-open-with-macdown-menu.png)
 
 dply is a pretty cool service for creating free temporary Linux servers.
 
