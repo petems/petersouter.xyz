@@ -33,7 +33,7 @@ I actually missed out on FOSDEM this year as I was already doing so much travel,
 
 ### Cfgmgmtcamp 2026
 
-I spoke at Cfgmgmtcamp again, which was great, as I realise this is about the 10 year anniversary of the first time I spoke there in 2016, and it was great to be back there after my last talk was Febuary 2020 (literally weeks before UK went into lockdown.)
+I spoke at Cfgmgmtcamp again, which was great, as I realise this is about the 10-year anniversary of the first time I spoke there in 2016, and it was great to be back there after my last talk was February 2020 (literally weeks before UK went into lockdown.)
 
 I did an updated version of my TestCon 2025 talk "CI/CD Observability, Metrics and DORA: Shifting Left and Cleaning Up" and also did my first Ignite talk, speaking about my work with the VoxPupuli with Datadog - "Untaggling Strings: Getting CI Visibility for Vox Pupuli Tests"
 
@@ -45,9 +45,9 @@ Adding all the talks I've given, giving links to the event pages, the slides and
 
 I know, I know, blogging about GenAI, how original, and it's funny! It's a double-edged sword, it's something that's allowed me to go back and work on a number of projects I'd been stuck on, start new side projects and fix old backlog issues... but also I've had a lot of thoughts around the practicalities of that. It also lead me down a burnout road, and I think GenAI discussion is frequently frustrating for multiple reasons.
 
-### Building a Github PR Review MCP
+### Building a GitHub PR Review MCP
 
-After getting frustrated with the [official Github MCP](https://github.com/modelcontextprotocol/servers/tree/main/src/github), I found myself making a basic one for my specific usecase: An agentic flow to just get the comments left on a pull-request for an agentic coding flow to review and implement. 
+After getting frustrated with the [official GitHub MCP](https://github.com/modelcontextprotocol/servers/tree/main/src/github), I found myself making a basic one for my specific use case: An agentic flow to just get the comments left on a pull request for an agentic coding flow to review and implement. 
 
 * https://github.com/petems/github-pr-review-mcp-server
 
@@ -72,7 +72,7 @@ Understanding a lot of the underlying core fundamentals was a big boon for me in
 
 ## Blog Infra Updates
 
-This blog is 8 years old now, and I've not done a big refresh of the underlying hosting tech and the pipelines in place for it for a while. It was one of the blockers for me to post sometimes, because I'd think "I should be fixing that stuff before I do "
+This blog is 8 years old now, and I've not done a big refresh of the underlying hosting tech and the pipelines in place for it for a while. It was one of the blockers for me to post sometimes, because I'd think "I should be fixing that stuff before I do any new posts."
 
 ### Upgrading the Building Blocks
 
@@ -80,7 +80,7 @@ Moving away from CircleCI, updating the Hugo version, double-checking the curren
 
 ### Tranquilpeak Refresh
 
-The theme I'm using has been effectively abandoned since 2022, I'm trying to figure out how I handle that. Do I fork? If I do, is there value on maintaining it "officially"? Do I switch over to something new?  
+The theme I'm using has been effectively abandoned since 2022, I'm trying to figure out how I handle that. Do I fork? If I do, is there value on maintaining it "officially"? Do I switch over to something new?
 
 ### Using New Hugo Features
 
