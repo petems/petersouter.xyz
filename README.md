@@ -33,8 +33,6 @@ A Hugo-based static blog hosted on AWS S3 with CloudFront CDN and Route53 DNS ma
 The site uses the following AWS services (managed via Terraform in `terraform/s3-website/`):
 
 1. **S3** - Static website hosting
-   - Bucket: `petersouter.xyz`
-   - Region: `eu-west-1`
    - Configured for PrettyURLs support
 
 2. **CloudFront** - CDN for content delivery
@@ -303,7 +301,3 @@ This is a personal blog, but if you notice issues:
 ## Acknowledgements
 
 This project was heavily inspired by [clburlison.com](https://github.com/clburlison/clburlison.com).
-
-## License
-
-Content is personal and copyrighted. Code and configuration are available for reference.
