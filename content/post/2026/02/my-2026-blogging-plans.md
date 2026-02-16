@@ -12,7 +12,6 @@ tags:
 - genai
 - hugo
 - obsidian
-- 2026
 ---
 
 I've got a lot of ideas of what I want to post about in 2026, a mix of plans for the future and catching up on the things I was meant to be posting about in 2025.
@@ -25,7 +24,7 @@ Looking back over my blog for the last 8 years, I forgot how much I was attendin
 
 ### TestCon 2025
 
-I finally got back on the horse of conference speaking, after a 5 year break! Specifically, I spoke at TestCon 2025 with a talk of "CI/CD Observability, Metrics and DORA: Shifting Left and Cleaning Up!". I want to talk about the conference, how it felt to speak again after such a big break, and what to do better next time.
+I finally got back on the horse of conference speaking, after a 5 year break! Specifically, I spoke at TestCon 2025 with a talk of ["CI/CD Observability, Metrics and DORA: Shifting Left and Cleaning Up!"](https://events.pinetool.ai/3498/#sessions/112207). I want to talk about the conference, how it felt to speak again after such a big break, and what to do better next time.
 
 ### FOSDEM 2026
 
@@ -33,9 +32,9 @@ I actually missed out on FOSDEM this year as I was already doing so much travel,
 
 ### Cfgmgmtcamp 2026
 
-I spoke at Cfgmgmtcamp again, which was great, as I realise this is about the 10-year anniversary of the first time I spoke there in 2016, and it was great to be back there after my last talk was February 2020 (literally weeks before UK went into lockdown.)
+I spoke at [Cfgmgmtcamp](https://cfgmgmtcamp.org/) again, which was great, as I realise this is about the 10-year anniversary of the first time I spoke there in 2016, and it was great to be back there after my last talk was February 2020 (literally weeks before UK went into lockdown.)
 
-I did an updated version of my TestCon 2025 talk "CI/CD Observability, Metrics and DORA: Shifting Left and Cleaning Up" and also did my first Ignite talk, speaking about my work with the VoxPupuli with Datadog - "Untaggling Strings: Getting CI Visibility for Vox Pupuli Tests"
+I did an updated version of my TestCon 2025 talk ["CI/CD Observability, Metrics and DORA: Shifting Left and Cleaning Up"](https://cfp.cfgmgmtcamp.org/ghent2026/talk/98XRKP/) and also did my first Ignite talk, speaking about my work with the VoxPupuli with Datadog - ["Untaggling Strings: Getting CI Visibility for Vox Pupuli Tests"](https://cfp.cfgmgmtcamp.org/ghent2026/talk/UTCKK9/)
 
 ### Enhancing My `/talks` Sub-Site
 
@@ -47,9 +46,9 @@ I know, I know, blogging about GenAI, how original, and it's funny! It's a doubl
 
 ### Building a GitHub PR Review MCP
 
-After getting frustrated with the [official GitHub MCP](https://github.com/modelcontextprotocol/servers/tree/main/src/github), I found myself making a basic one for my specific use case: An agentic flow to just get the comments left on a pull request for an agentic coding flow to review and implement. 
+After getting frustrated with the [official GitHub MCP](https://github.com/github/github-mcp-server) for its size for what I was doing (plus getting spooked by some of the [security vulnerabilities](https://invariantlabs.ai/blog/mcp-github-vulnerability) it'd had), I found myself making a basic one for my specific use case: An MCP flow to just get the comments left on a pull request for an agentic coding flow to review and implement.
 
-* https://github.com/petems/github-pr-review-mcp-server
+* <https://github.com/petems/github-pr-review-mcp-server>
 
 It was a good learning experience, and helped me understand what MCP is good and not good for, as well as something I find personally very useful and continue to use for my own personal projects.
 
@@ -68,7 +67,7 @@ It's definitely an area where I think people in the tech industry, especially ne
 
 ### LLM for Dummies
 
-Understanding a lot of the underlying core fundamentals was a big boon for me in breaking through the hype and FUD about GenAI, so I wanted to give a 101 on what GenAI is and the biggest changes that are coming, as well as recommending the books I read that helped on that topic.
+Understanding a lot of the underlying core fundamentals was a big boon for me in breaking through the hype and FUD about GenAI, so I wanted to give a 101 on what GenAI is and the biggest changes that are coming, as well as [recommending the books I read](https://www.oreilly.com/library/view/prompt-engineering-for/9781098156145/) that helped on that topic.
 
 ## Blog Infra Updates
 
@@ -80,11 +79,11 @@ Moving away from CircleCI, updating the Hugo version, double-checking the curren
 
 ### Tranquilpeak Refresh
 
-The theme I'm using has been effectively abandoned since 2022, I'm trying to figure out how I handle that. Do I fork? If I do, is there value on maintaining it "officially"? Do I switch over to something new?
+The theme I'm using has been effectively [abandoned since 2022](https://github.com/kakawait/hugo-tranquilpeak-theme/commit/3b5676afca7e667fc0d5c7f012c2ad00ca6dd9f0), I'm trying to figure out how I handle that. Do I fork? If I do, is there value on maintaining it "officially"? Do I switch over to something new?
 
 ### Using New Hugo Features
 
-Since I'm using such an old Hugo version, there's been a lot of enhancements around hosting pipelines, formatting and deployment in the app itself. I need to research all that and see what makes sense to pickup.
+Since I'm using such an old Hugo version, there's been a lot of enhancements around [asset pipes](https://gohugo.io/hugo-pipes/introduction/), [render hooks](https://gohugo.io/render-hooks/introduction/) and [deployment in the app itself](https://gohugo.io/host-and-deploy/deploy-with-hugo-deploy/). I need to research all that and see what makes sense to pickup.
 
 ### Adding a Garden Section
 
@@ -92,7 +91,7 @@ I have a lot of "Misc" ideas that I've been trying to figure out how to host. I'
 
 ## My Love of Obsidian
 
-I've switched to Obsidian as my main to-do list, scratchpad, research platform... basically my swiss army knife for anything involving writing. I want to talk about my workflows I've developed, what plugins are worth the time to understand, and how it's been a boon for me as a daily driver.
+I've switched to [Obsidian](https://obsidian.md/) as my main to-do list, scratchpad, research platform... basically my swiss army knife for anything involving writing. I want to talk about my workflows I've developed, what [plugins](https://obsidian.md/plugins) are worth the time to understand, and how it's been a boon for me as a daily driver.
 
 ## Personal
 
@@ -104,5 +103,4 @@ Personal things I want to do, like gym and powerlifting targets, reading more, w
 
 ## Wrapping Up
 
-This is an ambitious list I'll admit, and I'm sure it'll evolve throughout the year. Some of these posts might merge together, some might not happen at all, and I'm sure new ideas will emerge. If any of
-these topics particularly interest you, let me know - it might help me prioritize what to write next.
+This is an ambitious list I'll admit, and I'm sure it'll evolve throughout the year. Some of these posts might merge together, some might not happen at all, and I'm sure new ideas will emerge. If any of these topics particularly interest you, let me know - it might help me prioritize what to write next.
