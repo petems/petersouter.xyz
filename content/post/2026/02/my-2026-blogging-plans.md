@@ -54,12 +54,9 @@ It was a good learning experience, and helped me understand what MCP is good and
 
 A lot of people are talking about the GenAI burnout effect:
 
-- <https://steve-yegge.medium.com/the-ai-vampire-eda6e4f07163>
-- <https://theunisdk.medium.com/ai-adhd-the-cost-of-infinite-possibility-fc4d447583a7>
-
-<blockquote class="bluesky-embed" data-bluesky-uri="at://did:plc:ckaz32jwl6t2cno6fmuw2nhn/app.bsky.feed.post/3mevhhd4lbs2b" data-bluesky-cid="bafyreiav7tlrkksxa75h6u3vn6xozk2wuimbgch37qogsmqy4cmd6mg7u4" data-bluesky-embed-color-mode="system"><p lang="en">Token Anxiety
-
-i think i mostly echo this for myself. with so much that can be done, i often feel like i *should* be doing something, always<br><br><a href="https://bsky.app/profile/did:plc:ckaz32jwl6t2cno6fmuw2nhn/post/3mevhhd4lbs2b?ref_src=embed">[image or embed]</a></p>&mdash; Tim Kellogg (<a href="https://bsky.app/profile/did:plc:ckaz32jwl6t2cno6fmuw2nhn?ref_src=embed">@timkellogg.me</a>) <a href="https://bsky.app/profile/did:plc:ckaz32jwl6t2cno6fmuw2nhn/post/3mevhhd4lbs2b?ref_src=embed">15 February 2026 at 11:44</a></blockquote><script async src="https://embed.bsky.app/static/embed.js" charset="utf-8"></script>
+* <https://steve-yegge.medium.com/the-ai-vampire-eda6e4f07163>
+* <https://theunisdk.medium.com/ai-adhd-the-cost-of-infinite-possibility-fc4d447583a7>
+* <https://bsky.app/profile/timkellogg.me/post/3mevhhd4lbs2b>
 
 It's definitely an area where I think people in the tech industry, especially neurodiverse people like myself are most vulnerable to getting into a bad headspace. In fact I have personal experience with this from 2025 specifically, so I wanted to research this and talk about it as well.
 
