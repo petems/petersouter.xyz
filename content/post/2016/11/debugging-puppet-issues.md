@@ -197,7 +197,7 @@ digraph Relationships {
 
 You can then put this into a graph that can visualise .dot files such as Graphviz. There's a web version of it that you can use in a pinch:
 
-![Graph Vis Example](/images/2016/11/Screenshot-2016-11-14-20.17.58.png)
+![Graphviz rendering of Puppet class and resource relationships](/images/2016/11/graphviz-puppet-resource-relationship-graph.png)
 ###### A Puppet relationship graph made from http://www.webgraphviz.com/
 
 ### Cached Agent Catalog

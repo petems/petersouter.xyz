@@ -42,7 +42,7 @@ I was introduced to MassDrop's Mechanical Keyboard section
 
 ### Massdrop?
 
-![](/images/2016/11/Screenshot-2016-11-27-14.00.33.png)
+![Massdrop mechanical keyboards community drops listing keyboard deals](/images/2016/11/massdrop-mechanical-keyboards-drops-page.png)
 
 Massdrop is basically a Kickstarter-ish system, but with existing products. People pledge to buy a product in a certain quantity, either to get a lower price, or to get a manufacturer to produce a product that's been discontinued or hard to find.
 

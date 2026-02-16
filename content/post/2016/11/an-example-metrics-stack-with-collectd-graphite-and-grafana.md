@@ -4,7 +4,7 @@ categories = ["Tech"]
 date = 2016-11-10T19:15:00Z
 description = ""
 draft = false
-coverImage = "/images/2016/11/Screenshot-2016-11-15-20.19.48.png"
+coverImage = "/images/2016/11/grafana-collectd-overview-dashboard.png"
 slug = "an-example-metrics-stack-with-collectd-graphite-and-grafana"
 tags = ["Puppet", "Open-Source", "vDM30in30"]
 title = "An example metrics stack with Collectd, Graphite and Grafana"
@@ -188,10 +188,10 @@ At the end of it, boom, I had my working Grafana dashboard:
 ==> centos7: Username and password: admin:admin
 ```
 
-![](/images/2016/11/Screenshot-2016-11-15-20.06.37.png)
+![Grafana panel showing a network traffic spike from a test file download](/images/2016/11/grafana-collectd-network-traffic-panel.png)
 ##### Note the bump when I ran the file download
 
-![](/images/2016/11/Screenshot-2016-11-15-20.10.19.png)
+![Grafana panel showing load averages increasing during stress test](/images/2016/11/grafana-collectd-load-average-panel.png)
 ##### Note the jump when I ran stress
 
 One of the things I was curious about was how Graphite scaled, as it'd been 3 years since I'd last set it up in anger.
