@@ -86,13 +86,20 @@ ignoreLogs = ['warning-goldmark-raw-html']
 
 [[menu.links]]
   weight = 3
+  identifier = "bluesky"
+  name = "Bluesky"
+  pre = "<i class=\"sidebar-button-icon fab fa-bluesky\"></i>"
+  url = "https://bsky.app/profile/petersouter.xyz"
+
+[[menu.links]]
+  weight = 4
   identifier = "twitter"
   name = "Twitter"
   pre = "<i class=\"sidebar-button-icon fab fa-twitter\"></i>"
   url = "https://twitter.com/petersouter"
 
 [[menu.links]]
-  weight = 4
+  weight = 5
   identifier = "talks"
   name = "Talks"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-comment\"></i>"
@@ -194,7 +201,7 @@ ignoreLogs = ['warning-goldmark-raw-html']
   # Tranquilpeak configuration > Theme configuration > sharing-options
   [[params.sharingOptions]]
     name = "Facebook"
-    icon = "fa-facebook-official"
+    icon = "fa-facebook"
     url = "https://www.facebook.com/sharer/sharer.php?u=%s"
 
   [[params.sharingOptions]]
