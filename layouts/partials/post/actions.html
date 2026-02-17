@@ -30,7 +30,7 @@
               {{ else }}
                 <a class="post-action-btn btn btn--disabled">
               {{ end }}
-                  <i class="fa fa-angle-right"></i>
+                  <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">{{ i18n "pagination.next" }}</span>
                 </a>
             </li>
@@ -41,7 +41,7 @@
                 <a class="post-action-btn btn btn--disabled">
               {{ end }}
                   <span class="hide-xs hide-sm text-small icon-mr">{{ i18n "pagination.previous" }}</span>
-                  <i class="fa fa-angle-left"></i>
+                  <i class="fa fa-angle-right"></i>
                 </a>
             </li>
           {{ end }}
@@ -57,7 +57,7 @@
         {{ range .Site.Params.sharingOptions }}
           <li class="post-action hide-xs">
             <a class="post-action-btn btn btn--default" target="new" href="{{ printf .url $.Permalink }}">
-              <i class="fa {{ .icon }}"></i>
+              <i class="{{ .icon }}"></i>
             </a>
           </li>
         {{ end }}
