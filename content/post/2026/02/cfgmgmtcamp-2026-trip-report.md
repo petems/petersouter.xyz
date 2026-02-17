@@ -70,12 +70,22 @@ keywords = ["cfgmgmtcamp", "config management", "conferences", "ghent"]
   * But unfortunatly *at the exact same time as my talk*  
   * Luckily we had some other folks from Datadog attending so they cheered him on!
 
+![](/images/2026/02/cfgmgmtcamp-2026-hogent-bike-parking.png)
+![](/images/2026/02/cfgmgmtcamp-2026-ghent-owl-sign.png)
+![](/images/2026/02/cfgmgmtcamp-2026-ghent-pepsi-can-cafe.png)
+![](/images/2026/02/cfgmgmtcamp-2026-hogent-campus-sign.png)
+![](/images/2026/02/cfgmgmtcamp-2026-entrance-banner.png)
+![](/images/2026/02/cfgmgmtcamp-2026-ghent-street-sticker.jpg)
+
 ## **Day 1**
 
 ### **Intro and Logistics**
 
 * Show of hands for “For who is this their first cfgmgmgtcamp?” was very high, maybe 70% of the main room\!  
 * Show of hands for people coming since the first meetup beginning was about \~10, myself included\!
+
+![](/images/2026/02/cfgmgmtcamp-2026-opening-session.jpg)
+![](/images/2026/02/cfgmgmtcamp-2026-socials-slide.jpg)
 
 ### **We Built for Predictability; the Workloads Didn’t Care \- Micheal Stahnke**
 
@@ -90,6 +100,14 @@ keywords = ["cfgmgmtcamp", "config management", "conferences", "ghent"]
   * **Ops regains control:** Unpredictable, AI-generated code needs containment and guardrails, increasing the importance of operations in providing stable foundations and control points.  
 * **My Personal Notes:**  
   * Was great to see Stahnke again, we worked together at Puppet many years ago
+
+![](/images/2026/02/cfgmgmtcamp-2026-stahnke-title.jpg)
+![](/images/2026/02/cfgmgmtcamp-2026-stahnke-known-inputs.jpg)
+![](/images/2026/02/cfgmgmtcamp-2026-stahnke-chaos-engineering.jpg)
+![](/images/2026/02/cfgmgmtcamp-2026-stahnke-workload-evaluation.jpg)
+![](/images/2026/02/cfgmgmtcamp-2026-stahnke-membership-slide.jpg)
+![](/images/2026/02/cfgmgmtcamp-2026-stahnke-new-ci-cd-pipeline.jpg)
+![](/images/2026/02/cfgmgmtcamp-2026-stahnke-slides-qr.jpg)
 
 ### **The Exploitation Paradox in Open Source \- Richard Fontana**
 
@@ -139,6 +157,8 @@ keywords = ["cfgmgmtcamp", "config management", "conferences", "ghent"]
 * **My Personal Notes:**  
   * I’ve never heard a conference speaker swear so much in a talk 😅
 
+![](/images/2026/02/cfgmgmtcamp-2026-forgejo-talk.jpg)
+
 ### **My Talk \- CI/CD Observability, Metrics and DORA: Shifting Left and Cleaning Up\! \- Peter Souter**
 
 * **2026-02-02, 14:50–15:40, B.1.011**  
@@ -166,6 +186,8 @@ keywords = ["cfgmgmtcamp", "config management", "conferences", "ghent"]
   * Implement via a collector/connector pipeline (mini-ETL, like an OTel collector) that pulls/pushes from sources, transforms into CD events, stores them, and powers dashboards \+ automation/reactions.  
 * **My Personal Notes:**
 
+![](/images/2026/02/cfgmgmtcamp-2026-cdevents-about-david-bernard.jpg)
+
 ### **Beyond SHA Pinning: Security for CI/CD Pipelines \- Andoni Alonso & Paco Sanchez**
 
 * **2026-02-02, 16:25–16:50, B.1.011**  
@@ -179,6 +201,9 @@ keywords = ["cfgmgmtcamp", "config management", "conferences", "ghent"]
   * **Actionable defenses** focus on least privilege, safer PR workflow patterns (preventing PR-open → RCE paths), protecting workflow/config directories with stronger review controls, and carefully constraining **OIDC claims** to avoid role-assumption bypasses.  
 * **My Personal Notes:**
   * 
+
+![](/images/2026/02/cfgmgmtcamp-2026-beyond-sha-pinning-title.jpg)
+![](/images/2026/02/cfgmgmtcamp-2026-beyond-sha-pinning-qna.jpg)
 
 ## **Day 2**
 
@@ -239,6 +264,10 @@ keywords = ["cfgmgmtcamp", "config management", "conferences", "ghent"]
 * **My Personal Notes:**
   * asdfa
 
+![](/images/2026/02/cfgmgmtcamp-2026-stahnke-ignite-intro.jpg)
+![](/images/2026/02/cfgmgmtcamp-2026-stahnke-golden-dataset-testing.jpg)
+![](/images/2026/02/cfgmgmtcamp-2026-stahnke-statistical-acceptance.jpg)
+
 ### **Dopamine, Dunning-Kruger, and a Life in Technology: Why We're All Confidently Wrong About Everything (And That's Okay) \- James Freeman**
 
 * **2026-02-03, 12:25–12:30, D.Aud**  
@@ -267,6 +296,8 @@ keywords = ["cfgmgmtcamp", "config management", "conferences", "ghent"]
 * **My Personal Notes:**  
   * asdfasdf
 
+![](/images/2026/02/cfgmgmtcamp-2026-how-we-treat-each-other.jpg)
+
 ### **My Ignite: Untangling Strings: Getting CI Visibility for Vox Pupuli Tests \- Peter Souter**
 
 * **2026-02-03, 12:15–12:20, D.Aud**  
@@ -282,6 +313,10 @@ keywords = ["cfgmgmtcamp", "config management", "conferences", "ghent"]
   * My first ever ignite\!  
   * Was a fun format
 
+![](/images/2026/02/cfgmgmtcamp-2026-ignite-title-slide.png)
+![](/images/2026/02/cfgmgmtcamp-2026-ignite-datadog-oss-slide.png)
+![](/images/2026/02/cfgmgmtcamp-2026-ignite-ci-visibility-slide.png)
+
 ### **Every day I’m Hustlin' \- Ben Ford**
 
 * **2026-02-03, 12:20–12:25, D.Aud**  
@@ -295,6 +330,8 @@ keywords = ["cfgmgmtcamp", "config management", "conferences", "ghent"]
   * **Sustainability Over Speed** The core lesson of the talk is to prioritize sustainability over rapid growth. By lowering expectations and refusing external funding, the company avoids the "rat race" and ensures they can manage the workload without burning out.  
 * **My Personal Notes:**
   * asdfasdf
+
+![](/images/2026/02/cfgmgmtcamp-2026-ben-ford-hustlin-talk.jpg)
 
 ## **Conclusion**
 
