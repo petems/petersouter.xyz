@@ -16,11 +16,11 @@ keywords = ["cfgmgmtcamp", "config management", "conferences", "ghent"]
 | **Videos** | [https://www.youtube.com/watch?v=8ukj56T50kw\&list=PLBZBIkixHEich2-s0PRncozYzaBQNBXyw\&index=28](https://www.youtube.com/watch?v=8ukj56T50kw&list=PLBZBIkixHEich2-s0PRncozYzaBQNBXyw&index=28) |
 | **Website** | [https://cfgmgmtcamp.org/ghent2026/](https://cfgmgmtcamp.org/ghent2026/) |
 
-# **Event Summary**
+## **Event Summary**
 
 **CfgMgmtCamp** (short for **Configuration Management Camp**) is a **community-run, free (registration-required) conference** focused on **open-source infrastructure automation / “ops tooling”** \- configuration management, provisioning, orchestration, containers, and adjacent DevOps/CD topics. It’s traditionally held **in Ghent, Belgium right after FOSDEM**, so many people “extend” their FOSDEM trip into the following days.
 
-# **Takeaways**
+## **Takeaways**
 
 * **AI/LLMs dominated the conversation**  
   * AI was the single most recurring theme across tracks \- from Adam Jacob's keynote on AI-native infrastructure with Claude, to MCP (Model Context Protocol) appearing in multiple talks (Ansible, monitoring, IaC), to workshops on agentic AI for operations.  
@@ -61,21 +61,19 @@ keywords = ["cfgmgmtcamp", "config management", "conferences", "ghent"]
     * [https://cfp.cfgmgmtcamp.org/2020/speaker/39MQMY/](https://cfp.cfgmgmtcamp.org/2020/speaker/39MQMY/) a  
   * But the memories flooded back quick\!  
 * Walking over to Hogent University from the station, all the memories came flooding back.  
-  * So many bikes\!  
-  * The big Art Nevaeau owl for the Opticians  
-  * The big Pepsi can that's the front awning for a cafe  
-* And finally, the entrance to Hogent itself…  
+  * So many bikes!
+    * ![](/images/2026/02/cfgmgmtcamp-2026-hogent-bike-parking.png)  
+  * The big Art Nevaeau owl for the Opticians
+    * ![](/images/2026/02/cfgmgmtcamp-2026-ghent-owl-sign.png)
+  * The big Pepsi can that's the front awning for a cafe
+    * ![](/images/2026/02/cfgmgmtcamp-2026-ghent-pepsi-can-cafe.png)
+  * And finally, the entrance to Hogent itself…
+    * ![](/images/2026/02/cfgmgmtcamp-2026-hogent-campus-sign.png)
+    * ![](/images/2026/02/cfgmgmtcamp-2026-ghent-street-sticker.jpg)
 * My colleague Benjamin Fuhrmann was speaking
   * [https://cfp.cfgmgmtcamp.org/ghent2026/talk/USPZHD/](https://cfp.cfgmgmtcamp.org/ghent2026/talk/USPZHD/)  
   * But unfortunatly *at the exact same time as my talk*  
   * Luckily we had some other folks from Datadog attending so they cheered him on!
-
-![](/images/2026/02/cfgmgmtcamp-2026-hogent-bike-parking.png)
-![](/images/2026/02/cfgmgmtcamp-2026-ghent-owl-sign.png)
-![](/images/2026/02/cfgmgmtcamp-2026-ghent-pepsi-can-cafe.png)
-![](/images/2026/02/cfgmgmtcamp-2026-hogent-campus-sign.png)
-![](/images/2026/02/cfgmgmtcamp-2026-entrance-banner.png)
-![](/images/2026/02/cfgmgmtcamp-2026-ghent-street-sticker.jpg)
 
 ## **Day 1**
 
@@ -200,7 +198,7 @@ keywords = ["cfgmgmtcamp", "config management", "conferences", "ghent"]
   * **Lesser-known attack vectors** include “living off the pipeline” (abusing trusted tool configs) and **event-context/injection risks** (PR titles, branch names, commit messages) that can trigger unintended execution downstream.  
   * **Actionable defenses** focus on least privilege, safer PR workflow patterns (preventing PR-open → RCE paths), protecting workflow/config directories with stronger review controls, and carefully constraining **OIDC claims** to avoid role-assumption bypasses.  
 * **My Personal Notes:**
-  * 
+  *
 
 ![](/images/2026/02/cfgmgmtcamp-2026-beyond-sha-pinning-title.jpg)
 ![](/images/2026/02/cfgmgmtcamp-2026-beyond-sha-pinning-qna.jpg)
@@ -218,7 +216,7 @@ keywords = ["cfgmgmtcamp", "config management", "conferences", "ghent"]
   * **CUE Hub control plane:** A central coordinator between sources (Git) and sinks (Terraform/OpenTofu) to validate intent, enforce policy, and provide audit trails.  
   * **Shift-left \+ impact analysis:** Catch policy issues in PRs and preview the real blast radius by grouping related changes across envs/repos before production.  
 * **My Personal Notes:**
-  * 
+  *
 
 ### **The Gilded Age of Open Source is over \- Joe Brockmeier**
 
@@ -343,4 +341,4 @@ keywords = ["cfgmgmtcamp", "config management", "conferences", "ghent"]
   * [https://cfp.cfgmgmtcamp.org/ghent2026/talk/88YNP8/](https://cfp.cfgmgmtcamp.org/ghent2026/talk/88YNP8/)  
   * [https://cfp.cfgmgmtcamp.org/ghent2026/talk/GQYAVR/](https://cfp.cfgmgmtcamp.org/ghent2026/talk/GQYAVR/)  
   * [https://cfp.cfgmgmtcamp.org/ghent2026/talk/88YNP8/](https://cfp.cfgmgmtcamp.org/ghent2026/talk/88YNP8/)  
-* But I definitely loved being back, and will be planning on attending (and likely submitting again\!) for 2027 as well 
+* But I definitely loved being back, and will be planning on attending (and likely submitting again\!) for 2027 as well
