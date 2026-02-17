@@ -130,7 +130,7 @@ deployment:
   matchers:
     # Long-lived static assets: aggressive caching
     - pattern: '^.+\.(js|css|png|jpg|jpeg|gif|svg|webp|ico|ttf|woff|woff2|eot)$'
-      cacheControl: "max-age=31536000, public, immutable"
+      cacheControl: "max-age=31536000, public"
       gzip: true
     # HTML pages: short cache, always revalidate
     - pattern: '^.+\.(html)$'
