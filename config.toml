@@ -239,7 +239,7 @@ baseName = "feed"
   # HTML pages: short cache, always revalidate
   [[deployment.matchers]]
     pattern = "^.+\\.(html)$"
-    cacheControl = "max-age=0, must-revalidate, public"
+    cacheControl = "public, no-cache"
     gzip = true
 
   # XML/JSON feeds and data: moderate cache
