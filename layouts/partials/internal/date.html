@@ -1,0 +1,10 @@
+{{- $day := .Date.Day -}}
+{{- $suffix := "th" -}}
+{{- if or (eq $day 1) (eq $day 21) (eq $day 31) -}}
+  {{- $suffix = "st" -}}
+{{- else if or (eq $day 2) (eq $day 22) -}}
+  {{- $suffix = "nd" -}}
+{{- else if or (eq $day 3) (eq $day 23) -}}
+  {{- $suffix = "rd" -}}
+{{- end -}}
+{{- .Date.Weekday }}, {{ $day }}{{ $suffix }} {{ .Date.Month }} {{ .Date.Year -}}
