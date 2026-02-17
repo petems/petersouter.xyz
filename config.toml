@@ -224,3 +224,26 @@ ignoreLogs = ['warning-goldmark-raw-html']
 
 [outputFormats.RSS]
 baseName = "feed"
+
+[deployment]
+  [[deployment.targets]]
+    name = "production"
+    URL = "s3://petersouter.xyz?region=eu-west-1"
+
+  # Long-lived static assets: aggressive caching
+  [[deployment.matchers]]
+    pattern = "^.+\\.(js|css|png|jpg|jpeg|gif|svg|webp|ico|ttf|woff|woff2|eot)$"
+    cacheControl = "max-age=31536000, public, immutable"
+    gzip = true
+
+  # HTML pages: short cache, always revalidate
+  [[deployment.matchers]]
+    pattern = "^.+\\.(html)$"
+    cacheControl = "max-age=0, must-revalidate, public"
+    gzip = true
+
+  # XML/JSON feeds and data: moderate cache
+  [[deployment.matchers]]
+    pattern = "^.+\\.(xml|json)$"
+    cacheControl = "max-age=3600, public"
+    gzip = true
