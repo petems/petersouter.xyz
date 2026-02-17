@@ -7,4 +7,4 @@
 {{- else if or (eq $day 3) (eq $day 23) -}}
   {{- $suffix = "rd" -}}
 {{- end -}}
-{{ .Date.Weekday }}, {{ $day }}{{ $suffix }} {{ .Date.Month }} {{ .Date.Year }}
+{{- .Date.Weekday }}, {{ $day }}{{ $suffix }} {{ .Date.Month }} {{ .Date.Year -}}
