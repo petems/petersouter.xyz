@@ -8,9 +8,9 @@ slug = "cfgmgmtcamp-2026-trip-report"
 tags = ["Config Management", "Conferences", "CfgMgmtCamp"]
 title = "CfgMgmtCamp 2026 Trip Report"
 keywords = ["cfgmgmtcamp", "config management", "conferences", "ghent"]
+thumbnailImage = "/images/2026/02/bikes-landscape.jpg"
+coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
 +++
-
-> NB: This is a personal reposting of a trip report I made for work in the Datadog Confluence. I added some more personal flavor for this version and removed the Datadog-specific stuff.
 
 ## Good to be Back
 
@@ -18,17 +18,24 @@ keywords = ["cfgmgmtcamp", "config management", "conferences", "ghent"]
 - The last time I was here was in 2020...
 - I was speaking about [Testing Infra as Code](https://cfp.cfgmgmtcamp.org/2020/talk/M3QX7K/)
 - I've changed a lot since then, including growing a stache and wearing a baseball cap I guess!
+
+<!--more-->
+
+> NB: This is a personal reposting of a trip report I made for work in the Datadog Confluence. I added some more personal flavor for this version and removed the Datadog-specific stuff.
+
+## Nostalgic Journey
+
 - Walking over to Hogent University from the station, all the memories came flooding back.
 - So many bikes from the station exit...
-  - ![](/images/2026/02/cfgmgmtcamp-2026-hogent-bike-parking.png)
+  - ![Bike parking outside Ghent station](/images/2026/02/cfgmgmtcamp-2026-hogent-bike-parking.png)
 - The big Art Nevaeau owl for the Opticians:
-  - ![](/images/2026/02/cfgmgmtcamp-2026-ghent-owl-sign.png)
+  - ![Art Nouveau owl sign on a Ghent opticians](/images/2026/02/cfgmgmtcamp-2026-ghent-owl-sign.png)
 - The big Pepsi can that's the front awning for a cafe
-  - ![](/images/2026/02/cfgmgmtcamp-2026-ghent-pepsi-can-cafe.png)
+  - ![Cafe with a giant Pepsi can as its front awning](/images/2026/02/cfgmgmtcamp-2026-ghent-pepsi-can-cafe.png)
 - And finally, the entrance to Hogent itself
-  - ![](/images/2026/02/cfgmgmtcamp-2026-hogent-entrance-banner.png)
+  - ![Entrance banner at Hogent University](/images/2026/02/cfgmgmtcamp-2026-hogent-entrance-banner.png)
 - Finally saw the logo after so much time away
-  - ![](/images/2026/02/cfgmgmtcamp-2026-ghent-cfgmgmtcamp-2026-hogent-campus-sign.jpg)
+  - ![CfgMgmtCamp logo sticker spotted on a Ghent street](/images/2026/02/cfgmgmtcamp-2026-ghent-cfgmgmtcamp-2026-hogent-campus-sign.jpg)
 
 ## General Takeaways
 
@@ -226,7 +233,7 @@ keywords = ["cfgmgmtcamp", "config management", "conferences", "ghent"]
   - As you can tell by me making more notes than for other talks heh)
   - I feel like it was a good history lesson of how OSS is probably out of its best time.
   - Kept things optimistic as well, it's easy to be a doomer in this space I'd say.
-  - [My Bluesky post about the talk](https://bsky.app/profile/petersouter.xyz/post/3mdx4u5kz5c26)
+  - {{< bluesky link="https://bsky.app/profile/petersouter.xyz/post/3mdx4u5kz5c26" >}}
 
 ### Sovereign Computing: Panel
 
@@ -303,9 +310,9 @@ keywords = ["cfgmgmtcamp", "config management", "conferences", "ghent"]
   - Was also great to see the Vox Pupuli folks in the crowd for it.
   - I barely use Puppet at this point but I've known a lot of those folks for over 10 years at this point so it was fun to be able to use my Datadog skillz to help them out.
   - Photos:
-    - ![](/images/2026/02/my-ignite-pic.png)
-    - ![](/images/2026/02/my-ignite-pic-2.png)
-    - ![](/images/2026/02/my-ignite-pic-3.png)
+    - ![Peter presenting his ignite talk on stage](/images/2026/02/my-ignite-pic.png)
+    - ![Audience view of the ignite talk slides](/images/2026/02/my-ignite-pic-2.png)
+    - ![Post-ignite talk photo](/images/2026/02/my-ignite-pic-3.png)
 
 ### Every day I'm Hustlin' - Ben Ford
 
