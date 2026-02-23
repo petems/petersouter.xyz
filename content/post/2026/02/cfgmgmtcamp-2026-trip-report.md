@@ -92,13 +92,13 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
 - Show of hands for "For who is this their first cfgmgmtcamp?" was very high, maybe 70% of the main room!
 - Show of hands for people coming since the first meetup beginning was about ~10, myself included!
   - ![Opening session at CfgMgmtCamp 2026](/images/2026/02/cfgmgmtcamp-2026-opening-session.jpg)
+  - ![Socials Slide](/images/2026/02/cfgmgmtcamp-2026-socials-intro-slide.jpg)
 
 ### We Built for Predictability; the Workloads Didn't Care - Michael Stahnke
 
 - **2026-02-02, 09:30-10:20, D.Aud**
   - Link: [Session Page](https://cfp.cfgmgmtcamp.org/ghent2026/talk/AGSYJ3/)
   - Video: {{< youtube pq3Qxb26Nwo >}}
-  - ![Michael Stahnke's title slide](/images/2026/02/cfgmgmtcamp-2026-stahnke-title.jpg)
 - **Talk Summary**
   - **"Desired state" is a myth:** Config management chased certainty (idempotency, hermeticity), but real systems never stay "finished" or static - users and ongoing change disrupt them.
   - **Shift to probabilistic workloads:** AI/LLMs don't produce identical outputs from identical inputs, so engineers must reason in probabilities, not guarantees.
@@ -109,6 +109,13 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
   - Was great to see Stahnke again, we worked together at Puppet many years ago.
   - Interesting general perspective is that we no longer have "guaranteed" answers with the new GenAI world, so how do we handle that
   - Sandboxes are back on the menu - lotta people letting Claude et al run in yolo mode for long-running tasks, Stahnke's working at <https://flox.dev/> now
+  - Slides:
+    - ![Slide on known inputs and deterministic expectations](/images/2026/02/cfgmgmtcamp-2026-stahnke-known-inputs.jpg)
+    - ![Slide on workload evaluation approaches](/images/2026/02/cfgmgmtcamp-2026-stahnke-workload-evaluation.jpg)
+    - ![Slide on chaos engineering for AI workloads](/images/2026/02/cfgmgmtcamp-2026-stahnke-chaos-engineering.jpg)
+    - ![Slide on new CI/CD pipeline patterns](/images/2026/02/cfgmgmtcamp-2026-stahnke-new-ci-cd-pipeline.jpg)
+    - ![Slide on membership and community](/images/2026/02/cfgmgmtcamp-2026-stahnke-membership-slide.jpg)
+    - ![QR code to Stahnke's slides](/images/2026/02/cfgmgmtcamp-2026-stahnke-slides-qr.jpg)
 
 ### The Exploitation Paradox in Open Source - Richard Fontana
 
@@ -280,7 +287,9 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
   - **Sandboxing**: Stahnke notes that current safety measures often rely on "sandboxing," though many users blindly trust these sandboxes without fully understanding their architecture.
 - **My Personal Notes:**
   - ![Michael Stahnke's ignite talk intro slide](/images/2026/02/cfgmgmtcamp-2026-stahnke-ignite-intro.jpg)
-  - I liked a lot of the general slides on this talk, I took a lot of pictures
+  - ![Slide on statistical acceptance testing](/images/2026/02/cfgmgmtcamp-2026-stahnke-statistical-acceptance.jpg)
+  - ![Slide on golden dataset testing](/images/2026/02/cfgmgmtcamp-2026-stahnke-golden-dataset-testing.jpg)
+  - Some good statement slides here, hence me taking extra photos!
 
 ### Dopamine, Dunning-Kruger, and a Life in Technology: Why We're All Confidently Wrong About Everything (And That's Okay) - James Freeman
 
@@ -310,7 +319,6 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
   - **Management Pressure and Tech Debt:** He highlights the "pressure cooker" nature of the job where bosses frequently override quality controls to "just get it into production," forcing engineers to knowingly build up technical debt to meet arbitrary deadlines.
   - **A Call for Basic Kindness:** Viewing the current AI hype as just "another pill" the workforce is forced to swallow, Bown concludes that the solution isn't another complex strategy, but simply going "back to basics" and being nicer to one another.
 - **My Personal Notes:**
-  - ![Richard Bown presenting How We Treat Each Other At Work](/images/2026/02/cfgmgmtcamp-2026-how-we-treat-each-other.jpg)
   - Always good to hear people talking about the "human" side of things.
   - [Another book to add to the backlog...](https://richardwbown.com/human-software/)
 
@@ -335,9 +343,6 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
     - ![Ignite talk title slide](/images/2026/02/cfgmgmtcamp-2026-ignite-title-slide.png)
     - ![Slide showing Datadog's open source program](/images/2026/02/cfgmgmtcamp-2026-ignite-datadog-oss-slide.png)
     - ![Slide showing CI Visibility dashboard](/images/2026/02/cfgmgmtcamp-2026-ignite-ci-visibility-slide.png)
-    - ![Peter presenting his ignite talk on stage](/images/2026/02/my-ignite-pic.png)
-    - ![Audience view of the ignite talk slides](/images/2026/02/my-ignite-pic-2.png)
-    - ![Post-ignite talk photo](/images/2026/02/my-ignite-pic-3.png)
 
 ### Every day I'm Hustlin' - Ben Ford
 
@@ -351,7 +356,7 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
   - **The Power of Slowing Down:** Using an anecdote about a photographer who was overwhelmed by sudden popularity, Ford argues for the necessity of "putting on the brakes." He suggests using tools to intentionally slow down customer intake to a pace where the team can actually deliver quality.
   - **Sustainability Over Speed:** The core lesson of the talk is to prioritize sustainability over rapid growth. By lowering expectations and refusing external funding, the company avoids the "rat race" and ensures they can manage the workload without burning out.
 - **My Personal Notes:**
-  - ![Ben Ford presenting Every day I'm Hustlin'](/images/2026/02/cfgmgmtcamp-2026-ben-ford-hustlin-talk.jpg)
+  - ![Richard Bown presenting How We Treat Each Other At Work](/images/2026/02/cfgmgmtcamp-2026-binford2k-slide.jpg)
   - I've known Ben for a long time and it was great to see what he's up to.
   - Also made me realise that this is not something I'd like to get into for a while 😆
   - The idea of having to deal with paperwork, taxes and payroll brings me out in hives...
@@ -369,4 +374,3 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
 ## Conclusion
 
 - I loved being back, and will be planning on attending (and likely submitting again!) for 2027 as well.
-  - ![Socials slide from CfgMgmtCamp 2026](/images/2026/02/cfgmgmtcamp-2026-socials-slide.jpg)
