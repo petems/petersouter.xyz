@@ -91,12 +91,14 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
 
 - Show of hands for "For who is this their first cfgmgmtcamp?" was very high, maybe 70% of the main room!
 - Show of hands for people coming since the first meetup beginning was about ~10, myself included!
+  - ![Opening session at CfgMgmtCamp 2026](/images/2026/02/cfgmgmtcamp-2026-opening-session.jpg)
 
 ### We Built for Predictability; the Workloads Didn't Care - Michael Stahnke
 
 - **2026-02-02, 09:30-10:20, D.Aud**
   - Link: [Session Page](https://cfp.cfgmgmtcamp.org/ghent2026/talk/AGSYJ3/)
   - Video: {{< youtube pq3Qxb26Nwo >}}
+  - ![Michael Stahnke's title slide](/images/2026/02/cfgmgmtcamp-2026-stahnke-title.jpg)
 - **Talk Summary**
   - **"Desired state" is a myth:** Config management chased certainty (idempotency, hermeticity), but real systems never stay "finished" or static - users and ongoing change disrupt them.
   - **Shift to probabilistic workloads:** AI/LLMs don't produce identical outputs from identical inputs, so engineers must reason in probabilities, not guarantees.
@@ -159,6 +161,7 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
   - **Real pipelines:** Workflows can checkout code, run tests, spin up services (e.g., Postgres), upload artifacts, and publish releases (often using tokens/secrets).
   - **The "important AF" argument:** Moving off GitHub reduces dependence on a single for-profit vendor and supports digital autonomy; the speaker encourages mirroring a repo, porting a workflow, and supporting the Forgejo/Codeberg ecosystem.
 - **My Personal Notes:**
+  - ![Jeroen Baten presenting the Forgejo Actions talk](/images/2026/02/cfgmgmtcamp-2026-forgejo-talk.jpg)
   - I've never heard a conference speaker swear so much in a talk 😆
   - Was an interesting session overall, very much talking about how we can't put too much trust in things like GitHub.
   - Forgejo does seem like the closest 1:1 with everything that GitHub currently does, beyond just repo hosting and into PM, issues, artifacts and CI/CD.
@@ -190,6 +193,7 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
   - **Standard event model:** Use a consistent identity + type + context so artifacts, deployments, tests, and pipeline runs can be linked and queried reliably across systems.
   - **Collector/connector pipeline:** Implement via a mini-ETL (like an OTel collector) that pulls/pushes from sources, transforms into CD events, stores them, and powers dashboards + automation/reactions.
 - **My Personal Notes:**
+  - ![David Bernard presenting about CDEvents](/images/2026/02/cfgmgmtcamp-2026-cdevents-about-david-bernard.jpg)
   - This is the first OSS style option I've seen for some of the work I talked about with Datadog's CI Visibility tooling.
   - Got an item on my backlog to give it a go and see how it looks.
   - Had a chance to have a chat with David afterwards to understand more about it, seems like an interesting OSS option in this space.
@@ -206,6 +210,8 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
   - **Lesser-known attack vectors:** "Living off the pipeline" (abusing trusted tool configs) and event-context/injection risks (PR titles, branch names, commit messages) that can trigger unintended execution downstream.
   - **Actionable defenses:** Focus on least privilege, safer PR workflow patterns (preventing PR-open -> RCE paths), protecting workflow/config directories with stronger review controls, and carefully constraining OIDC claims to avoid role-assumption bypasses.
 - **My Personal Notes:**
+  - ![Beyond SHA Pinning title slide](/images/2026/02/cfgmgmtcamp-2026-beyond-sha-pinning-title.jpg)
+  - ![Q&A session after the Beyond SHA Pinning talk](/images/2026/02/cfgmgmtcamp-2026-beyond-sha-pinning-qna.jpg)
   - A lot of things I already knew about, particularly around pinning things like GitHub Action refs, but was interesting to see more edge case scenarios.
   - Made me think about how I handle PRs and titles, especially in the new AI world where prompt injection is another area of vulnerability.
 
@@ -273,6 +279,7 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
   - **LLM Personality:** Because AI models are trained on internet data like Reddit and Stack Overflow, agents can sometimes exhibit "hostile" attitudes or create code that makes reviewers feel "uncomfortable."
   - **Sandboxing**: Stahnke notes that current safety measures often rely on "sandboxing," though many users blindly trust these sandboxes without fully understanding their architecture.
 - **My Personal Notes:**
+  - ![Michael Stahnke's ignite talk intro slide](/images/2026/02/cfgmgmtcamp-2026-stahnke-ignite-intro.jpg)
   - I liked a lot of the general slides on this talk, I took a lot of pictures
 
 ### Dopamine, Dunning-Kruger, and a Life in Technology: Why We're All Confidently Wrong About Everything (And That's Okay) - James Freeman
@@ -303,6 +310,7 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
   - **Management Pressure and Tech Debt:** He highlights the "pressure cooker" nature of the job where bosses frequently override quality controls to "just get it into production," forcing engineers to knowingly build up technical debt to meet arbitrary deadlines.
   - **A Call for Basic Kindness:** Viewing the current AI hype as just "another pill" the workforce is forced to swallow, Bown concludes that the solution isn't another complex strategy, but simply going "back to basics" and being nicer to one another.
 - **My Personal Notes:**
+  - ![Richard Bown presenting How We Treat Each Other At Work](/images/2026/02/cfgmgmtcamp-2026-how-we-treat-each-other.jpg)
   - Always good to hear people talking about the "human" side of things.
   - [Another book to add to the backlog...](https://richardwbown.com/human-software/)
 
@@ -324,6 +332,9 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
   - Was also great to see the Vox Pupuli folks in the crowd for it.
   - I barely use Puppet at this point but I've known a lot of those folks for over 10 years at this point so it was fun to be able to use my Datadog skillz to help them out.
   - Photos:
+    - ![Ignite talk title slide](/images/2026/02/cfgmgmtcamp-2026-ignite-title-slide.png)
+    - ![Slide showing Datadog's open source program](/images/2026/02/cfgmgmtcamp-2026-ignite-datadog-oss-slide.png)
+    - ![Slide showing CI Visibility dashboard](/images/2026/02/cfgmgmtcamp-2026-ignite-ci-visibility-slide.png)
     - ![Peter presenting his ignite talk on stage](/images/2026/02/my-ignite-pic.png)
     - ![Audience view of the ignite talk slides](/images/2026/02/my-ignite-pic-2.png)
     - ![Post-ignite talk photo](/images/2026/02/my-ignite-pic-3.png)
@@ -340,6 +351,7 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
   - **The Power of Slowing Down:** Using an anecdote about a photographer who was overwhelmed by sudden popularity, Ford argues for the necessity of "putting on the brakes." He suggests using tools to intentionally slow down customer intake to a pace where the team can actually deliver quality.
   - **Sustainability Over Speed:** The core lesson of the talk is to prioritize sustainability over rapid growth. By lowering expectations and refusing external funding, the company avoids the "rat race" and ensures they can manage the workload without burning out.
 - **My Personal Notes:**
+  - ![Ben Ford presenting Every day I'm Hustlin'](/images/2026/02/cfgmgmtcamp-2026-ben-ford-hustlin-talk.jpg)
   - I've known Ben for a long time and it was great to see what he's up to.
   - Also made me realise that this is not something I'd like to get into for a while 😆
   - The idea of having to deal with paperwork, taxes and payroll brings me out in hives...
@@ -357,3 +369,4 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
 ## Conclusion
 
 - I loved being back, and will be planning on attending (and likely submitting again!) for 2027 as well.
+  - ![Socials slide from CfgMgmtCamp 2026](/images/2026/02/cfgmgmtcamp-2026-socials-slide.jpg)
