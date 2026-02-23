@@ -15,61 +15,53 @@ keywords = ["cfgmgmtcamp", "config management", "conferences", "ghent"]
 ## Good to be Back
 
 - It was good to be back in Ghent! It'd been 6 years since I was last here for Cfgmgmtcamp, but the memories flooded back quick.
-  - The last time I was here: 2020
-  - {{< youtube wYEffa1q6eU >}}
-  - [My CfgMgmtCamp 2020 Speaker Profile](https://cfp.cfgmgmtcamp.org/2020/speaker/39MQMY/)
+- The last time I was here was in 2020...
+- I was speaking about [Testing Infra as Code](https://cfp.cfgmgmtcamp.org/2020/talk/M3QX7K/)
+- I've changed a lot since then, including growing a stache and wearing a baseball cap I guess!
 - Walking over to Hogent University from the station, all the memories came flooding back.
 - So many bikes from the station exit...
-
-![](/images/2026/02/cfgmgmtcamp-2026-hogent-bike-parking.png)
-
+  - ![](/images/2026/02/cfgmgmtcamp-2026-hogent-bike-parking.png)
 - The big Art Nevaeau owl for the Opticians:
-
-![](/images/2026/02/cfgmgmtcamp-2026-ghent-owl-sign.png)
-
+  - ![](/images/2026/02/cfgmgmtcamp-2026-ghent-owl-sign.png)
 - The big Pepsi can that's the front awning for a cafe
-
-![](/images/2026/02/cfgmgmtcamp-2026-ghent-pepsi-can-cafe.png)
-
+  - ![](/images/2026/02/cfgmgmtcamp-2026-ghent-pepsi-can-cafe.png)
 - And finally, the entrance to Hogent itself
-
-![](/images/2026/02/cfgmgmtcamp-2026-hogent-campus-sign.png)
-
+  - ![](/images/2026/02/cfgmgmtcamp-2026-hogent-entrance-banner.png)
 - Finally saw the logo after so much time away
-
-![](/images/2026/02/cfgmgmtcamp-2026-ghent-street-sticker.jpg)
+  - ![](/images/2026/02/cfgmgmtcamp-2026-ghent-cfgmgmtcamp-2026-hogent-campus-sign.jpg)
 
 ## General Takeaways
 
 - **AI/LLMs dominated the conversation**
   - Unsuprising as this is the tech landscape of 2026!
   - But just looking across all the tracks and session, AI was the single most recurring theme across tracks.
-  - Specific callouts were Adam Jacob's keynote on AI-native infrastructure with Claude, to MCP (Model Context Protocol) appearing in multiple talks (Ansible, monitoring, IaC), to workshops on agentic AI for operations.
-  - Nearly every track had at least one AI-related talk, signaling it's no longer a niche topic but a central concern for infrastructure engineers.
-  - Notably, several talks also pushed back on AI hype, questioning its impact on mentorship and learning (Bernd Erk's "Automation Without Apprentices").
-- **Open source sustainability and sovereignty were recurring themes**
-  - Multiple keynotes tackled the economics and politics of open source - Richard Fontana on the "exploitation paradox," Joe Brockmeier declaring "The Gilded Age of Open Source is over," Martin Alfke on community vs. business, and a full panel on European sovereign computing etc.
-  - The conference reflected genuine anxiety about corporate rug-pulls, vendor lock-in, and the need for digital autonomy in the current geopolitical landscape.
-- **The tooling landscape was broad but Ansible-heavy**
-  - Ansible had the largest footprint with 2-3 dedicated tracks per day plus a full contributor summit on Day 3. Red Hat's presence was felt throughout (Ansible, Foreman/Katello, Pulp, bootc).
-    - NB: Ansible **and** Red Hat are sponsors, so it makes sense: [CfgMgmtCamp 2026 Sponsors](https://cfgmgmtcamp.org/ghent2026/sponsors/)
-  - Other well-represented ecosystems included OpenTofu (with its own track), Nix/NixOS, Kubernetes, Foreman, and mgmt config.
+  - A lot of specific call outs in the main track, MCP (Model Context Protocol) appearing in multiple talks (Ansible, monitoring, IaC) and even specific workshops on agentic AI for operations.
+  - Nearly every track had at least one AI-related talk, we're well beyond it being a niche and it's now hit that glowing red central concern for infra folks
+  - Notably, several talks also pushed back on AI hype, questioning its impact on open source, mentorship and learning
+- **Open Source Sustainability and Sovereignty as Recurring Themes**
+  - Multiple keynotes tackled the economics and politics of open source - Richard Fontana on the "exploitation paradox," Joe Brockmeier declaring "The Gilded Age of Open Source is over", Martin Alfke on community vs. business, and a full panel on European sovereign computing etc.
+  - Lot of general anxiety about "corporate rug-pulls", vendor lock-in, and the need for digital autonomy in the current geopolitical landscape.
+  - GenAI was part of this conversation but I feel like this is always an underlying concern, which makes sense as Cfgmgmtcamp is a FOSDEM-cousin as it were.
+- **The tooling landscape was broad but RedHat-heavy**
+  - Even after RedHat's move under big blue of IBM, was still a big presecne across the event
+  - Ansible **and** Red Hat are sponsors, so it makes sense: [CfgMgmtCamp 2026 Sponsors](https://cfgmgmtcamp.org/ghent2026/sponsors/)
+  - Other well-represented ecosystems included OpenTofu (the OSS fork of Terraform with its own track), Nix/NixOS, Kubernetes, Foreman, and mgmt config.
   - Notably absent or minimal: Chef, Saltstack (only via Uyuni), and Pulumi.
-    - NB: Pulumi is one of the sponsors also... strange they didn't have any sessions or workshops.
+    - NB: Pulumi is one of the sponsors also... strange they didn't have any sessions or workshops? :thinking emoji:
   - Cfgmgmtcamp continues to line up with its FOSDEM-cousin-ish ways, where talk mix skewed toward practitioner talks and live demos over vendor pitches.
-- **Observability, CI/CD, and platform engineering emerged as crosscutting concerns**
-  - Beyond traditional config management, the conference showed the field expanding into CI/CD observability (OpenTelemetry in pipelines, DORA metrics, CDEvents), platform engineering principles, and "Day Two" operational challenges.
+- **Observability and CI/CD A Big Prescense**
+  - Obviously an area I'm interested in now I'm at Datadog, there's a big expansion into observability
+  - Tools like OpenTelemetry, Grafana, and VictoriaMetrics appeared across multiple tracks
   - Obviously I was part of this and happy that it was a growing trend overall!
-  - Tools like OpenTelemetry, Grafana, and VictoriaMetrics appeared across multiple tracks, reflecting a maturing understanding that managing infrastructure now means managing the entire delivery and operational lifecycle - not just the initial provisioning.
-  - Would be nice to have more of a Datadog prescence at Cfgmgmtcamp.
-    - But aware we also had folks working at FOSDEM and on the oTel Unconference on the Monday.
+- **Datadog at Cfgmgmtcamp***
+  - My colleague Benjamin Fuhrmann was speaking
+    - [Benjamin's Talk on the Schedule](https://cfp.cfgmgmtcamp.org/ghent2026/talk/USPZHD/)
+    - But unfortunately *at the exact same time as my talk*.
+    - Luckily we had some other folks from Datadog attending so they cheered him on!
+  - We also had folks working at FOSDEM and on the oTel Unconference on the Monday so a bit of crossover with Cfgmgmtcamp
     - [How to Instrument Go Without Changing Code](https://kakkoyun.me/talks/how-to-instrument-go-without-changing-code/)
     - [How to Reliably Measure Software Performance](https://kakkoyun.me/talks/how-to-reliably-measure-software-performance/)
     - [OTel Unplugged at FOSDEM](https://opentelemetry.io/blog/2025/otel-unplugged-fosdem/)
-- My colleague Benjamin Fuhrmann was speaking
-  - [Benjamin's Talk on the Schedule](https://cfp.cfgmgmtcamp.org/ghent2026/talk/USPZHD/)
-  - But unfortunately *at the exact same time as my talk*.
-  - Luckily we had some other folks from Datadog attending so they cheered him on!
 
 ## Detailed Breakdown
 
@@ -93,13 +85,14 @@ keywords = ["cfgmgmtcamp", "config management", "conferences", "ghent"]
   - **Ops regains control:** Unpredictable, AI-generated code needs containment and guardrails, increasing the importance of operations in providing stable foundations and control points.
 - **My Personal Notes:**
   - Was great to see Stahnke again, we worked together at Puppet many years ago.
-  - Sandboxes are back on the menu - lotta people letting Claude et al run in yolo mode for long-running tasks.
+  - Intereasting general perspective is that we no longer have "guartenteed" answes with the new GenAI world, so how do we handle that
+  - Sandboxes are back on the menu - lotta people letting Claude et al run in yolo mode for long-running tasks, Stanke's working at <https://flox.dev/> now
 
 ### The Exploitation Paradox in Open Source - Richard Fontana
 
 - **2026-02-02, 10:20-11:10, D.Aud**
   - Link: [Session Page](https://cfp.cfgmgmtcamp.org/ghent2026/talk/KP9YPK/)
-  - Slides: [Link](https://cfp.cfgmgmtcamp.org/media/ghent2026/submissions/KP9YPK/resources/slides-fontana-cfgmgmtcamp2026_GW81j66.pdf)
+  - Slides: [Slides](https://cfp.cfgmgmtcamp.org/media/ghent2026/submissions/KP9YPK/resources/slides-fontana-cfgmgmtcamp2026_GW81j66.pdf)
   - Video: {{< youtube TLSqdzhccuE >}}
 - **Talk Summary:**
   - **Static definitions vs. changing reality:** Classic open-source definitions (FSF/OSI) are fixed, while today's software environment (SaaS, cloud, AI) keeps shifting - creating repeated crises when old rules don't fit new contexts.
@@ -246,7 +239,7 @@ keywords = ["cfgmgmtcamp", "config management", "conferences", "ghent"]
   - **The Knowledge and Generational Gap** A major hurdle identified is the "knowledge gap" among decision-makers who lack the technical understanding to realize that non-public cloud solutions are viable for 90% of use cases. Furthermore, the panel noted a lack of younger engineers (20-40 years old) involved in the sovereignty space, emphasizing the need for education to prevent knowledge about independent infrastructure from being lost.
   - **Standardization Over Reinvention** Rather than trying to build a direct one-to-one competitor to AWS, panelists suggested that Europe should focus on defining a common "API standard". By mandating that providers comply with a shared specification, the industry could achieve interoperability similar to "cars and gas stations," allowing users to switch providers freely without having to rewrite their automation code.
 - **My Personal Notes:**
-  -
+  - Not exactly an area that comes up in my day to day, but I'm interested, especially with some of the geopolitical events in the US
 
 ## Ignites
 
@@ -259,6 +252,7 @@ keywords = ["cfgmgmtcamp", "config management", "conferences", "ghent"]
   - **Replacement via Competence** Addressing fears of job loss, Stahnke shares a key insight from his peers: while AI itself may not replace an engineer, "the person that uses AI better than you will replace you," highlighting the necessity of adapting to these new tools.
   - **Personality and Sandboxing** Because AI models are trained on internet data like Reddit and Stack Overflow, agents can sometimes exhibit "hostile" attitudes or create code that makes reviewers feel "uncomfortable." Stahnke notes that current safety measures often rely on "sandboxing," though many users blindly trust these sandboxes without fully understanding their architecture.
 - **My Personal Notes:**
+  - I liked a lot of the general slides on this talk, I took a lot of pictures
 
 ### Dopamine, Dunning-Kruger, and a Life in Technology: Why We're All Confidently Wrong About Everything (And That's Okay) - James Freeman
 
@@ -272,7 +266,9 @@ keywords = ["cfgmgmtcamp", "config management", "conferences", "ghent"]
   - **The Trap of Perfectionism** This dopamine-fueled cycle can lead to negative outcomes, such as the "relentless pursuit of perfection" and massive over-engineering. Freeman uses the example of a complex, AI-generated kettle to show how people often over-complicate solutions rather than accepting that "good" is sufficient.
   - **A Message of Reassurance** The talk concludes by addressing the audience's internal fears, reminding them that despite the noise of the industry and their own self-doubt, they are "always enough" and are likely doing much better than they think they are.
 - **My Personal Notes:**
-  - An area I've been meaning to blog about for a while, especially with
+  - An area I've been meaning to blog about for a while, especially with people talkinga bout things like the [AI Vampire](https://steve-yegge.medium.com/the-ai-vampire-eda6e4f07163)
+  - Good to get a general idea of how other people feel, gave me a lot of ideas for when I get around to doing it myuself
+  - I always appreciate a good "feels" talk, esp as an ignite!
 
 ### How We Treat Each Other At Work - Richard W Bown
 
@@ -306,6 +302,10 @@ keywords = ["cfgmgmtcamp", "config management", "conferences", "ghent"]
   - I mostly managed to stick to the timer and not have too many awkward silences.
   - Was also great to see the Vox Pupuli folks in the crowd for it.
   - I barely use Puppet at this point but I've known a lot of those folks for over 10 years at this point so it was fun to be able to use my Datadog skillz to help them out.
+  - Photos:
+    - ![](/images/2026/02/my-ignite-pic.png)
+    - ![](/images/2026/02/my-ignite-pic-2.png)
+    - ![](/images/2026/02/my-ignite-pic-3.png)
 
 ### Every day I'm Hustlin' - Ben Ford
 
