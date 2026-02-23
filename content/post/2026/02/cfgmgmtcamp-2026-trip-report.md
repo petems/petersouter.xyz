@@ -23,6 +23,19 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
 
 > NB: This is a personal reposting of a trip report I made for work in the Datadog Confluence. I added some more personal flavor for this version and removed the Datadog-specific stuff.
 
+### GenAI Acknowledgement
+
+- This was my first experiment in using GenAI tools to write up a trip report to a conference I attended.
+- Everything was written based on my scratchpad notes I took at the time, photos and my general thoughts about the event.
+- I've been meaning to add an [`/ai` acknowledgement to my blog overall](https://www.bydamo.la/p/ai-manifesto), because I do think it should be acknowledged and called out
+- But in the mean time, here's the specific tools I used when writing this:/
+  - Claude Code
+    - General coding, Hugo formatting, General formatting
+  - Google Gemini and LLM Notebook
+    - Photo identificaiton, Youtube Video Notetaking review after-the-fact to compare to my contemporary notes
+  - CodeRabbit + Gemini Code Assist
+    - PR Pipeline review as part of my pipeline, primarily captures markdown issues, spelling and general typos. 
+
 ## Nostalgic Journey
 
 - Walking over to Hogent University from the station, all the memories came flooding back.
@@ -33,9 +46,9 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
 - The big Pepsi can that's the front awning for a cafe
   - ![Cafe with a giant Pepsi can as its front awning](/images/2026/02/cfgmgmtcamp-2026-ghent-pepsi-can-cafe.png)
 - And finally, the entrance to Hogent itself
-  - ![Entrance banner at Hogent University](/images/2026/02/cfgmgmtcamp-2026-hogent-entrance-banner.png)
+  - ![Entrance banner at Hogent University](/images/2026/02/cfgmgmtcamp-2026-entrance-banner.png)
 - Finally saw the logo after so much time away
-  - ![CfgMgmtCamp logo sticker spotted on a Ghent street](/images/2026/02/cfgmgmtcamp-2026-ghent-cfgmgmtcamp-2026-hogent-campus-sign.jpg)
+  - ![CfgMgmtCamp logo sticker spotted on a Ghent street](/images/2026/02/cfgmgmtcamp-2026-hogent-campus-sign.png)
 
 ## General Takeaways
 
@@ -140,11 +153,11 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
   - Link: [Session Page](https://cfp.cfgmgmtcamp.org/ghent2026/talk/PQUPEQ/)
   - Slides: [Slides](https://cfp.cfgmgmtcamp.org/media/ghent2026/submissions/PQUPEQ/resources/cfgmgtcamp-2026-forgejo_Dxzq5oT.pdf)
 - **Talk Summary:**
-  - **Forgejo** is a lightweight, self-hostable Git forge (repos, issues, PRs, releases, wiki) that's easy to run and maintain.
-  - **Forgejo Actions** provide CI/CD similar to GitHub Actions: workflows live in `.forgejo/workflows/` and are near-compatible with GitHub's syntax.
-  - **Runners** execute jobs by polling the server; you can run many runners across Docker, OSes, and hardware, and target them using **labels**.
-  - Workflows can do real pipelines: checkout code, run tests, spin up services (e.g., Postgres), upload **artifacts**, and publish **releases** (often using tokens/secrets).
-  - The "important AF" argument: moving off GitHub reduces dependence on a single for-profit vendor and supports digital autonomy; the speaker encourages mirroring a repo, porting a workflow, and supporting the Forgejo/Codeberg ecosystem.
+  - **Forgejo overview:** A lightweight, self-hostable Git forge (repos, issues, PRs, releases, wiki) that's easy to run and maintain.
+  - **Forgejo Actions:** Provide CI/CD similar to GitHub Actions: workflows live in `.forgejo/workflows/` and are near-compatible with GitHub's syntax.
+  - **Runners:** Execute jobs by polling the server; you can run many runners across Docker, OSes, and hardware, and target them using labels.
+  - **Real pipelines:** Workflows can checkout code, run tests, spin up services (e.g., Postgres), upload artifacts, and publish releases (often using tokens/secrets).
+  - **The "important AF" argument:** Moving off GitHub reduces dependence on a single for-profit vendor and supports digital autonomy; the speaker encourages mirroring a repo, porting a workflow, and supporting the Forgejo/Codeberg ecosystem.
 - **My Personal Notes:**
   - I've never heard a conference speaker swear so much in a talk 😆
   - Was an interesting session overall, very much talking about how we can't put too much trust in things like GitHub.
@@ -171,11 +184,11 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
   - Link: [Session Page](https://cfp.cfgmgmtcamp.org/ghent2026/talk/M993WU/)
   - Slides: [Slides](https://cfp.cfgmgmtcamp.org/media/ghent2026/submissions/M993WU/resources/cfgmgmtcamp2026-cdviz_tQUBdLq.odp)
 - **Talk Summary:**
-  - CI/CD observability is hard today because delivery data is fragmented across many tools, making simple questions (what's deployed where, what changed, was it signed, which pipeline produced it) require manual correlation.
-  - The proposed fix is to treat the software delivery lifecycle as **observable events** and build a **single unified view** across environments and tools.
-  - Key principle: **don't replace teams' tools/workflows** - instead "observe what exists," integrate with current systems, and provide end-to-end visibility of "what happened."
-  - Use a standard event model (consistent identity + type + context) so artifacts, deployments, tests, and pipeline runs can be linked and queried reliably across systems.
-  - Implement via a collector/connector pipeline (mini-ETL, like an OTel collector) that pulls/pushes from sources, transforms into CD events, stores them, and powers dashboards + automation/reactions.
+  - **Fragmented delivery data:** CI/CD observability is hard today because delivery data is fragmented across many tools, making simple questions (what's deployed where, what changed, was it signed, which pipeline produced it) require manual correlation.
+  - **Observable events:** The proposed fix is to treat the software delivery lifecycle as observable events and build a single unified view across environments and tools.
+  - **Don't replace, observe:** Key principle is don't replace teams' tools/workflows - instead "observe what exists," integrate with current systems, and provide end-to-end visibility of "what happened."
+  - **Standard event model:** Use a consistent identity + type + context so artifacts, deployments, tests, and pipeline runs can be linked and queried reliably across systems.
+  - **Collector/connector pipeline:** Implement via a mini-ETL (like an OTel collector) that pulls/pushes from sources, transforms into CD events, stores them, and powers dashboards + automation/reactions.
 - **My Personal Notes:**
   - This is the first OSS style option I've seen for some of the work I talked about with Datadog's CI Visibility tooling.
   - Got an item on my backlog to give it a go and see how it looks.
@@ -187,11 +200,11 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
   - Link: [Session Page](https://cfp.cfgmgmtcamp.org/ghent2026/talk/E9ANZ8/)
   - Slides: [Slides](https://cfp.cfgmgmtcamp.org/media/ghent2026/submissions/E9ANZ8/resources/Beyond_SHA_Pinning__Security_for_CI_CD_Pipelines__a7Smty9.pdf)
 - **Talk Summary:**
-  - **CI/CD pipelines are high-value targets** because they hold privileged access to source code, infrastructure, and secrets - so pipeline security must be treated as core SDLC security, not an afterthought.
-  - **Supply-chain incidents (e.g., tj-actions)** show that basic hygiene like "pin actions by SHA" helps but isn't sufficient on its own; you need layered defenses and continuous verification.
-  - **Common failure modes** covered include secrets leakage, over-permissioned tokens/runners, and unsafe dependency/action usage - each turning small mistakes into large blast-radius compromises.
-  - **Lesser-known attack vectors** include "living off the pipeline" (abusing trusted tool configs) and **event-context/injection risks** (PR titles, branch names, commit messages) that can trigger unintended execution downstream.
-  - **Actionable defenses** focus on least privilege, safer PR workflow patterns (preventing PR-open -> RCE paths), protecting workflow/config directories with stronger review controls, and carefully constraining **OIDC claims** to avoid role-assumption bypasses.
+  - **CI/CD pipelines are high-value targets:** They hold privileged access to source code, infrastructure, and secrets - so pipeline security must be treated as core SDLC security, not an afterthought.
+  - **Supply-chain incidents:** Examples like tj-actions show that basic hygiene like "pin actions by SHA" helps but isn't sufficient on its own; you need layered defenses and continuous verification.
+  - **Common failure modes:** Secrets leakage, over-permissioned tokens/runners, and unsafe dependency/action usage - each turning small mistakes into large blast-radius compromises.
+  - **Lesser-known attack vectors:** "Living off the pipeline" (abusing trusted tool configs) and event-context/injection risks (PR titles, branch names, commit messages) that can trigger unintended execution downstream.
+  - **Actionable defenses:** Focus on least privilege, safer PR workflow patterns (preventing PR-open -> RCE paths), protecting workflow/config directories with stronger review controls, and carefully constraining OIDC claims to avoid role-assumption bypasses.
 - **My Personal Notes:**
   - A lot of things I already knew about, particularly around pinning things like GitHub Action refs, but was interesting to see more edge case scenarios.
   - Made me think about how I handle PRs and titles, especially in the new AI world where prompt injection is another area of vulnerability.
@@ -218,16 +231,16 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
 - **2026-02-03, 10:20-11:10, D.Aud**
   - Link: [Session Page](https://cfp.cfgmgmtcamp.org/ghent2026/talk/QV7JPB/)
 - **Talk Summary:**
-  - **The Gilded Age Metaphor** Brockmeier draws a parallel between the US Gilded Age (1870s-1890s) - characterized by rapid railroad expansion, wealth inequality, and robber barons - and the last 20 years of open source, which saw the rapid expansion of the internet and the accumulation of corporate power.
-  - **Sanitization for Business** While open source began with volunteers and free software ideals, it was eventually "sanitized" to make it palatable for capitalists; the term "open source" was adopted specifically to distinguish it from "free software" and encourage business adoption.
-  - **The "Convenience or Death" Culture** Despite preaching openness, developers frequently chose convenience over freedom, adopting proprietary tools like Slack, Jira, and GitHub for their workflows, which centralized control and gave corporations leverage over open source infrastructure.
-  - **The Rise of Single-Vendor Projects** The ecosystem shifted from community-driven projects (like the LAMP stack) to single-vendor, VC-funded projects; this model often led to "rug pulls" where companies changed licenses (e.g., Redis, MongoDB) after failing to monetize effectively against public clouds.
-  - **The Public Cloud Paradox** Major cloud providers like AWS utilized open source software to build massive businesses without contributing back proportionately, forcing smaller open source vendors to abandon open licenses to protect their revenue.
-  - **Supply Chain Fragility** The Log4Shell vulnerability exposed the cracks in the open source foundation, highlighting how the entire internet relies on unpaid, burnt-out maintainers who are often treated as suppliers rather than volunteers.
-  - **Erosion of Trust and Geopolitics** Recent events have damaged the trust required for collaboration, including the XZ backdoor attack on supply chains and the removal of Russian maintainers from the Linux kernel due to sanctions, signaling the intrusion of geopolitics into code.
-  - **The Threat of AI** The speaker argues that AI is displacing open source as the primary target for VC investment and is actively harming the ecosystem by scraping code without permission and flooding maintainers with low-quality, machine-generated pull requests.
-  - **Decline of General Purpose Computing** There is a growing hostility toward general-purpose computing, exemplified by "walled gardens" like the Apple App Store and Google's restrictions on side-loading in Android, which limits user freedom and control.
-  - **Call for a Progressive Era** Brockmeier concludes that while the "Gilded Age" is over, a "Progressive Era" is possible if the community returns to core values, mentors the next generation, and moves beyond being passive consumers to active participants who prioritize rights over convenience.
+  - **The Gilded Age Metaphor:** Brockmeier draws a parallel between the US Gilded Age (1870s-1890s) - characterized by rapid railroad expansion, wealth inequality, and robber barons - and the last 20 years of open source, which saw the rapid expansion of the internet and the accumulation of corporate power.
+  - **Sanitization for Business:** While open source began with volunteers and free software ideals, it was eventually "sanitized" to make it palatable for capitalists; the term "open source" was adopted specifically to distinguish it from "free software" and encourage business adoption.
+  - **The "Convenience or Death" Culture:** Despite preaching openness, developers frequently chose convenience over freedom, adopting proprietary tools like Slack, Jira, and GitHub for their workflows, which centralized control and gave corporations leverage over open source infrastructure.
+  - **The Rise of Single-Vendor Projects:** The ecosystem shifted from community-driven projects (like the LAMP stack) to single-vendor, VC-funded projects; this model often led to "rug pulls" where companies changed licenses (e.g., Redis, MongoDB) after failing to monetize effectively against public clouds.
+  - **The Public Cloud Paradox:** Major cloud providers like AWS utilized open source software to build massive businesses without contributing back proportionately, forcing smaller open source vendors to abandon open licenses to protect their revenue.
+  - **Supply Chain Fragility:** The Log4Shell vulnerability exposed the cracks in the open source foundation, highlighting how the entire internet relies on unpaid, burnt-out maintainers who are often treated as suppliers rather than volunteers.
+  - **Erosion of Trust and Geopolitics:** Recent events have damaged the trust required for collaboration, including the XZ backdoor attack on supply chains and the removal of Russian maintainers from the Linux kernel due to sanctions, signaling the intrusion of geopolitics into code.
+  - **The Threat of AI:** The speaker argues that AI is displacing open source as the primary target for VC investment and is actively harming the ecosystem by scraping code without permission and flooding maintainers with low-quality, machine-generated pull requests.
+  - **Decline of General Purpose Computing:** There is a growing hostility toward general-purpose computing, exemplified by "walled gardens" like the Apple App Store and Google's restrictions on side-loading in Android, which limits user freedom and control.
+  - **Call for a Progressive Era:** Brockmeier concludes that while the "Gilded Age" is over, a "Progressive Era" is possible if the community returns to core values, mentors the next generation, and moves beyond being passive consumers to active participants who prioritize rights over convenience.
 - **My Personal Notes:**
   - Probably my favourite talk of the conference!
   - As you can tell by me making more notes than for other talks heh)
@@ -240,11 +253,11 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
 - **2026-02-03, 11:25-12:15, D.Aud**
   - Link: [Session Page](https://cfp.cfgmgmtcamp.org/ghent2026/talk/AURM7P/)
 - **Session Summary:**
-  - **Sovereignty as a Spectrum of Choice** The panelists defined digital sovereignty not as a binary state, but as a multi-dimensional "spectrum" centered on the freedom to choose and the independence from "big tech" and "big money". They emphasized that achieving sovereignty involves making calculated trade-offs between convenience, cost, and control, noting that true independence prevents organizations from being beholden to the whims of specific billionaires or foreign jurisdictions.
-  - **Critique of European Cloud Initiatives** There was significant criticism of EU-funded projects like "Gaia X," which panelists argued spent hundreds of millions of euros to produce documents rather than usable technology. Some argued that to compete with US hyperscalers, Europe must stop acting solely as infrastructure companies and start operating as software companies that prioritize "developer experience," as this is the primary reason users choose platforms like AWS.
-  - **The Fallacy of "Global Scale"** The panel debated the necessity of hyperscalers, with some arguing that the requirement for "global scale" is often a false narrative used to justify locking into American cloud providers. Speakers cited real-world examples, such as *The Moscow Times* and international judicial institutes, that were forced to build sovereign infrastructure to avoid political censorship and de-platforming, proving that global operations are possible without big tech.
-  - **The Knowledge and Generational Gap** A major hurdle identified is the "knowledge gap" among decision-makers who lack the technical understanding to realize that non-public cloud solutions are viable for 90% of use cases. Furthermore, the panel noted a lack of younger engineers (20-40 years old) involved in the sovereignty space, emphasizing the need for education to prevent knowledge about independent infrastructure from being lost.
-  - **Standardization Over Reinvention** Rather than trying to build a direct one-to-one competitor to AWS, panelists suggested that Europe should focus on defining a common "API standard". By mandating that providers comply with a shared specification, the industry could achieve interoperability similar to "cars and gas stations," allowing users to switch providers freely without having to rewrite their automation code.
+  - **Sovereignty as a Spectrum of Choice:** The panelists defined digital sovereignty not as a binary state, but as a multi-dimensional "spectrum" centered on the freedom to choose and the independence from "big tech" and "big money". They emphasized that achieving sovereignty involves making calculated trade-offs between convenience, cost, and control, noting that true independence prevents organizations from being beholden to the whims of specific billionaires or foreign jurisdictions.
+  - **Critique of European Cloud Initiatives:** There was significant criticism of EU-funded projects like "Gaia X," which panelists argued spent hundreds of millions of euros to produce documents rather than usable technology. Some argued that to compete with US hyperscalers, Europe must stop acting solely as infrastructure companies and start operating as software companies that prioritize "developer experience," as this is the primary reason users choose platforms like AWS.
+  - **The Fallacy of "Global Scale":** The panel debated the necessity of hyperscalers, with some arguing that the requirement for "global scale" is often a false narrative used to justify locking into American cloud providers. Speakers cited real-world examples, such as *The Moscow Times* and international judicial institutes, that were forced to build sovereign infrastructure to avoid political censorship and de-platforming, proving that global operations are possible without big tech.
+  - **The Knowledge and Generational Gap:** A major hurdle identified is the "knowledge gap" among decision-makers who lack the technical understanding to realize that non-public cloud solutions are viable for 90% of use cases. Furthermore, the panel noted a lack of younger engineers (20-40 years old) involved in the sovereignty space, emphasizing the need for education to prevent knowledge about independent infrastructure from being lost.
+  - **Standardization Over Reinvention:** Rather than trying to build a direct one-to-one competitor to AWS, panelists suggested that Europe should focus on defining a common "API standard". By mandating that providers comply with a shared specification, the industry could achieve interoperability similar to "cars and gas stations," allowing users to switch providers freely without having to rewrite their automation code.
 - **My Personal Notes:**
   - Not exactly an area that comes up in my day to day, but I'm interested, especially with some of the geopolitical events in the US
 
@@ -254,10 +267,11 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
 
 - **Video:** {{< youtube FdIItDpEtUw >}}
 - **Talk Summary:**
-  - **The Shift to Probabilistic Workloads** Stahnke explains that the industry has entered an era of "probabilistic workloads" where inputs do not guarantee exact outputs (e.g., asking for three items and getting five). This requires engineers to accept uncertainty and verify that outcomes fall within an acceptable range rather than relying on strict deterministic success.
-  - **The Manager vs. Contributor Divide** Interviews with engineering leaders revealed that managers generally favor AI more than individual contributors (ICs). Managers are accustomed to unplanned but acceptable outcomes, whereas ICs often reject AI-generated solutions simply because the code style differs from how they would personally write it.
-  - **Replacement via Competence** Addressing fears of job loss, Stahnke shares a key insight from his peers: while AI itself may not replace an engineer, "the person that uses AI better than you will replace you," highlighting the necessity of adapting to these new tools.
-  - **Personality and Sandboxing** Because AI models are trained on internet data like Reddit and Stack Overflow, agents can sometimes exhibit "hostile" attitudes or create code that makes reviewers feel "uncomfortable." Stahnke notes that current safety measures often rely on "sandboxing," though many users blindly trust these sandboxes without fully understanding their architecture.
+  - **The Shift to Probabilistic Workloads:** Stahnke explains that the industry has entered an era of "probabilistic workloads" where inputs do not guarantee exact outputs (e.g., asking for three items and getting five). This requires engineers to accept uncertainty and verify that outcomes fall within an acceptable range rather than relying on strict deterministic success.
+  - **The Manager vs. Contributor Divide:** Interviews with engineering leaders revealed that managers generally favor AI more than individual contributors (ICs). Managers are accustomed to unplanned but acceptable outcomes, whereas ICs often reject AI-generated solutions simply because the code style differs from how they would personally write it.
+  - **Replacement via Competence:** Addressing fears of job loss, Stahnke shares a key insight from his peers: while AI itself may not replace an engineer, "the person that uses AI better than you will replace you," highlighting the necessity of adapting to these new tools.
+  - **LLM Personality:** Because AI models are trained on internet data like Reddit and Stack Overflow, agents can sometimes exhibit "hostile" attitudes or create code that makes reviewers feel "uncomfortable."
+  - **Sandboxing**: Stahnke notes that current safety measures often rely on "sandboxing," though many users blindly trust these sandboxes without fully understanding their architecture.
 - **My Personal Notes:**
   - I liked a lot of the general slides on this talk, I took a lot of pictures
 
@@ -267,11 +281,11 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
   - Link: [Session Page](https://cfp.cfgmgmtcamp.org/ghent2026/talk/MGVWWM/)
   - Video: {{< youtube 1TwA-qXIElM >}}
 - **Talk Summary:**
-  - **The Dunning-Kruger Effect** Freeman opens with the story of a bank robber who believed lemon juice made him invisible to illustrate the Dunning-Kruger effect: the cognitive bias where people with low ability at a task overestimate their ability. He explains that humans are generally poor at judging their own competence levels.
-  - **Oscillating Self-Perception** The speaker describes how tech workers tend to oscillate between two extremes: the overconfidence of thinking a new task looks easy, and the "imposter syndrome" of the "valley of despair," where they believe everyone else is smarter than they are.
-  - **The Dopamine Driver** Freeman connects these psychological states to dopamine, noting that the brain's chemical reward system drives engineers to addictively seek out problems to fix or features to add. He notes that corporate targets and performance reviews often reinforce this cycle.
-  - **The Trap of Perfectionism** This dopamine-fueled cycle can lead to negative outcomes, such as the "relentless pursuit of perfection" and massive over-engineering. Freeman uses the example of a complex, AI-generated kettle to show how people often over-complicate solutions rather than accepting that "good" is sufficient.
-  - **A Message of Reassurance** The talk concludes by addressing the audience's internal fears, reminding them that despite the noise of the industry and their own self-doubt, they are "always enough" and are likely doing much better than they think they are.
+  - **The Dunning-Kruger Effect:** Freeman opens with the story of a bank robber who believed lemon juice made him invisible to illustrate the Dunning-Kruger effect: the cognitive bias where people with low ability at a task overestimate their ability. He explains that humans are generally poor at judging their own competence levels.
+  - **Oscillating Self-Perception:** The speaker describes how tech workers tend to oscillate between two extremes: the overconfidence of thinking a new task looks easy, and the "imposter syndrome" of the "valley of despair," where they believe everyone else is smarter than they are.
+  - **The Dopamine Driver:** Freeman connects these psychological states to dopamine, noting that the brain's chemical reward system drives engineers to addictively seek out problems to fix or features to add. He notes that corporate targets and performance reviews often reinforce this cycle.
+  - **The Trap of Perfectionism:** This dopamine-fueled cycle can lead to negative outcomes, such as the "relentless pursuit of perfection" and massive over-engineering. Freeman uses the example of a complex, AI-generated kettle to show how people often over-complicate solutions rather than accepting that "good" is sufficient.
+  - **A Message of Reassurance:** The talk concludes by addressing the audience's internal fears, reminding them that despite the noise of the industry and their own self-doubt, they are "always enough" and are likely doing much better than they think they are.
 - **My Personal Notes:**
   - An area I've been meaning to blog about for a while, especially with people talking about things like the [AI Vampire](https://steve-yegge.medium.com/the-ai-vampire-eda6e4f07163)
   - Good to get a general idea of how other people feel, gave me a lot of ideas for when I get around to doing it myself
@@ -283,26 +297,26 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
   - Link: [Session Page](https://cfp.cfgmgmtcamp.org/ghent2026/talk/TKV8RR/)
   - Video: {{< youtube sJD-Rlmylok >}}
 - **Talk Summary:**
-  - **The Stagnation of Work Culture** Reflecting on his 30-year career, Bown argues that despite the industry's adoption of Agile, new frameworks, and endless meetings, engineers are ultimately "still doing the same shit" they were doing decades ago.
-  - **Critique of Business Novels** While he acknowledges enjoying books like *The Phoenix Project* and *The Unicorn Project*, he categorizes them as "business books" that teach frameworks rather than stories that accurately reflect the often "miserable" reality of the day-to-day job.
-  - **The Fallacy of "Work is Family"** Bown pushes back against the corporate narrative that "work is a family," asserting that forced bonding events and mandates to have fun are fake, as genuine team chemistry cannot be manufactured by management.
-  - **Management Pressure and Tech Debt** He highlights the "pressure cooker" nature of the job where bosses frequently override quality controls to "just get it into production," forcing engineers to knowingly build up technical debt to meet arbitrary deadlines.
-  - **A Call for Basic Kindness** Viewing the current AI hype as just "another pill" the workforce is forced to swallow, Bown concludes that the solution isn't another complex strategy, but simply going "back to basics" and being nicer to one another.
+  - **The Stagnation of Work Culture:** Reflecting on his 30-year career, Bown argues that despite the industry's adoption of Agile, new frameworks, and endless meetings, engineers are ultimately "still doing the same shit" they were doing decades ago.
+  - **Critique of Business Novels:** While he acknowledges enjoying books like *The Phoenix Project* and *The Unicorn Project*, he categorizes them as "business books" that teach frameworks rather than stories that accurately reflect the often "miserable" reality of the day-to-day job.
+  - **The Fallacy of "Work is Family":** Bown pushes back against the corporate narrative that "work is a family," asserting that forced bonding events and mandates to have fun are fake, as genuine team chemistry cannot be manufactured by management.
+  - **Management Pressure and Tech Debt:** He highlights the "pressure cooker" nature of the job where bosses frequently override quality controls to "just get it into production," forcing engineers to knowingly build up technical debt to meet arbitrary deadlines.
+  - **A Call for Basic Kindness:** Viewing the current AI hype as just "another pill" the workforce is forced to swallow, Bown concludes that the solution isn't another complex strategy, but simply going "back to basics" and being nicer to one another.
 - **My Personal Notes:**
   - Always good to hear people talking about the "human" side of things.
-  - Another book to add to the backlog...
+  - [Another book to add to the backlog...](https://richardwbown.com/human-software/)
 
 ### My Ignite: Untangling Strings: Getting CI Visibility for Vox Pupuli Tests - Peter Souter
 
 - **2026-02-03, 12:15-12:20, D.Aud**
   - Schedule Link: [Session Page](https://cfp.cfgmgmtcamp.org/ghent2026/talk/UTCKK9/)
-  - Stream Recording - {{< youtube 0WzoLHT3hZI >}}
+  - Video: - {{< youtube 0WzoLHT3hZI >}}
 - **Talk Summary:**
-  - **Managing Massive Scale** Souter introduces Vox Pupuli as the gatekeepers for over 300 Puppet repositories containing 46,000 pull requests. He notes that managing the Continuous Integration (CI) for this volume of activity is highly complex due to the sheer number of interactions.
-  - **Solving for "Known Unknowns"** The talk focuses on resolving "known unknowns" in CI infrastructure - instances where maintainers know certain builds are slow or problematic but lack the data to identify exactly which ones are causing the bottlenecks.
-  - **Rapid Integration for Visibility** Leveraging Datadog's open source program, the team was able to integrate CI visibility directly into GitHub Actions with a "one-click" setup. This provided immediate insights, such as an 87% pipeline success rate, without requiring extensive configuration.
-  - **The "Hall of Shame" Dashboard** Souter demonstrated how they built custom dashboards featuring a "Hall of Shame" to isolate the slowest pipelines (such as the Rocky tests). This allowed the team to distinguish between legitimate code failures and platform-level API errors.
-  - **Data-Driven Debugging** The visibility tool successfully replaced "gut feelings" with hard data. In one specific example, the team identified a spike where a CI run time doubled, allowing them to visually trace the regression back to a specific commit and fix the issue immediately.
+  - **Managing Massive Scale:** Souter introduces Vox Pupuli as the gatekeepers for over 300 Puppet repositories containing 46,000 pull requests. He notes that managing the Continuous Integration (CI) for this volume of activity is highly complex due to the sheer number of interactions.
+  - **Solving for "Known Unknowns":** The talk focuses on resolving "known unknowns" in CI infrastructure - instances where maintainers know certain builds are slow or problematic but lack the data to identify exactly which ones are causing the bottlenecks.
+  - **Rapid Integration for Visibility:** Leveraging Datadog's open source program, the team was able to integrate CI visibility directly into GitHub Actions with a "one-click" setup. This provided immediate insights, such as an 87% pipeline success rate, without requiring extensive configuration.
+  - **The "Hall of Shame" Dashboard:** Souter demonstrated how they built custom dashboards featuring a "Hall of Shame" to isolate the slowest pipelines (such as the Rocky tests). This allowed the team to distinguish between legitimate code failures and platform-level API errors.
+  - **Data-Driven Debugging:** The visibility tool successfully replaced "gut feelings" with hard data. In one specific example, the team identified a spike where a CI run time doubled, allowing them to visually trace the regression back to a specific commit and fix the issue immediately.
 - **My Personal Notes:**
   - My first ever ignite!
   - Was a fun format, forces you to realise what to show on screen since you only have 15 seconds.
@@ -318,19 +332,19 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
 
 - **2026-02-03, 12:20-12:25, D.Aud**
   - Schedule Link: [Session Page](https://cfp.cfgmgmtcamp.org/ghent2026/talk/MFY3SB/)
-  - Stream Recording - {{< youtube 32wugqip7Ms >}}
+  - Video: - {{< youtube 32wugqip7Ms >}}
 - **Talk Summary:**
-  - **The Reality of Enterprise Bootstrapping** Ford shares that his plan to bootstrap the company using a massive support contract with a well-known enterprise company proved difficult because the negotiations were far slower and more tedious than anticipated, though the company is finally approaching its first million in revenue.
-  - **Rejection of the Unicorn Model** The speaker expresses a moral opposition to Venture Capital, stating he has no interest in becoming a "10x hockey stick unicorn" or being tied to shareholders. Instead, his goal is simply to make a living, pay his staff, and do good work without the need to "ride a giant dick rocket into space".
-  - **The Founder as Administrator** He describes the reality of running a small business as dealing with "administrative bullshit" and constant context switching. The founder's role effectively becomes picking up every piece of work - from legal to project management - that does not have a dedicated engineer assigned to it.
-  - **The Power of Slowing Down** Using an anecdote about a photographer who was overwhelmed by sudden popularity, Ford argues for the necessity of "putting on the brakes." He suggests using tools to intentionally slow down customer intake to a pace where the team can actually deliver quality.
-  - **Sustainability Over Speed** The core lesson of the talk is to prioritize sustainability over rapid growth. By lowering expectations and refusing external funding, the company avoids the "rat race" and ensures they can manage the workload without burning out.
+  - **The Reality of Enterprise Bootstrapping:** Ben's original plan bootstrap the company using a massive support contract with a well-known enterprise company proved difficult because the negotiations were far slower and more tedious than anticipated, though the company is finally approaching its first million in revenue.
+  - **Rejection of the Unicorn Model:** Ben expressed a moral opposition to Venture Capital, stating he has no interest in becoming a "10x hockey stick unicorn" or being tied to shareholders. Instead, his goal is simply to make a living, pay his staff, and do good work without the need to "ride a giant dick rocket into space".
+  - **The Founder as Administrator:** He describes the reality of running a small business as dealing with "administrative bullshit" and constant context switching. The founder's role effectively becomes picking up every piece of work - from legal to project management - that does not have a dedicated engineer assigned to it.
+  - **The Power of Slowing Down:** Using an anecdote about a photographer who was overwhelmed by sudden popularity, Ford argues for the necessity of "putting on the brakes." He suggests using tools to intentionally slow down customer intake to a pace where the team can actually deliver quality.
+  - **Sustainability Over Speed:** The core lesson of the talk is to prioritize sustainability over rapid growth. By lowering expectations and refusing external funding, the company avoids the "rat race" and ensures they can manage the workload without burning out.
 - **My Personal Notes:**
   - I've known Ben for a long time and it was great to see what he's up to.
   - Also made me realise that this is not something I'd like to get into for a while 😆
-  - The idea of having to deal with paperwork, taxes and payroll brings me out in hives.
+  - The idea of having to deal with paperwork, taxes and payroll brings me out in hives...
 
-## Conclusion
+## Other Talks
 
 - Unfortunately I had to leave early from here as I had an earlier train (around 2pm on the 2nd day).
 - Which is a shame because there were some talks later on that seemed super relevant to me now I'm at Datadog and observability is top of mind:
@@ -339,4 +353,7 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
   - [From Code to Context: Infrastructure as Code and the Model Context Protocol - Mar](https://cfp.cfgmgmtcamp.org/ghent2026/talk/VM78AU/)
   - [OpenTelemetry Tracing, Not Just for Webapps - Pieter Lexis](https://cfp.cfgmgmtcamp.org/ghent2026/talk/88YNP8/)
   - [Modern Network Observability - Christian Adell](https://cfp.cfgmgmtcamp.org/ghent2026/talk/GQYAVR/)
-- But I definitely loved being back, and will be planning on attending (and likely submitting again!) for 2027 as well.
+
+## Conclusion
+
+- I loved being back, and will be planning on attending (and likely submitting again!) for 2027 as well.
