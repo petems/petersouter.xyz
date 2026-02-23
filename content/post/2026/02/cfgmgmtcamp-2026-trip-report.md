@@ -14,7 +14,7 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
 
 ## Good to be Back
 
-- It was good to be back in Ghent! It'd been 6 years since I was last here for Cfgmgmtcamp, but the memories flooded back quick.
+- It was good to be back in Ghent! It'd been 6 years since I was last here for Cfgmgmtcamp, but the memories flooded back quickly.
 - The last time I was here was in 2020...
 - I was speaking about [Testing Infra as Code](https://cfp.cfgmgmtcamp.org/2020/talk/M3QX7K/)
 - I've changed a lot since then, including growing a stache and wearing a baseball cap I guess!
@@ -28,7 +28,7 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
 - Walking over to Hogent University from the station, all the memories came flooding back.
 - So many bikes from the station exit...
   - ![Bike parking outside Ghent station](/images/2026/02/cfgmgmtcamp-2026-hogent-bike-parking.png)
-- The big Art Nevaeau owl for the Opticians:
+- The big Art Nouveau owl for the Opticians:
   - ![Art Nouveau owl sign on a Ghent opticians](/images/2026/02/cfgmgmtcamp-2026-ghent-owl-sign.png)
 - The big Pepsi can that's the front awning for a cafe
   - ![Cafe with a giant Pepsi can as its front awning](/images/2026/02/cfgmgmtcamp-2026-ghent-pepsi-can-cafe.png)
@@ -40,8 +40,8 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
 ## General Takeaways
 
 - **AI/LLMs dominated the conversation**
-  - Unsuprising as this is the tech landscape of 2026!
-  - But just looking across all the tracks and session, AI was the single most recurring theme across tracks.
+  - Unsurprising as this is the tech landscape of 2026!
+  - But just looking across all the tracks and sessions, AI was the single most recurring theme across tracks.
   - A lot of specific call outs in the main track, MCP (Model Context Protocol) appearing in multiple talks (Ansible, monitoring, IaC) and even specific workshops on agentic AI for operations.
   - Nearly every track had at least one AI-related talk, we're well beyond it being a niche and it's now hit that glowing red central concern for infra folks
   - Notably, several talks also pushed back on AI hype, questioning its impact on open source, mentorship and learning
@@ -50,17 +50,17 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
   - Lot of general anxiety about "corporate rug-pulls", vendor lock-in, and the need for digital autonomy in the current geopolitical landscape.
   - GenAI was part of this conversation but I feel like this is always an underlying concern, which makes sense as Cfgmgmtcamp is a FOSDEM-cousin as it were.
 - **The tooling landscape was broad but RedHat-heavy**
-  - Even after RedHat's move under big blue of IBM, was still a big presecne across the event
+  - Even after RedHat's move under big blue of IBM, was still a big presence across the event
   - Ansible **and** Red Hat are sponsors, so it makes sense: [CfgMgmtCamp 2026 Sponsors](https://cfgmgmtcamp.org/ghent2026/sponsors/)
   - Other well-represented ecosystems included OpenTofu (the OSS fork of Terraform with its own track), Nix/NixOS, Kubernetes, Foreman, and mgmt config.
   - Notably absent or minimal: Chef, Saltstack (only via Uyuni), and Pulumi.
     - NB: Pulumi is one of the sponsors also... strange they didn't have any sessions or workshops? :thinking emoji:
   - Cfgmgmtcamp continues to line up with its FOSDEM-cousin-ish ways, where talk mix skewed toward practitioner talks and live demos over vendor pitches.
-- **Observability and CI/CD A Big Prescense**
+- **Observability and CI/CD A Big Presence**
   - Obviously an area I'm interested in now I'm at Datadog, there's a big expansion into observability
   - Tools like OpenTelemetry, Grafana, and VictoriaMetrics appeared across multiple tracks
   - Obviously I was part of this and happy that it was a growing trend overall!
-- **Datadog at Cfgmgmtcamp***
+- **Datadog at Cfgmgmtcamp**
   - My colleague Benjamin Fuhrmann was speaking
     - [Benjamin's Talk on the Schedule](https://cfp.cfgmgmtcamp.org/ghent2026/talk/USPZHD/)
     - But unfortunately *at the exact same time as my talk*.
@@ -76,10 +76,10 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
 
 ### Intro and Logistics
 
-- Show of hands for "For who is this their first cfgmgmgtcamp?" was very high, maybe 70% of the main room!
+- Show of hands for "For who is this their first cfgmgmtcamp?" was very high, maybe 70% of the main room!
 - Show of hands for people coming since the first meetup beginning was about ~10, myself included!
 
-### We Built for Predictability; the Workloads Didn't Care - Micheal Stahnke
+### We Built for Predictability; the Workloads Didn't Care - Michael Stahnke
 
 - **2026-02-02, 09:30-10:20, D.Aud**
   - Link: [Session Page](https://cfp.cfgmgmtcamp.org/ghent2026/talk/AGSYJ3/)
@@ -92,8 +92,8 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
   - **Ops regains control:** Unpredictable, AI-generated code needs containment and guardrails, increasing the importance of operations in providing stable foundations and control points.
 - **My Personal Notes:**
   - Was great to see Stahnke again, we worked together at Puppet many years ago.
-  - Intereasting general perspective is that we no longer have "guartenteed" answes with the new GenAI world, so how do we handle that
-  - Sandboxes are back on the menu - lotta people letting Claude et al run in yolo mode for long-running tasks, Stanke's working at <https://flox.dev/> now
+  - Interesting general perspective is that we no longer have "guaranteed" answers with the new GenAI world, so how do we handle that
+  - Sandboxes are back on the menu - lotta people letting Claude et al run in yolo mode for long-running tasks, Stahnke's working at <https://flox.dev/> now
 
 ### The Exploitation Paradox in Open Source - Richard Fontana
 
@@ -108,7 +108,7 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
   - **AI "open washing":** In AI, "open" is used even more loosely - models often lack transparency (especially training data) and don't fit open-source definitions, but the label is used to signal virtue without real freedom.
   - **"Mobile freedoms" framework:** He proposes shifting to adaptable freedoms - **Reproduce, Verify, Participate, Exit** - grounded in **Stewardship**, to keep power negotiable and prevent lock-in.
 - **My Personal Notes**
-  - When Richard specifically mentioned the Terraform BPL fork, and even asked how many HashiCorp employees were attending (0 hands up, sad times).
+  - When Richard specifically mentioned the Terraform BSL fork, and even asked how many HashiCorp employees were attending (0 hands up, sad times).
   - Interesting topic overall but I have to admit Richard's delivery was a little dry and slow.
 
 ### AI Native Infrastructure Automation: How I learned to stop worrying and love Claude - Adam Jacob
@@ -129,7 +129,7 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
   - Isn't that the opposite of the small composable units of work? It doesn't mean we can't use AI for it, just make it digestible.
   - But hey, honestly I'm not knee deep in actual software engineering so maybe I'm out-of-step with the current trends.
 
-## Break and Practise
+## Break and Practice
 
 - I missed on the ignites because I wanted to grab lunch, practise my talk and double check slides.
 - I went up to my room early to watch the talks before my slot and to scope out the setup and location.
@@ -163,7 +163,7 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
 - **My Personal Notes:**
   - I think it went well overall! Had a few peeps come up to me afterwards with questions and such.
   - Some asks about FOSS/self-deployed options.
-  - Serendipidously, there was a talk afterwards about CVEvent, which is a specific library for OSS stuff.
+  - Serendipitously, there was a talk afterwards about CDEvents, which is a specific library for OSS stuff.
 
 ### Event-Driven CI/CD Observability: Infrastructure as Observable Events - David Bernard
 
@@ -193,8 +193,8 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
   - **Lesser-known attack vectors** include "living off the pipeline" (abusing trusted tool configs) and **event-context/injection risks** (PR titles, branch names, commit messages) that can trigger unintended execution downstream.
   - **Actionable defenses** focus on least privilege, safer PR workflow patterns (preventing PR-open -> RCE paths), protecting workflow/config directories with stronger review controls, and carefully constraining **OIDC claims** to avoid role-assumption bypasses.
 - **My Personal Notes:**
-  - A lot of things I already knew about, particularly around pinning things like GitHub Action refs, but was intersting to see more edge case scenarios.
-  - Made me thing about how I handle PRs and titles, espeically in the new AI world where prompt injection is another area of vulnerability.
+  - A lot of things I already knew about, particularly around pinning things like GitHub Action refs, but was interesting to see more edge case scenarios.
+  - Made me think about how I handle PRs and titles, especially in the new AI world where prompt injection is another area of vulnerability.
 
 ## Day 2
 
@@ -250,7 +250,7 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
 
 ## Ignites
 
-### Prompt engineering is just Stack Overflow - Micheal Stahnke
+### Prompt engineering is just Stack Overflow - Michael Stahnke
 
 - **Video:** {{< youtube FdIItDpEtUw >}}
 - **Talk Summary:**
@@ -273,8 +273,8 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
   - **The Trap of Perfectionism** This dopamine-fueled cycle can lead to negative outcomes, such as the "relentless pursuit of perfection" and massive over-engineering. Freeman uses the example of a complex, AI-generated kettle to show how people often over-complicate solutions rather than accepting that "good" is sufficient.
   - **A Message of Reassurance** The talk concludes by addressing the audience's internal fears, reminding them that despite the noise of the industry and their own self-doubt, they are "always enough" and are likely doing much better than they think they are.
 - **My Personal Notes:**
-  - An area I've been meaning to blog about for a while, especially with people talkinga bout things like the [AI Vampire](https://steve-yegge.medium.com/the-ai-vampire-eda6e4f07163)
-  - Good to get a general idea of how other people feel, gave me a lot of ideas for when I get around to doing it myuself
+  - An area I've been meaning to blog about for a while, especially with people talking about things like the [AI Vampire](https://steve-yegge.medium.com/the-ai-vampire-eda6e4f07163)
+  - Good to get a general idea of how other people feel, gave me a lot of ideas for when I get around to doing it myself
   - I always appreciate a good "feels" talk, esp as an ignite!
 
 ### How We Treat Each Other At Work - Richard W Bown
