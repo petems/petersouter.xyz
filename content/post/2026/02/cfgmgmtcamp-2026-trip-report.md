@@ -34,7 +34,7 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
   - Google Gemini and LLM Notebook
     - Photo identificaiton, Youtube Video Notetaking review after-the-fact to compare to my contemporary notes
   - CodeRabbit + Gemini Code Assist
-    - PR Pipeline review as part of my pipeline, primarily captures markdown issues, spelling and general typos. 
+    - PR Pipeline review as part of my pipeline, primarily captures markdown issues, spelling and general typos.
 
 ## Nostalgic Journey
 
@@ -97,6 +97,7 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
 - **2026-02-02, 09:30-10:20, D.Aud**
   - Link: [Session Page](https://cfp.cfgmgmtcamp.org/ghent2026/talk/AGSYJ3/)
   - Video: {{< youtube pq3Qxb26Nwo >}}
+
 #### Talk Summary
 
 - **"Desired state" is a myth:** Config management chased certainty (idempotency, hermeticity), but real systems never stay "finished" or static - users and ongoing change disrupt them.
@@ -124,6 +125,7 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
   - Link: [Session Page](https://cfp.cfgmgmtcamp.org/ghent2026/talk/KP9YPK/)
   - Slides: [Slides](https://cfp.cfgmgmtcamp.org/media/ghent2026/submissions/KP9YPK/resources/slides-fontana-cfgmgmtcamp2026_GW81j66.pdf)
   - Video: {{< youtube TLSqdzhccuE >}}
+
 #### Talk Summary
 
 - **Static definitions vs. changing reality:** Classic open-source definitions (FSF/OSI) are fixed, while today's software environment (SaaS, cloud, AI) keeps shifting - creating repeated crises when old rules don't fit new contexts.
@@ -142,6 +144,7 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
 - **2026-02-02, 11:30-12:20, D.Aud**
   - Link: [Session Page](https://cfp.cfgmgmtcamp.org/ghent2026/talk/UGTUYH/)
   - Video: {{< youtube g1R71Wbxlkk >}}
+
 #### Talk Summary
 
 - **AI is inevitable in dev:** The productivity jump is too big to ignore; with tens of thousands of lines of working code generated daily, **ops/deploy** becomes the main bottleneck.
@@ -168,6 +171,7 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
 - **2026-02-02, 14:00-14:50, B.1.011**
   - Link: [Session Page](https://cfp.cfgmgmtcamp.org/ghent2026/talk/PQUPEQ/)
   - Slides: [Slides](https://cfp.cfgmgmtcamp.org/media/ghent2026/submissions/PQUPEQ/resources/cfgmgtcamp-2026-forgejo_Dxzq5oT.pdf)
+
 #### Talk Summary
 
 - **Forgejo overview:** A lightweight, self-hostable Git forge (repos, issues, PRs, releases, wiki) that's easy to run and maintain.
@@ -188,6 +192,7 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
 - **2026-02-02, 14:50-15:40, B.1.011**
   - Link: [Session Page](https://cfp.cfgmgmtcamp.org/ghent2026/talk/98XRKP/)
   - Slides: [Link](https://cfp.cfgmgmtcamp.org/media/ghent2026/submissions/98XRKP/resources/CI_CD_Observability-Metrics_and_DORA__Shifting_Le_1Anewor.pdf)
+
 #### Talk Summary
 
 - **Core principle:** Across SDLC/Agile/DevOps, the recurring theme is **small batch sizes + tight feedback loops**; "waterfall" is framed as a misread of Royce's original warning rather than the intended best practice.
@@ -206,6 +211,7 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
 - **2026-02-02, 16:00-16:25, B.1.011**
   - Link: [Session Page](https://cfp.cfgmgmtcamp.org/ghent2026/talk/M993WU/)
   - Slides: [Slides](https://cfp.cfgmgmtcamp.org/media/ghent2026/submissions/M993WU/resources/cfgmgmtcamp2026-cdviz_tQUBdLq.odp)
+
 #### Talk Summary
 
 - **Fragmented delivery data:** CI/CD observability is hard today because delivery data is fragmented across many tools, making simple questions (what's deployed where, what changed, was it signed, which pipeline produced it) require manual correlation.
@@ -226,6 +232,7 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
 - **2026-02-02, 16:25-16:50, B.1.011**
   - Link: [Session Page](https://cfp.cfgmgmtcamp.org/ghent2026/talk/E9ANZ8/)
   - Slides: [Slides](https://cfp.cfgmgmtcamp.org/media/ghent2026/submissions/E9ANZ8/resources/Beyond_SHA_Pinning__Security_for_CI_CD_Pipelines__a7Smty9.pdf)
+
 #### Talk Summary
 
 - **CI/CD pipelines are high-value targets:** They hold privileged access to source code, infrastructure, and secrets - so pipeline security must be treated as core SDLC security, not an afterthought.
@@ -247,6 +254,7 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
 
 - **2026-02-03, 09:30-10:20, D.Aud**
   - Link: [Session Page](https://cfp.cfgmgmtcamp.org/ghent2026/talk/S93BW8/)
+
 #### Talk Summary
 
 - **Configuration failure repeats:** The industry cycles every 10-15 years between IaC, static data, and templating; DRY breaks under variation, WET doesn't scale.
@@ -265,6 +273,7 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
 
 - **2026-02-03, 10:20-11:10, D.Aud**
   - Link: [Session Page](https://cfp.cfgmgmtcamp.org/ghent2026/talk/QV7JPB/)
+
 #### Talk Summary
 
 - **The Gilded Age Metaphor:** Brockmeier draws a parallel between the US Gilded Age (1870s-1890s) - characterized by rapid railroad expansion, wealth inequality, and robber barons - and the last 20 years of open source, which saw the rapid expansion of the internet and the accumulation of corporate power.
@@ -284,12 +293,13 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
 - As you can tell by me making more notes than for other talks heh)
 - I feel like it was a good history lesson of how OSS is probably out of its best time.
 - Kept things optimistic as well, it's easy to be a doomer in this space I'd say.
-- {{< bluesky link="https://bsky.app/profile/petersouter.xyz/post/3mdx4u5kz5c26" >}}
+- {{< bluesky link="<https://bsky.app/profile/petersouter.xyz/post/3mdx4u5kz5c26>" >}}
 
 ### Sovereign Computing: Panel
 
 - **2026-02-03, 11:25-12:15, D.Aud**
   - Link: [Session Page](https://cfp.cfgmgmtcamp.org/ghent2026/talk/AURM7P/)
+
 #### Session Summary
 
 - **Sovereignty as a Spectrum of Choice:** The panelists defined digital sovereignty not as a binary state, but as a multi-dimensional "spectrum" centered on the freedom to choose and the independence from "big tech" and "big money". They emphasized that achieving sovereignty involves making calculated trade-offs between convenience, cost, and control, noting that true independence prevents organizations from being beholden to the whims of specific billionaires or foreign jurisdictions.
@@ -307,6 +317,7 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
 ### Prompt engineering is just Stack Overflow - Michael Stahnke
 
 - **Video:** {{< youtube FdIItDpEtUw >}}
+
 #### Talk Summary
 
 - **The Shift to Probabilistic Workloads:** Stahnke explains that the industry has entered an era of "probabilistic workloads" where inputs do not guarantee exact outputs (e.g., asking for three items and getting five). This requires engineers to accept uncertainty and verify that outcomes fall within an acceptable range rather than relying on strict deterministic success.
@@ -327,6 +338,7 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
 - **2026-02-03, 12:25-12:30, D.Aud**
   - Link: [Session Page](https://cfp.cfgmgmtcamp.org/ghent2026/talk/MGVWWM/)
   - Video: {{< youtube 1TwA-qXIElM >}}
+
 #### Talk Summary
 
 - **The Dunning-Kruger Effect:** Freeman opens with the story of a bank robber who believed lemon juice made him invisible to illustrate the Dunning-Kruger effect: the cognitive bias where people with low ability at a task overestimate their ability. He explains that humans are generally poor at judging their own competence levels.
@@ -346,6 +358,7 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
 - **2026-02-03, 12:30-12:35, D.Aud**
   - Link: [Session Page](https://cfp.cfgmgmtcamp.org/ghent2026/talk/TKV8RR/)
   - Video: {{< youtube sJD-Rlmylok >}}
+
 #### Talk Summary
 
 - **The Stagnation of Work Culture:** Reflecting on his 30-year career, Bown argues that despite the industry's adoption of Agile, new frameworks, and endless meetings, engineers are ultimately "still doing the same shit" they were doing decades ago.
@@ -364,6 +377,7 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
 - **2026-02-03, 12:15-12:20, D.Aud**
   - Schedule Link: [Session Page](https://cfp.cfgmgmtcamp.org/ghent2026/talk/UTCKK9/)
   - Video: {{< youtube 0WzoLHT3hZI >}}
+
 #### Talk Summary
 
 - **Managing Massive Scale:** Souter introduces Vox Pupuli as the gatekeepers for over 300 Puppet repositories containing 46,000 pull requests. He notes that managing the Continuous Integration (CI) for this volume of activity is highly complex due to the sheer number of interactions.
@@ -389,6 +403,7 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
 - **2026-02-03, 12:20-12:25, D.Aud**
   - Schedule Link: [Session Page](https://cfp.cfgmgmtcamp.org/ghent2026/talk/MFY3SB/)
   - Video: {{< youtube 32wugqip7Ms >}}
+
 #### Talk Summary
 
 - **The Reality of Enterprise Bootstrapping:** Ben's original plan bootstrap the company using a massive support contract with a well-known enterprise company proved difficult because the negotiations were far slower and more tedious than anticipated, though the company is finally approaching its first million in revenue.
