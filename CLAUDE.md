@@ -126,7 +126,7 @@ If switching to ugly URLs, modify both `config.toml` and `terraform/s3-website/m
 - Workflow defined in `.github/workflows/deploy.yml`
 - Triggers on push to `master` branch
 - Uses Hugo v0.155.3 for building
-- Deploys to S3 using `go3up` with MD5 caching
+- Deploys to S3 using Hugo's built-in `hugo deploy` with differential sync
 - Authentication via OIDC (no static AWS keys)
 - View deployments: https://github.com/petems/petersouter.xyz/actions
 
