@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Peter Souter's personal blog and website",
   "scripts": {
-    "test": "jest",
+    "test": "jest && npm run test:hugo:bluesky",
+    "test:hugo:bluesky": "bash tests/bluesky-shortcode-smoke.sh",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage"
   },

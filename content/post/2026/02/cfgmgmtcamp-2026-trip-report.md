@@ -293,7 +293,7 @@ coverImage = "/images/2026/02/bikes-landscape-cover.jpg"
 - As you can tell by me making more notes than for other talks heh)
 - I feel like it was a good history lesson of how OSS is probably out of its best time.
 - Kept things optimistic as well, it's easy to be a doomer in this space I'd say.
-- {{< bluesky link="<https://bsky.app/profile/petersouter.xyz/post/3mdx4u5kz5c26>" >}}
+- {{< bluesky link="https://bsky.app/profile/petersouter.xyz/post/3mdx4u5kz5c26" >}}
 
 ### Sovereign Computing: Panel
 
