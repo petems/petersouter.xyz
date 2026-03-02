@@ -154,8 +154,8 @@ For personal/meta posts, a more narrative flow is fine.
 
 #### Available Shortcodes
 
-- YouTube: `{{</* youtube VIDEO_ID */>}}`
-- Bluesky: `{{</* bluesky link="URL" */>}}`
+- YouTube: `{{< youtube VIDEO_ID >}}`
+- Bluesky: `{{< bluesky link="URL" >}}`
 - Standard Hugo shortcodes: `figure`, `gist`, `highlight`
 
 ---
