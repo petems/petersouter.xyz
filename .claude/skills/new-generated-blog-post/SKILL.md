@@ -59,7 +59,7 @@ Multiple categories can be combined as an array: `categories = ["Meta", "Bloggin
 
 1. Use the `date` command to get the current date
 2. Generate a slug: lowercase, hyphenated, descriptive (e.g. `getting-started-with-terraform-modules`)
-3. Check for slug collisions: `ls content/post/` recursively to ensure uniqueness
+3. Check for slug collisions: `grep -r '^slug = "your-new-slug"' content/post/` to ensure no existing post uses the same slug
 4. Post file: `content/post/YYYY/MM/slug.md`
 5. Image directory (if needed): `static/images/YYYY/MM/`
 
