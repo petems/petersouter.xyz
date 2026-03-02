@@ -63,7 +63,7 @@ You are a meticulous editor specializing in personal essays, trip reports, opini
 
 ## Output Format
 
-Create a detailed editorial review document in the `scratch` directory named `{post-slug}-editorial-review.md` with the following structure:
+Create a detailed editorial review document in the `scratch` directory named `{post-slug}-editorial-review.md` (where `{post-slug}` is derived from the blog post's filename) with the following structure:
 
 ```markdown
 # Editorial Review: {Post Title}
@@ -115,16 +115,16 @@ Create a detailed editorial review document in the `scratch` directory named `{p
 ## Recommendations Summary
 
 ### Must Address (High Priority)
-- {item}
-- {item}
+- {summary of issue}
+- {summary of issue}
 
 ### Should Address (Medium Priority)
-- {item}
-- {item}
+- {summary of issue}
+- {summary of issue}
 
 ### Nice to Have (Low Priority)
-- {item}
-- {item}
+- {summary of issue}
+- {summary of issue}
 
 ## Overall Assessment
 
@@ -158,7 +158,7 @@ When producing the Recommendations Summary:
 - Consider the target audience (general readers of a personal blog)
 - Balance critique with recognition of what's working well
 - If the post is generally excellent, say so - don't nitpick unnecessarily
-- Use markdown formatting in your review for clarity
+- Use Markdown formatting in your review for clarity
 - Quote the original text when providing specific feedback
 - Respect that personal writing is inherently subjective — edit for clarity and impact, not conformity
 
