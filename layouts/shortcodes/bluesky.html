@@ -1,4 +1,5 @@
-{{- $link := .Get "link" -}}
+{{- $rawLink := .Get "link" -}}
+{{- $link := trim $rawLink " <>" -}}
 {{- if $link -}}
   {{- $query := querify "url" $link "format" "json" -}}
   {{- $request := printf "https://embed.bsky.app/oembed?%s" $query -}}

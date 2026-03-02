@@ -1,0 +1,33 @@
+name: Build Warning Check
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build-warning-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Set up Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: "0.155.3"
+
+      - name: Run build and fail on warnings
+        shell: bash
+        run: |
+          set -euo pipefail
+          bash ./build.sh 2>&1 | tee build.log
+
+          if grep -Ei '\bwarn(ing)?\b' build.log; then
+            echo "Build warnings were found. Failing."
+            exit 1
+          fi
+
+          echo "Build completed with no warnings."

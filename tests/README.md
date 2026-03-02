@@ -2,6 +2,8 @@
 
 This directory contains unit tests for the conference talks filtering functionality.
 
+It also includes Hugo smoke tests for template/shortcode regressions.
+
 ## Overview
 
 The talks page (`/talks/`) uses JavaScript to filter conference talks by year, conference, and topic. These tests ensure the filtering logic works correctly.
@@ -59,6 +61,7 @@ All 30 tests pass successfully:
 ## Files
 
 - `talks-filter.test.js`: Main test suite
+- `bluesky-shortcode-smoke.sh`: Hugo build smoke test for Bluesky oEmbed shortcode warnings
 - `../static/js/talks-filter.js`: Source code being tested
 - `../jest.config.js`: Jest configuration
 - `../package.json`: Test dependencies and scripts
