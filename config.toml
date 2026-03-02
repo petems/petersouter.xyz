@@ -222,5 +222,24 @@ ignoreLogs = ['warning-goldmark-raw-html']
   # [params.footer]
   #   copyright = "<a href=\"https://github.com/petems\">petems</a>"
 
+[mediaTypes."text/markdown"]
+  suffixes = ["md"]
+
 [outputFormats.RSS]
-baseName = "feed"
+  baseName = "feed"
+
+[outputFormats.Markdown]
+  mediaType = "text/markdown"
+  isPlainText = true
+  isHTML = false
+  baseName = "index"
+  rel = "alternate"
+
+[outputFormats.TXT]
+  mediaType = "text/plain"
+  baseName = "llms"
+  isPlainText = true
+
+[outputs]
+  home = ["HTML", "RSS", "TXT"]
+  page = ["HTML", "Markdown"]
