@@ -135,7 +135,8 @@ Peter's voice is:
 #### Content Structure
 
 For technical posts, follow a logical structure:
-```
+
+```text
 Opening hook / why this matters
 <!--more-->
 ## Background / Context
@@ -184,6 +185,7 @@ GitHub Actions will automatically optimise images on commit — no manual compre
 ### Step 5: Pre-Publication Check
 
 #### Frontmatter Validation
+
 - [ ] Uses TOML format with `+++` delimiters (NOT `---`)
 - [ ] `author = "Peter Souter"` is present
 - [ ] `draft = true`
@@ -193,6 +195,7 @@ GitHub Actions will automatically optimise images on commit — no manual compre
 - [ ] Image paths point to real files or are `""`
 
 #### Content Quality
+
 - [ ] `<!--more-->` is present after opening paragraph
 - [ ] British English spelling used throughout
 - [ ] Internal links to existing posts where relevant
