@@ -169,7 +169,7 @@ Peter modulates tone based on content:
 
 ### Emphasis Techniques
 - **Bold** for key concepts and takeaways
-- Short punchy sentences for impact: "Boom."
+- Short punchy sentences for impact: "Boom!"
 - Single-line paragraphs for emphasis: "Boom, one deadline down"
 - ALL CAPS sparingly, for emphasis or humor: "DO THE DAMN THING"
 - Parenthetical asides for color and personality
