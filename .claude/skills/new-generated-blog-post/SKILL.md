@@ -94,7 +94,7 @@ Record existing posts for use in adding internal links during Step 3. Look for t
 
 ### Step 3: Create the Post File
 
-**Do NOT use `hugo new`** — the archetype uses YAML frontmatter but all posts use TOML. Create the file directly.
+**Do NOT use `hugo new`** — while the project CLAUDE.md documents `hugo new post/...` as a general convention, the default archetype generates YAML frontmatter (`---` delimiters). All existing blog posts use TOML frontmatter (`+++` delimiters), so this skill creates the file directly to ensure consistency. If the archetype is updated to use TOML in the future, this guidance should be revisited.
 
 #### Frontmatter Template (TOML)
 
