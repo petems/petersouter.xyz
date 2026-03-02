@@ -2,12 +2,12 @@
 author = "Peter Souter"
 categories = ["Tech"]
 date = 2026-03-02T12:00:00Z
-description = "Why I've started using multi-model consensus to review my code, my writing, and my own AI-assisted conclusions — and what happened when I pointed it at this very blog post."
+description = "Why I've started assembling a 'Council of AIs' to review my code, my writing, and my own AI-assisted conclusions — using PAL MCP Server's consensus tool."
 draft = true
 slug = "using-pal-mcp-for-multi-model-consensus"
 tags = ["MCP", "GenAI", "Claude Code", "Code Review", "Tooling", "Consensus"]
-title = "Multi-Model Consensus with PAL: Getting AI Models to Argue So You Don't Have To"
-keywords = ["PAL MCP server", "model consensus", "multi-model AI", "code review", "MCP", "Claude Code", "Gemini", "GPT", "council of AIs", "consensus"]
+title = "Council of AIs: Using Multi-Model Consensus to Keep Your AI Honest"
+keywords = ["PAL MCP server", "model consensus", "multi-model AI", "code review", "MCP", "Claude Code", "Gemini", "GPT", "council of AIs", "consensus", "second opinion"]
 thumbnailImage = ""
 coverImage = ""
 +++
@@ -15,16 +15,6 @@ coverImage = ""
 I've been on a bit of an MCP kick lately. After [building my own GitHub PR Review MCP server]({{< relref "post/2026/02/my-2026-blogging-plans.md" >}}) to scratch a very specific itch, I found myself wondering: what happens when you stop asking *one* AI model for its opinion and start getting multiple models to argue with each other?
 
 <!--more-->
-
-Enter [PAL MCP Server](https://github.com/BeehiveInnovations/pal-mcp-server).
-
-## What Is PAL?
-
-PAL (Provider Abstraction Layer) is an MCP server that lets your AI CLI of choice — Claude Code, Gemini CLI, Codex CLI, whatever you're using — orchestrate *multiple* AI models within a single workflow. The project describes itself as "the power of Claude Code + Gemini + OpenAI + all of the above working as one" and, honestly, that's a pretty fair summary.
-
-The bit that makes it interesting isn't the provider abstraction itself — it's that PAL threads tool outputs and conversation summaries into subsequent model calls. So when you ask Gemini to review something that Claude already analysed, Gemini gets Claude's findings as context. No copy-pasting, no re-explaining. The models build on each other's work.
-
-PAL ships with a bunch of tools — code review, debugging, planning, pre-commit validation — but the one I want to talk about is `consensus`, because it's the one that's changed how I think about using AI tools in general.
 
 ## Why a Council of AIs Matters
 
@@ -38,13 +28,21 @@ So what if you bring in models from different providers? Different training data
 
 And what if you go further and explicitly assign stances? Tell one model to advocate, another to critique, a third to stay neutral. Now you've got something closer to a genuine review process — not just "what do you think?" but a structured debate with at least one participant whose job is to find problems.
 
-That's the "Council of AIs" idea, and it's why I've been reaching for PAL's `consensus` tool more than anything else.
+That's the "Council of AIs" idea. To be clear: this isn't a replacement for human review. Models can all be wrong together, and they'll consistently miss domain-specific context that a teammate would catch immediately. But as a first pass — something to run before you involve another human — it's been genuinely useful for code, for writing, and honestly for questioning any conclusion I've arrived at with AI assistance.
 
-To be clear: this isn't a replacement for human review. Models can all be wrong together, and they'll consistently miss domain-specific context that a teammate would catch immediately. But as a first pass — something to run before you involve another human — it's been genuinely useful.
+## Enter PAL
 
-## The Consensus Tool: Structured Debate
+[PAL MCP Server](https://github.com/BeehiveInnovations/pal-mcp-server) (Provider Abstraction Layer) is an MCP server that lets your AI CLI of choice — Claude Code, Gemini CLI, Codex CLI, whatever you're using — orchestrate *multiple* AI models within a single workflow. It ships with a whole suite of tools — code review, debugging, planning, pre-commit validation — but the one I want to focus on here is `consensus`, because it's the tool that formalises this Council of AIs approach.
 
-The `consensus` tool formalises this. You pose a question or decision, assign models with stances, and PAL manages the structured debate and synthesises the results.
+Two things make PAL's consensus particularly powerful beyond just "ask multiple models the same question":
+
+**The context flows between tools.** When you run a consensus review, those findings don't just vanish — they feed into PAL's other tools. A consensus finding can inform the `planner`, which feeds into implementation, and the `precommit` review at the end has the full context from the debate. It's not a one-shot second opinion; it's a persistent thread that other tools in the workflow can build on.
+
+**It can shell out to agentic CLIs via `clink`.** This is the bit that surprised me. PAL's `clink` tool can launch isolated sub-agents in other CLIs — so you can, say, have Codex CLI do a deep-dive code review with its own specialised role, and feed those findings back into the consensus. I've found Codex particularly good at blog criticism, oddly enough — it tends to be blunter than Claude about structural issues. The point is you're not limited to simple API calls; you can go genuinely deep with full agentic workflows as part of the consensus process.
+
+### How Consensus Works
+
+You pose a question or decision, assign models with stances, and PAL manages the structured debate and synthesises the results.
 
 Here's a practical example. I was trying to decide on an approach for a caching layer and ran:
 
@@ -163,17 +161,15 @@ Instead, what happened:
 
 None of this would've come out of running the same prompt through the same Claude session that wrote the draft. The value isn't just "more models" — it's *different* models with *assigned roles*, which is a fundamentally different review dynamic.
 
-## Code Review: Same Principle, Different Application
+## Other Tools in This Space
 
-The same multi-model logic applies to PAL's `codereview` tool. The workflow is:
+PAL is the most full-featured option I've found for this workflow, but if you're specifically interested in the multi-model consensus idea without the broader tool suite, there are a couple of lighter-weight alternatives worth knowing about:
 
-1. One model walks through your changes, noting issues with confidence levels and severity ratings
-2. Those findings get passed to a second model for independent review
-3. Everything gets consolidated into recommendations
+**[Second Opinion MCP Server](https://github.com/politwit1984/second-opinion-mcp-server)** takes a different approach — rather than model-vs-model debate, it synthesises answers from Gemini, Stack Overflow, and Perplexity AI into a single report. It's more "get multiple sources" than "get models to argue," but for coding problems specifically it's a useful lightweight option. You get AI analysis *plus* real community answers from Stack Overflow, which grounds things in actual human experience.
 
-I've been using this for both code *and* blog posts (yes, really). Running a multi-model review on a draft catches different classes of issues: one model might flag structural problems, another catches tone inconsistencies, a third spots factual claims that need sourcing.
+**[Consulting Agents MCP](https://github.com/matthewpdingle/consulting-agents-mcp)** is closer to the Council of AIs idea. It gives your primary CLI access to a roster of named "consultant" agents — each backed by a different model with a specific speciality. There's a reasoning-focused one (O3), a general-purpose one (GPT-4o with web search), a large-context one (Gemini 2.5 Pro for whole-repo analysis), and an extended-thinking one (Claude Sonnet). The nice thing is each consultant has a defined role, so you're not just asking the same question three times — you're getting genuinely different perspectives.
 
-There's also a `precommit` tool that validates your staged git changes before you commit — same multi-pass logic, applied to diffs rather than whole files.
+If you just want the core "get a second opinion from a different model" workflow without setting up PAL's full ecosystem, either of these is a solid starting point. The tradeoff is that neither has PAL's context threading between tools or the `clink` agentic bridging — so you get the multi-model perspective but not the persistent workflow integration.
 
 ## Setting It Up
 
@@ -209,11 +205,11 @@ One thing to be aware of: multi-model workflows mean your code and diffs are bei
 
 A few observations from using this:
 
-**Context continuity is the killer feature.** The multi-model stuff is interesting, but what makes it *practical* is that tool outputs thread into subsequent calls. A finding from `codereview` can inform the planner which feeds into the implementation, and the `precommit` review at the end has context from all of it.
-
 **Model selection matters, but not as much as you'd think.** I started out agonising over which model to pair with which for each task. After a while, I've settled on "use what's good enough and move on." The biggest gains come from having *any* second perspective from a different provider, not from optimising the specific pairing.
 
 **It's not a replacement for human review.** I want to be clear about this. Multi-model consensus is useful for catching things you might miss, surfacing considerations you hadn't thought of, and doing a first pass before you involve another human. It's not a substitute for having a colleague look at your code. The models can agree on something that's wrong, or miss domain-specific context that a teammate would catch immediately.
+
+**The real value is in the disagreements.** When all three models agree on something, that's useful but unsurprising. When they *disagree* — that's when you learn something. The disagreement about `codereview` being single-pass vs multi-pass told me more about the ambiguity in my own writing than any amount of agreement would have.
 
 ## Where MCP Is Going
 
