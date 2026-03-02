@@ -47,10 +47,11 @@ Select a category based on article content. Only use established categories from
 | **Tech** | Technical posts, tutorials, tools, programming, DevOps |
 | **Personal** | Personal reflections, life updates, non-technical |
 | **Conference** | Trip reports, event coverage, conference summaries |
-| **Meta, Blogging** | Posts about the blog itself, writing process |
+| **Meta** | Posts about the blog itself |
+| **Blogging** | Posts about the writing process |
 | **Career** | Career advice, professional development |
 | **Cooking** | Recipes, food-related |
-| **Tech, Travel** | Technical content with a travel component |
+| **Travel** | Travel-related content (can be combined with **Tech**) |
 
 Multiple categories can be combined as an array: `categories = ["Meta", "Blogging"]`
 
