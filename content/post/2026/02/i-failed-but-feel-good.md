@@ -24,9 +24,9 @@ Not only that, I took the most hallowed bond possible: I posted it as a LinkedIn
 
 So did I make it? Yes and no. I managed to force something out literally at the last minute, cutting it super fine and pushing it with seconds to go:
 
-![Github Actions showing it deployed with 10 seconds left](/images/2026/02/github-actions-deadline.png)
+![Github Actions showing it deployed with 34 seconds left](/images/2026/02/github-action-timestamp.png)
 
-`Sat, 28 Feb 2026 23:59:50 GMT`
+`Sat, 28 Feb 2026 23:59:26 GMT`
 
 I refreshed my website... and it didn't show.
 
@@ -34,75 +34,75 @@ Turns out...I'd forgotten to switch it from draft... whoops!
 
 ## Accepting the L
 
-Technically... TECHICALLY! I did _blog_ three times. Just one of them was a draft..
+Technically... TECHNICALLY! I did _blog_ three times. Just one of them was a draft...
 
-But lets be real, that would be a letter-of-the-law thing. And honestly, I wasn't proud of the post. It was unfocused and rambling and clearly done in a rush. I'm not happy with that and it'd leave a sour taste about blogging for the future.
+But let's be real, that would be a letter-of-the-law thing. And honestly, I wasn't proud of the post. It was unfocused and rambling and clearly done in a rush. I'm not happy with that and it'd leave a sour taste about blogging for the future.
 
-So lets nuke that (feel free to go read the post from [the commit](https://github.com/petems/petersouter.xyz/commit/636d91f) if you want) and replace it with something better.
+So let's nuke that (feel free to go read the post from [the commit](https://github.com/petems/petersouter.xyz/commit/636d91f) if you want) and replace it with something better.
 
-But doing the thing and failing actually helped me reset a bit. Throughout this whole thing, the stakes on this were incredibly low:
+As for the LinkedIn punishment... well, a bet's a bet. <!-- TODO: Add link/screenshot of the Hustleslop LinkedIn post here -->
 
-It was just for me, nothing work or family related, and my main punishment for failure is a little bit of cringe.
+But doing the thing and failing actually helped me reset a bit. Throughout this whole thing, the stakes were incredibly low -- it was just for me, nothing work or family related, and my main punishment for failure is a little bit of cringe.
 
 So I dusted myself off Saturday morning, had a screen break for most of the weekend and touched some grass, including baking a cake with my kiddos. Then I used the wee hours of a lazy Sunday to do some self-reflection.
 
 ## First Blog: 2026 Blogging Plans
 
-Honestly, I started off well! My [first blog](/post/my-2026-blogging-plans/) was a two-birds approach: throw in all the ideas I'd had in 2025 I'd been keeping in Todoist and grab the PR merges from the website's git repo to remind me what improvements I'd made to the site itself. 
-
-One down!
+The [first blog](/post/my-2026-blogging-plans/) went smoothly -- a contained scope, mostly pulling from existing Todoist notes and git history. Minimal AI involvement, just me and my notes. One down!
 
 ## Second Blog: Cfgmgmtcamp 2026 Trip Report
 
-My second post, about [Cfgmgmtcamp 2026](/post/cfgmgmtcamp-2026-trip-report/) started out well. I already had a good base from my usual conference prep: extensive photos, notes, schedules and scratchpad writeups.
+The [Cfgmgmtcamp 2026 trip report](/post/cfgmgmtcamp-2026-trip-report/) started well -- I had a solid base from my usual conference prep: photos, notes, schedules and scratchpad writeups.
 
-But I wanted to elaborate and double-check my notes on the talks I'd attended. That led me into looking through talk recordings, following up on talks I'd missed, noodling with NotebookLLM, Claude, Gemini, ChatGPT and basically _massively_ increasing the scope...
+Then the AI-driven scope creep kicked in. I wanted to elaborate on the talks I'd attended, which led me down a rabbit hole: NotebookLLM for talk summaries, Claude for drafting, Gemini for fact-checking, ChatGPT for restructuring. Each tool opened a new avenue to explore and the scope _ballooned_.
 
-I also had a bit of a weird feeling in my gut around using so much GenAI for a trip report, so that was another blocker. It did lead me to find out about the [`/ai` Disclosure Manifesto](https://www.bydamo.la/p/ai-manifesto), as a backlog item I just added a note to the blog itself as a starter-for-10 before I did that.
+On top of that, I had a nagging gut feeling about using so much GenAI for a trip report -- something that's supposed to be _my_ experience of the event. That discomfort led me to the [`/ai` Disclosure Manifesto](https://www.bydamo.la/p/ai-manifesto), a framework for transparently labelling AI involvement in your writing. I added an AI disclosure note to the post as a starting point, but it became yet another thing to think about.
 
-I didn't get it merged in until the 24th, leaving only 4 days to post the last blog.
+I didn't get it merged until the 24th, leaving only 4 days for the last blog.
 
-## 3rd Blog Inspiration Overload
+## Third Blog: Inspiration Overload
 
-It wasn't quite just 4 days, I'd actually gotten a few early drafts worked on in parallel: a tribute to Terrance Gore (the GOAT 1-tool runner who died only a few weeks ago), a piece on staying human in the age of AI, and a post about cool and unusual flags from across the world.
+It wasn't quite just 4 days -- I'd actually been working on a few early drafts in parallel: a tribute to Terrance Gore (the GOAT 1-tool runner who died only a few weeks ago), a piece on staying human in the age of AI, and a post about cool and unusual flags from across the world (a vexillology deep-dive I'd been sitting on for months).
 
 Anyone sensible can look at that spread and go "You're spreading yourself way too thin, pick a lane!"
 
-The AI disclosure gut-feel was especially strong around the Terrance Gore tribute. It felt a bit... icky, for lack of a better word. The AI-ness bled through as I stitched together research from ScholarGPT, my own raw thoughts and Claude Code agentically.
+The AI discomfort was especially strong around the Terrance Gore tribute. It felt _icky_, for lack of a better word. AI can help you research stats and timelines, but a tribute to someone needs to come from _you_ -- your memories, your feelings, your voice. The AI-ness bled through as I stitched together research from ScholarGPT, my own raw thoughts and Claude Code agentically, and the result read like a Wikipedia article wearing a baseball cap.
 
-I ended up picking _secret option 4_ and trying to cleverly talk about my approach for the whole thing, and to be fair to last-minute cramming, I _did_ get kinda close. I panicked and finished it up with a reference to my original vexillology blog idea -- I was wearing my Zheleznogorsk flag shirt so maybe that triggered something subliminal in a fight-or-flight moment...
+I ended up picking _secret option 4_ and trying to cleverly talk about my approach for the whole thing, and to be fair to last-minute cramming, I _did_ get kinda close. I panicked and finished it up with a reference to my original vexillology blog idea -- I was wearing my Zheleznogorsk flag shirt so maybe that triggered something subliminal in a fight-or-flight moment.
 
-![RUSSIAN TOWN SHIRT](/images/2026/02/russian-town-shirt.jpg)
+![Me wearing my Zheleznogorsk flag t-shirt](/images/2026/02/russian-town-shirt.jpg)
 
-So in the end it was a classic case of underplanning, overscoping and spreading myself too thin.
+In the end, underplanning and AI-driven overscoping fed each other: every tool suggested a new angle, every new angle needed another tool, and the 11th-hour scramble was inevitable.
 
-But there was still a nagging feeling that something new was also wrapped in and it reminded me of a study I'd had in my notes since the middle of last year:
+That nagging feeling reminded me of a study I'd had in my notes since the middle of last year:
 
 > Despite the performance benefits, participants who collaborated with gen AI on one task and then transitioned to a different, unaided task consistently reported a decline in intrinsic motivation and an increase in boredom. Across our studies, intrinsic motivation dropped by an average of 11% and boredom increased by an average of 20%. In contrast, those who worked without AI maintained a relatively steady psychological state.
 
 > [Research: Gen AI Makes People More Productive—and Less Motivated, by Yukun Liu, Suqing Wu, Mengqi Ruan, Siyu Chen and Xiao-Yun Xie](https://hbr.org/2025/05/research-gen-ai-makes-people-more-productive-and-less-motivated)
 
-So... you've got an ever increasing backlog of ideas, you're solving them with AI and improving the core work, but you're not scratching that dopamine loop of satisfaction when you deliver, so you think about your backlog some more, maybe you'll work on that other thing instead, or maybe that new idea comes in...
+So you've got an ever increasing backlog of ideas, you're solving them with AI and improving the core work, but you're not scratching that loop of satisfaction when you deliver. So you think about your backlog some more, maybe you'll work on that other thing instead, or maybe a new idea comes in.
 
-Honestly, in retrospect this was one of the various root-causes of my 2025 blur-of-a-year and lack of blogging and stretching myself too thin across multiple side-projects. That already meant I was doing a lot of wheel spinning and initial spikes but not getting to the tangible deliverable bits.
+In retrospect, this was one of the root causes of my 2025 blur-of-a-year: the AI-assisted scope bloat meant I was doing a lot of wheel spinning and initial spikes but never reaching the tangible, satisfying deliverable bits.
 
-And I was not alone...
+And I was not alone.
 
 ## The AI Vampire
 
-A bunch of people have written, blogged and posted about this core concept:
+A bunch of people have written about this core concept:
 
-- https://jkap.io/token-anxiety-or-a-slot-machine-by-any-other-name/
-- https://muratbuffalo.blogspot.com/2026/02/butlers-or-architects.html?m=1&ref=danielcorin.com
-- https://steve-yegge.medium.com/the-ai-vampire-eda6e4f07163
+- [Token Anxiety, or A Slot Machine by Any Other Name](https://jkap.io/token-anxiety-or-a-slot-machine-by-any-other-name/) -- jkap on how AI token usage triggers slot-machine-like compulsive dynamics
+- [Butlers or Architects](https://muratbuffalo.blogspot.com/2026/02/butlers-or-architects.html?m=1&ref=danielcorin.com) -- Murat on the tension between AI as a helpful assistant vs. AI as something that reshapes how you think
+- [The AI Vampire](https://steve-yegge.medium.com/the-ai-vampire-eda6e4f07163) -- Steve Yegge's framing of AI as something that "sucks the mass and energy out of your projects." As he puts it: _"You're not getting more done. You're getting more started."_
 
-I feel like Steve Yegge's hit particularly hard because of its naming of the core idea ("The AI Vampire") and that he's not a babe-in-the-woods when it comes to development: If this kind of FOMO + Dopamine + Agentic Flows combo can happen to him, it can happen to anyone.
+Yegge's piece hit particularly hard because he's not a babe-in-the-woods when it comes to development: if this kind of FOMO + agentic flow combo can happen to him, it can happen to anyone.
 
 ## So, What Now?
 
-I want to get things fun and engaging again. That means figuring out a new writing flow: proper planning, a helping hand from LLM tools, but without the AI vampirism.
+I want to get things fun and engaging again. That means figuring out a new writing flow: proper planning, a helping hand from LLM tools, but without the AI vampirism. Concretely, I'm going to try: outline first in plaintext, one LLM pass for structure and fact-checking, then manual editing for voice. The AI helps with scaffolding, but the words have to be mine.
 
-One area I'll be exploring is ["Cognitive debt"](https://www.media.mit.edu/publications/your-brain-on-chatgpt/), a concept I found via Benjamin Breen's ["What is Happening To Writing"](https://resobscura.substack.com/p/what-is-happening-to-writing) substack post. "Writing is thinking in public" really stuck with me -- ultimately that's the fun and joy: unpicking an idea from your brain, converting it into prose and getting it into the brains of others.
+One area I'll be exploring is ["cognitive debt"](https://www.media.mit.edu/publications/your-brain-on-chatgpt/) -- the idea that offloading thinking to AI doesn't make the thinking disappear, it just defers it, and the interest compounds. I found it via Benjamin Breen's ["What is Happening To Writing"](https://resobscura.substack.com/p/what-is-happening-to-writing) substack post.
+
+"Writing is thinking in public" really stuck with me. Ultimately that's the fun and joy of it: unpicking an idea from your brain, converting it into prose, and getting it into the brains of others. If you let AI do the unpicking, you lose the part that makes it worthwhile.
 
 For my backlog, something like a [digital garden](https://www.danielcorin.com/garden/) would be a nice way to clear out the various sparks and ideas without committing to a full post.
 
