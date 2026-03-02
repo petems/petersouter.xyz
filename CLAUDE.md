@@ -23,9 +23,7 @@ This is a Hugo-based static blog hosted on AWS S3 with CloudFront CDN and Route5
 
 ### Content Management
 
-- **Create new post**: `hugo new post/my-post-title.md`
-  - Creates a new post in `content/post/` directory
-  - Uses archetype templates from `archetypes/` directory
+- **Create new post**: Do NOT use `hugo new` — the archetype uses YAML frontmatter but all posts use TOML. Instead, create the file directly in `content/post/` with TOML frontmatter (`+++` delimiters).
 
 - **List all content**: `hugo list all`
 
