@@ -88,9 +88,9 @@ It didn't also help that the AI disclosure gut-feel felt extremely strong around
 
 I ended up picking _secret option 4_ and trying to cleverly talk about my approach for the whole thing, and to be fair to last-minute cramming, I _did_ get kinda close. 
 
-Even if I did panic and finish it up with a reference to flags out of no-where (I blame the fact I was wearing my [RUSSIAN TOWN] t-shirt doing some sort of subliminal brain injection on me:
+I did panic and finish it up with a reference to my original vexilogy blog idea,I was wearing my Zheleznogorsk flag shirt so maybe that did some sort of subliminal trigger on me in a fight-or-flight moment...
 
-![RUSSIAN TOWN SHIRT](/images/2026/02/linked-in-declaration.png)
+![RUSSIAN TOWN SHIRT](/images/2026/02/russian-town-shirt.jpg)
 
 So in the end it was a classic case of underplanning, overscoping and spreding myself too thin. 
 
@@ -116,20 +116,20 @@ A bunch of people have written, blogged and posted about this core concept:
 
 I feel like Steve Yegge's hit particularly hard because of it's naming of the core idea ("The AI Vampire") and that he's not a babe-in-the-woods when it comes to development: If this kind of FOMO + Dopamine + Agentic Flows combo can happen to him, it can happen to anyone.
 
-## What now?
+## So, What Now?
 
-One of the original themes from my original mess of a blog I think is gonna be my guiding light from here:
+I want to get things fun and engaging again.
 
-> "Isn't this supposed to be fun?"
+To start with, figure out a new writing flow to break it down to a sustainable and fun way. I need to balance proper planning, getting a helping hand with LLM tools, but without those AI vampirism.
 
-That's going to be my basis going forward: Don't just try and drink from the firehose, stick to things that "bring joy".
+One of the areas I'll be looking into is ["Cognitive debt"](https://www.media.mit.edu/publications/your-brain-on-chatgpt/), a concept I learned Benjamin Breen's ["What is Happening To Writing"](https://resobscura.substack.com/p/what-is-happening-to-writing) substack post. 
 
-Specifically around my writing process, I need to figure out how to break it down to a sustainable and fun way. Like how to find a balance between proper planning, getting a helping hand with LLM tools, but without those AI vampirism feels creeping in.
+His story of how he's been trying to grok the GenAI world as a writer helped me really think about what I'm trying to achieve and get out of writing. "Writing is thinking in public" really stuck with me from it, ultimately that's the fun and joy, it's how to unpick an idea from your brain, convert that into prose and get it in the brains of others.
 
-For my backlog, I think to help get a lot of my various sparks and ideas, something like a [Blog Garden]() would be a nice way to clear out the backlog and help scratch that itch without going into a full post.
+For my backlog, I think to help get a lot of my various sparks and ideas, something like a [garden](https://www.danielcorin.com/garden/) would be a nice way to clear out the backlog and help scratch that itch without going into a full post.
 
 Thinking even beyond that, I need to disconnect and touch grass! I'm normally a vicarious reader and movie watcher, and I feel like I've dropped off massively on both of those, and my powerlifting and walking has slipped noticeably.
 
-But as I said, I feel good about everything, it was a good learning exprience and a chance to refocus!
+Overall, I feel positive, I feel good! I've had a good learning exprience and a chance to refocus!
 
 See you in the next (scoped, fun, consise) blog!
