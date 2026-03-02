@@ -31,7 +31,7 @@ Always apply Peter's writing voice from `.claude/context/writing-style.md`:
 - **Closing style**: Practical takeaway, honest reflection, or forward-looking thought
 
 ### What to Avoid
-- No emojis unless explicitly requested
+- Overusing emojis
 - No corporate-speak or marketing language
 - No unnecessary preamble ("In conclusion...")
 - No "10 simple steps" formulas
