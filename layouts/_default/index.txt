@@ -3,6 +3,6 @@
 > {{ .Site.Params.description }}
 
 ## Blog Posts
-
-{{ range (where .Site.RegularPages "Type" "post") }}- [{{ .Title }}]({{ .Permalink }}index.md): Published {{ .Date.Format "2006-01-02" }}
-{{ end }}
+{{ range where .Site.RegularPages "Type" "post" }}
+- [{{ .Title }}]({{ .Permalink }}index.md): Published {{ .Date.Format "2006-01-02" }}
+{{- end }}
