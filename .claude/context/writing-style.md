@@ -49,7 +49,7 @@ Varied but always personal or relatable — leads with personal context or a pra
 - **Emotional hook**: "Today is a very big day for me. Today is my last day at Puppet."
 - **Curiosity/problem**: "Through a series of yak-shaves, I ended up needing to..."
 - **Personal admission**: "One thing you should know about me is I love tinkering"
-- **Direct setup**: "I've had to setup 3 different macbooks from scratch recently..."
+- **Direct setup**: "I've had to set up 3 different macbooks from scratch recently..."
 - **Narrative scene**: "Walking over to Hogent University from the station, all the memories came flooding back."
 
 Establishes personal stakes before diving into technical content.
