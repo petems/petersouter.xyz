@@ -149,7 +149,7 @@ For personal/meta posts, a more narrative flow is fine.
 
 #### Linking
 
-- **Internal links**: Link to existing blog posts where relevant using `(/slug-name/)` format
+- **Internal links**: Link to existing blog posts where relevant using Hugo's `relref` shortcode, e.g., `[link text]({{< relref "post/YYYY/MM/slug.md" >}})`
 - **External links**: Link to authoritative sources (official docs, GitHub repos, RFCs)
 - Use inline markdown links: `[link text](url)`
 
