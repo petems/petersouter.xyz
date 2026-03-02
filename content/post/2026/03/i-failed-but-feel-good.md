@@ -1,15 +1,15 @@
 +++
 author = "Peter Souter"
 categories = ["Personal"]
-date = 2026-03-02T19:08:19Z
+date = 2026-03-02T18:00:00Z
 description = "I missed my self-imposed blogging deadline, reflected on how GenAI affects motivation, and came out the other side feeling good about it."
 draft = false
 slug = "i-failed-but-feel-good"
 tags = ["Blogging", "GenAI", "Productivity"]
 title = "I Failed, But I Feel Good: GenAI, Blogging For Fun and Touching Grass"
-keywords = []
-thumbnailImage = ""
-coverImage = ""
+keywords = ["blogging", "GenAI", "productivity", "motivation", "accountability", "writing", "personal blog"]
+thumbnailImage = "/images/2026/02/flag-of-zheleznogorsk.png"
+coverImage = "/images/2026/02/flag-of-zheleznogorsk-dark.png"
 +++
 
 On the 12th of February, I made a blog post where I laid out my disappointment in barely blogging in 2025, how it was such a blur and 2026 was going to be `#NewYearNewMe`.
