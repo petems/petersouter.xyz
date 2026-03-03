@@ -1,0 +1,60 @@
+<script type="application/ld+json">
+{{- $schema := dict "@context" "https://schema.org" -}}
+{{- if eq .Section "posts" -}}
+  {{- $schema = merge $schema (dict "@type" "BlogPosting") -}}
+  {{- $schema = merge $schema (dict "headline" .Title) -}}
+  {{- if .Params.coverImage -}}
+    {{- if (findRE "^/" .Params.coverImage 1) -}}
+      {{- $schema = merge $schema (dict "image" (.Params.coverImage | absURL)) -}}
+    {{- else -}}
+      {{- $schema = merge $schema (dict "image" (path.Join .RelPermalink .Params.coverImage | absURL)) -}}
+    {{- end -}}
+  {{- else if .Params.thumbnailImage -}}
+    {{- if (findRE "^/" .Params.thumbnailImage 1) -}}
+      {{- $schema = merge $schema (dict "image" (.Params.thumbnailImage | absURL)) -}}
+    {{- else -}}
+      {{- $schema = merge $schema (dict "image" (path.Join .RelPermalink .Params.thumbnailImage | absURL)) -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $schema = merge $schema (dict "datePublished" (.PublishDate.Format "2006-01-02T15:04:05Z07:00")) -}}
+  {{- $schema = merge $schema (dict "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00")) -}}
+  {{- $author := dict "@type" "Person" "name" .Site.Params.author.name -}}
+  {{- with ($.Scratch.Get "authorPicture") -}}
+    {{- $author = merge $author (dict "image" .) -}}
+  {{- end -}}
+  {{- $schema = merge $schema (dict "author" $author) -}}
+  {{- $schema = merge $schema (dict "mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink)) -}}
+  {{- $publisher := dict "@type" "Organization" "name" .Site.Title -}}
+  {{- with ($.Scratch.Get "authorPicture") -}}
+    {{- $publisher = merge $publisher (dict "logo" (dict "@type" "ImageObject" "url" .)) -}}
+  {{- end -}}
+  {{- $schema = merge $schema (dict "publisher" $publisher) -}}
+  {{- $schema = merge $schema (dict "description" (.Summary | plainify)) -}}
+{{- else -}}
+  {{- $schema = merge $schema (dict "@type" "WebSite") -}}
+  {{- $schema = merge $schema (dict "@id" .Site.BaseURL) -}}
+  {{- $author := dict "@type" "Person" "name" .Site.Params.author.name -}}
+  {{- with ($.Scratch.Get "authorPicture") -}}
+    {{- $author = merge $author (dict "image" .) -}}
+  {{- end -}}
+  {{- $schema = merge $schema (dict "author" $author) -}}
+  {{- $schema = merge $schema (dict "name" .Site.Title) -}}
+  {{- $desc := .Site.Params.description -}}
+  {{- if .Description -}}
+    {{- $desc = .Description -}}
+  {{- else if .IsPage -}}
+    {{- $desc = .Summary | plainify -}}
+  {{- end -}}
+  {{- $schema = merge $schema (dict "description" $desc) -}}
+  {{- $schema = merge $schema (dict "url" .Permalink) -}}
+{{- end -}}
+{{- $keywords := slice -}}
+{{- with .Keywords -}}
+  {{- $keywords = . -}}
+{{- end -}}
+{{- with .Site.Params.keywords -}}
+  {{- $keywords = $keywords | append . -}}
+{{- end -}}
+{{- $schema = merge $schema (dict "keywords" $keywords) -}}
+{{ $schema | jsonify | safeJS }}
+</script>
