@@ -1,9 +1,9 @@
 {{ if .Site.Params.thumbnailImage }}
-  {{ if .Params.thumbnailimage }}
-    {{ if (findRE "^/" .Params.thumbnailimage 1) }}
-      {{ .Scratch.Set "thumbnailImage" (.Params.thumbnailimage | absURL) }}
+  {{ if .Params.thumbnailImage }}
+    {{ if (findRE "^/" .Params.thumbnailImage 1) }}
+      {{ .Scratch.Set "thumbnailImage" (.Params.thumbnailImage | absURL) }}
     {{ else }}
-      {{ .Scratch.Set "thumbnailImage" (path.Join .RelPermalink .Params.thumbnailimage) }}
+      {{ .Scratch.Set "thumbnailImage" (path.Join .RelPermalink .Params.thumbnailImage) }}
     {{ end }}
   {{ else }}
     {{ if or .Params.autothumbnailimage (and .Site.Params.autoThumbnailImage (ne .Params.autothumbnailimage false)) }}
@@ -39,7 +39,7 @@
         <a href="{{ .Permalink }}" aria-label="{{ if i18n "global.open_post" }}{{ i18n "global.open_post" }}: {{ .Title }}{{ end }}">
       {{ end }}
         <div class="postShorten-thumbnailimg">
-          <img alt="" src="{{ .Scratch.Get "thumbnailImage" }}"/>
+          <img alt="{{ .Title }}" src="{{ .Scratch.Get "thumbnailImage" }}"/>
         </div>
       </a>
     {{ end }}
@@ -82,7 +82,7 @@
       <a href="{{ .Permalink }}" aria-label="{{ if i18n "global.open_post" }}{{ i18n "global.open_post" }}: {{ .Title }}{{ end }}">
     {{ end }}
       <div class="postShorten-thumbnailimg">
-        <img alt="" src="{{ .Scratch.Get "thumbnailImage" }}"/>
+        <img alt="{{ .Title }}" src="{{ .Scratch.Get "thumbnailImage" }}"/>
       </div>
     </a>
   {{ end }}

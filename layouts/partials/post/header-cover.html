@@ -1,4 +1,4 @@
-{{ if .Params.coverimage }}
+{{ if .Params.coverImage }}
   {{ if (findRE "^/" .Params.coverImage 1) }}
     {{ .Scratch.Set "coverImageURL" (.Params.coverImage | relURL) }}
   {{ else }}
