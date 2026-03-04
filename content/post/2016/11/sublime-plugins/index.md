@@ -86,7 +86,7 @@ The other is just an easy way to close multiple tabs at once.
 
 I already mentioned this in my Dash blog post, basically ou can press `Ctrl+H` in a file with Sublime, and it will do a context search using the type of code in the file plus a search for that entry.
 
-[](/images/2016/11/dash_sublime-1.gif)
+![](dash_sublime-1.gif)
 
 https://github.com/farcaller/DashDoc
 

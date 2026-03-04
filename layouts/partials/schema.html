@@ -1,6 +1,6 @@
 <script type="application/ld+json">
 {{- $schema := dict "@context" "https://schema.org" -}}
-{{- if eq .Section "posts" -}}
+{{- if eq .Section "post" -}}
   {{- $schema = merge $schema (dict "@type" "BlogPosting") -}}
   {{- $schema = merge $schema (dict "headline" .Title) -}}
   {{- if .Params.coverImage -}}
