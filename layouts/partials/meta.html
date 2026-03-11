@@ -58,13 +58,17 @@
   {{ end }}
 {{ end }}
 
-{{ with .Params.thumbnailImage }}
-  <meta property="og:image" content="{{ . | absURL }}">
-  <meta property="twitter:image" content="{{ . | absURL }}">
-{{ end }}
-{{ with .Params.coverImage }}
-  <meta property="og:image" content="{{ . | absURL }}">
-  <meta property="twitter:image" content="{{ . | absURL }}">
+{{ $image := .Params.coverImage }}
+{{ if not $image }}{{ $image = .Params.thumbnailImage }}{{ end }}
+{{ with $image }}
+  {{ $imageUrl := "" }}
+  {{ if (findRE "^/" . 1) }}
+    {{ $imageUrl = . | absURL }}
+  {{ else }}
+    {{ $imageUrl = path.Join $.RelPermalink . | absURL }}
+  {{ end }}
+  <meta property="og:image" content="{{ $imageUrl }}">
+  <meta property="twitter:image" content="{{ $imageUrl }}">
 {{ end }}
 {{ with .Params.gallery }}
   {{ range . }}
