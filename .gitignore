@@ -30,3 +30,7 @@ hugo_cache
 
 # Testing
 coverage
+
+# Scratch directory (keep dir, ignore contents)
+scratch/*
+!scratch/.gitkeep
