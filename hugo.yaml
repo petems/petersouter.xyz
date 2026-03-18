@@ -1,0 +1,120 @@
+baseURL: "https://petersouter.xyz/"
+languageCode: "en-uk"
+defaultContentLanguage: "en-uk"
+title: "Angels && Daemons - https://petersouter.xyz"
+theme: "PaperMod"
+pagination:
+  pagerSize: 5
+ignoreLogs:
+  - warning-goldmark-raw-html
+
+services:
+  disqus:
+    shortname: "petersouter"
+
+permalinks:
+  post: "/:title/"
+  page: "/:title/"
+
+taxonomies:
+  tag: "tags"
+  category: "categories"
+
+params:
+  author: "Peter Souter"
+  description: "Tech blog by Peter Souter"
+  defaultTheme: "auto"
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowToc: true
+  comments: true
+
+  homeInfoParams:
+    Title: "Angels && Daemons"
+    Content: "Tech blog by Peter Souter - Just some guy y'know?"
+
+  socialIcons:
+    - name: "github"
+      url: "https://github.com/petems"
+    - name: "linkedin"
+      url: "https://www.linkedin.com/in/peter-souter-7bb67a38/"
+    - name: "bluesky"
+      url: "https://bsky.app/profile/petersouter.xyz"
+    - name: "twitter"
+      url: "https://twitter.com/petersouter"
+    - name: "rss"
+      url: "/feed.xml"
+
+  cover:
+    linkFullImages: true
+    responsiveImages: true
+
+menu:
+  main:
+    - identifier: "home"
+      name: "Home"
+      url: "/"
+      weight: 1
+    - identifier: "archives"
+      name: "Archives"
+      url: "/archives/"
+      weight: 2
+    - identifier: "categories"
+      name: "Categories"
+      url: "/categories/"
+      weight: 3
+    - identifier: "tags"
+      name: "Tags"
+      url: "/tags/"
+      weight: 4
+    - identifier: "talks"
+      name: "Talks"
+      url: "/talks/"
+      weight: 5
+    - identifier: "about"
+      name: "About"
+      url: "/about/"
+      weight: 6
+    - identifier: "search"
+      name: "Search"
+      url: "/search/"
+      weight: 7
+
+markup:
+  highlight:
+    codeFences: true
+    guessSyntax: true
+    style: "monokai"
+    noClasses: true
+
+mediaTypes:
+  text/markdown:
+    suffixes:
+      - "md"
+
+outputFormats:
+  RSS:
+    baseName: "feed"
+  Markdown:
+    mediaType: "text/markdown"
+    isPlainText: true
+    isHTML: false
+    baseName: "index"
+    rel: "alternate"
+  TXT:
+    mediaType: "text/plain"
+    baseName: "llms"
+    isPlainText: true
+
+outputs:
+  home:
+    - "HTML"
+    - "RSS"
+    - "TXT"
+    - "JSON"
+  page:
+    - "HTML"
+    - "Markdown"

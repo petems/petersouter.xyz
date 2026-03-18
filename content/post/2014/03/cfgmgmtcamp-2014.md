@@ -4,10 +4,12 @@ categories = ["Tech", "Travel"]
 date = 2014-03-04T13:00:00Z
 description = ""
 draft = false
-coverImage = "/images/2016/10/cfg.png"
 slug = "cfgmgmtcamp-2014"
 tags = ["Config Management", "Meetups", "Conferences", "CfgMgmtCamp"]
 title = "CfgMgmtCamp 2014"
+
+[cover]
+  image = "/images/2016/10/cfg.png"
 
 +++
 

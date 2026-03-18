@@ -4,10 +4,12 @@ categories = ["Tech"]
 date = 2016-11-06T15:42:00Z
 description = ""
 draft = false
-coverImage = "/images/2016/11/472028910_ec8f1fde23_z.jpg"
 slug = "sysops-welcome-to-the-club"
 tags = ["vDM30in30", "SysOps", "SysAdmin", "DevOps"]
 title = "SysOps: Welcome to the Club"
+
+[cover]
+  image = "/images/2016/11/472028910_ec8f1fde23_z.jpg"
 
 +++
 

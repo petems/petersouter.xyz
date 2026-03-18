@@ -4,10 +4,12 @@ categories = ["Tech"]
 date = 2016-11-09T20:48:00Z
 description = ""
 draft = false
-coverImage = "/images/2016/11/optimised.png"
 slug = "compressing-images-in-gh"
 tags = ["Ghost", "vDM30in30"]
 title = "Compressing images in Ghost blog"
+
+[cover]
+  image = "/images/2016/11/optimised.png"
 
 +++
 

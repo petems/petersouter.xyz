@@ -4,10 +4,12 @@ categories = ["Tech"]
 date = 2016-11-08T19:25:00Z
 description = ""
 draft = false
-coverImage = "/images/2016/11/marmo.png"
 slug = "debugging-puppet-issues"
 tags = ["Puppet", "vDM30in30"]
 title = "Debugging Puppet Issues"
+
+[cover]
+  image = "/images/2016/11/marmo.png"
 
 +++
 

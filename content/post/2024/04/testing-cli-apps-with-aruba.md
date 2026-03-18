@@ -4,11 +4,13 @@ categories = ["Tech"]
 date = 2024-04-09T13:28:00Z
 description = ""
 draft = false
-thumbnailImage = "/images/2024/04/aruba.png"
-coverImage = "/images/2024/04/aruba-cover.png"
 slug = "testing-cli-apps-with-aruba"
 tags = ["Blog", "Ruby", "Testing"]
 title = "Testing CLI apps with Aruba (Ruby or Not)"
+
+[cover]
+  image = "/images/2024/04/aruba-cover.png"
+
 +++
 
 ## CLI Acceptance Testing 

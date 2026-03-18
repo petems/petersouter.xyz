@@ -4,10 +4,12 @@ categories = ["Tech"]
 date = 2016-11-05T20:55:00Z
 description = ""
 draft = false
-coverImage = "/images/2016/11/cockpit-selinux-access-control-overview.png"
 slug = "system-administration-with-cockpit"
 tags = ["Puppet", "Open-Source", "vDM30in30"]
 title = "System Administration with Cockpit"
+
+[cover]
+  image = "/images/2016/11/cockpit-selinux-access-control-overview.png"
 
 +++
 

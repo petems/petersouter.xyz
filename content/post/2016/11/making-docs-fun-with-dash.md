@@ -4,10 +4,12 @@ categories = ["Tech"]
 date = 2016-11-19T12:47:00Z
 description = ""
 draft = false
-coverImage = "/images/2016/11/dply-beta-homepage-copy.png"
 slug = "making-docs-fun-with-dash"
 tags = ["vDM30in30"]
 title = "Making Docs fun with Dash"
+
+[cover]
+  image = "/images/2016/11/dply-beta-homepage-copy.png"
 
 +++
 

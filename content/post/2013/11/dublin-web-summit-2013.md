@@ -3,11 +3,13 @@ author = "Peter Souter"
 date = 2013-11-14T12:00:00Z
 description = ""
 draft = false
-coverImage = "/images/2016/10/10226806236_2915beec76_z.jpg"
 slug = "dublin-web-summit-2013"
 title = "Dublin Web Summit 2013"
 categories = ["Tech", "Travel"]
 tags = ["Conferences", "Meetups", "DevOps"]
+
+[cover]
+  image = "/images/2016/10/10226806236_2915beec76_z.jpg"
 
 +++
 

@@ -4,10 +4,12 @@ categories = ["Tech"]
 date = 2016-11-04T22:17:00Z
 description = ""
 draft = false
-coverImage = "/images/2016/11/instacode.png"
 slug = "running-puppet-acceptance-tests-in-docker-in-travis"
 tags = ["Puppet", "Testing", "Beaker", "Open-Source", "vDM30in30"]
 title = "Running Puppet acceptance tests in Docker in Travis"
+
+[cover]
+  image = "/images/2016/11/instacode.png"
 
 +++
 

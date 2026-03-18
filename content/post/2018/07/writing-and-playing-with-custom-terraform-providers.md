@@ -4,11 +4,13 @@ categories = ["Tech"]
 date = 2018-07-01T12:07:00Z
 description = ""
 draft = false
-thumbnailImage = "/images/2018/07/golang_http_750.png"
-coverImage = "/images/2018/07/golang_http.png"
 slug = "writing-and-playing-with-custom-terraform-providers"
 tags = ["Blog", "Terraform", "Golang"]
 title = "Writing and playing with custom Terraform Providers"
+
+[cover]
+  image = "/images/2018/07/golang_http.png"
+
 +++
 
 # Writing and playing with custom Terraform Providers

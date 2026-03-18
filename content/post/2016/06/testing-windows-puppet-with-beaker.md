@@ -4,10 +4,12 @@ categories = ["Tech"]
 date = 2016-06-09T17:06:00Z
 description = "How to test Puppet on Windows machines (particularly Windows 2008/2012) with Beaker, using Bitvise instead of Cygwin"
 draft = false
-coverImage = "/images/2016/10/108487-1.png"
 slug = "testing-windows-puppet-with-beaker"
 tags = ["Puppet", "Testing", "Beaker", "Windows", "Cygwin"]
 title = "Testing Windows with Beaker without Cygwin"
+
+[cover]
+  image = "/images/2016/10/108487-1.png"
 
 +++
 

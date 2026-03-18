@@ -4,10 +4,12 @@ categories = ["Tech"]
 date = 2014-03-08T13:57:37Z
 description = ""
 draft = false
-coverImage = "/images/2016/10/8505316460_78d0abaf5b_z.jpg"
 slug = "ansible-kiss-and-profiling"
 tags = ["Config Management", "Ansible"]
 title = "Ansible: Keep it Simple!"
+
+[cover]
+  image = "/images/2016/10/8505316460_78d0abaf5b_z.jpg"
 
 +++
 

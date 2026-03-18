@@ -1,14 +1,16 @@
----
-title: "{{ replace .TranslationBaseName "-" " " | title }}"
-date: {{ .Date }}
-categories:
-- tech
-tags:
-- tag1
-- tag2
-keywords:
-- tech
-#thumbnailImage: //example.com/image.jpg
----
++++
+author = "Peter Souter"
+categories = ["Tech"]
+date = {{ .Date }}
+description = ""
+draft = true
+slug = "{{ .File.ContentBaseName }}"
+tags = []
+title = "{{ replace .TranslationBaseName "-" " " | title }}"
+keywords = []
+
+[cover]
+  image = ""
++++
 
 <!--more-->

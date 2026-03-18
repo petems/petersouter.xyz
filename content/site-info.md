@@ -44,8 +44,8 @@ technologies used on this site.
   <p>All AWS infrastructure (S3, CloudFront, Route53, Certificate Manager) is defined as code using Terraform. This means the entire site infrastructure can be versioned, reviewed, and reproduced. The Terraform configurations are in the <code>terraform/</code> directory of the repository.</p>
 </details>
 <details>
-  <summary>The theme for this website was created by <u><a target="_blank" href="https://github.com/kakawait">Thibaud Lepretre</a></u>.</summary>
-  <p>The theme <a target="_blank" href="https://github.com/kakawait/hugo-tranquilpeak-theme/">tranquilpeak</a> is a gorgeous responsive theme for the Hugo blog framework.</p>
+  <summary>The theme for this website is <u><a target="_blank" href="https://github.com/adityatelange/hugo-PaperMod">PaperMod</a></u> by Aditya Telange.</summary>
+  <p>PaperMod is a fast, clean, and responsive Hugo theme with built-in dark mode, search, and excellent performance. It focuses on readability and minimal design.</p>
 </details>
 <details>
   <summary>GitHub Actions deploys my website <u><a target="_blank" href="https://github.com/petems/petersouter.xyz/actions">Build History</a></u>.</summary>

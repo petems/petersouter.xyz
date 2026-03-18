@@ -4,10 +4,12 @@ categories = ["Tech"]
 date = 2016-11-11T13:24:00Z
 description = ""
 draft = false
-coverImage = "/images/2016/11/puppet-server-threadpool-architecture.png"
 slug = "puppetserver-caching"
 tags = ["vDM30in30", "Puppet"]
 title = "puppetserver caching"
+
+[cover]
+  image = "/images/2016/11/puppet-server-threadpool-architecture.png"
 
 +++
 

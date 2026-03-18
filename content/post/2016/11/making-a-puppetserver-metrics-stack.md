@@ -4,10 +4,12 @@ categories = ["Tech"]
 date = 2016-11-15T02:56:00Z
 description = ""
 draft = false
-coverImage = "/images/2016/11/grafana-puppetserver-jmx-overview-dashboard-cover.png"
 slug = "making-a-puppetserver-metrics-stack"
 tags = ["vDM30in30", "Puppet", "Metrics"]
 title = "JMX puppetserver metrics vagrant stack"
+
+[cover]
+  image = "/images/2016/11/grafana-puppetserver-jmx-overview-dashboard-cover.png"
 
 +++
 

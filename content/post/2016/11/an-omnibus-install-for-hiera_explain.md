@@ -4,10 +4,12 @@ categories = ["Tech"]
 date = 2016-11-01T21:48:11Z
 description = ""
 draft = false
-coverImage = "/images/2016/11/hiera-explain-terminal-output-copy.png"
 slug = "an-omnibus-install-for-hiera_explain"
 tags = ["Puppet", "vDM30in30", "Hiera"]
 title = "An Omnibus package for hiera_explain"
+
+[cover]
+  image = "/images/2016/11/hiera-explain-terminal-output-copy.png"
 
 +++
 

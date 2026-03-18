@@ -4,11 +4,12 @@ categories = ["Tech"]
 date = 2018-03-02T12:47:00Z
 description = "Moving from Ghost to Hugo"
 draft = false
-thumbnailImage = "/images/2018/03/ghost-export-750.png"
-coverImage = "/images/2018/03/ghost-export.png"
 slug = "moving-my-blog-from-ghost-to-hugo"
 tags = ["Blog", "Terraform", "Hugo"]
 title = "Migrating my blog from Ghost to Hugo"
+
+[cover]
+  image = "/images/2018/03/ghost-export.png"
 
 +++
 

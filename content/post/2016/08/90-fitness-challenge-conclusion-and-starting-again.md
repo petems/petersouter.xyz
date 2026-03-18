@@ -4,10 +4,12 @@ categories = ["Personal"]
 date = 2016-08-30T15:13:33Z
 description = ""
 draft = false
-coverImage = "/images/2016/10/8410432441_05fd470325_z--2-.jpg"
 slug = "90-fitness-challenge-conclusion-and-starting-again"
 tags = ["Fitness", "Health", "Gym", "Data"]
 title = "90 Fitness Challenge - Conclusion and Starting again"
+
+[cover]
+  image = "/images/2016/10/8410432441_05fd470325_z--2-.jpg"
 
 +++
 

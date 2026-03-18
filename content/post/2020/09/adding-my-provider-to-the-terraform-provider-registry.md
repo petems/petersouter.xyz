@@ -4,11 +4,13 @@ categories = ["Tech"]
 date = 2020-09-17T13:28:00Z
 description = ""
 draft = false
-thumbnailImage = "/images/2020/09/registry-page.png"
-coverImage = "/images/2020/09/registry-page-cover.png"
 slug = "adding-my-provider-to-the-terraform-provider-registry"
 tags = ["Blog", "Terraform", "Golang"]
 title = "Adding my Provider to the Terraform Provider Registry"
+
+[cover]
+  image = "/images/2020/09/registry-page-cover.png"
+
 +++
 
 I've blogged previously about my tinkering with my own [Terraform provider for fetching external IPs](/content/post/writing-and-playing-with-custom-terraform-providers.md)

@@ -4,11 +4,12 @@ categories = ["Cooking"]
 date = 2020-04-13T13:14:08Z
 description = "Making Käsespätzle"
 draft = false
-thumbnailImage = "/images/2020/04/device-on-pot-750.jpg"
-coverImage = "/images/2020/04/device-on-pot.jpg"
 slug = "kasespatzle-making"
 tags = ["Recipe", "German Food"]
 title = "Making Käsespätzle"
+
+[cover]
+  image = "/images/2020/04/device-on-pot.jpg"
 
 +++
 

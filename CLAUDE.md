@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a Hugo-based static blog hosted on AWS S3 with CloudFront CDN and Route53 DNS management. The site is built using Hugo's "tranquilpeak" theme and deployed via GitHub Actions.
+This is a Hugo-based static blog hosted on AWS S3 with CloudFront CDN and Route53 DNS management. The site is built using Hugo's "PaperMod" theme and deployed via GitHub Actions.
 
 ## Hugo Commands
 
@@ -12,7 +12,7 @@ This is a Hugo-based static blog hosted on AWS S3 with CloudFront CDN and Route5
 
 - **Build the site**: `hugo` or `hugo --destination public`
   - Generates static files in the `public/` directory
-  - The site uses `config.toml` for all Hugo configuration
+  - The site uses `hugo.yaml` for all Hugo configuration
 
 - **Local development server**: `hugo server`
   - Starts a live-reloading development server
@@ -23,7 +23,7 @@ This is a Hugo-based static blog hosted on AWS S3 with CloudFront CDN and Route5
 
 ### Content Management
 
-- **Create new post**: Do NOT use `hugo new` — the archetype uses YAML frontmatter but all posts use TOML. Instead, create the file directly in `content/post/` with TOML frontmatter (`+++` delimiters).
+- **Create new post**: `hugo new content/post/YYYY/MM/post-slug.md` or create the file directly in `content/post/` with TOML frontmatter (`+++` delimiters). Cover images use the `[cover]` section with `image` field.
 
 - **List all content**: `hugo list all`
 
@@ -114,9 +114,9 @@ The site uses the following AWS services (managed via Terraform):
 The site uses PrettyURLs (e.g., `/path/` instead of `/path/index.html`). This is implemented through:
 - S3 static website hosting with routing rules
 - CloudFront configuration that points to the S3 website endpoint
-- Hugo's `canonifyurls = true` in config.toml
+- Hugo's permalink configuration in `hugo.yaml`
 
-If switching to ugly URLs, modify both `config.toml` and `terraform/s3-website/main.tf` (see comments in the Terraform file).
+If switching to ugly URLs, modify both `hugo.yaml` and `terraform/s3-website/main.tf` (see comments in the Terraform file).
 
 ### Deployment Pipeline
 
@@ -135,17 +135,21 @@ If switching to ugly URLs, modify both `config.toml` and `terraform/s3-website/m
 ### Content Structure
 
 - `content/post/`: Blog posts (primary content)
-- `content/`: Top-level pages (about, talks, etc.)
+- `content/`: Top-level pages (about, talks, archives, search, etc.)
 - `static/`: Static assets (images, files)
-- `themes/tranquilpeak/`: Hugo theme (git submodule)
+- `themes/PaperMod/`: Hugo theme (git submodule)
 - `public/`: Generated static site (not in git)
 
 ### Theme Configuration
 
-- Uses the "tranquilpeak" theme
-- Theme is a git submodule in `themes/tranquilpeak/`
-- Customization is done through `config.toml` parameters
-- Layout overrides can be placed in `layouts/` directory
+- Uses the "PaperMod" theme (https://github.com/adityatelange/hugo-PaperMod)
+- Theme is a git submodule in `themes/PaperMod/`
+- Configuration is in `hugo.yaml`
+- Syntax highlighting uses Hugo's built-in Chroma (not highlight.js)
+- Navigation is header-based (not sidebar)
+- Dark/light mode toggle is built-in (`defaultTheme: auto`)
+- PaperMod extension hooks: `layouts/partials/extend_head.html`
+- Custom functionality: talks page (`layouts/partials/talks-list.html` + `static/js/talks-filter.js`)
 
 ## Git Workflow
 

@@ -4,10 +4,12 @@ categories = ["Personal"]
 date = 2016-07-04T23:03:30Z
 description = ""
 draft = false
-coverImage = "/images/2016/10/swing-time-500-axis-tooltip.png"
 slug = "90-day-fitness-challenge-week-1-first-check-in"
 tags = ["Fitness", "Health", "Gym", "Data", "Kettlebells"]
 title = "90 Day Fitness Challenge - Week 4 - 33% Check-in"
+
+[cover]
+  image = "/images/2016/10/swing-time-500-axis-tooltip.png"
 
 +++
 

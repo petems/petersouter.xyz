@@ -4,10 +4,12 @@ categories = ["Tech"]
 date = 2016-11-26T21:20:00Z
 description = ""
 draft = false
-coverImage = "/images/2016/11/sublime-open-with-macdown-menu-copy.png"
 slug = "quick-testing-with-dply"
 tags = ["vDM30in30"]
 title = "Quickly testing with dply.co"
+
+[cover]
+  image = "/images/2016/11/sublime-open-with-macdown-menu-copy.png"
 
 +++
 
