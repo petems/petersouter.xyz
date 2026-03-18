@@ -4,10 +4,12 @@ categories = ["Tech"]
 date = 2016-11-02T23:38:49Z
 description = ""
 draft = false
-coverImage = "github-tugboat-repo-page.png"
 slug = "some-thoughts-on-maintaining-oss-that-has-an-official-competitor"
 tags = ["Open-Source", "vDM30in30"]
 title = "Some thoughts on maintaining OSS that has an official \"competitor\""
+
+[cover]
+  image = "/images/2016/11/github-tugboat-repo-page.png"
 
 +++
 

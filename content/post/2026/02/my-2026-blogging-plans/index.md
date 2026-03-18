@@ -8,8 +8,10 @@ slug = "my-2026-blogging-plans"
 tags = ["Blogging", "Conferences", "Speaking", "GenAI", "Hugo", "Obsidian"]
 title = "My 2026 Blogging Plans"
 keywords = ["blogging", "2026", "conferences", "testcon", "cfgmgmtcamp", "fosdem", "genai", "mcp", "hugo", "obsidian"]
-thumbnailImage = "long-exposure-new-york-skyline.jpg"
-coverImage = "long-exposure-new-york-skyline-cover.jpg"
+
+[cover]
+  image = "/images/2026/02/long-exposure-new-york-skyline-cover.jpg"
+
 +++
 
 I've got a lot of ideas of what I want to post about in 2026, a mix of plans for the future and catching up on the things I was meant to be posting about in 2025.

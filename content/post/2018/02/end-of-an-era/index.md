@@ -4,11 +4,12 @@ categories = ["Career"]
 date = 2018-02-19T13:09:08Z
 description = "Old jobs and new jobs"
 draft = false
-thumbnailImage = "puppetconf-2016-750.jpg"
-coverImage = "puppetconf-2016.jpg"
 slug = "end-of-an-era"
 tags = ["Puppet", "HashiCorp"]
 title = "An End of an Era and New Opportunities"
+
+[cover]
+  image = "/images/2018/02/puppetconf-2016.jpg"
 
 +++
 

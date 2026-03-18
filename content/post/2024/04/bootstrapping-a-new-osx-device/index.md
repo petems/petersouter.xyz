@@ -4,11 +4,13 @@ categories = ["Tech"]
 date = 2024-04-04T13:28:00Z
 description = ""
 draft = false
-thumbnailImage = "osx-strap.png"
-coverImage = "osx-strap-cover.png"
 slug = "bootstrapping-a-new-osx-device"
 tags = ["Blog", "Terraform", "Puppet"]
 title = "Bootstrapping a new OSX device: A Brief History and Current Approach"
+
+[cover]
+  image = "/images/2024/04/osx-strap-cover.png"
+
 +++
 
 ## Bootstrapping 

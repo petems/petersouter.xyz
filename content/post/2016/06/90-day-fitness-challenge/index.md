@@ -4,10 +4,12 @@ categories = ["Personal"]
 date = 2016-06-16T22:27:25Z
 description = ""
 draft = false
-coverImage = "swing-time-500-with-dates-copy.png"
 slug = "90-day-fitness-challenge"
 tags = ["Fitness", "Data", "Kettlebells"]
 title = "90 Day Fitness Challenge - Week 1 - First check-in"
+
+[cover]
+  image = "/images/2016/10/swing-time-500-with-dates-copy.png"
 
 +++
 

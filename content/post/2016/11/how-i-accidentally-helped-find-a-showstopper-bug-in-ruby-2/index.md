@@ -4,10 +4,12 @@ categories = ["Tech"]
 date = 2016-11-03T23:49:00Z
 description = ""
 draft = false
-coverImage = "ruby-bug-12832-ticket.png"
 slug = "how-i-accidentally-helped-find-a-showstopper-bug-in-ruby-2"
 tags = ["Open-Source", "vDM30in30"]
 title = "How I accidentally helped find a showstopper bug in Ruby"
+
+[cover]
+  image = "/images/2016/11/ruby-bug-12832-ticket.png"
 
 +++
 

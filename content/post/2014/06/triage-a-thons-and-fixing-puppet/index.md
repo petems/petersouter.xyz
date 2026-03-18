@@ -4,10 +4,12 @@ categories = ["Tech"]
 date = 2014-06-02T22:52:25Z
 description = ""
 draft = false
-coverImage = "triage_a_thon.png"
 slug = "triage-a-thons-and-fixing-puppet"
 tags = ["Puppet", "Config Management", "Open-Source"]
 title = "Triage-a-thons and Fixing Puppet"
+
+[cover]
+  image = "/images/2016/10/triage_a_thon.png"
 
 +++
 

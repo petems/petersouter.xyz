@@ -4,11 +4,12 @@ categories = ["Career"]
 date = 2018-01-01T16:14:08Z
 description = "Wow, I didn't blog at all in 2017"
 draft = false
-thumbnailImage = "church-750.jpg"
-coverImage = "church.jpg"
 slug = "an-eventful-2017"
 tags = ["New Year"]
 title = "An Eventful 2017"
+
+[cover]
+  image = "/images/2018/01/church.jpg"
 
 +++
 

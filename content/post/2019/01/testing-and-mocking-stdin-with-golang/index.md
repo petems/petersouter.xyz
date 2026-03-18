@@ -4,11 +4,13 @@ categories = ["Tech"]
 date = 2019-01-13T13:53:44Z
 description = ""
 draft = false
-thumbnailImage = "golang_stdin_750.png"
-coverImage = "golang_stdin.png"
 slug = "testing-and-mocking-stdin-with-golang"
 tags = ["Blog", "Terraform", "Golang"]
 title = "Testing and mocking stdin in Golang"
+
+[cover]
+  image = "/images/2019/01/golang_stdin.png"
+
 +++
 
 # Testing and mocking stdin in Golang

@@ -3,11 +3,13 @@ author = "Peter Souter"
 date = 2016-11-30T20:29:27Z
 description = ""
 draft = false
-coverImage = "rspec-core-shared-examples-docs.png"
 slug = "day-30-vdm30in30-is-over"
 title = "Day 30 vdm30in30 is over!"
 categories = ["Personal"]
 tags = ["vDM30in30", "Blog"]
+
+[cover]
+  image = "/images/2016/11/rspec-core-shared-examples-docs.png"
 
 +++
 

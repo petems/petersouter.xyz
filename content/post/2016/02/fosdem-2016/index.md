@@ -4,10 +4,12 @@ categories = ["Tech", "Travel"]
 date = 2016-02-07T23:33:15Z
 description = ""
 draft = false
-coverImage = "24445631829_4e2e715900_z.jpg"
 slug = "fosdem-2016"
 tags = ["FOSDEM", "Talks", "Config Management"]
 title = "FOSDEM 2016"
+
+[cover]
+  image = "/images/2016/10/24445631829_4e2e715900_z.jpg"
 
 +++
 

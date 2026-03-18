@@ -4,10 +4,12 @@ categories = ["Tech"]
 date = 2016-11-27T21:44:00Z
 description = ""
 draft = false
-coverImage = "sublime-text-editor-with-tugboat-code.png"
 slug = "sublime-plugins"
 tags = ["vDM30in30", "Open-Source"]
 title = "Sublime Plugins"
+
+[cover]
+  image = "/images/2016/11/sublime-text-editor-with-tugboat-code.png"
 
 +++
 

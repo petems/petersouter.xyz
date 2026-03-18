@@ -4,10 +4,12 @@ categories = ["Personal"]
 date = 2016-11-20T14:54:00Z
 description = ""
 draft = false
-coverImage = "Switch_Tester_1__11977.1455787922.1280.1280--1--1.png"
 slug = "keyboard-geekery"
 tags = ["vDM30in30"]
 title = "Keyboard Geekery"
+
+[cover]
+  image = "/images/2016/11/Switch_Tester_1__11977.1455787922.1280.1280--1--1.png"
 
 +++
 

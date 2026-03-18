@@ -8,8 +8,10 @@ slug = "back-on-the-horse-refocusing-on-what-matters-in-2026"
 tags = ["Blogging", "AI", "Productivity", "Burnout", "Speaking"]
 title = "Back on the Horse: Refocusing on What Matters in 2026"
 keywords = ["blogging", "ai burnout", "productivity", "testcon", "website updates"]
-thumbnailImage = "bikes-landscape.jpg"
-coverImage = "bikes-landscape-cover.jpg"
+
+[cover]
+  image = "/images/2026/02/bikes-landscape-cover.jpg"
+
 +++
 
 One thing you should know about me is I love tinkering. I always have a side-project or two on the go, and an office littered with kickstarted gadgets, half-completed projects and the various detritus of a jumbled mind.

@@ -4,10 +4,12 @@ categories = ["Tech"]
 date = 2016-11-10T19:15:00Z
 description = ""
 draft = false
-coverImage = "grafana-collectd-overview-dashboard.png"
 slug = "an-example-metrics-stack-with-collectd-graphite-and-grafana"
 tags = ["Puppet", "Open-Source", "vDM30in30"]
 title = "An example metrics stack with Collectd, Graphite and Grafana"
+
+[cover]
+  image = "/images/2016/11/grafana-collectd-overview-dashboard.png"
 
 +++
 

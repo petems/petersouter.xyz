@@ -4,10 +4,12 @@ categories = ["Personal"]
 date = 2016-06-06T10:58:48Z
 description = "Like a lot of people in tech, I wasn't exactly the pinnacle of health..."
 draft = false
-coverImage = "dexa-body-scan-front.png"
 slug = "fitter-and-healthier"
 tags = ["Fitness", "Health", "Gym"]
 title = "Getting fitter and healthier in 90 days...with data!"
+
+[cover]
+  image = "/images/2016/10/dexa-body-scan-front.png"
 
 +++
 

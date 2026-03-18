@@ -4,10 +4,12 @@ categories = ["Tech"]
 date = 2016-11-13T19:12:00Z
 description = ""
 draft = false
-coverImage = "usr1.png"
 slug = "triggering-a-daemonized-puppet-agent-run-immediately-2"
 tags = ["vDM30in30", "Puppet", "SysAdmin"]
 title = "Triggering a daemonized puppet agent with SIGUSR1"
+
+[cover]
+  image = "/images/2016/11/usr1.png"
 
 +++
 

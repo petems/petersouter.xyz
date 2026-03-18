@@ -8,8 +8,10 @@ slug = "i-failed-but-feel-good"
 tags = ["Blogging", "GenAI", "Productivity"]
 title = "I Failed, But I Feel Good: GenAI, Blogging For Fun and Touching Grass"
 keywords = ["blogging", "GenAI", "productivity", "motivation", "accountability", "writing", "personal blog"]
-thumbnailImage = "flag-of-zheleznogorsk.png"
-coverImage = "flag-of-zheleznogorsk-dark.png"
+
+[cover]
+  image = "/images/2026/02/flag-of-zheleznogorsk-dark.png"
+
 +++
 
 On the 12th of February, I made a blog post where I laid out my disappointment in barely blogging in 2025, how it was such a blur and 2026 was going to be `#NewYearNewMe` and I was going to get back to blogging more.

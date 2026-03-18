@@ -4,10 +4,12 @@ categories = ["Tech"]
 date = 2015-12-13T00:38:29Z
 description = "How I setup my blog with docker-compose, allowing me to run ghost and nginx from a docker container and serve over HTTPS."
 draft = false
-coverImage = "Compose.png"
 slug = "switching-to-hosting-ghost-on-docker"
 tags = ["Puppet", "Ghost", "Docker", "Blog"]
 title = "Switching to hosting my blog on Docker"
+
+[cover]
+  image = "/images/2016/10/Compose.png"
 
 +++
 

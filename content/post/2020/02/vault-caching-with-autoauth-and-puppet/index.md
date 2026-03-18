@@ -4,11 +4,13 @@ categories = ["Tech"]
 date = 2020-02-12T12:07:00Z
 description = ""
 draft = false
-thumbnailImage = "Vault-Agent-Auto-Auth_750.png"
-coverImage = "Vault-Agent-Auto-Auth.png"
 slug = "vault-caching-with-autoauth-and-puppet"
 tags = ["Blog", "Terraform", "Puppet"]
 title = "Vault Caching with Auto-Auth and Puppet"
+
+[cover]
+  image = "/images/2020/02/Vault-Agent-Auto-Auth.png"
+
 +++
 
 # Vault Caching with Auto-Auth and Puppet

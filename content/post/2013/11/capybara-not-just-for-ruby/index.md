@@ -4,10 +4,12 @@ categories = ["Tech"]
 date = 2013-11-28T12:00:00Z
 description = ""
 draft = false
-coverImage = "5592629831_c79b801af5_z.jpg"
 slug = "capybara-not-just-for-ruby"
 tags = ["Testing", "Ruby"]
 title = "Capybara Smoketests: Not just for Ruby!"
+
+[cover]
+  image = "/images/2016/10/5592629831_c79b801af5_z.jpg"
 
 +++
 

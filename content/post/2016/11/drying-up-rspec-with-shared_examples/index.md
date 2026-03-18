@@ -4,10 +4,12 @@ categories = ["Tech"]
 date = 2016-11-17T11:46:00Z
 description = ""
 draft = false
-coverImage = "readability-stats-panel.png"
 slug = "drying-up-rspec-with-shared_examples"
 tags = ["vDM30in30", "Testing", "Puppet", "Ruby"]
 title = "Drying up rspec with shared_examples"
+
+[cover]
+  image = "/images/2016/11/readability-stats-panel.png"
 
 +++
 
