@@ -19,3 +19,8 @@ staying technical.
 I'm currently happily employed as a Senior Sales Engineeer at Datadog.
 
 I enjoy working on open-source projects, so checkout my Github or my page describing some of my maintained projects.
+
+## More About Me
+
+- [`/now`](/now/) - What I'm currently focused on
+- [`/uses`](/uses/) - Tools and technology I use
