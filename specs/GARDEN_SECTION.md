@@ -115,8 +115,12 @@ Example frontmatter:
 ---
 title: "Garden"
 description: "A place for thoughts, ideas and essays I tend to"
-layout: "garden"
-showReadingTime: false
+cascade:
+  hiddenInHomeList: true
+  ShowReadingTime: false
+  ShowShareButtons: false
+  ShowPostNavLinks: false
+  comments: false
 ---
 ```
 
@@ -130,11 +134,9 @@ Example `content/garden/building-with-ai/index.md`:
 ---
 title: "Building With AI"
 date: 2026-03-18T10:00:00Z
-type: "garden"
-layout: "garden-note"
 garden_topic: "Language Models"
 summary: "Working notes on using LLMs in software projects."
-status: "evergreen"
+status: "Evergreen"
 ---
 ```
 
@@ -260,6 +262,8 @@ Optional later enhancements:
 | `layouts/garden/list.html` | Custom grouped landing page |
 | `layouts/garden/single.html` | Optional note template override |
 | `assets/css/extended/garden.css` | Garden-specific styling |
+| `archetypes/garden.md` | Archetype for new garden notes |
+| `data/garden.yaml` | Emoji mapping for topic headers |
 
 ## Rollout Plan
 
