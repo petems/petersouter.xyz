@@ -7,6 +7,7 @@ showActions:    false
 showPagination: false
 showSocial:     false
 showDate:       false
+ShowToc:        false
 ---
 
 {{< talks-list >}}
