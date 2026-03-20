@@ -6,15 +6,15 @@ garden_topic: "Traveling"
 status: "Seedling"
 ---
 
-I started using Foursqaure in 2012.
+I started using Foursquare in 2012.
 
-I was pretty diligent at checking in at places I wanted to remember, I didn't do the think where I checked in at every single stop or place of interest.
+I was pretty diligent at checking in at places I wanted to remember, I didn't do the thing where I checked in at every single stop or place of interest.
 
 I was the Mayor of the club The Egg in London for a while in 2010 or so.
 
 Which says a lot about my going out habits at the time...
 
-I had lists for every major city I traveled too.
+I had lists for every major city I traveled to.
 
 I worked with a lot of people who traveled a bunch for work as well, and I worked a lot of customer facing jobs which were high travel, even to the states.
 
@@ -36,7 +36,7 @@ Could I export it? Is there an API that still works?
 
 A GDPR data request that would give me a JSON dump of every check-in and tip I ever left?
 
-I think techically the Swarm part still exists, so maybe it's in there somewhere. 
+I think technically the Swarm part still exists, so maybe it's in there somewhere.
 
 But... even if I could get it all back... 
 

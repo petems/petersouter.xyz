@@ -143,7 +143,7 @@ status: "Evergreen"
 Recommended frontmatter fields:
 
 - `garden_topic`: the landing-page bucket label
-- `status`: optional values like `seedling`, `growing`, `evergreen`
+- `status`: optional values like `Seedling`, `Growing`, `Evergreen`
 - `summary`: short link description if needed later
 
 The critical field is `garden_topic`. It allows grouped rendering on `/garden/` while keeping note URLs flat as `/garden/<slug>/`.

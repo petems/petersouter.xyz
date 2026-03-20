@@ -10,7 +10,7 @@ I'm someone who reads a lot, travels and often jumps between books depending on 
 
 This means I generally buy books digitally where possible.
 
-However, sometimes there's a read thats physical only, or an author that specifically asked for people to buy it physically, or a spontanious purchase in an airport bookshop, because the one time I got stuck in a queue in Vegas for 2 hours, and the CBP guy wouldn't let anyone use anything electronic, even a Kindle on airplane mode.
+However, sometimes there's a read that's physical only, or an author who specifically asked for people to buy it physically, or a spontaneous purchase in an airport bookshop, because the one time I got stuck in a queue in Vegas for 2 hours, and the CBP guy wouldn't let anyone use anything electronic, even a Kindle on airplane mode.
 
 So, I have a pile of shame of physical books I need to get back to. So I'm posting them here to make myself go back and read them:
 

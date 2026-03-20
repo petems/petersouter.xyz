@@ -18,7 +18,7 @@
   {{- $groupName := .Key | default "Unsorted" -}}
   {{- $topic := index $topicData $groupName -}}
   {{- $emoji := "🌱" -}}
-  {{- with $topic }}{{ $emoji = .emoji }}{{ end -}}
+  {{- with $topic.emoji }}{{ $emoji = . }}{{ end -}}
   <section class="garden-topic">
     <h2 class="garden-topic-title">
       <span class="garden-topic-emoji">{{ $emoji }}</span>

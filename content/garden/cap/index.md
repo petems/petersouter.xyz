@@ -18,7 +18,7 @@ I started wearing a cap all the time to deal with my overgrown hair.
 
 When I eventually buzzed it short, the habit stuck.
 
-Then afterwards, it became supersticion
+Then afterwards, it became superstition.
 
 (I started wearing it when the Dodgers were down 3-1 to the Braves, and they won 3 in a row afterwards) and the fact I couldn't get a haircut easily.
 

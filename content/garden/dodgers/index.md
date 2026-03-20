@@ -8,7 +8,7 @@ status: "Seedling"
 
 I'm a Dodgers fan.
 
-Why? Well as a Brit, chosing was a bit arbitrary.
+Why? Well, as a Brit, choosing was a bit arbitrary.
 
 I think I settled on picking a team around 2016-ish? 
 
@@ -22,7 +22,7 @@ I loved the white and blue, and I loved the history.
 
 Jackie Robinson
 
-Sandy Kophax
+Sandy Koufax
 
 The fact the last world series they'd won was in my birthyear (1988)
 
