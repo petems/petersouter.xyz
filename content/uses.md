@@ -9,7 +9,9 @@ showSocial: false
 showDate: false
 ---
 
-_A snapshot of the tools I reach for most often. This is not an exhaustive list and will drift over time._
+> A snapshot of the tools I reach for most often. This is not an exhaustive list and will drift over time
+
+{{< lastmod >}}
 
 ## Writing and Notes
 
@@ -21,7 +23,6 @@ _A snapshot of the tools I reach for most often. This is not an exhaustive list 
 - **macOS** as the daily driver.
 - **iTerm2** and **zsh** for most command-line work.
 - **Git** and **GitHub CLI** for day-to-day repo work.
-- **ripgrep** for the kind of project archaeology that usually starts with "where on earth is that defined?"
 - **Hugo** for this site, because writing in Markdown and shipping static files still feels correct.
 
 ## Infrastructure and Delivery
@@ -39,4 +40,3 @@ _A snapshot of the tools I reach for most often. This is not an exhaustive list 
 ## Hardware
 
 - **A MacBook** for the main machine.
-- **A decent external keyboard** whenever I'm at a desk for longer stretches, because my wrists are not getting any younger.
