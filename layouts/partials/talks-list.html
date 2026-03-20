@@ -306,11 +306,13 @@
   </div>
 
   <div class="results-count">
-    Showing <span id="visible-count">{{ len $talks }}</span> of {{ len $talks }} talks
+    <span role="status" aria-live="polite" aria-atomic="true">
+      Showing <span id="visible-count">{{ len $talks }}</span> of {{ len $talks }} talks
+    </span>
     <button type="button" class="filter-tag clear" data-action="clear" style="display: none;">Clear filters</button>
   </div>
 
-  <div class="no-results" style="display: none;">
+  <div class="no-results" style="display: none;" role="status" aria-live="polite">
     No talks match the current filters. <button type="button" class="filter-tag clear" data-action="clear">Clear filters</button> to see all talks.
   </div>
 
