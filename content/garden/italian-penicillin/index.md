@@ -10,7 +10,7 @@ Italian Penicillin is the nickname for "Pastina"
 
 I've been a little obsessed with it recently
 
-There's somthing about hte little pastina stars floating in a satisfying broth that tickles the good parts of my brain.
+There's something about the little pastina stars floating in a satisfying broth that tickles the good parts of my brain.
 
 The recipe is pretty foolproof as well.
 
@@ -22,7 +22,7 @@ Cook the veggies til soft.
 
 Blend them to a smooth soup.
 
-Then throw in a parmasan rind, and cool whatever small pasta you have until al-dente.
+Then throw in a parmesan rind, and cook whatever small pasta you have until al dente.
 
 Pastina are harder to find at supermarkets but I bought them online cos I love the little flowers.
 
