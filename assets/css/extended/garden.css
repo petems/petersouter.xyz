@@ -1,0 +1,135 @@
+/* Garden — a browsable pinboard of ideas */
+
+.garden-intro {
+    max-width: 38rem;
+    margin-bottom: 0.5rem;
+    color: var(--secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.garden-intro p:last-child {
+    margin-bottom: 0;
+}
+
+/* --- Column layout (Corin-style CSS columns) --- */
+
+.garden-columns {
+    columns: 3;
+    column-gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.garden-topic {
+    break-inside: avoid;
+    margin-bottom: 1.75rem;
+}
+
+/* --- Topic headers --- */
+
+.garden-topic-title {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 0.4rem;
+}
+
+.garden-topic-emoji {
+    font-style: normal;
+    line-height: 1;
+}
+
+.garden-topic-count {
+    margin-left: auto;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--secondary);
+}
+
+/* --- Note lists --- */
+
+.garden-notes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.garden-notes li {
+    padding: 0.3rem 0;
+}
+
+.garden-notes a {
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.garden-notes a::before {
+    content: "\2192\00a0";
+    color: var(--secondary);
+    font-size: 0.85em;
+}
+
+.garden-notes a:hover {
+    color: var(--content);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.garden-notes a:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+/* --- Single note page --- */
+
+.garden-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+    color: var(--secondary);
+    font-size: 0.9rem;
+}
+
+.garden-status {
+    font-size: 0.75rem;
+    color: var(--secondary);
+    background: var(--code-bg);
+    padding: 0.15rem 0.5rem;
+    border-radius: var(--radius);
+}
+
+.garden-backlink {
+    display: inline-block;
+    font-weight: 600;
+}
+
+.garden-backlink:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+.garden-empty {
+    color: var(--secondary);
+    font-style: italic;
+}
+
+/* --- Responsive --- */
+
+@media (max-width: 1024px) {
+    .garden-columns {
+        columns: 2;
+    }
+}
+
+@media (max-width: 640px) {
+    .garden-columns {
+        columns: 1;
+    }
+}

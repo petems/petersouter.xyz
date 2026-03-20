@@ -1,0 +1,36 @@
+{{- define "main" }}
+
+<article class="post-single">
+  <header class="post-header">
+    {{- partial "breadcrumbs.html" . }}
+    <h1 class="post-title">{{ .Title }}</h1>
+    {{- if .Description }}
+    <div class="post-description">{{ .Description | markdownify }}</div>
+    {{- end }}
+    <div class="garden-meta">
+      {{- with .Params.garden_topic }}
+      <span class="garden-status">{{ . }}</span>
+      {{- end }}
+      {{- with .Params.status }}
+      <span class="garden-status">{{ . }}</span>
+      {{- end }}
+      {{- with .Date }}
+      <time datetime="{{ .Format "2006-01-02" }}">{{ .Format "2 January 2006" }}</time>
+      {{- end }}
+    </div>
+  </header>
+
+  {{- if .Content }}
+  <div class="post-content">
+    {{- if not (.Param "disableAnchoredHeadings") }}
+    {{- partial "anchored_headings.html" .Content -}}
+    {{- else }}{{ .Content }}{{ end }}
+  </div>
+  {{- end }}
+
+  <footer class="post-footer">
+    <a class="garden-backlink" href="{{ "/garden/" | relURL }}">&larr; Back to Garden</a>
+  </footer>
+</article>
+
+{{- end }}

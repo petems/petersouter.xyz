@@ -1,14 +1,16 @@
-+++
-author = "Peter Souter"
-date = 2015-01-04T23:34:48Z
-description = ""
-draft = false
-slug = "explained-better-by"
-title = "Explained better by..."
+---
+title: "Explained Better By..."
+date: 2015-01-04T23:34:48Z
+description: "Blog posts I reference as shorthand when explaining things."
+garden_topic: "Links"
+status: "Evergreen"
+aliases:
+  - "/explained-better-by/"
+---
 
-+++
+> This used to be hosted at [/explained-better-by/](/explained-better-by/) and was a bit of a precursor to the Garden idea I have.
 
-This is a list of blog-posts that I occasionally reference as a short-hand when I'm trying to explain something.
+A list of blog posts that I occasionally reference as a shorthand when I'm trying to explain something.
 
 ## The Moderately Enthusiastic Programmer
 http://devblog.avdi.org/2014/01/31/the-moderately-enthusiastic-programmer/
