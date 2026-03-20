@@ -1,0 +1,31 @@
+topics:
+  Writing:
+    emoji: "\U0001F4DD"
+  Books:
+    emoji: "\U0001F4DA"
+  Movies:
+    emoji: "\U0001F3AC"
+  Food:
+    emoji: "\U0001F35C"
+  Places:
+    emoji: "\U0001F4CD"
+  Music:
+    emoji: "\U0001F3B5"
+  Ideas:
+    emoji: "\U0001F4A1"
+  Tech:
+    emoji: "\U0001F527"
+  Cooking:
+    emoji: "\U0001F468\U0000200D\U0001F373"
+  Eating:
+    emoji: "\U0001F37D"
+  Traveling:
+    emoji: "\U00002708"
+  Baseball:
+    emoji: "\U000026BE"
+  Links:
+    emoji: "\U0001F517"
+  About:
+    emoji: "\U00002139"
+  Unsorted:
+    emoji: "\U0001F331"

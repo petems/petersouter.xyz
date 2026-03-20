@@ -3,8 +3,8 @@ title: "Why A Garden?"
 date: 2026-03-18T12:00:00Z
 description: "A short note about why this section exists."
 summary: "A home for shorter ideas that are still finding their final shape."
-garden_topic: "Writing"
-status: "seedling"
+garden_topic: "About"
+status: "Seedling"
 ---
 
 I have plenty of ideas that are useful before they are polished.

@@ -1,9 +1,6 @@
 ---
-title: "Garden"
-description: "Working notes, smaller ideas and essays in progress."
-introBefore: "A place for"
-introHighlight: "thoughts, ideas and essays"
-introAfter: "I tend to grow in public."
+title: "Garden 🌱"
+description: "Half-baked ideas, things I like, stuff I'm thinking about..."
 cascade:
   hiddenInHomeList: true
   ShowReadingTime: false
@@ -12,6 +9,6 @@ cascade:
   comments: false
 ---
 
-The garden is where I keep smaller notes that do not need to become full posts on day one.
+A scratchpad for ideas that aren't ready to be blog posts
 
-Some of these entries will eventually grow into longer essays. Some will stay short on purpose.
+... and some that never will be.

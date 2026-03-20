@@ -1,24 +1,21 @@
 {{- define "main" }}
 
-<article class="post-single garden-note">
-  <header class="post-header garden-note-header">
+<article class="post-single">
+  <header class="post-header">
     {{- partial "breadcrumbs.html" . }}
-    <p class="garden-kicker">Garden Note</p>
     <h1 class="post-title">{{ .Title }}</h1>
     {{- if .Description }}
-    <div class="post-description">
-      {{ .Description | markdownify }}
-    </div>
+    <div class="post-description">{{ .Description | markdownify }}</div>
     {{- end }}
-    <div class="garden-note-meta">
+    <div class="garden-meta">
       {{- with .Params.garden_topic }}
-      <span class="garden-chip">{{ . }}</span>
+      <span class="garden-status">{{ . }}</span>
       {{- end }}
       {{- with .Params.status }}
-      <span class="garden-chip garden-chip-status">{{ . | title }}</span>
+      <span class="garden-status">{{ . }}</span>
       {{- end }}
       {{- with .Date }}
-      <time class="garden-note-date" datetime="{{ .Format "2006-01-02" }}">{{ .Format "January 2, 2006" }}</time>
+      <time datetime="{{ .Format "2006-01-02" }}">{{ .Format "2 January 2006" }}</time>
       {{- end }}
     </div>
   </header>
@@ -31,8 +28,8 @@
   </div>
   {{- end }}
 
-  <footer class="post-footer garden-note-footer">
-    <a class="garden-backlink" href="{{ "/garden/" | relURL }}">Back to Garden</a>
+  <footer class="post-footer">
+    <a class="garden-backlink" href="{{ "/garden/" | relURL }}">&larr; Back to Garden</a>
   </footer>
 </article>
 

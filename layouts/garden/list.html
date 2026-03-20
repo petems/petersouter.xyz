@@ -2,62 +2,41 @@
 
 {{- $pages := .RegularPages.ByTitle -}}
 {{- $groups := $pages.GroupByParam "garden_topic" -}}
-{{- $introBefore := .Params.introBefore | default "A place for" -}}
-{{- $introHighlight := .Params.introHighlight | default "thoughts, ideas and essays" -}}
-{{- $introAfter := .Params.introAfter | default "I tend to keep close at hand." -}}
+{{- $topicData := .Site.Data.garden.topics -}}
 
-<div class="garden-page">
-  <header class="garden-hero">
-    {{- partial "breadcrumbs.html" . }}
-    <div class="garden-hero-shell">
-      <p class="garden-kicker">Digital Garden</p>
-      <h1 class="garden-title">{{ .Title }}</h1>
-      <p class="garden-tagline">
-        {{ $introBefore }}
-        <span class="garden-highlight">{{ $introHighlight }}</span>
-        {{ $introAfter }}
-      </p>
-      {{- with .Content }}
-      <div class="garden-intro">
-        {{ . }}
-      </div>
+<header class="page-header">
+  {{- partial "breadcrumbs.html" . }}
+  <h1>{{ .Title }}</h1>
+  {{- with .Content }}
+  <div class="garden-intro">{{ . }}</div>
+  {{- end }}
+</header>
+
+{{- if gt (len $pages) 0 }}
+<div class="garden-columns">
+  {{- range $groups }}
+  {{- $groupName := .Key | default "Unsorted" -}}
+  {{- $topic := index $topicData $groupName -}}
+  {{- $emoji := "🌱" -}}
+  {{- with $topic }}{{ $emoji = .emoji }}{{ end -}}
+  <section class="garden-topic">
+    <h2 class="garden-topic-title">
+      <span class="garden-topic-emoji">{{ $emoji }}</span>
+      {{ $groupName }}
+      <span class="garden-topic-count">{{ len .Pages }}</span>
+    </h2>
+    <ul class="garden-notes">
+      {{- range .Pages.ByTitle }}
+      <li>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      </li>
       {{- end }}
-    </div>
-  </header>
-
-  {{- if gt (len $pages) 0 }}
-  <div class="garden-groups">
-    {{- range $groups }}
-    {{- $groupName := .Key | default "Unsorted" -}}
-    <section class="garden-group">
-      <header class="garden-group-header">
-        <h2>{{ $groupName }}</h2>
-        <span class="garden-group-count">{{ len .Pages }}</span>
-      </header>
-      <ul class="garden-link-list">
-        {{- range .Pages.ByTitle }}
-        <li class="garden-link-item">
-          <a class="garden-link-card" href="{{ .RelPermalink }}">
-            <span class="garden-link-title">{{ .Title }}</span>
-            {{- with .Params.status }}
-            <span class="garden-link-status">{{ . | title }}</span>
-            {{- end }}
-            {{- with .Summary }}
-            <span class="garden-link-summary">{{ . | plainify | htmlUnescape }}</span>
-            {{- end }}
-          </a>
-        </li>
-        {{- end }}
-      </ul>
-    </section>
-    {{- end }}
-  </div>
-  {{- else }}
-  <section class="garden-empty-state">
-    <p>No notes planted yet.</p>
-    <p>Add one with <code>hugo new garden/my-note/index.md</code>.</p>
+    </ul>
   </section>
   {{- end }}
 </div>
+{{- else }}
+<p class="garden-empty">Nothing planted yet — check back soon.</p>
+{{- end }}
 
 {{- end }}
