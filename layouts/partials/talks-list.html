@@ -29,38 +29,63 @@
   margin-bottom: 1rem;
 }
 
-.filter-group label {
+.filter-group:last-child {
+  margin-bottom: 0;
+}
+
+.filter-toggle {
   font-weight: bold;
   display: block;
+  width: 100%;
   margin-bottom: 0.5rem;
+  padding: 0;
   cursor: pointer;
   user-select: none;
   color: var(--primary);
+  background: none;
+  border: none;
+  font-size: inherit;
+  font-family: inherit;
+  text-align: left;
+  transition: color 0.2s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.filter-group label:hover {
-  color: #4a90e2;
+.filter-toggle:hover {
+  color: var(--secondary);
 }
 
-.filter-group label::before {
+.filter-toggle:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.filter-toggle::before {
   content: '▼ ';
   display: inline-block;
-  transition: transform 0.2s;
+  transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.filter-group.collapsed label::before {
+.filter-group.collapsed .filter-toggle::before {
   transform: rotate(-90deg);
 }
 
 .filter-content {
-  max-height: 1500px;
+  display: grid;
+  grid-template-rows: 1fr;
   overflow: hidden;
-  transition: max-height 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: grid-template-rows 0.3s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  opacity: 1;
 }
 
 .filter-content.collapsed {
-  max-height: 0;
-  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  grid-template-rows: 0fr;
+  opacity: 0;
+}
+
+.filter-content-inner {
+  min-height: 0;
+  overflow: hidden;
 }
 
 .filter-tag {
@@ -71,31 +96,38 @@
   border: 2px solid var(--border);
   border-radius: 4px;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: background-color 0.15s cubic-bezier(0.25, 1, 0.5, 1),
+              border-color 0.15s cubic-bezier(0.25, 1, 0.5, 1),
+              color 0.15s cubic-bezier(0.25, 1, 0.5, 1),
+              transform 0.1s cubic-bezier(0.25, 1, 0.5, 1);
   font-size: 0.9rem;
   color: var(--primary);
 }
 
 .filter-tag:hover {
-  border-color: #4a90e2;
+  border-color: var(--primary);
   background: var(--entry);
 }
 
+.filter-tag:active {
+  transform: scale(0.95);
+}
+
 .filter-tag.active {
-  background: #4a90e2;
-  color: white;
-  border-color: #4a90e2;
+  background: var(--primary);
+  color: var(--theme);
+  border-color: var(--primary);
 }
 
 .filter-tag.clear {
-  background: #e74c3c;
-  color: white;
-  border-color: #e74c3c;
+  background: var(--secondary);
+  color: var(--theme);
+  border-color: var(--secondary);
 }
 
 .filter-tag.clear:hover {
-  background: #c0392b;
-  border-color: #c0392b;
+  background: var(--primary);
+  border-color: var(--primary);
 }
 
 .talk-item {
@@ -104,25 +136,23 @@
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background: var(--entry);
-  transition: all 0.3s ease-in-out, opacity 0.4s ease-in-out, transform 0.4s ease-in-out, max-height 0.4s ease-in-out, margin 0.4s ease-in-out;
+  transition: opacity 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+              transform 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+              box-shadow 0.2s cubic-bezier(0.25, 1, 0.5, 1);
   opacity: 1;
   transform: translateY(0);
-  max-height: 2000px;
-  overflow: hidden;
 }
 
 .talk-item.hidden {
   opacity: 0;
-  transform: translateY(-20px);
-  max-height: 0;
-  margin: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-  border: none;
+  transform: translateY(-10px);
+  position: absolute;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .talk-item:hover {
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 .talk-header {
@@ -153,19 +183,25 @@
 }
 
 .talk-year {
-  background: #3498db;
-  color: white;
+  background: var(--primary);
+  color: var(--theme);
 }
 
 .talk-conference {
-  background: #9b59b6;
-  color: white;
+  background: var(--secondary);
+  color: var(--theme);
+}
+
+.talk-date {
+  background: var(--code-bg);
+  color: var(--primary);
+  border: 1px solid var(--border);
 }
 
 .talk-topic {
   background: var(--code-bg);
   color: var(--primary);
-  border: 1px solid #3498db;
+  border: 1px solid var(--border);
 }
 
 .talk-description {
@@ -179,48 +215,97 @@
 }
 
 .talk-links a {
+  display: inline-block;
   margin-right: 1rem;
   text-decoration: none;
-  color: #4a90e2;
+  color: var(--primary);
   font-weight: 500;
+  transition: color 0.15s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .talk-links a:hover {
   text-decoration: underline;
+  color: var(--secondary);
 }
 
 .results-count {
   margin: 1rem 0;
   font-style: italic;
   color: var(--secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.no-results {
+  margin: 2rem 0;
+  padding: 2rem;
+  text-align: center;
+  color: var(--secondary);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+}
+
+/* Accessibility: respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .filter-toggle::before,
+  .filter-content,
+  .filter-tag,
+  .talk-item,
+  .talk-links a {
+    transition: none;
+  }
+  .filter-tag:active {
+    transform: none;
+  }
 }
 </style>
 
 <div class="talks-container">
-  <!-- Top Filters: Year and Conference -->
+  <!-- Filters -->
   <div class="talks-filters">
     <div class="filter-group collapsed">
-      <label onclick="toggleFilterGroup(this)">Filter by Year:</label>
+      <button type="button" class="filter-toggle" aria-expanded="false">Year</button>
       <div class="filter-content collapsed">
-        <span class="filter-tag clear" onclick="clearFilters()">Clear All</span>
-        {{ range $years }}
-          <span class="filter-tag year-filter" data-year="{{ . }}" onclick="toggleFilter(this, 'year')">{{ . }}</span>
-        {{ end }}
+        <div class="filter-content-inner">
+          {{ range $years }}
+            <span class="filter-tag year-filter" data-year="{{ . }}">{{ . }}</span>
+          {{ end }}
+        </div>
       </div>
     </div>
 
     <div class="filter-group collapsed">
-      <label onclick="toggleFilterGroup(this)">Filter by Conference:</label>
+      <button type="button" class="filter-toggle" aria-expanded="false">Conference</button>
       <div class="filter-content collapsed">
-        {{ range $conferences }}
-          <span class="filter-tag conference-filter" data-conference="{{ . }}" onclick="toggleFilter(this, 'conference')">{{ . }}</span>
-        {{ end }}
+        <div class="filter-content-inner">
+          {{ range $conferences }}
+            <span class="filter-tag conference-filter" data-conference="{{ . }}">{{ . }}</span>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+
+    <div class="filter-group collapsed">
+      <button type="button" class="filter-toggle" aria-expanded="false">Topic</button>
+      <div class="filter-content collapsed">
+        <div class="filter-content-inner">
+          {{ range $topics }}
+            <span class="filter-tag topic-filter" data-topic="{{ . }}">{{ . }}</span>
+          {{ end }}
+        </div>
       </div>
     </div>
   </div>
 
   <div class="results-count">
     Showing <span id="visible-count">{{ len $talks }}</span> of {{ len $talks }} talks
+    <span class="filter-tag clear" data-action="clear" style="display: none;">Clear filters</span>
+  </div>
+
+  <div class="no-results" style="display: none;">
+    No talks match the current filters. <span class="filter-tag clear" data-action="clear">Clear filters</span> to see all talks.
   </div>
 
   <!-- Talks List -->
@@ -238,7 +323,7 @@
             <span class="talk-badge talk-year">{{ .year }}</span>
             <span class="talk-badge talk-conference">{{ .conference }}</span>
             {{ if .date }}
-              <span class="talk-badge" style="background: var(--tertiary); color: var(--primary);">
+              <span class="talk-badge talk-date">
                 {{ dateFormat "January 2" .date }}
               </span>
             {{ end }}
@@ -268,18 +353,6 @@
         </div>
       </div>
     {{ end }}
-  </div>
-
-  <!-- Topic Filters (Below List) -->
-  <div class="talks-filters">
-    <div class="filter-group collapsed">
-      <label onclick="toggleFilterGroup(this)">Filter by Topic:</label>
-      <div class="filter-content collapsed">
-        {{ range $topics }}
-          <span class="filter-tag topic-filter" data-topic="{{ . }}" onclick="toggleFilter(this, 'topic')">{{ . }}</span>
-        {{ end }}
-      </div>
-    </div>
   </div>
 </div>
 
