@@ -14,7 +14,7 @@ There's something about the little pastina stars floating in a satisfying broth 
 
 The recipe is pretty foolproof as well.
 
-Garlic, onion, carrots, celery. 
+Garlic, onion, carrots, celery.
 
 Thyme, Bay Leaf, Stock.
 
