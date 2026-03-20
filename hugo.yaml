@@ -2,7 +2,10 @@ baseURL: "https://petersouter.xyz/"
 languageCode: "en-uk"
 defaultContentLanguage: "en-uk"
 title: "Angels && Daemons - https://petersouter.xyz"
-theme: "PaperMod"
+theme: "anatole"
+summarylength: 10
+enableEmoji: true
+enableRobotsTXT: true
 pagination:
   pagerSize: 5
 ignoreLogs:
@@ -21,67 +24,62 @@ taxonomies:
   category: "categories"
 
 params:
+  title: "Angels && Daemons"
   author: "Peter Souter"
-  description: "Tech blog by Peter Souter"
-  defaultTheme: "auto"
-  ShowReadingTime: true
-  ShowShareButtons: true
-  ShowPostNavLinks: true
-  ShowBreadCrumbs: true
-  ShowCodeCopyButtons: true
-  ShowToc: true
-  comments: true
-
-  homeInfoParams:
-    Title: "Angels && Daemons"
-    Content: "Tech blog by Peter Souter - Just some guy y'know?"
-
+  description: "Tech blog by Peter Souter - Just some guy y'know?"
+  profilePicture: "images/profile.jpg"
+  favicon: "favicons/"
+  mainSections:
+    - "post"
+  singleDateFormat: "2/1/2006"
+  indexDateFormat: "2/1/2006"
+  listDateFormat: "2/1/2006"
+  readMore: true
+  reversepagetitle: true
+  doNotLoadAnimations: false
   socialIcons:
-    - name: "github"
+    - icon: "fa-brands fa-github"
+      title: "GitHub"
       url: "https://github.com/petems"
-    - name: "linkedin"
+    - icon: "fa-brands fa-linkedin"
+      title: "LinkedIn"
       url: "https://www.linkedin.com/in/peter-souter-7bb67a38/"
-    - name: "bluesky"
+    - icon: "fa-brands fa-bluesky"
+      title: "Bluesky"
       url: "https://bsky.app/profile/petersouter.xyz"
-    - name: "twitter"
+    - icon: "fa-brands fa-twitter"
+      title: "Twitter"
       url: "https://twitter.com/petersouter"
-    - name: "rss"
+    - icon: "fa-solid fa-rss"
+      title: "RSS"
       url: "/feed.xml"
-
-  cover:
-    linkFullImages: true
-    responsiveImages: true
 
 menu:
   main:
     - identifier: "home"
       name: "Home"
       url: "/"
-      weight: 1
-    - identifier: "archives"
-      name: "Archives"
-      url: "/archives/"
-      weight: 2
+      weight: 100
+    - identifier: "posts"
+      name: "Posts"
+      url: "/post/"
+      weight: 200
     - identifier: "categories"
       name: "Categories"
       url: "/categories/"
-      weight: 3
+      weight: 300
     - identifier: "tags"
       name: "Tags"
       url: "/tags/"
-      weight: 4
+      weight: 400
     - identifier: "talks"
       name: "Talks"
       url: "/talks/"
-      weight: 5
+      weight: 500
     - identifier: "about"
       name: "About"
       url: "/about/"
-      weight: 6
-    - identifier: "search"
-      name: "Search"
-      url: "/search/"
-      weight: 7
+      weight: 600
 
 markup:
   highlight:
@@ -89,6 +87,9 @@ markup:
     guessSyntax: true
     style: "monokai"
     noClasses: true
+  goldmark:
+    renderer:
+      unsafe: true
 
 mediaTypes:
   text/markdown:
@@ -114,7 +115,6 @@ outputs:
     - "HTML"
     - "RSS"
     - "TXT"
-    - "JSON"
   page:
     - "HTML"
     - "Markdown"
