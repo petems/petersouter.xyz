@@ -19,7 +19,8 @@ function toggleFilterGroup(button) {
   const isCollapsed = filterGroup.classList.toggle('collapsed');
 
   filterContent.classList.toggle('collapsed');
-  button.setAttribute('aria-expanded', !isCollapsed);
+  filterContent.setAttribute('aria-hidden', String(isCollapsed));
+  button.setAttribute('aria-expanded', String(!isCollapsed));
 }
 
 /**
@@ -33,9 +34,11 @@ function toggleFilter(element, type) {
   if (activeFilters[type].has(value)) {
     activeFilters[type].delete(value);
     element.classList.remove('active');
+    element.setAttribute('aria-pressed', 'false');
   } else {
     activeFilters[type].add(value);
     element.classList.add('active');
+    element.setAttribute('aria-pressed', 'true');
   }
 
   applyFilters();
@@ -53,6 +56,9 @@ function clearFilters() {
 
   document.querySelectorAll('.filter-tag').forEach(tag => {
     tag.classList.remove('active');
+    if (tag.hasAttribute('aria-pressed')) {
+      tag.setAttribute('aria-pressed', 'false');
+    }
   });
 
   applyFilters();
@@ -134,8 +140,9 @@ function applyFilters() {
 
         // Clean up delay after transition completes
         if (useStagger) {
-          const delay = (staggerIndex * 30) + 300;
-          setTimeout(() => { talk.style.transitionDelay = ''; }, delay);
+          talk.addEventListener('transitionend', () => {
+            talk.style.transitionDelay = '';
+          }, { once: true });
         }
       }
       visibleCount++;
@@ -197,28 +204,24 @@ function initTalksFilters() {
     });
   });
 
-  // Bind filter tags (year, conference, topic)
-  document.querySelectorAll('.filter-tag.year-filter').forEach(tag => {
-    tag.addEventListener('click', function () {
-      toggleFilter(this, 'year');
-    });
-  });
+  // Use event delegation for filter tags and clear buttons
+  document.querySelector('.talks-container')?.addEventListener('click', (event) => {
+    const target = event.target.closest('.filter-tag');
+    if (!target) return;
 
-  document.querySelectorAll('.filter-tag.conference-filter').forEach(tag => {
-    tag.addEventListener('click', function () {
-      toggleFilter(this, 'conference');
-    });
-  });
+    if (target.classList.contains('clear')) {
+      clearFilters();
+      return;
+    }
 
-  document.querySelectorAll('.filter-tag.topic-filter').forEach(tag => {
-    tag.addEventListener('click', function () {
-      toggleFilter(this, 'topic');
-    });
-  });
+    let filterType = null;
+    if (target.dataset.year) filterType = 'year';
+    else if (target.dataset.conference) filterType = 'conference';
+    else if (target.dataset.topic) filterType = 'topic';
 
-  // Bind clear button
-  document.querySelectorAll('.filter-tag.clear').forEach(tag => {
-    tag.addEventListener('click', clearFilters);
+    if (filterType) {
+      toggleFilter(target, filterType);
+    }
   });
 }
 

@@ -101,7 +101,13 @@
               color 0.15s cubic-bezier(0.25, 1, 0.5, 1),
               transform 0.1s cubic-bezier(0.25, 1, 0.5, 1);
   font-size: 0.9rem;
+  font-family: inherit;
   color: var(--primary);
+}
+
+.filter-tag:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
 }
 
 .filter-tag:hover {
@@ -266,33 +272,33 @@
   <!-- Filters -->
   <div class="talks-filters">
     <div class="filter-group collapsed">
-      <button type="button" class="filter-toggle" aria-expanded="false">Year</button>
-      <div class="filter-content collapsed">
+      <button type="button" class="filter-toggle" aria-expanded="false" aria-controls="filter-panel-year">Year</button>
+      <div id="filter-panel-year" class="filter-content collapsed" aria-hidden="true">
         <div class="filter-content-inner">
           {{ range $years }}
-            <span class="filter-tag year-filter" data-year="{{ . }}">{{ . }}</span>
+            <button type="button" class="filter-tag year-filter" data-year="{{ . }}" aria-pressed="false">{{ . }}</button>
           {{ end }}
         </div>
       </div>
     </div>
 
     <div class="filter-group collapsed">
-      <button type="button" class="filter-toggle" aria-expanded="false">Conference</button>
-      <div class="filter-content collapsed">
+      <button type="button" class="filter-toggle" aria-expanded="false" aria-controls="filter-panel-conference">Conference</button>
+      <div id="filter-panel-conference" class="filter-content collapsed" aria-hidden="true">
         <div class="filter-content-inner">
           {{ range $conferences }}
-            <span class="filter-tag conference-filter" data-conference="{{ . }}">{{ . }}</span>
+            <button type="button" class="filter-tag conference-filter" data-conference="{{ . }}" aria-pressed="false">{{ . }}</button>
           {{ end }}
         </div>
       </div>
     </div>
 
     <div class="filter-group collapsed">
-      <button type="button" class="filter-toggle" aria-expanded="false">Topic</button>
-      <div class="filter-content collapsed">
+      <button type="button" class="filter-toggle" aria-expanded="false" aria-controls="filter-panel-topic">Topic</button>
+      <div id="filter-panel-topic" class="filter-content collapsed" aria-hidden="true">
         <div class="filter-content-inner">
           {{ range $topics }}
-            <span class="filter-tag topic-filter" data-topic="{{ . }}">{{ . }}</span>
+            <button type="button" class="filter-tag topic-filter" data-topic="{{ . }}" aria-pressed="false">{{ . }}</button>
           {{ end }}
         </div>
       </div>
@@ -301,15 +307,15 @@
 
   <div class="results-count">
     Showing <span id="visible-count">{{ len $talks }}</span> of {{ len $talks }} talks
-    <span class="filter-tag clear" data-action="clear" style="display: none;">Clear filters</span>
+    <button type="button" class="filter-tag clear" data-action="clear" style="display: none;">Clear filters</button>
   </div>
 
   <div class="no-results" style="display: none;">
-    No talks match the current filters. <span class="filter-tag clear" data-action="clear">Clear filters</span> to see all talks.
+    No talks match the current filters. <button type="button" class="filter-tag clear" data-action="clear">Clear filters</button> to see all talks.
   </div>
 
   <!-- Talks List -->
-  <div class="talks-list">
+  <div class="talks-list" style="position: relative;">
     {{ range $talks }}
       <div class="talk-item"
            data-year="{{ .year }}"
