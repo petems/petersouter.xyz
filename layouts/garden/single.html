@@ -8,7 +8,7 @@
     <div class="post-description">{{ .Description | markdownify }}</div>
     {{- end }}
     <div class="garden-meta">
-      {{- with .Params.garden_topic }}
+      {{- with .CurrentSection.Title }}
       <span class="garden-status">{{ . }}</span>
       {{- end }}
       {{- with .Params.status }}
