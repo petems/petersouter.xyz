@@ -1,36 +1,46 @@
-{{- define "main" }}
-
-<article class="post-single">
-  <header class="post-header">
-    {{- partial "breadcrumbs.html" . }}
-    <h1 class="post-title">{{ .Title }}</h1>
-    {{- if .Description }}
-    <div class="post-description">{{ .Description | markdownify }}</div>
-    {{- end }}
-    <div class="garden-meta">
-      {{- with .CurrentSection.Title }}
-      <span class="garden-status">{{ . }}</span>
-      {{- end }}
-      {{- with .Params.status }}
-      <span class="garden-status">{{ . }}</span>
-      {{- end }}
-      {{- with .Date }}
-      <time datetime="{{ .Format "2006-01-02" }}">{{ .Format "2 January 2006" }}</time>
-      {{- end }}
+{{ define "header" }}
+<style type="text/css">
+    header.intro-header {
+        background-image: url('{{ if .Params.image }}{{ .Params.image | relURL }}{{ else }}{{ .Site.Params.header_image | relURL}}{{ end }}')
+    }
+</style>
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>{{ .Title }}</h1>
+                    {{- if .Description }}
+                    <h2 class="subheading">{{ .Description | markdownify }}</h2>
+                    {{- end }}
+                    <span class="meta">
+                        {{- with .CurrentSection.Title }}
+                        <span class="garden-status">{{ . }}</span> &middot;
+                        {{- end }}
+                        {{- with .Params.status }}
+                        <span class="garden-status">{{ . }}</span> &middot;
+                        {{- end }}
+                        {{- with .Date }}
+                        <time datetime="{{ .Format "2006-01-02" }}">{{ .Format "Monday, January 2, 2006" }}</time>
+                        {{- end }}
+                    </span>
+                </div>
+            </div>
+        </div>
     </div>
-  </header>
+</header>
+{{ end }}
 
-  {{- if .Content }}
-  <div class="post-content">
-    {{- if not (.Param "disableAnchoredHeadings") }}
-    {{- partial "anchored_headings.html" .Content -}}
-    {{- else }}{{ .Content }}{{ end }}
-  </div>
-  {{- end }}
-
-  <footer class="post-footer">
-    <a class="garden-backlink" href="{{ "/garden/" | relURL }}">&larr; Back to Garden</a>
-  </footer>
+{{ define "main" }}
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
+                {{ .Content }}
+                <hr>
+                <a href="{{ "/garden/" | relURL }}">&larr; Back to Garden</a>
+            </div>
+        </div>
+    </div>
 </article>
-
-{{- end }}
+{{ end }}

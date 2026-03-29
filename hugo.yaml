@@ -1,124 +1,99 @@
 baseURL: "https://petersouter.xyz/"
 languageCode: "en-uk"
 defaultContentLanguage: "en-uk"
-title: "Angels && Daemons - https://petersouter.xyz"
-theme: "PaperMod"
+title: "Angels && Daemons"
+theme: "hugo-theme-cleanwhite"
 pagination:
-  pagerSize: 5
+    pagerSize: 5
 ignoreLogs:
-  - warning-goldmark-raw-html
+    - warning-goldmark-raw-html
 
 services:
-  disqus:
-    shortname: "petersouter"
+    disqus:
+        shortname: "petersouter"
 
 permalinks:
-  post: "/:title/"
-  page: "/:title/"
+    post: "/:title/"
+    page: "/:title/"
 
 taxonomies:
-  tag: "tags"
-  category: "categories"
+    tag: "tags"
+    category: "categories"
 
 params:
-  author: "Peter Souter"
-  description: "Tech blog by Peter Souter"
-  defaultTheme: "auto"
-  ShowReadingTime: true
-  ShowShareButtons: true
-  ShowPostNavLinks: true
-  ShowBreadCrumbs: true
-  ShowCodeCopyButtons: true
-  ShowToc: true
-  comments: true
+    header_image: "img/home-bg.jpg"
+    SEOTitle: "Angels && Daemons | petersouter.xyz"
+    description: "A blog by Peter Souter"
+    slogan: "Just some guy y'know?"
+    image_404: "img/404-bg.jpg"
+    title_404: "Page not found :("
+    omit_categories: true
+    auto_theme: true
+    dark_mode_toggle: true
 
-  homeInfoParams:
-    Title: "Angels && Daemons"
-    Content: "Tech blog by Peter Souter - Just some guy y'know?"
+    sidebar_about_description: "Tech blog by Peter Souter - Just some guy y'know?"
+    sidebar_avatar: "img/avatar.jpg"
 
-  socialIcons:
-    - name: "github"
-      url: "https://github.com/petems"
-    - name: "linkedin"
-      url: "https://www.linkedin.com/in/peter-souter-7bb67a38/"
-    - name: "bluesky"
-      url: "https://bsky.app/profile/petersouter.xyz"
-    - name: "twitter"
-      url: "https://twitter.com/petersouter"
-    - name: "rss"
-      url: "/feed.xml"
+    featured_tags: true
+    featured_condition_size: 1
 
-  cover:
-    linkFullImages: true
-    responsiveImages: true
+    about_me: true
 
-menu:
-  main:
-    - identifier: "home"
-      name: "Home"
-      url: "/"
-      weight: 1
-    - identifier: "archives"
-      name: "Archives"
-      url: "/archives/"
-      weight: 2
-    - identifier: "garden"
-      name: "Garden"
-      url: "/garden/"
-      weight: 3
-    - identifier: "categories"
-      name: "Categories"
-      url: "/categories/"
-      weight: 4
-    - identifier: "tags"
-      name: "Tags"
-      url: "/tags/"
-      weight: 5
-    - identifier: "talks"
-      name: "Talks"
-      url: "/talks/"
-      weight: 6
-    - identifier: "about"
-      name: "About"
-      url: "/about/"
-      weight: 7
-    - identifier: "search"
-      name: "Search"
-      url: "/search/"
-      weight: 8
+    social:
+        rss: true
+        email: "peter@petersouter.co.uk"
+        github: "https://github.com/petems"
+        linkedin: "https://www.linkedin.com/in/peter-souter-7bb67a38/"
+        twitter: "https://twitter.com/petersouter"
+        mastodon: "https://bsky.app/profile/petersouter.xyz"
+
+    additional_menus:
+        - title: "ARCHIVE"
+          href: "/archives/"
+        - title: "GARDEN"
+          href: "/garden/"
+        - title: "TALKS"
+          href: "/talks/"
+        - title: "ABOUT"
+          href: "/about/"
 
 markup:
-  highlight:
-    codeFences: true
-    guessSyntax: true
-    style: "monokai"
-    noClasses: true
+    highlight:
+        codeFences: true
+        guessSyntax: true
+        style: "dracula"
+        noClasses: true
+    goldmark:
+        renderer:
+            unsafe: true
+    tableOfContents:
+        endLevel: 2
+        startLevel: 1
 
 mediaTypes:
-  text/markdown:
-    suffixes:
-      - "md"
+    text/markdown:
+        suffixes:
+            - "md"
 
 outputFormats:
-  RSS:
-    baseName: "feed"
-  Markdown:
-    mediaType: "text/markdown"
-    isPlainText: true
-    isHTML: false
-    baseName: "index"
-    rel: "alternate"
-  TXT:
-    mediaType: "text/plain"
-    baseName: "llms"
-    isPlainText: true
+    RSS:
+        baseName: "feed"
+    Markdown:
+        mediaType: "text/markdown"
+        isPlainText: true
+        isHTML: false
+        baseName: "index"
+        rel: "alternate"
+    TXT:
+        mediaType: "text/plain"
+        baseName: "llms"
+        isPlainText: true
 
 outputs:
-  home:
-    - "HTML"
-    - "RSS"
-    - "TXT"
-    - "JSON"
-  page:
-    - "HTML"
-    - "Markdown"
+    home:
+        - "HTML"
+        - "RSS"
+        - "TXT"
+    page:
+        - "HTML"
+        - "Markdown"
