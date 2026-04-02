@@ -23,15 +23,17 @@ Quick update from me! I've not got a big thesis or a grand narrative this time r
 
 I mentioned in my [last ramble](/post/i-failed-but-feel-good/) that I wanted a place for all those smaller ideas that don't warrant a full blog post. Well, I went and built it: a [garden section](/garden/) on the site.
 
-I've written a [longer post about the thinking behind it](/post/my-little-thoughts-garden/), but the short version is: I had all these seedlings rattling around in my notes — recommendations, half-formed opinions, lists of things I like — and they were just sitting there doing nothing. The garden gives them somewhere to live and breathe without the pressure of being a Proper Post&trade;.
+I had all these seedlings rattling around in my notes - recommendations, half-formed opinions, lists of things I like - and they were just sitting there doing nothing. The garden gives them somewhere to live and breathe without the pressure of being a Proper Post&trade;.
 
-It's been surprisingly satisfying for such a simple idea. Some of them might grow into full blog posts eventually, some are just a paragraph that I wanted to get out of my head, and that's completely fine. It's scratching that itch of wanting to write something down without building an entire article around it.
+It's been surprisingly satisfying for such a simple idea. Some of them might grow into full blog posts eventually, some are just a paragraph that I wanted to get out of my head, and that's completely fine. Some are literally just an excuse to show a photo I took, or a link I can reference and send to someone on a topic. 
 
-I'm trying to punch through that overthinking and just Get Stuff Done and this makes it super easy.
+It's scratching that itch of wanting to write something down without building an entire article around it.
+
+I'm trying to punch through that overthinking and just "Get Stuff Done" and this makes it super easy.
 
 ## Claude Skills as a Blog Editor
 
-I've been experimenting with using Claude Code's [Skills](https://docs.anthropic.com/en/docs/claude-code/skills) feature to help with the blogging process. Specifically, I've set up a couple of custom skills that act as editorial reviewers for my posts — one for [technical content](https://github.com/petems/petersouter.xyz/tree/master/.claude/skills/tech-blog-editor) and one for [personal/non-tech posts](https://github.com/petems/petersouter.xyz/tree/master/.claude/skills/non-tech-blog-editor).
+I've been experimenting with using Claude Code's [Skills](https://docs.anthropic.com/en/docs/claude-code/skills) feature to help with the blogging process. Specifically, I've set up a couple of custom skills that act as editorial reviewers for my posts - one for [technical content](https://github.com/petems/petersouter.xyz/tree/master/.claude/skills/tech-blog-editor) and one for [personal/non-tech posts](https://github.com/petems/petersouter.xyz/tree/master/.claude/skills/non-tech-blog-editor).
 
 I've already used it to review one of my recent posts, and it was genuinely useful. It caught some silly mistakes I'd missed, but also gave some more thoughtful structural feedback that made me reconsider how I'd framed a few sections.
 
@@ -59,4 +61,6 @@ Like a fish one could say!
 
 ## That's It, Really
 
-Told you it was a quick one. Garden's growing, AI's editing, grass is being touched, books are being read. See you in the next one!
+Told you it was a quick one. Garden's growing, AI's editing, grass is being touched, books are being read. 
+
+See you in the next one!
