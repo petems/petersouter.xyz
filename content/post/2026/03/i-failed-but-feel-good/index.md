@@ -100,7 +100,7 @@ And maybe it wasn't just one...
 
 Honestly I was spinning my wheels at this point, with 3 earlish drafts across _wildly_ different topics:
 
-* A tribute to [Terrance Gore](https://en.wikipedia.org/wiki/Terrance_Gore) who had tragically passed in the middle of my writing spree
+* A tribute to [Terrance Gore](https://www.mlb.com/video/hot-stove-on-the-passing-of-terrance-gore) who had tragically passed in the middle of my writing spree
 * A pondering on Staying Human In The Age of AI
 * ... And a post about cool and unusual flags from across the world.
 
