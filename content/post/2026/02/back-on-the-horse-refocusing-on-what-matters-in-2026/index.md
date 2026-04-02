@@ -10,7 +10,9 @@ title = "Back on the Horse: Refocusing on What Matters in 2026"
 keywords = ["blogging", "ai burnout", "productivity", "testcon", "website updates"]
 
 [cover]
-  image = "/images/2026/02/bikes-landscape-cover.jpg"
+  image = "saddle-baqueano-full_unsplash-NMril_t8Dt4.jpg"
+  alt = "man riding on horse"
+  caption = "[Photo](https://unsplash.com/photos/NMril_t8Dt4?utm_source=unsplash_mcp&utm_medium=referral) by [Diego Vitali](https://unsplash.com/@dmacros?utm_source=unsplash_mcp&utm_medium=referral) on [Unsplash](https://unsplash.com?utm_source=unsplash_mcp&utm_medium=referral)"
 
 +++
 
