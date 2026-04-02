@@ -62,7 +62,7 @@ So let's nuke that (feel free to go read the post from [the commit](https://gith
 
 As for the LinkedIn punishment... well, a bet's a bet...
 
-![My LinkedIn Punishment will be live by the time you read this...](bet-is-a-bet.png)
+![My LinkedIn Punishment will be live by the time you read this...](bet-is-a-bet.jpg)
 
 But doing the thing and failing actually helped me reset a bit. Throughout this whole thing, the stakes were incredibly low - it was just for me, nothing work or family related, and my main punishment for failure is a little bit of cringe.
 
