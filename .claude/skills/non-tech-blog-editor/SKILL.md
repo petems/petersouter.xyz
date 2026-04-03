@@ -82,6 +82,7 @@ When flagging AI tells, quote the specific passage and suggest a rewrite that so
 Review and apply Peter's writing voice from `.claude/context/writing-style.md`:
 
 ### Voice Characteristics
+
 - **First-person, conversational, personal**: Use "I've been", "I was tinkering", "I thought"
 - **Informal and friendly**: Use contractions liberally, parenthetical asides, em-dashes
 - **Self-deprecating humor**: Comfortable admitting gaps and mistakes
@@ -89,11 +90,13 @@ Review and apply Peter's writing voice from `.claude/context/writing-style.md`:
 - **Honest and candid**: Not afraid to discuss struggles or incomplete projects
 
 ### Structural Patterns
+
 - **Opening hooks**: Start with a personal experience, problem you hit, or observation
 - **Clear section organization**: H2/H3 headers, sometimes playful ("Enter Boxen", "Turtles all the way down")
 - **Closing style**: Practical takeaway, honest reflection, or forward-looking thought
 
 ### What to Avoid
+
 - Overusing emojis
 - No corporate-speak or marketing language
 - No unnecessary preamble ("In conclusion...")

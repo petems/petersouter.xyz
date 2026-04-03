@@ -10,9 +10,9 @@ Words that spiked in frequency after 2023, corroborated by peer-reviewed studies
 
 > additionally, align with, crucial, delve, emphasizing, enduring, enhance, fostering, garner, highlight (verb), interplay, intricate/intricacies, key (adjective), landscape (abstract), multifaceted, nuanced, pivotal, realm, showcase, tapestry (abstract), testament, underscore (verb), valuable, vibrant
 
-One or two in a full email is fine. A cluster of 3+ in a section means the LLM was on autopilot.
+One or two in a full post is fine. A cluster of 3+ in a section means the LLM was on autopilot.
 
-**Email-specific note:** Sales engineering emails are particularly susceptible to "leverage", "robust", "seamless", "cutting-edge", and "best-in-class". These are vendor cliches even without AI involvement, but LLMs reach for them reflexively.
+**Blog-specific note:** Tech blog posts are particularly susceptible to "leverage", "robust", "seamless", "cutting-edge", and "best-in-class". These are vendor cliches even without AI involvement, but LLMs reach for them reflexively.
 
 ## Inflated significance
 
@@ -28,7 +28,7 @@ LLMs inflate importance with a small repertoire of phrases. Scan for:
 - "deeply rooted"
 - "enduring/lasting legacy"
 
-**The fix:** Say what actually happened. Specific facts beat vague significance. In customer emails, concrete capabilities and measurable outcomes are always more persuasive than inflated language.
+**The fix:** Say what actually happened. Specific facts beat vague significance. In blog posts, concrete details and real experiences are always more compelling than inflated language.
 
 ## Superficial -ing analysis
 
@@ -41,7 +41,7 @@ LLMs tack present participle phrases onto sentences as fake depth:
 - "...contributing to the ecosystem"
 - "...fostering a sense of community"
 
-**The fix:** If the -ing clause adds no information the reader didn't already have, cut it. Customer emails should be concise - trailing participle phrases pad length without adding value.
+**The fix:** If the -ing clause adds no information the reader didn't already have, cut it. Blog posts should be concise - trailing participle phrases pad length without adding value.
 
 ## Promotional language
 
@@ -49,7 +49,7 @@ Words that read like a travel brochure or sales deck:
 
 > breathtaking, stunning, nestled, in the heart of, boasts a, vibrant, rich (figurative), profound, groundbreaking (figurative), renowned, showcasing, exemplifies, commitment to, natural beauty, rich cultural tapestry/heritage
 
-Good SE emails are enthusiastic but specific. "APM reduced their P99 latency from 800ms to 120ms" beats "our groundbreaking, industry-leading APM solution delivers a profound improvement in application performance."
+Good blog writing is enthusiastic but specific. "I cut the deploy time from 8 minutes to 45 seconds" beats "this groundbreaking approach delivers a profound improvement in deployment performance."
 
 ## Vague authority
 
@@ -61,7 +61,7 @@ LLMs attribute claims to phantom experts:
 - "Some critics contend..."
 - "Several publications have noted..."
 
-**The fix:** Name the source or drop the attribution. Link to the actual documentation, blog post, or case study. Customers trust specificity over anonymous authority.
+**The fix:** Name the source or drop the attribution. Link to the actual documentation, blog post, or case study. Readers trust specificity over anonymous authority.
 
 ## Formulaic transitions
 
@@ -69,7 +69,7 @@ These transitions read like a five-paragraph essay:
 
 > moreover, furthermore, in addition, on the other hand, in contrast, it's important to note, it is worth mentioning, no discussion would be complete without
 
-Professional email uses direct transitions or none at all. A line break between topics is often better than a forced connector.
+Good blog writing uses direct transitions or none at all. A line break between topics is often better than a forced connector.
 
 ## Negative parallelism overuse
 
@@ -79,7 +79,7 @@ The "not X, it's Y" construction:
 - "Not only... but also..."
 - "It isn't X - it's Y"
 
-**Nuance:** This pattern works sparingly for genuine emphasis. The tell is when every other paragraph uses it, or when it creates false profundity from obvious contrasts. In customer emails, one instance per message is the maximum before it becomes a tic.
+**Nuance:** This pattern works sparingly for genuine emphasis. The tell is when every other paragraph uses it, or when it creates false profundity from obvious contrasts. One instance per post section is the maximum before it becomes a tic.
 
 ## Rule of three
 
@@ -90,7 +90,7 @@ LLMs default to grouping things in threes:
 
 When every list has exactly three items, it's suspicious. Vary the count. Two items is fine. Four is fine. One is fine.
 
-**Email-specific note:** Feature lists in customer emails should contain exactly as many items as are relevant - no padding to hit three, no trimming to avoid four.
+**Blog-specific note:** Lists in blog posts should contain exactly as many items as are relevant - no padding to hit three, no trimming to avoid four.
 
 ## Copula avoidance
 
@@ -103,7 +103,7 @@ LLMs replace "is" with fancier verbs:
 - "boasts" instead of "has"
 - "features" instead of "has"
 
-Sometimes the fancy verb is right. Usually "is" is better. In customer emails, directness builds trust.
+Sometimes the fancy verb is right. Usually "is" is better. In blog writing, directness builds trust.
 
 ## Elegant variation
 
@@ -111,7 +111,7 @@ LLMs use increasingly elaborate synonyms to avoid repeating a word:
 
 > the tool - the solution - the platform - the offering - the ecosystem
 
-If you're talking about Datadog, just say Datadog again. If you're talking about APM, say APM. Readers don't mind repetition of concrete nouns. They notice when you cycle through thesaurus entries.
+If you're talking about Hugo, just say Hugo again. If you're talking about Terraform, say Terraform. Readers don't mind repetition of concrete nouns. They notice when you cycle through thesaurus entries.
 
 ## Em dash overuse
 
@@ -124,7 +124,7 @@ LLMs use em dashes at 2-3x the rate of human writers. They substitute them for c
 - **Bullet + bold header + colon**: the "**Term:** Description of term" pattern in every list
 - **Emoji decoration**: emoji before every section heading or bullet point
 
-**Email-specific note:** Customer emails should use formatting sparingly. A wall of bold text and bullet points can feel like a product datasheet rather than a personal response. Use formatting to aid scanning, not to decorate.
+**Blog-specific note:** Blog posts should use formatting sparingly. A wall of bold text and bullet points can feel like a product datasheet rather than a personal post. Use formatting to aid scanning, not to decorate.
 
 ## Challenges-and-future formula
 
@@ -136,4 +136,4 @@ The rigid "Despite its success, X faces challenges... Despite these challenges, 
 2. Read through once scanning for vocabulary clusters
 3. Read through again checking structural patterns (parallelism density, list uniformity, transition formality)
 4. For each hit: Is this a deliberate rhetorical choice, or did the LLM default to it? If you can't articulate why the fancy version is better, use the plain one
-5. When in doubt, read it aloud. If it sounds like a press release, rewrite it. If it sounds like something you'd actually say to a customer face-to-face, keep it
+5. When in doubt, read it aloud. If it sounds like a press release, rewrite it. If it sounds like something you'd actually say in a conversation, keep it
