@@ -194,10 +194,25 @@ GitHub Actions will automatically optimise images on commit — no manual compre
 - [ ] `categories` uses established values only
 - [ ] Image paths point to real files or are `""`
 
+#### AI Writing Tells
+
+Before finalising, review the draft against `.claude/context/ai-writing-tells.md`. Scan for and eliminate:
+
+- Clusters of AI-overrepresented vocabulary ("delve", "crucial", "multifaceted", "landscape", "tapestry", "underscore", "foster")
+- Inflated significance phrases ("stands as a testament", "plays a pivotal role")
+- Trailing -ing phrases that add no information ("...ensuring a seamless experience")
+- Formulaic transitions ("moreover", "furthermore", "it's important to note")
+- Every list having exactly three items — vary the count
+- Copula avoidance ("serves as" when "is" is more direct)
+- Elegant variation (cycling through synonyms instead of repeating the concrete noun)
+
+The signal is density — one instance is fine; a cluster in a section means rewrite that section in Peter's natural voice.
+
 #### Content Quality
 
 - [ ] `<!--more-->` is present after opening paragraph
 - [ ] British English spelling used throughout
+- [ ] No AI writing tell clusters (checked against `.claude/context/ai-writing-tells.md`)
 - [ ] Internal links to existing posts where relevant
 - [ ] External links to authoritative sources
 - [ ] No broken markdown links or image references

@@ -97,7 +97,13 @@ Once the full draft is complete:
    - No corporate-speak or marketing language
    - Clear, scannable structure with headers and lists
 
-3. **Verify content quality**:
+3. **Scan for AI writing tells** (see `.claude/context/ai-writing-tells.md`):
+   - Check for clusters of AI-overrepresented vocabulary ("delve", "crucial", "multifaceted", "landscape", "tapestry", "underscore", "foster")
+   - Remove inflated significance phrases, trailing -ing filler, and formulaic transitions
+   - Vary list lengths (not always three items), prefer "is" over "serves as"/"stands as"
+   - The signal is density — one instance is fine; a cluster means rewrite in Peter's voice
+
+4. **Verify content quality**:
    - Technical claims are accurate
    - Code examples work and have context
    - Personal voice maintained throughout
