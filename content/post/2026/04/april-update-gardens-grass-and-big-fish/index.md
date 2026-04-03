@@ -35,7 +35,9 @@ I'm trying to punch through that overthinking and just "Get Stuff Done" and this
 
 I've been experimenting with using Claude Code's [Skills](https://docs.anthropic.com/en/docs/claude-code/skills) feature to help with the blogging process. Specifically, I've set up a couple of custom skills that act as editorial reviewers for my posts - one for [technical content](https://github.com/petems/petersouter.xyz/tree/master/.claude/skills/tech-blog-editor) and one for [personal/non-tech posts](https://github.com/petems/petersouter.xyz/tree/master/.claude/skills/non-tech-blog-editor).
 
-I've already used it to review one of my recent posts, and it was genuinely useful. It caught some silly mistakes I'd missed, but also gave some more thoughtful structural feedback that made me reconsider how I'd framed a few sections.
+I've already used it to review one of my recent posts, and it was genuinely useful. It caught some silly mistakes I'd missed, but also gave some more thoughtful structural feedback that made me reconsider how I'd framed a few sections. You can see the [actual PR where I applied the feedback](https://github.com/petems/petersouter.xyz/pull/161) if you're curious.
+
+![An example of Claude Code reviewing a blog post](claude-review-example.png)
 
 Using AI as a *proofreader* and *editor* feels very different from using it as a *writer*. A second pair of eyes seems like the best way to make sure the voice is still mine, but still getting a nudge on the bits where I've been sloppy or unclear.
 
