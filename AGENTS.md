@@ -70,6 +70,7 @@ Create the directory and `index.md` file directly:
 
 ```sh
 mkdir -p content/post/YYYY/MM/post-slug
+touch content/post/YYYY/MM/post-slug/index.md
 ```
 
 ### Frontmatter (TOML with `+++` delimiters)
@@ -78,7 +79,7 @@ mkdir -p content/post/YYYY/MM/post-slug
 +++
 author = "Peter Souter"
 categories = ["Tech"]
-date = 2026-03-02T19:08:19Z
+date = 2026-03-02T19:08:19+00:00
 description = "Short description of the post"
 draft = false
 slug = "post-slug"
@@ -123,6 +124,7 @@ content/garden/
 
 ```sh
 mkdir -p content/garden/topic-name/entry-name
+touch content/garden/topic-name/entry-name/index.md
 ```
 
 ### Frontmatter (YAML with `---` delimiters)
@@ -130,7 +132,7 @@ mkdir -p content/garden/topic-name/entry-name
 ```yaml
 ---
 title: "Entry Title"
-date: 2026-03-20T00:00:00Z
+date: 2026-03-20T00:00:00+00:00
 description: "Short description."
 garden_topic: "Topic Name"
 status: "Seedling"
