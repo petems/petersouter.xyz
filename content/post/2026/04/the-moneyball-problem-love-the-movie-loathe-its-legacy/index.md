@@ -1,15 +1,17 @@
 +++
 author = "Peter Souter"
 categories = ["Personal"]
-date = 2026-03-10T11:14:05Z
+date = 2026-04-03
 description = "Moneyball is probably one of the best baseball movies ever made. It's also the origin myth for everything that's made modern baseball less fun to watch. Talking about both at the same time is... complicated."
 draft = true
-slug = "why-moneyball-is-such-a-tricky-movie-to-talk-about-as-a-baseball-fan"
+slug = "the-moneyball-problem-love-the-movie-loathe-its-legacy"
 tags = ["Baseball", "Movies", "Moneyball", "Analytics", "Sport"]
-title = "Why Moneyball Is Such a Tricky Movie to Talk About as a Baseball Fan"
+title = "The Moneyball Problem: Love the Movie, Loathe Its Legacy"
 keywords = ["moneyball", "baseball", "analytics", "three true outcomes", "oakland athletics"]
-thumbnailImage = ""
-coverImage = ""
+[cover]
+image = "moneyball-stadium_unsplash-kkrNHg62wjQ.jpg"
+alt = "A baseball stadium filled with fans"
+caption = "Photo by [Caleb Woods](https://unsplash.com/photos/kkrNHg62wjQ) on [Unsplash](https://unsplash.com)"
 +++
 
 I watched [a video essay by Modern MBA](https://youtu.be/evArab8oOoo?si=2DoDzEA_qpMhFs4I) the other day about how the *Moneyball* mindset — not just the book or the film, but the whole philosophy — escaped baseball and infected corporate America. Their argument is that what *The Social Network* was for nerds, *Moneyball* was for suits. The film spread through business schools and boardrooms, and the message that landed wasn't "find market inefficiencies" — it was "winning is a maths problem, not a creative one."
@@ -34,6 +36,20 @@ The entire stadium is in that horrible, sinking, "oh no, we've bottled it" mode.
 
 In the film, [Chris Pratt plays Hatteberg](https://www.imdb.com/title/tt1210166/characters/nm0695435/) — and this is pre-*Guardians of the Galaxy*, pre-*Jurassic World*, pre-overexposure Chris Pratt. He's just this slightly doughy, earnest, likeable guy who can't believe he's actually doing this. He [absolutely nails Hatteberg's real reaction](https://www.mlb.com/cut4/scott-hattebergs-moneyball-hr-extends-streak/c-147158164) — the arm raised, the look back towards his teammates gathering at home plate — and honestly, every time I watch it, I still get chills. If you watch the real footage side by side with the movie, it's uncanny. Hatteberg himself came to the set to help Pratt with the role, and it shows.
 
+Here's the whole sequence, [GIF by GIF](https://www.mlb.com/cut4/scott-hattebergs-moneyball-hr-extends-streak/c-147158164):
+
+![The pitch](01-the-pitch.gif)
+
+![Contact](02-the-contact.gif)
+
+![Ball flight](03-ball-flight.gif)
+
+![Over the fence](05-over-the-fence.gif)
+
+![Rounding the bases](07-rounding-bases.gif)
+
+![Team celebration at home plate](08-team-celebration.gif)
+
 It's cinema at its best. It's sport at its best. It's the reason we watch.
 
 So what's the problem?
@@ -44,7 +60,7 @@ Here's where it gets complicated. The movie tells you the A's won because Billy 
 
 It's a great narrative. It's also... not the whole picture.
 
-The 2002 Oakland A's had what became known as [the "Big Three"](https://en.wikipedia.org/wiki/Big_Three_(Oakland_Athletics%29): Barry Zito, Tim Hudson, and Mark Mulder. Zito won the AL Cy Young Award that year with a 23-5 record and a 2.75 ERA. Hudson and Mulder had both finished as Cy Young runners-up in previous seasons. That's not a rotation you assemble by finding undervalued players on the cheap — that's three of the best pitchers in the American League, all on your team at the same time.
+The 2002 Oakland A's had what became known as [the "Big Three"](https://en.wikipedia.org/wiki/Big_Three_(Oakland_Athletics)): Barry Zito, Tim Hudson, and Mark Mulder. Zito won the AL Cy Young Award that year with a 23-5 record and a 2.75 ERA. Hudson and Mulder had both finished as Cy Young runners-up in previous seasons. That's not a rotation you assemble by finding undervalued players on the cheap — that's three of the best pitchers in the American League, all on your team at the same time.
 
 [Miguel Tejada won the 2002 AL MVP](https://en.wikipedia.org/wiki/2002_American_League_Most_Valuable_Player_Award). He and Eric Chavez combined for 240 RBIs. And here's the irony: Tejada was famously *not* a Moneyball-type player. He swung at everything. [Billy Beane himself called him "Mr. Swing-At-Everything"](https://leejudge.substack.com/p/the-problem-with-moneyball) because he didn't walk enough. But he could absolutely rake.
 
@@ -56,11 +72,11 @@ The real insight behind Moneyball — the actual clever bit — [wasn't really a
 
 But that's not the lesson baseball took away from it.
 
-What the rest of the sport heard was: "Stats beat scouts. Spreadsheets beat intuition. If you can quantify it, you can optimise it." Teams started hiring physics PhDs and building entire analytics departments. They started looking for [new statistics that better correlated to "win probability"](https://iansbnr.com/how-moneyball-ruined-baseball/) than simple metrics like OBP. And eventually, they started optimising the fun right out of the game.
+What the rest of the sport heard was: "Stats beat scouts. Spreadsheets beat intuition. If you can quantify it, you can optimise it." Teams started hiring physics PhDs and building entire analytics departments. They started looking for [new statistics that better correlated to "win probability"](https://iansbnr.com/how-moneyball-ruined-baseball/) than familiar metrics like OBP. And eventually, they started optimising the fun right out of the game.
 
 As [former Phillies GM Ruben Amaro put it](https://www.sportskeeda.com/baseball/news-ruined-sport-20-years-ex-phillies-gm-calls-major-flaw-brad-pitt-s-moneyball): the analytics "took baseball backwards... to such an extent that now they're making rules to try to get the game back to where it used to be." He claimed the Moneyball philosophy "ruined the game for like 20 years."
 
-That's probably a bit strong. But he's not entirely wrong, either.
+That's probably a bit strong — especially coming from a bloke whose own GM tenure with the Phillies was widely regarded as a masterclass in how *not* to build a roster. But he's not entirely wrong, either.
 
 ## The Three True Outcomes
 
@@ -84,7 +100,7 @@ And then there's my team.
 
 I'm a Dodgers fan, which means I have an... awkward relationship with all of this. Andrew Friedman — the guy who now runs the Dodgers — cut his teeth doing exactly the Moneyball thing with the Tampa Bay Rays. Small market, tiny budget, analytics-driven roster construction. He was *great* at it. And then in 2014, he came to the Dodgers, where the ownership group essentially said "right, do all that clever stuff, but also here's a blank cheque."
 
-The result is the most dominant team in modern baseball. Back-to-back World Series. Shohei Ohtani on a $700 million contract — the largest in sports history. Yoshinobu Yamamoto lured over from Japan on a $325 million deal before he'd thrown a single pitch in the majors. Roki Sasaki persuaded to sign based on the Dodgers' analytics operation, their pitching development lab, their track record. It's Moneyball with money, and it turns out that's an almost unfair combination.
+The result is the most dominant team in modern baseball. Ten NL West titles in eleven seasons. Five World Series appearances, including back-to-back wins in 2024 and 2025 — the first team to repeat since the Yankees' three-peat in 1998-2000. Shohei Ohtani on a $700 million contract — the largest in sports history. Yoshinobu Yamamoto lured over from Japan on a $325 million deal before he'd thrown a single pitch in the majors. Roki Sasaki persuaded to sign based on the Dodgers' analytics and development track record. It's Moneyball with money, and it turns out that's an almost unfair combination.
 
 Which puts me in the bizarre position of benefiting directly from the same philosophy I've just spent several paragraphs criticising. The Dodgers are the final evolution of Moneyball thinking — they just happen to also have the resources to buy the stars that Billy Beane could never afford. I can hardly complain about analytics ruining the game while my team is using those same analytics to build a dynasty.
 
