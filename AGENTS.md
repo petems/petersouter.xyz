@@ -171,7 +171,7 @@ public/                # Generated site (not in git)
 - **Hosting**: S3 (eu-west-1) + CloudFront CDN + Route53 DNS, managed via Terraform in `terraform/s3-website/`
 - **Deployment**: GitHub Actions on push to `master` using OIDC auth (no static AWS keys). Vercel previews for PRs.
 - **Theme**: PaperMod (git submodule). Custom partials in `layouts/partials/`. Extension hook: `layouts/partials/extend_head.html`
-- **URLs**: PrettyURLs via S3 static website hosting + Hugo permalink config. To change URL style, update both `hugo.yaml` and `terraform/s3-website/main.tf`
+- **URLs**: PrettyURLs via S3 static website hosting + Hugo permalink config (`/:title/`). Blog post URLs resolve to `https://petersouter.xyz/<slug>/` where `<slug>` is the `slug` frontmatter field (no date path segments). To change URL style, update both `hugo.yaml` and `terraform/s3-website/main.tf`
 - **Custom functionality**: Talks page filter (`layouts/partials/talks-list.html` + `static/js/talks-filter.js`)
 
 ## Git Workflow
