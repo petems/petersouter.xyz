@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "mcp__unsplash__search_photos",
+      "mcp__unsplash__get_photo_attribution"
+    ]
+  }
+}

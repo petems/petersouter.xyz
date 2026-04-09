@@ -31,6 +31,10 @@ hugo_cache
 # Testing
 coverage
 
+# Claude Code (user-local settings, not committed)
+.claude/*.local.json
+.claude/*.local.md
+
 # Scratch directory (keep dir, ignore contents)
 scratch/*
 !scratch/.gitkeep
