@@ -27,5 +27,17 @@ topics:
     emoji: "\U0001F517"
   About:
     emoji: "\U00002139"
+  Workstation:
+    emoji: "\U0001F5A5"
+  OSX:
+    emoji: "\U0001F34E"
+  Interests:
+    emoji: "\U0001F3A8"
+  Git:
+    emoji: "\U0001F374"
+  Windows:
+    emoji: "\U0001FA9F"
+  Concepts:
+    emoji: "\U0001F4AD"
   Unsorted:
     emoji: "\U0001F331"

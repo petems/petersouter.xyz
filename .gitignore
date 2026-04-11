@@ -13,6 +13,9 @@ _asset_bundler_cache
 .gem
 resume/index.html
 
+# WSL
+*.Zone.Identifier
+
 # Hugo
 public
 hugo_cache
