@@ -24,16 +24,29 @@ Then afterwards, it became superstition.
 
 When the Dodgers won the world series that year, first thing I did was buy 3 more baseball caps 
 
-Dodgers 2020 Winners Snapback, Dodgers 2020 Fitted and 2020 Dodgers + Lakers Twin City Champions)
+* Dodgers 2020 Winners Snapback
+  ![Dodgers 2020 World Series Champs locker room cap](dodgers-2020-ws-locker-room-cap.jpg)
+* Dodgers 2020 Fitted
+  ![Dodgers 2020 World Series Champions Fitted](dodgers-2020-ws-champions-fitted.jpg)
+* 2020 Dodgers + Lakers Twin City Champions
+  ![Dodgers x Lakers 2020 Dual Champions](dodgers-lakers-2020-dual-champions.jpg)
 
-As we eased out of lockdown, I kept wearing it.
+As we eased out of lockdown, I kept wearing it as a bit of a  good luck charm and mostly out of habit.
 
 I completely forget about it?
 
-One time a doctor asked me if the reason I didn't take it off indoors was because I'd had a head injury. Which was a bit wild to me?
+One time a doctor asked me if the reason I didn't take it off indoors was because I'd had a head injury. Which was a bit wild to me...
 
 But I forget some people feel strongly about hats indoors.
 
 Like Tony Soprano...
 
 {{< youtube A85u4gSoO6I >}}
+
+Regardless, it's a comfort thing for me now, and I've stocked up on many, many, many caps at this point.
+
+And it's a flywheel problem, as people often gift me caps since they know I like them!
+
+So my office is now full of them, and cap storage methods
+
+![Baseball cap collection hanging on a door](cap-collection-on-door.jpg)
