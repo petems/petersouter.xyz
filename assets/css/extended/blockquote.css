@@ -1,0 +1,56 @@
+/* Blockquote with author attribution
+ * Adapted from: https://discourse.gohugo.io/t/generating-the-author-of-a-quote-blockquote/19200
+ *
+ * A render hook (render-blockquote.html) adds the .quote-with-attribution
+ * class to blockquotes with exactly two <p> elements (quote + author).
+ *
+ * Usage in markdown:
+ *   > Quote text here
+ *   >
+ *   > Author Name
+ *
+ * When a blockquote has two <p> elements, the first gets opening curly quotes
+ * and the last is styled as an attribution line (italic, preceded by em-dash).
+ * A single-<p> blockquote gets balanced open/close quotes with no attribution.
+ * Blockquotes with 3+ paragraphs are left unstyled.
+ */
+
+blockquote {
+    quotes: '\201C' '\201D' '\2018' '\2019';
+}
+
+/* --- Single-paragraph blockquote: balanced open/close quotes --- */
+
+blockquote p:only-of-type::before {
+    content: open-quote;
+    margin-right: 0.1rem;
+}
+
+blockquote p:only-of-type::after {
+    content: close-quote;
+    margin-left: 0.1rem;
+}
+
+/* --- Two-paragraph blockquote (quote + attribution) --- */
+
+/* Open quote on the first paragraph */
+.quote-with-attribution p:first-of-type::before {
+    content: open-quote;
+    margin-right: 0.1rem;
+}
+
+/* Close quote on the first paragraph (before the attribution) */
+.quote-with-attribution p:first-of-type::after {
+    content: close-quote;
+    margin-left: 0.1rem;
+}
+
+/* Attribution line: italic with em-dash prefix */
+.quote-with-attribution p:last-of-type {
+    font-style: italic;
+}
+
+.quote-with-attribution p:last-of-type::before {
+    content: "\2014" " ";
+    font-style: normal;
+}

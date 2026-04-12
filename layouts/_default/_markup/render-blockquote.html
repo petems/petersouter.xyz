@@ -1,0 +1,5 @@
+{{- $text := .Text -}}
+{{- $paraCount := len (findRE "<p>" $text) -}}
+<blockquote{{ if eq $paraCount 2 }} class="quote-with-attribution"{{ end }}>
+  {{ $text }}
+</blockquote>
