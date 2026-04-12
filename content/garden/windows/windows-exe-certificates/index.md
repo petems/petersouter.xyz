@@ -50,18 +50,20 @@ To install on a test machine: right-click the `.msix` > Properties > Digital Sig
 
 Since June 2023, all OV and EV certificates must be stored on a hardware token or cloud HSM — no software PFX for public certs anymore. EV certs are trusted by Windows SmartScreen immediately; OV certs build reputation over time.
 
-| Vendor | OV (~annual) | EV (~annual) |
+| Vendor | OV | EV |
 |---|---|---|
-| SSL.com | ~$170 | ~$300 |
-| Sectigo | ~$200 | ~$350 |
-| DigiCert | ~$500 | ~$700 |
+| SSL.com | Check current pricing | Check current pricing |
+| Sectigo | Check current pricing | Check current pricing |
+| DigiCert | Check current pricing | Check current pricing |
+
+Prices vary significantly by duration, reseller, and storage method (token/HSM/cloud) — check vendor sites for current rates.
 
 For CI/CD with a commercial cert, use **Azure Key Vault** (store the cert there, sign with `AzureSignTool` in the pipeline — no physical USB token in CI).
 
 ### Option C: Microsoft Store (Microsoft signs for you)
 
-- One-time $19 developer registration.
+- Free registration for individual accounts, ~$99 USD for company accounts (varies by region).
 - Microsoft assigns you a `Publisher` identity — you must update the manifest to match it.
 - You sign your upload with any cert (even self-signed), Microsoft re-signs before delivery.
 - Users see a Microsoft-signed package; no SmartScreen issues.
-- Downside: 1–5 day certification review, Store policies apply, 15% revenue share on paid apps.
+- Downside: up to 3 business days certification review (often faster), Store policies apply, 15% revenue share on paid apps.
