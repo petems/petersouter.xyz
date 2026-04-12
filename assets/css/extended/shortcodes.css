@@ -1,0 +1,41 @@
+/* Shortcode component styles */
+
+/* --- Info shortcode --- */
+
+.shortcode-info {
+    background-color: #cff4fc;
+    border: 1px solid #6edff6;
+    border-radius: 4px;
+    padding: 12px 16px;
+    margin: 1em 0;
+    color: #055160;
+}
+
+.shortcode-info a {
+    color: #0a58ca;
+    text-decoration: underline;
+}
+
+.shortcode-info a:hover {
+    color: #053d8a;
+}
+
+/* --- Warning shortcode --- */
+
+.shortcode-warning {
+    background-color: #fff3cd;
+    border: 1px solid #ffc107;
+    border-radius: 4px;
+    padding: 12px 16px;
+    margin: 1em 0;
+    color: #664d03;
+}
+
+.shortcode-warning a {
+    color: #664d03;
+    text-decoration: underline;
+}
+
+.shortcode-warning a:hover {
+    color: #3d2e02;
+}
