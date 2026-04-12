@@ -32,11 +32,11 @@ $cert = New-SelfSignedCertificate `
   -KeyUsage DigitalSignature `
   -FriendlyName "VidPare Dev Signing" `
   -CertStoreLocation "Cert:\CurrentUser\My" `
-  -TextExtension @("2.5.29.37={text}1.3.6.1.5.5.7.3.3", "2.5.29.19={text}")
+  -TextExtension @("2.5.29.37={text}1.3.6.1.5.5.7.3.3", "2.5.29.19={text}Subject Type=End Entity")
 
 # Export to PFX for build tooling
 Export-PfxCertificate -cert $cert -FilePath VidPare.pfx `
-  -Password (ConvertTo-SecureString "yourpassword" -Force -AsPlainText)
+  -Password (ConvertTo-SecureString "<YOUR_PASSWORD>" -Force -AsPlainText)
 
 # Get thumbprint for csproj
 $cert.Thumbprint
