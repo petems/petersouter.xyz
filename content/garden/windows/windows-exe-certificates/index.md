@@ -55,7 +55,7 @@ Since June 2023, all OV and EV certificates must be stored on a hardware token o
 | Vendor | OV (~annual) | EV (~annual) |
 |---|---|---|
 | [SSL.com](https://www.ssl.com/code-signing-certificates/code-signing) | ~$65/yr | ~$349/yr |
-| [Sectigo](https://sectigo.com/ssl-certificates-tls/code-signing) | Contact for pricing | Contact for pricing |
+| [Sectigo](https://sectigo.com/ssl-certificates-tls/code-signing) | ~$715/yr | ~$829/yr |
 | [DigiCert](https://www.digicert.com/signing/code-signing-certificates) | ~$696/yr ($44/mo) | ~$972/yr ($62/mo) |
 
 These are estimates as of April 2026 — prices vary by duration, reseller, and storage method (token/HSM/cloud). Check the vendor links above for current rates.
