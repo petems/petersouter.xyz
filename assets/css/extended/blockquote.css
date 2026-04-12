@@ -1,0 +1,55 @@
+/* Blockquote with author attribution
+ * Adapted from: https://discourse.gohugo.io/t/generating-the-author-of-a-quote-blockquote/19200
+ *
+ * Usage in markdown:
+ *   > Quote text here
+ *   >
+ *   > Author Name
+ *
+ * When a blockquote has two <p> elements, the first gets opening curly quotes
+ * and the last is styled as an attribution line (italic, preceded by em-dash).
+ * A single-<p> blockquote gets balanced open/close quotes with no attribution.
+ */
+
+blockquote p {
+    display: inline;
+}
+
+/* First paragraph: open quote */
+blockquote p:first-of-type {
+    quotes: '\201C' '\201D' '\2018' '\2019';
+}
+
+blockquote p:first-of-type::before {
+    content: open-quote;
+    margin-right: 0.1rem;
+}
+
+/* Last paragraph (when there are multiple): attribution line */
+blockquote p:last-of-type {
+    quotes: '\201C' '\201D' '\2018' '\2019';
+    font-style: italic;
+}
+
+blockquote p:last-of-type::before {
+    content: close-quote "\000A" "\2014" " ";
+    white-space: pre;
+    margin-left: 0.1rem;
+    font-style: normal;
+}
+
+/* Only paragraph (no attribution): balanced open/close quotes */
+blockquote p:only-of-type {
+    font-style: normal;
+    quotes: '\201C' '\201D' '\2018' '\2019';
+}
+
+blockquote p:only-of-type::before {
+    content: open-quote;
+    margin-right: 0.1rem;
+}
+
+blockquote p:only-of-type::after {
+    content: close-quote;
+    margin-left: 0.1rem;
+}

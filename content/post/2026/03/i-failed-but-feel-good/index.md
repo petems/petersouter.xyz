@@ -134,8 +134,8 @@ Or even simpler "Isn't this supposed to be fun?" hence vexillology and having a 
 As I was quickly running the "git commit and merge straight to prod branch yolo mode to speed things up", I had a flashback to a study that I'd intended to use as my central thesis of my "Staying Human in the age of AI" blog...
 
 > Despite the performance benefits, participants who collaborated with gen AI on one task and then transitioned to a different, unaided task consistently reported a decline in intrinsic motivation and an increase in boredom. Across our studies, intrinsic motivation dropped by an average of 11% and boredom increased by an average of 20%. In contrast, those who worked without AI maintained a relatively steady psychological state.
-
-[Research: Gen AI Makes People More Productive—and Less Motivated, by Yukun Liu, Suqing Wu, Mengqi Ruan, Siyu Chen and Xiao-Yun Xie](https://hbr.org/2025/05/research-gen-ai-makes-people-more-productive-and-less-motivated)
+>
+> [Research: Gen AI Makes People More Productive—and Less Motivated](https://hbr.org/2025/05/research-gen-ai-makes-people-more-productive-and-less-motivated), by Yukun Liu, Suqing Wu, Mengqi Ruan, Siyu Chen and Xiao-Yun Xie
 
 Hmm, so...you've got an ever increasing backlog of ideas, you're solving them with AI and improving the core work, but you're not scratching that loop of satisfaction when you deliver.
 
