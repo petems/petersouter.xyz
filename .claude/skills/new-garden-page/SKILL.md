@@ -59,25 +59,15 @@ Use the page name (not the topic) for the branch: `feat/garden/cold-brew`, `feat
 
 #### Existing Garden Topics
 
-Try to fit the page into one of these existing topics first:
+List the current topics dynamically — don't rely on a hardcoded list, as topics get added over time:
 
-| Topic | What Goes Here |
-|-------|---------------|
-| **about** | Personal info, bio-adjacent |
-| **baseball** | Baseball fandom, games, players |
-| **books** | Reading lists, book notes |
-| **concepts** | Abstract ideas, mental models, principles |
-| **cooking** | Recipes, techniques, kitchen gear |
-| **eating** | Restaurants, food spots, recommendations |
-| **git** | Git tips, workflows, conventions |
-| **interests** | Hobbies, things Peter's into |
-| **links** | Curated link collections, reference lists |
-| **osx** | macOS tips, tools, setup |
-| **traveling** | Travel notes, trip fragments |
-| **windows** | Windows tips, tools, setup |
-| **workstation** | Desk setup, hardware, ergonomics |
+```bash
+ls -d content/garden/*/  | xargs -I{} basename {}
+```
 
-If nothing fits, suggest a new topic to the user and confirm before creating it. New topics need a `_index.md` in the new directory:
+Read the `_index.md` in each topic directory if you need to understand what goes where, and look at existing pages in candidate topics for tone and content cues.
+
+Try to fit the page into an existing topic first. If nothing fits, suggest a new topic to the user and confirm before creating it. New topics need a `_index.md` in the new directory:
 
 ```yaml
 ---
