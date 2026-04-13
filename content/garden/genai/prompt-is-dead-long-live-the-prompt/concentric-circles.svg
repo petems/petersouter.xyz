@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <defs>
+    <filter id="textbg" x="-5%" y="-5%" width="110%" height="110%">
+      <feFlood flood-color="#fff" flood-opacity="0.85" result="bg"/>
+      <feMerge>
+        <feMergeNode in="bg"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Outer ring: Agentic Engineering -->
+  <circle cx="250" cy="250" r="220" fill="#632CA6" opacity="0.06" stroke="#632CA6" stroke-width="2" stroke-opacity="0.3"/>
+
+  <!-- Middle ring: Context Engineering -->
+  <circle cx="250" cy="260" r="150" fill="#3A1866" opacity="0.08" stroke="#3A1866" stroke-width="2" stroke-opacity="0.4"/>
+
+  <!-- Inner ring: Prompt Engineering -->
+  <circle cx="250" cy="270" r="80" fill="#1a0a2e" opacity="0.1" stroke="#1a0a2e" stroke-width="2" stroke-opacity="0.5"/>
+
+  <!-- Dashed outer suggestion: Intent Engineering -->
+  <circle cx="250" cy="250" r="240" fill="none" stroke="#7C4DDB" stroke-width="2" stroke-dasharray="8,6" opacity="0.4"/>
+
+  <!-- Text labels with white background pills -->
+  <!-- Agentic -->
+  <rect x="130" y="42" width="240" height="44" rx="8" fill="#fff" opacity="0.9"/>
+  <text x="250" y="62" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="17" font-weight="bold" fill="#632CA6">Agentic engineering</text>
+  <text x="250" y="80" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#666">The model goes and gets what it needs</text>
+
+  <!-- Context -->
+  <rect x="145" y="127" width="210" height="44" rx="8" fill="#fff" opacity="0.9"/>
+  <text x="250" y="147" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="17" font-weight="bold" fill="#3A1866">Context engineering</text>
+  <text x="250" y="165" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#666">What the model can see</text>
+
+  <!-- Prompt -->
+  <rect x="185" y="248" width="130" height="60" rx="8" fill="#fff" opacity="0.9"/>
+  <text x="250" y="268" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="bold" fill="#1a0a2e">Prompt</text>
+  <text x="250" y="286" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="bold" fill="#1a0a2e">engineering</text>
+  <text x="250" y="302" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#666">What you say</text>
+
+  <!-- Intent -->
+  <rect x="370" y="237" width="120" height="26" rx="6" fill="#fff" opacity="0.85"/>
+  <text x="430" y="255" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-style="italic" fill="#7C4DDB">Intent engineering?</text>
+</svg>
