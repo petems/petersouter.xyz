@@ -83,7 +83,7 @@ title: "Topic Name"
 
 #### File Path
 
-```
+```text
 content/garden/<topic>/<page-name>/index.md
 ```
 
@@ -211,7 +211,8 @@ git add content/garden/<topic>/<page-name>/
 If a new topic `_index.md` was created, include it in the staged files.
 
 Suggest commit message format:
-```
+
+```text
 feat(garden): add <page-name> page
 ```
 
