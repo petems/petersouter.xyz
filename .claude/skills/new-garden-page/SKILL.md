@@ -11,7 +11,7 @@ The digital garden is a public scratchpad — short, honest, low-pressure pages 
 ## Garden Conventions
 
 - **Site URL**: https://petersouter.xyz/garden/
-- **Hugo theme**: tranquilpeak
+- **Hugo theme**: PaperMod
 - **Page structure**: Page bundles at `content/garden/<topic>/<page-name>/index.md`
 - **Images**: Local to the page bundle (same directory as `index.md`)
 - **Frontmatter**: YAML (`---` delimiters, NOT TOML `+++`)
