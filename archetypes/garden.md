@@ -4,7 +4,7 @@ date: {{ .Date }}
 description: ""
 summary: ""
 garden_topic: ""
-status: "seedling"
+status: "Seedling"
 comments: false
 ShowReadingTime: false
 ShowShareButtons: false
