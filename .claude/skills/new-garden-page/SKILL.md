@@ -30,32 +30,11 @@ Ask the user:
 
 If the user has already provided this, move on.
 
-### Step 1: Create the Branch
+### Step 1: Determine Topic, Page Name, and Create Branch
 
-Garden pages always get their own branch. Create it early so all work happens on the branch from the start.
+First, figure out where the page goes and what it's called. Then create a branch for it.
 
-#### Branch Safety Checks
-
-Before creating the branch:
-
-1. Check current branch: `git branch --show-current`
-2. Check for uncommitted changes: `git status --short`
-3. If there are uncommitted changes, **stop and warn the user**. Don't create a branch with dirty state — ask them to commit or stash first.
-4. If already on a `feat/garden/*` branch, ask the user if they want to add to the current branch or create a new one.
-
-#### Create the Branch
-
-You'll need a page name first (see Step 2), so determine the topic and page name, then:
-
-```bash
-git checkout master
-git pull origin master
-git checkout -b feat/garden/<page-name>
-```
-
-Use the page name (not the topic) for the branch: `feat/garden/cold-brew`, `feat/garden/terrance-gore`, `feat/garden/pile-of-shame`.
-
-### Step 2: Determine Topic and Page Name
+#### Existing Garden Topics
 
 #### Existing Garden Topics
 
@@ -86,6 +65,27 @@ title: "Topic Name"
 ```text
 content/garden/<topic>/<page-name>/index.md
 ```
+
+#### Create the Branch
+
+Garden pages always get their own branch. Create it early so all work happens on the branch from the start.
+
+**Branch safety checks** — before creating the branch:
+
+1. Check current branch: `git branch --show-current`
+2. Check for uncommitted changes: `git status --short`
+3. If there are uncommitted changes, **stop and warn the user**. Don't create a branch with dirty state — ask them to commit or stash first.
+4. If already on a `feat/garden/*` branch, ask the user if they want to add to the current branch or create a new one.
+
+**Create the branch:**
+
+```bash
+git checkout master
+git pull origin master
+git checkout -b feat/garden/<page-name>
+```
+
+Use the page name (not the topic) for the branch: `feat/garden/cold-brew`, `feat/garden/terrance-gore`, `feat/garden/pile-of-shame`.
 
 ### Step 2: Research (Light Touch)
 
