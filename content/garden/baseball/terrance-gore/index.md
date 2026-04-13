@@ -10,7 +10,7 @@ Terrance Gore passed away on February 6th 2026, aged 34, following complications
 
 I've been meaning to write a proper blog post about his passing, got a draft or two kicking around that I haven't been happy with yet. 
 
-I'm trying to balance writing a good enough tribute to the man himself, but also my fascination with the other one-tool running-only players (like the '70s Athletics squad with Herb Washington). Not quite found a way to figure that out...
+I'm trying to balance writing a good enough tribute to the man himself, but also my fascination with the other one-tool running-only players (like the ['70s Athletics squad with Herb Washington](https://sabr.org/journal/article/leg-men-career-pinch-runners-in-major-league-baseball/)). Not quite found a way to figure that out...
 
 As a Dodgers fan, I've got a small personal connection, as he was briefly one of ours in 2020...even if it was only for 2 regular season games!
 
