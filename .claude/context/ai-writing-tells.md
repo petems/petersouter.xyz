@@ -132,7 +132,7 @@ LLMs use em dashes at 2-3x the rate of human writers. They substitute them for c
 ## Formatting tells
 
 - **Excessive boldface**: bolding every key term mechanically, "key takeaways" style
-- **Title case in every heading**: genuine AI tell in most contexts, but Peter's personal override (see top of file) keeps Title Case for all H1/H2/H3 headings and for bold prefixes in headline-style bullets. Do not flag these in his content.
+- **Title Case in Every Heading**: genuine AI tell in most contexts, but Peter's personal override (see top of file) keeps Title Case for all H1/H2/H3 headings and for bold prefixes in headline-style bullets. Do not flag these in his content.
 - **Bullet + bold header + colon**: the "**Term:** Description of term" pattern in every list
 - **Emoji decoration**: emoji before every section heading or bullet point
 
