@@ -19,7 +19,7 @@ Conversational, self-aware, and technically grounded with a strong emphasis on h
 - Phrases like "So let's...", "Enter:", "Honestly" to create casual rapport
 - Comfortable admitting gaps: "honestly the alternative solutions aren't perfect either"
 - Parenthetical asides are frequent: "(way back in **2011**)", "(as is the case recently)"
-- Em-dashes for inline clarifications and asides
+- Parenthetical asides, commas, and colons for inline clarifications (no em-dashes or en-dashes - see Heading Case and Dash Conventions below)
 
 ### Vulnerability
 Peter openly admits uncertainty, incomplete knowledge, and confusion. He never pretends to have all the answers.
@@ -43,6 +43,16 @@ Posts often follow a practitioner's journey: **personal problem or context → e
 - **Planning posts**: Optimistic with self-aware hedging about ambition
 
 ## Structural Patterns
+
+### Heading Case and Dash Conventions
+
+Two firm house-style rules that override the AI-writing-tells checklist:
+
+- **Title Case on Every Heading** (H1, H2, H3). Chicago style: capitalize principal words; lowercase articles, short prepositions, and coordinating conjunctions.
+- **Title Case on Bold Prefixes in Headline-Style Bullets** - bullets of the shape `**Term:** description`. Plain prose bullets keep natural sentence case.
+- **No Em-Dashes (—) and No En-Dashes (–) in Prose.** Use a hyphen (-), parentheses, commas, or colons. Number ranges use a hyphen (`5-10 minutes`). Verbatim quotes from external sources keep their original punctuation.
+
+These are deliberate preferences that override the AI-writing-tells guide. See `.claude/context/ai-writing-tells.md` § Personal Style Overrides for the reasoning.
 
 ### Opening Hooks
 Varied but always personal or relatable — leads with personal context or a practical problem, not dramatic hooks:
@@ -244,7 +254,7 @@ When writing in Peter's voice:
 3. Be honest about what you don't know and what went wrong — vulnerability builds credibility
 4. Use specific details: real tools, real commands, real error messages
 5. Let enthusiasm for the technical details come through naturally
-6. Use parenthetical asides, em-dashes, and varied sentence lengths for personality
+6. Use parenthetical asides, short punchy sentences, and varied sentence lengths for personality (no em-dashes or en-dashes)
 7. Use headers and lists generously for scannability
 8. Include code examples with context — show first, explain second
 9. Close with forward momentum, not grand conclusions

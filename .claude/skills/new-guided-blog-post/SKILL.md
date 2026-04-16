@@ -20,7 +20,7 @@ Always apply Peter's writing voice from `.claude/context/writing-style.md`:
 
 ### Voice Characteristics
 - **First-person, conversational, personal**: Use "I've been", "I was tinkering", "I thought"
-- **Informal and friendly**: Use contractions liberally, parenthetical asides, em-dashes
+- **Informal and Friendly**: Use contractions liberally and parenthetical asides (no em-dashes or en-dashes - see `.claude/context/writing-style.md`)
 - **Self-deprecating humor**: Comfortable admitting gaps and mistakes
 - **Enthusiastic about discovery**: Genuine excitement about tools and technical solutions
 - **Honest and candid**: Not afraid to discuss struggles or incomplete projects
@@ -66,10 +66,10 @@ When the user describes what they want to write about:
 Work through the outline section by section:
 
 1. **Draft each section** following the style guide:
-   - Start with a personal hook — an experience, observation, or problem
+   - Start with a personal hook: an experience, observation, or problem
    - Be honest about what you don't know and what went wrong
    - Let enthusiasm for the technical details come through naturally
-   - Use parenthetical asides and em-dashes for personality
+   - Use parenthetical asides for personality (no em-dashes or en-dashes)
    - Include code examples with context, never bare code dumps
 
 2. **Iterate with feedback**:
@@ -101,7 +101,8 @@ Once the full draft is complete:
    - Check for clusters of AI-overrepresented vocabulary ("delve", "crucial", "multifaceted", "landscape", "tapestry", "underscore", "foster")
    - Remove inflated significance phrases, trailing -ing filler, and formulaic transitions
    - Vary list lengths (not always three items), prefer "is" over "serves as"/"stands as"
-   - The signal is density — one instance is fine; a cluster means rewrite in Peter's voice
+   - The signal is density: one instance is fine; a cluster means rewrite in Peter's voice
+   - Verify Peter's personal overrides: Title Case on every heading and on bold prefixes in headline bullets, and zero em-dashes or en-dashes anywhere in the body
 
 4. **Verify content quality**:
    - Technical claims are accurate

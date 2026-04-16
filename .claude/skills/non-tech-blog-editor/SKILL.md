@@ -67,8 +67,10 @@ Review the post against the checklist in `.claude/context/ai-writing-tells.md`. 
 - **Copula avoidance**: "serves as" / "stands as" when "is" would be more direct
 - **Elegant variation**: Cycling through synonyms ("the tool — the solution — the platform — the offering") instead of just repeating the concrete noun
 - **Formatting tells**: Excessive boldface, "**Term:** Description" in every bullet, emoji decoration
+- **Peter's personal overrides (do NOT flag as tells)**: Title Case headings (H1/H2/H3) and Title Case bold prefixes in `**Term:** description` bullets are Peter's house style, not AI tells. Do not suggest sentence-case rewrites for these.
+- **Em-dash and en-dash hard ban**: Peter treats every em-dash (—) and en-dash (–) as a hard error, stricter than the general "overuse" framing. Flag each instance and suggest replacement with a hyphen (-), parentheses, comma, or colon. Even number ranges: `5-10`, not `5–10`. Verbatim quotes from external sources are exempt.
 
-When flagging AI tells, quote the specific passage and suggest a rewrite that sounds like Peter's natural voice. The goal is authenticity, not paranoia — some of these patterns appear in good human writing too.
+When flagging AI tells, quote the specific passage and suggest a rewrite that sounds like Peter's natural voice. The goal is authenticity, not paranoia: some of these patterns appear in good human writing too.
 
 ### Engagement
 
@@ -84,7 +86,7 @@ Review and apply Peter's writing voice from `.claude/context/writing-style.md`:
 ### Voice Characteristics
 
 - **First-person, conversational, personal**: Use "I've been", "I was tinkering", "I thought"
-- **Informal and friendly**: Use contractions liberally, parenthetical asides, em-dashes
+- **Informal and Friendly**: Use contractions liberally and parenthetical asides (no em-dashes or en-dashes)
 - **Self-deprecating humor**: Comfortable admitting gaps and mistakes
 - **Enthusiastic about discovery**: Genuine excitement about expressing themselves and teaching new topics
 - **Honest and candid**: Not afraid to discuss struggles or incomplete projects
@@ -150,7 +152,9 @@ Create a detailed editorial review document in the `scratch` directory named `{p
 
 ## AI Writing Tells
 
-{Scan for AI-overrepresented vocabulary clusters, inflated significance, formulaic transitions, and other patterns from the AI writing tells checklist. Quote specific passages and suggest rewrites in Peter's voice. If the post reads naturally with no AI tell clusters, say so in one line}
+{Scan for AI-overrepresented vocabulary clusters, inflated significance, formulaic transitions, and other patterns from the AI writing tells checklist. Quote specific passages and suggest rewrites in Peter's voice. If the post reads naturally with no AI tell clusters, say so in one line.
+
+Em-dash and en-dash findings are hard errors, not stylistic suggestions: list them in a dedicated subsection and do not count them toward the Must Address cap. Suppressed Title Case flags (from Peter's personal override) do not need to be mentioned.}
 
 ## Specific Line-by-Line Feedback
 

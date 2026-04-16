@@ -92,9 +92,8 @@ Use the page name (not the topic) for the branch: `feat/garden/cold-brew`, `feat
 Garden pages are informal, but accuracy still matters.
 
 - If the user provided links, read them with WebFetch
-- If the topic references tools, commands, or facts — verify them
+- If the topic references tools, commands, or facts, verify them
 - Check existing garden pages in the same topic for tone and format consistency: `ls content/garden/<topic>/`
-- Check existing blog posts for potential cross-links: `find content/post/ -name "*.md" | sort`
 
 Don't over-research. The garden is a scratchpad, not a research paper.
 
@@ -127,12 +126,12 @@ Peter's voice applies here just as much as in blog posts, but the format is diff
 
 Read `.claude/context/writing-style.md` for the full voice guide. The key points for garden content:
 
-- **First-person, conversational**: "I learnt about...", "I've been using..."
+- **First-Person, Conversational**: "I learnt about...", "I've been using..."
 - **British English**: recognised, organised, colour, favourite
-- **No preamble**: Jump straight into the idea. No "In this page, I'll discuss..."
-- **Short paragraphs**: 1-3 sentences each. White space is your friend.
-- **Honest and casual**: Incomplete thoughts are fine. "I'm not sure about this yet" is valid garden content.
-- **Links are generous**: Link to sources, tools, people, other garden pages, blog posts
+- **No Preamble**: Jump straight into the idea. No "In this page, I'll discuss..."
+- **Short Paragraphs**: 1-3 sentences each. White space is your friend.
+- **Honest and Casual**: Incomplete thoughts are fine. "I'm not sure about this yet" is valid garden content.
+- **Links Are Generous**: Link to sources, tools, people, other garden pages, blog posts
 
 #### Content Guidelines
 
@@ -177,10 +176,13 @@ If the user provides images, copy them into the page bundle directory.
 
 Review the draft against `.claude/context/ai-writing-tells.md`. Garden pages are short, so even a small cluster stands out. Watch for:
 
-- AI vocabulary ("delve", "crucial", "landscape", "foster") — replace with plain language
-- Inflated significance — garden pages are casual; nothing needs to "stand as a testament"
-- Formulaic transitions — in a short page, "moreover" and "furthermore" stick out badly
-- Promotional tone — no "stunning", "groundbreaking", "renowned"
+- AI vocabulary ("delve", "crucial", "landscape", "foster"): replace with plain language
+- Inflated significance: garden pages are casual; nothing needs to "stand as a testament"
+- Formulaic transitions: in a short page, "moreover" and "furthermore" stick out badly
+- Promotional tone: no "stunning", "groundbreaking", "renowned"
+- **Em-dashes and en-dashes**: Zero of either in the content. Hyphen, parens, comma, or colon instead. Even for number ranges. Verbatim quotes from external sources are exempt.
+
+Note: Title Case on headings and on `**Term:**` bold bullet prefixes is Peter's house style, do NOT flag as AI tells.
 
 The signal is density. One instance in a long page is fine. In a 100-word garden page, one is already a cluster.
 
