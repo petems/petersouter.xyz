@@ -19,7 +19,7 @@ Conversational, self-aware, and technically grounded with a strong emphasis on h
 - Phrases like "So let's...", "Enter:", "Honestly" to create casual rapport
 - Comfortable admitting gaps: "honestly the alternative solutions aren't perfect either"
 - Parenthetical asides are frequent: "(way back in **2011**)", "(as is the case recently)"
-- Em-dashes for inline clarifications and asides
+- Parenthetical asides for inline clarifications (use parentheses, not em-dashes)
 
 ### Vulnerability
 Peter openly admits uncertainty, incomplete knowledge, and confusion. He never pretends to have all the answers.
@@ -56,7 +56,8 @@ Establishes personal stakes before diving into technical content.
 
 ### Section Organization
 - H2/H3 headers used liberally to break up content
-- Headers are descriptive and sometimes playful: "Too quiet", "Enter Boxen", "Turtles all the way down"
+- Headers are descriptive and sometimes playful: "Too Quiet", "Enter Boxen", "Turtles All the Way Down"
+- All headers and headlines use Title Case regardless of length or grammar rules
 - Numbered lists for sequential/chronological content
 - Bullet points for parallel ideas
 - Bold emphasis for key takeaways
@@ -244,7 +245,7 @@ When writing in Peter's voice:
 3. Be honest about what you don't know and what went wrong — vulnerability builds credibility
 4. Use specific details: real tools, real commands, real error messages
 5. Let enthusiasm for the technical details come through naturally
-6. Use parenthetical asides, em-dashes, and varied sentence lengths for personality
+6. Use parenthetical asides and varied sentence lengths for personality (never em-dashes)
 7. Use headers and lists generously for scannability
 8. Include code examples with context — show first, explain second
 9. Close with forward momentum, not grand conclusions

@@ -115,12 +115,12 @@ If you're talking about Hugo, just say Hugo again. If you're talking about Terra
 
 ## Em dash overuse
 
-LLMs use em dashes at 2-3x the rate of human writers. They substitute them for commas, parentheses, and colons in a formulaic, "punched up" style. When every other sentence has one, or when a comma would be more natural, it's a tell.
+Remove all em dashes. Em dashes are now so strongly associated with AI-generated text that even a single one damages credibility. Their reputation is too tarnished to salvage — the association is instant and automatic for anyone who reads a lot of LLM output. Use a comma, parentheses, a colon, or restructure the sentence. Never use an em dash.
 
 ## Formatting tells
 
 - **Excessive boldface**: bolding every key term mechanically, "key takeaways" style
-- **Title case in every heading**: use sentence case instead
+- **Sentence case headings**: always use Title Case for headings and headlines — every significant word capitalised
 - **Bullet + bold header + colon**: the "**Term:** Description of term" pattern in every list
 - **Emoji decoration**: emoji before every section heading or bullet point
 
