@@ -2,17 +2,15 @@
 {{- if $link -}}
   {{- $query := querify "url" $link "format" "json" -}}
   {{- $request := printf "https://embed.bsky.app/oembed?%s" $query -}}
-  {{- with resources.GetRemote $request -}}
+  {{- with try (resources.GetRemote $request) -}}
     {{- with .Err -}}
       {{- warnf "bluesky shortcode: failed to fetch oEmbed for %q: %s" $link . -}}
-    {{- else -}}
+    {{- else with .Value -}}
       {{- $jsonOembed := unmarshal .Content -}}
       {{- with $jsonOembed.html -}}
         {{- . | safeHTML -}}
       {{- end -}}
     {{- end -}}
-  {{- else -}}
-    {{- warnf "bluesky shortcode: no response fetching oEmbed for %q" $link -}}
   {{- end -}}
 {{- else -}}
   {{- warnf "bluesky shortcode: missing required \"link\" parameter" -}}
