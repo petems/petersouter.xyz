@@ -206,7 +206,7 @@ Before finalising, review the draft against `.claude/context/ai-writing-tells.md
 - Copula avoidance ("serves as" when "is" is more direct)
 - Elegant variation (cycling through synonyms instead of repeating the concrete noun)
 - **Peter's overrides (do not flag)**: Title Case on every H1/H2/H3 heading and on bold prefixes of `**Term:** description` bullets. These are intentional.
-- **Zero em-dashes, zero en-dashes**: Search the draft for `—` and `–`. Every instance must be replaced with a hyphen (-), parentheses, a comma, or a colon. Number ranges included (`5-10`, not `5–10`). Verbatim quotes from external sources are exempt.
+- **Zero em-dashes, zero en-dashes in prose**: Search the draft's prose for `—` and `–`. Every instance must be replaced with a hyphen (-), parentheses, a comma, or a colon. Number ranges included (`5-10`, not `5–10`). Code blocks and verbatim quotes from external sources are exempt.
 
 The signal is density: one instance is fine; a cluster in a section means rewrite that section in Peter's natural voice.
 
@@ -215,7 +215,7 @@ The signal is density: one instance is fine; a cluster in a section means rewrit
 - [ ] `<!--more-->` is present after opening paragraph
 - [ ] British English spelling used throughout
 - [ ] No AI writing tell clusters (checked against `.claude/context/ai-writing-tells.md`)
-- [ ] No em-dashes (—) or en-dashes (–) anywhere in the post body (quotes exempt)
+- [ ] No em-dashes (—) or en-dashes (–) in prose (code blocks and verbatim quotes exempt)
 - [ ] All headings (H1/H2/H3) use Title Case
 - [ ] Internal links to existing posts where relevant
 - [ ] External links to authoritative sources
