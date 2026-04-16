@@ -4,6 +4,16 @@ Adapted from [Wikipedia: Signs of AI writing](https://en.wikipedia.org/wiki/Wiki
 
 This checklist is **descriptive, not prescriptive**. A few of these patterns appear naturally in good human writing. The signal is density - one "pivotal" is fine; five AI vocabulary words in two paragraphs is a rewrite.
 
+## Personal Style Overrides
+
+A few patterns in this checklist are genuine AI tells, but Peter prefers them in his own writing. These overrides are deliberate - do not "correct" them during drafting or review:
+
+- **Title Case for All Headings (H1, H2, H3).** LLMs overuse Title Case (see Formatting tells below). Peter uses it anyway: it reads cleaner on his site and matches his aesthetic preference. Sentence case is not the house style.
+- **Title Case for Bold Prefixes in Headline-Style Bullets.** Bullets of the shape `**Term:** description` use Title Case on the term (Chicago style: capitalize principal words; lowercase articles, short prepositions, coordinating conjunctions). Plain prose bullets keep natural sentence case.
+- **Zero Em-Dashes and Zero En-Dashes in Prose.** LLMs overuse em-dashes (see Em dash overuse below). Peter's rule is stricter than the checklist: none at all in published content. Use a hyphen (-), parentheses, a comma, or a colon. Applies even to number ranges (`5-10 minutes`, not `5–10 minutes`). Verbatim quotes from external sources are exempt.
+
+When editing or reviewing Peter's content: do not flag Title Case headings or `**Term:**` bullet prefixes as AI tells. Do flag every em-dash and en-dash as a hard error, stricter than the general "overuse" framing below.
+
 ## Overused AI vocabulary
 
 Words that spiked in frequency after 2023, corroborated by peer-reviewed studies. Scan for clusters of these:
@@ -115,12 +125,14 @@ If you're talking about Hugo, just say Hugo again. If you're talking about Terra
 
 ## Em dash overuse
 
-LLMs use em dashes at 2-3x the rate of human writers. They substitute them for commas, parentheses, and colons in a formulaic, "punched up" style. When every other sentence has one, or when a comma would be more natural, it's a tell.
+**Personal override applies - see Personal Style Overrides at the top of this file.** Peter bans em-dashes and en-dashes entirely in his content.
+
+LLMs use em dashes at 2-3x the rate of human writers. They substitute them for commas, parentheses, and colons in a formulaic, "punched up" style. In Peter's writing, replace every em-dash (—) and en-dash (–) with one of: a hyphen (-), parentheses, a comma, or a colon. Applies to number ranges too (`5-10 minutes`, not `5–10 minutes`). Verbatim quotes from external sources are exempt.
 
 ## Formatting tells
 
 - **Excessive boldface**: bolding every key term mechanically, "key takeaways" style
-- **Title case in every heading**: use sentence case instead
+- **Title case in every heading**: genuine AI tell in most contexts, but Peter's personal override (see top of file) keeps Title Case for all H1/H2/H3 headings and for bold prefixes in headline-style bullets. Do not flag these in his content.
 - **Bullet + bold header + colon**: the "**Term:** Description of term" pattern in every list
 - **Emoji decoration**: emoji before every section heading or bullet point
 
