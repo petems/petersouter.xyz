@@ -6,9 +6,9 @@ garden_topic: "Git"
 status: "Seedling"
 ---
 
-Letting 1Password run your SSH agent is neat! It'll hold holds your keys, and prompts you to authorise each use pretty seamlesly with your password or thumbprint.
+Letting 1Password run your SSH agent is neat! It'll hold your keys, and prompt you to authorise each use pretty seamlessly with your password or thumbprint.
 
-For the usecase we'll be talking about here, we can use it to be a git commit signer. For me, this was way easier than the setup I had before: No GPG, no having to add an `ssh-agent` call to your shell's startup prompt, and having to type a password to use a protected key every single time and so on.
+For the use case we'll be talking about here, we can use it as a git commit signer. For me, this was way easier than the setup I had before: No GPG, no having to add an `ssh-agent` call to your shell's startup prompt, and having to type a password to use a protected key every single time and so on.
 
 This is how it's done...
 
@@ -96,7 +96,7 @@ If you'd rather keep everything in one file, drop this into `~/.gitconfig` direc
 A quick note on `signingkey`: git accepts either a path to a public key file (what's shown above), or the literal public key prefixed with `key::` (like `key::ssh-ed25519 AAAA...`). If you look at the file 1Password generates, it uses the raw `ssh-ed25519 AAAA...` form with no prefix, which also works. The [git docs](https://git-scm.com/docs/git-config#Documentation/git-config.txt-usersigningKey) call that form deprecated but it's still tolerated for backward compat, hence 1Password's choice.
 {{< /info >}}
 
-For the email, I've switched to using [the Github `noreply` option](https://docs.github.com/en/account-and-profile/reference/email-addresses-reference#your-noreply-email-address). For me that's `petems@users.noreply.github.com`, but they've recently added an option to hide your email address completely as well:
+For the email, I've switched to using [the GitHub `noreply` option](https://docs.github.com/en/account-and-profile/reference/email-addresses-reference#your-noreply-email-address). For me that's `petems@users.noreply.github.com`, but they've recently added an option to hide your email address completely as well:
 
 ![GitHub email settings with the Keep my email addresses private toggle turned on](github-keep-email-private.png)
 
@@ -126,7 +126,7 @@ Then tell git about it:
 git config --global gpg.ssh.allowedSignersFile ~/.config/git/allowed_signers
 ```
 
-That should fit it!
+That should fix it!
 
 ## Bonus: Use 1Password as Your Full SSH Agent
 
