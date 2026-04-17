@@ -10,7 +10,7 @@ Ma (間) is a Japanese concept that roughly translates to "the space between thi
 
 Way back in the day, when I was doing A-Level Film Studies was the first time I'd heard it, and that original memory was re-sparked for me recently watching this YouTube short of Brennan Lee Mulligan and Matt Mercer (of Critical Role fame for ya'll non-nerds out there) talking about Ma in the context of *Seven Samurai* and Kurosawa:
 
-{{< youtube jTh8CaB0Ugk >}}
+{{< youtube id="jTh8CaB0Ugk" title="Brennan Lee Mulligan and Matt Mercer discuss the concept of Ma in Seven Samurai" >}}
 
 Now I wish I could be cool enough to say my first experience with Ma was with a Kurosawa picture, but it was actually with Miyazaki of Ghibli fame. I think Spirited Away (2003 western release)? Because that lines up with his interview with Roger Ebert when he talked about Ma in 2002 so I imagine that might have been one of the sources we'd referenced in class:
 
