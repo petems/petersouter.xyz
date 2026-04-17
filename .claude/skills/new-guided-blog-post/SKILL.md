@@ -41,26 +41,6 @@ Always apply Peter's writing voice from `.claude/context/writing-style.md`:
 
 ## Workflow Phases
 
-### Phase 0.5: Create the Branch
-
-Before drafting, pick a short kebab-case slug for the post and create a branch `feat/blog/<short-slug>`. This keeps the blog work isolated and easy to find later.
-
-Follow the same safety checks as the garden skill:
-
-1. `git branch --show-current` — note current branch
-2. `git status --short` — must be clean; if not, stop and warn the user
-3. If already on a `feat/blog/*` branch, ask whether to extend it or cut a new one
-
-Create the branch:
-
-```bash
-git checkout master
-git pull origin master
-git checkout -b feat/blog/<short-slug>
-```
-
-Use the post's working slug. It doesn't have to match the final Hugo `slug` frontmatter exactly — favour a short, memorable name (<= ~40 chars).
-
 ### Phase 1: Understanding the Topic
 
 When the user describes what they want to write about:
@@ -80,6 +60,28 @@ When the user describes what they want to write about:
    - Break down the article into manageable sections
    - Each task should be a specific section or component
    - Track progress as you write
+
+### Phase 1.5: Create the Branch
+
+Once the topic is understood and a slug makes sense, create a branch `feat/blog/<short-slug>` before drafting. This keeps blog work isolated and easy to find later. Use the post's working slug — it doesn't have to match the final Hugo `slug` frontmatter exactly, favour a short, memorable name (<= ~40 chars).
+
+Follow the same safety checks as the garden skill:
+
+1. `git branch --show-current` — note current branch
+2. `git status --short` — must be clean; if not, stop and warn the user
+3. If already on a `feat/blog/*` branch, ask whether to extend it or cut a new one
+4. Ensure the target branch is unused locally: `git rev-parse --verify feat/blog/<short-slug>` should fail
+5. Ensure the target branch is unused on origin: `git ls-remote --exit-code --heads origin feat/blog/<short-slug>` should fail
+
+If either collision check passes (i.e. the name is taken), pick a more specific slug and re-check.
+
+Create the branch:
+
+```bash
+git checkout master
+git pull origin master
+git checkout -b feat/blog/<short-slug>
+```
 
 ### Phase 2: Collaborative Drafting
 

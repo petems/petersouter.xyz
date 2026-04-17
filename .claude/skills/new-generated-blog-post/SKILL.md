@@ -75,7 +75,8 @@ Blog posts always get their own branch, named `feat/blog/<short-slug>`. `<short-
 2. Check for uncommitted changes: `git status --short`
 3. If there are uncommitted changes, **stop and warn the user**. Don't create a branch with dirty state — ask them to commit or stash first.
 4. If already on a `feat/blog/*` branch, ask the user if they want to add to the current branch or create a new one.
-5. Check the new branch name is not already in use: `git rev-parse --verify feat/blog/<short-slug>` should fail. If it exists, pick a more specific slug and re-check.
+5. Check the branch name is unused locally: `git rev-parse --verify feat/blog/<short-slug>` should fail.
+6. Check the branch name is unused on origin: `git ls-remote --exit-code --heads origin feat/blog/<short-slug>` should fail. If either exists, pick a more specific slug and re-check.
 
 **Create the branch:**
 
