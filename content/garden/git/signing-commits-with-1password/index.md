@@ -1,5 +1,5 @@
 ---
-title: "Signing Git Commits With 1Password"
+title: "1Password Signing"
 date: 2026-04-16T00:00:00+00:00
 description: "Setting up SSH-based git commit signing when 1Password is already running your SSH agent."
 garden_topic: "Git"
