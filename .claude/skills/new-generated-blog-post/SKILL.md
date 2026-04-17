@@ -65,6 +65,28 @@ Multiple categories can be combined as an array: `categories = ["Meta", "Bloggin
 
 ---
 
+### Step 1.5: Create the Branch
+
+Blog posts always get their own branch, named `feat/blog/<short-slug>`. `<short-slug>` is a shortened, kebab-case version of the post slug chosen in Step 1 — keep it under ~40 characters so the branch name stays readable. Examples: post slug `the-moneyball-problem-love-the-movie-loathe-its-legacy` → branch `feat/blog/moneyball-problem`; post slug `fosdem-2026-highlights` → branch `feat/blog/fosdem-2026`.
+
+**Branch safety checks** — before creating the branch:
+
+1. Check current branch: `git branch --show-current`
+2. Check for uncommitted changes: `git status --short`
+3. If there are uncommitted changes, **stop and warn the user**. Don't create a branch with dirty state — ask them to commit or stash first.
+4. If already on a `feat/blog/*` branch, ask the user if they want to add to the current branch or create a new one.
+5. Check the new branch name is not already in use: `git rev-parse --verify feat/blog/<short-slug>` should fail. If it exists, pick a more specific slug and re-check.
+
+**Create the branch:**
+
+```bash
+git checkout master
+git pull origin master
+git checkout -b feat/blog/<short-slug>
+```
+
+---
+
 ### Step 2: Research Source Material
 
 #### 2.1 Read User-Provided Material
@@ -236,4 +258,5 @@ The post is only considered complete after confirming there are no build errors.
 
 - Preview: `hugo server --buildDrafts` then visit `http://localhost:1313/slug-name/`
 - Commit: `git add content/post/YYYY/MM/slug.md static/images/YYYY/MM/` (if images added)
-- Commit message: `feat: add draft blog post about [topic]`
+- Commit message: `feat(blog): add draft post about [topic]`
+- Push: `git push -u origin feat/blog/<short-slug>`

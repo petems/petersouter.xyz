@@ -41,6 +41,26 @@ Always apply Peter's writing voice from `.claude/context/writing-style.md`:
 
 ## Workflow Phases
 
+### Phase 0.5: Create the Branch
+
+Before drafting, pick a short kebab-case slug for the post and create a branch `feat/blog/<short-slug>`. This keeps the blog work isolated and easy to find later.
+
+Follow the same safety checks as the garden skill:
+
+1. `git branch --show-current` — note current branch
+2. `git status --short` — must be clean; if not, stop and warn the user
+3. If already on a `feat/blog/*` branch, ask whether to extend it or cut a new one
+
+Create the branch:
+
+```bash
+git checkout master
+git pull origin master
+git checkout -b feat/blog/<short-slug>
+```
+
+Use the post's working slug. It doesn't have to match the final Hugo `slug` frontmatter exactly — favour a short, memorable name (<= ~40 chars).
+
 ### Phase 1: Understanding the Topic
 
 When the user describes what they want to write about:
@@ -146,6 +166,7 @@ Where `[slug-name]` is a lowercase, hyphenated version of the topic.
 - Ask for feedback at natural breakpoints
 - Be direct about uncertainties ("I'm not sure how technical to get here - should I expand on the implementation details?")
 - Accept revision requests gracefully and adjust
+- When the draft is ready, remind the user to push the branch: `git push -u origin feat/blog/<short-slug>`
 
 ## Example Collaborative Flow
 
