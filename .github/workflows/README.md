@@ -49,24 +49,16 @@ This directory contains GitHub Actions workflows for automated testing and deplo
 - Deploys preview versions of the site to Vercel
 - Allows reviewing changes before merging
 
-### compress-images-cron.yml - Image Optimization
-
-**Triggers:**
-- Scheduled (cron)
-- Manual workflow dispatch
-
-**What it does:**
-- Compresses images to reduce file sizes
-- Improves site performance
-
 ### calibreapp-image-actions.yml - Image Optimization
 
 **Triggers:**
-- Pull requests with image changes
+- Pull requests
 
 **What it does:**
-- Automatically optimizes images in pull requests
-- Uses Calibre Image Actions
+- Runs `calibreapp/image-actions` scoped to files changed in the PR only, so each image is optimised exactly once (when it's introduced).
+- Commits the optimised versions back to the PR branch.
+
+**Why there is no scheduled/cron variant:** a previous `compress-images-cron.yml` scanned every image in the repo daily. Because calibreapp always re-encodes (PNGs via different compression heuristics, JPEGs lossily at quality 80), each run found marginal new savings and opened another "Optimised images" PR. Over repeated passes this degraded JPEG quality. Do not reintroduce a repo-wide scheduled run — rely on the PR-scoped flow above.
 
 ## Test Configuration
 
