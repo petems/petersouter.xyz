@@ -180,3 +180,17 @@ public/                # Generated site (not in git)
 - **Commit style**: Conventional Commits
 - **Deploy**: Automatic on push to `master` via GitHub Actions
 - **Previews**: PRs trigger Vercel preview deployments
+
+### Branch Naming
+
+All work happens on topic branches. Use one of these prefixes so `git branch -r` stays scannable:
+
+- `feat/blog/<slug>` — new blog posts or rewrites of existing posts. `<slug>` is a short kebab-case slug derived from the post title (not necessarily the full Hugo `slug` field — keep it under ~40 chars). Examples: `feat/blog/fosdem-2026`, `feat/blog/moneyball-problem`, `feat/blog/rip-terrance-gore`.
+- `feat/garden/<page-name>` — new garden pages (see `.claude/skills/new-garden-page/SKILL.md`).
+- `feat/<topic>` — other features (theme, tooling, infra, CI).
+- `fix/<topic>` — bug fixes.
+- `chore/<topic>` — deps, config, non-functional cleanup.
+- `refactor/<topic>` — code restructuring with no behaviour change.
+- `docs/<topic>` — documentation-only changes.
+
+Agent-generated prefixes (`claude/*`, `cursor/*`, `codex/*`) are acceptable for short-lived scratch branches, but rename to one of the above before pushing work you want to come back to.
