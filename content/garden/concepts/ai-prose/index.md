@@ -10,7 +10,7 @@ status: "Budding"
 
 [Grace's](https://bsky.app/profile/gracekind.net) store-bought-cake metaphor has stuck with me since I first saw it, and I think about it every time I reach for an LLM to help me write something for humans.
 
-To stretch the metaphor, my own complaint goes beyond the store-bought part, it's the flavour.
+To stretch the metaphor, my complaint goes beyond the store-bought part: it's the flavour.
 
 ## Tastes Like Purple
 
@@ -47,7 +47,7 @@ Where LLMs genuinely earn their keep for me:
 - **Drafting Structure.** "Here are the five things I want to cover, lay out a skeleton and I'll write the prose." The scaffolding is easy to audit, and I fill in the voice-heavy parts.
 - **Unblocking.** When I'm stuck, a quick LLM pass often surfaces angles I hadn't considered. By the time I've edited, I rarely keep the original words, but the angle sticks.
 - **Proof Reading.** Asking the model to scan my draft for AI tells, vendor phrasing, and unsupported claims, and to suggest references worth adding in.
-- **Summarising Source Material.** A long doc, a PR diff, a transcript. Summarise for my own consumption first, then I can write my takeaways in my own voice.
+- **Summarising Source Material.** A long doc, a PR diff, a transcript. Summarise for my own consumption first, then I write the takeaway in my voice.
 
 Basically: LLM for structure and review, human for the actual craft of writing.
 
@@ -100,7 +100,7 @@ two paragraphs is a rewrite.
 [...]
 ```
 
-**Personal Overrides** (same file, top section). Important bit. Without these you over-correct and flatten your own style. Mine are Title Case on headings, Title Case on bold bullet prefixes (which turns out to be [Chicago style](https://en.wikipedia.org/wiki/The_Chicago_Manual_of_Style), absorbed from years of reading without ever sitting down and picking it), and a stricter em-dash/en-dash ban than the Wikipedia guide: none at all, even for number ranges.
+**Personal Overrides** (same file, top section). Important bit. Without these you over-correct and flatten your own style. Mine are Title Case on headings, Title Case on bold bullet prefixes (which overlaps with [Chicago style](https://en.wikipedia.org/wiki/The_Chicago_Manual_of_Style), absorbed from years of reading without ever sitting down and choosing it deliberately), and a stricter em-dash/en-dash ban than the Wikipedia guide: none at all, even for number ranges.
 
 ```markdown
 ## Personal Style Overrides
@@ -122,15 +122,19 @@ do not "correct" them during drafting or review.
   external sources are exempt.
 ```
 
-These files don't do anything on their own, they're just reference documents. The thing that wires them together is a [skill](https://github.com/petems/petersouter.xyz/blob/master/.claude/skills/new-generated-blog-post/SKILL.md) that Claude Code loads before drafting, which points at both files and runs the checklist as a self-review pass before handing me a draft to read.
+These files don't do anything on their own, they're just reference documents. The thing that wires them together is a [skill](https://github.com/petems/petersouter.xyz/blob/master/.claude/skills/new-generated-blog-post/SKILL.md) that Claude Code loads before drafting. It points at both files and runs the checklist as a self-review pass before handing me a draft to read.
+
+(The snippets above are lightly sanitised, mostly swapping em-dashes for parens so this page stays clean. The real files are the linked ones.)
 
 It's not bulletproof. Purple prose still slips through, and this very page needed a few editing passes before I was happy signing my name to it. But it catches more slop than any hand-edit I used to do, and it's a lot more useful than a bare "help me write a post about X" prompt.
+
+Even with the tooling in place though, there's one more rule I try to hold to: be honest about when AI is in the mix at all.
 
 ## The Disclosure Play
 
 I'd rather be explicit about AI assistance than sneak it in.
 
-If I've asked Claude to sketch something out and I'm sharing it before I've had time to edit, I say so. A quick "here's a rough Claude draft, I'll give a proper take later" costs me nothing, and means the person reading knows what they're reading. Just copypasta-ing LLM output as if I'd written it is a paper-cut of trust in the relationship, even if nobody calls it out.
+If I've asked Claude to sketch something out and I'm sharing it before I've had time to edit, I say so. A quick "here's a rough Claude draft, I'll give a proper take later" costs me nothing, and the person on the other end knows what they've got. Just copypasta-ing LLM output as if I'd written it is a paper-cut of trust in the relationship, even if nobody calls it out.
 
 ## Closer
 
