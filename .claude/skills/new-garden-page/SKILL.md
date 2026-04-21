@@ -1,7 +1,7 @@
 ---
 name: new-garden-page
 description: "Create a new digital garden page for petersouter.xyz. Gathers the idea, picks a garden topic, writes a concise page in Peter's voice, validates the build, and creates a feat/garden/* branch. Use this skill whenever the user mentions garden content, garden pages, garden ideas, seedlings, adding to the garden, digital garden, or wants to capture a short idea/note that isn't a full blog post. If the user has a quick thought, link collection, or half-formed idea they want to publish, this is the right skill — not the blog post writer."
-user_invocable: true
+user-invocable: true
 ---
 
 # Garden Page Creator for petersouter.xyz
@@ -124,7 +124,7 @@ Field rules:
 
 Peter's voice applies here just as much as in blog posts, but the format is different. Garden pages are short and direct.
 
-Read `.claude/context/writing-style.md` for the full voice guide. The key points for garden content:
+Read `.claude/references/writing-style.md` for the full voice guide. The key points for garden content:
 
 - **First-Person, Conversational**: "I learnt about...", "I've been using..."
 - **British English**: recognised, organised, colour, favourite
@@ -174,7 +174,7 @@ If the user provides images, copy them into the page bundle directory.
 
 #### AI Writing Tells
 
-Review the draft against `.claude/context/ai-writing-tells.md`. Garden pages are short, so even a small cluster stands out. Watch for:
+Review the draft against `.claude/references/ai-writing-tells.md`. Garden pages are short, so even a small cluster stands out. Watch for:
 
 - AI vocabulary ("delve", "crucial", "landscape", "foster"): replace with plain language
 - Inflated significance: garden pages are casual; nothing needs to "stand as a testament"

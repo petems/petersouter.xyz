@@ -52,7 +52,7 @@ Two firm house-style rules that override the AI-writing-tells checklist:
 - **Title Case on Bold Prefixes in Headline-Style Bullets** - bullets of the shape `**Term:** description`. Plain prose bullets keep natural sentence case.
 - **No Em-Dashes (—) and No En-Dashes (–) in Prose.** Use a hyphen (-), parentheses, commas, or colons. Number ranges use a hyphen (`5-10 minutes`). Verbatim quotes from external sources keep their original punctuation.
 
-These are deliberate preferences that override the AI-writing-tells guide. See `.claude/context/ai-writing-tells.md` § Personal Style Overrides for the reasoning.
+These are deliberate preferences that override the AI-writing-tells guide. See `.claude/references/ai-writing-tells.md` § Personal Style Overrides for the reasoning.
 
 ### Opening Hooks
 Varied but always personal or relatable — leads with personal context or a practical problem, not dramatic hooks:
