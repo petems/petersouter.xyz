@@ -1,7 +1,7 @@
 ---
 name: blog-post-writer
 description: "Write a new blog post for petersouter.xyz. Gathers requirements, researches source material, creates the post with correct Hugo frontmatter and site conventions, and verifies the build. Use when the user wants to write, draft, or start a new blog post."
-user_invocable: true
+user-invocable: true
 ---
 
 # Blog Post Writer for petersouter.xyz
@@ -219,7 +219,7 @@ GitHub Actions will automatically optimise images on commit — no manual compre
 
 #### AI Writing Tells
 
-Before finalising, review the draft against `.claude/context/ai-writing-tells.md`. Scan for and eliminate:
+Before finalising, review the draft against `.claude/references/ai-writing-tells.md`. Scan for and eliminate:
 
 - Clusters of AI-overrepresented vocabulary ("delve", "crucial", "multifaceted", "landscape", "tapestry", "underscore", "foster")
 - Inflated significance phrases ("stands as a testament", "plays a pivotal role")
@@ -237,7 +237,7 @@ The signal is density: one instance is fine; a cluster in a section means rewrit
 
 - [ ] `<!--more-->` is present after opening paragraph
 - [ ] British English spelling used throughout
-- [ ] No AI writing tell clusters (checked against `.claude/context/ai-writing-tells.md`)
+- [ ] No AI writing tell clusters (checked against `.claude/references/ai-writing-tells.md`)
 - [ ] No em-dashes (—) or en-dashes (–) in prose (code blocks and verbatim quotes exempt)
 - [ ] All headings (H1/H2/H3) use Title Case
 - [ ] Internal links to existing posts where relevant

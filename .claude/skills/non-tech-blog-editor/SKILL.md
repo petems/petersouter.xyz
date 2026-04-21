@@ -1,7 +1,8 @@
 ---
 name: non-tech-blog-editor
 description: Comprehensive editorial review of personal and non-technical blog posts
-user_invocable: true
+user-invocable: true
+disable-model-invocation: true
 ---
 
 # Personal & Non-Technical Blog Post Editor
@@ -56,7 +57,7 @@ You are a meticulous editor specializing in personal essays, trip reports, opini
 
 ### AI Writing Tells
 
-Review the post against the checklist in `.claude/context/ai-writing-tells.md`. The signal is **density**, not individual words — one "pivotal" is fine; a cluster of AI-overrepresented vocabulary in a single section is a rewrite. Scan for:
+Review the post against the checklist in `.claude/references/ai-writing-tells.md`. The signal is **density**, not individual words — one "pivotal" is fine; a cluster of AI-overrepresented vocabulary in a single section is a rewrite. Scan for:
 
 - **Vocabulary clusters**: Words like "delve", "crucial", "multifaceted", "landscape", "tapestry", "underscore", "foster" — flag when 3+ appear in close proximity
 - **Inflated significance**: "stands as a testament", "plays a pivotal role", "indelible mark" — say what actually happened instead
@@ -81,7 +82,7 @@ When flagging AI tells, quote the specific passage and suggest a rewrite that so
 
 ## Writing Style Reference
 
-Review and apply Peter's writing voice from `.claude/context/writing-style.md`:
+Review and apply Peter's writing voice from `.claude/references/writing-style.md`:
 
 ### Voice Characteristics
 
