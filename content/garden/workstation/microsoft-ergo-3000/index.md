@@ -32,7 +32,7 @@ I was actually pretty sad to find out, as I was researching this post, that Micr
 
 However, all is not lost. It lives on through a [partnership with InCase](https://www.theverge.com/2024/1/5/24026323/microsoft-incase-partnership-keyboards-accessories-partnership).
 
-So now, if you want one you'll be looking for an **"Incase Designed by Microsoft™ Ergonomic Keyboard**:
+So now, if you want one you'll be looking for an **"Incase Designed by Microsoft™ Ergonomic Keyboard"**:
 
 ![Incase Designed by Microsoft Ergonomic Keyboard](Incase-Designed-by-Microsoft-Ergonomic-Keyboard.png)
 <https://www.incase.com/products/ergonomic-keyboard>
