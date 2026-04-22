@@ -51,7 +51,7 @@ It Just Works™
 
 ## If It Aint Broke
 
-At this point I think I must've bought half a dozen of it and its various successors. Not because it broke down, far from it! I found myself gifting it to friends and family members who complained about wrist issues, for desks and workstations at companies I worked at where I often left it behind when I left, and... yes, sometimes as a refresh when previous ones started to get a little worn down. Although looking through my email archives, my first purchase of one was in 2015, and that one was a workhorse that lasted 5 years it seems!
+At this point I think I must've bought half a dozen of them and their various successors. Not because it broke down, far from it! I found myself gifting it to friends and family members who complained about wrist issues, for desks and workstations at companies I worked at where I often left it behind when I left, and... yes, sometimes as a refresh when previous ones started to get a little worn down. Although looking through my email archives, my first purchase of one was in 2015, and that one was a workhorse that lasted 5 years it seems!
 
 ![Amazon keyboard purchase history](amazon-keyboard-emails.png)
 
