@@ -1,7 +1,7 @@
 {{- define "main" }}
 
 {{- $topicData := .Site.Data.garden.topics -}}
-{{- $sections := .Sections -}}
+{{- $sections := .Sections.ByTitle -}}
 
 <header class="page-header">
   {{- partial "breadcrumbs.html" . }}
