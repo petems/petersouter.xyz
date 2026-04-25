@@ -5,12 +5,10 @@
   {{- with try (resources.GetRemote $request) -}}
     {{- with .Err -}}
       {{- warnf "bluesky shortcode: failed to fetch oEmbed for %q: %s" $link . -}}
-    {{- else -}}
-      {{- with .Value -}}
-        {{- $jsonOembed := unmarshal .Content -}}
-        {{- with $jsonOembed.html -}}
-          {{- . | safeHTML -}}
-        {{- end -}}
+    {{- else with .Value -}}
+      {{- $jsonOembed := unmarshal .Content -}}
+      {{- with $jsonOembed.html -}}
+        {{- . | safeHTML -}}
       {{- end -}}
     {{- end -}}
   {{- end -}}
