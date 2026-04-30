@@ -194,3 +194,22 @@ All work happens on topic branches. Use one of these prefixes so `git branch -r`
 - `docs/<topic>` — documentation-only changes.
 
 Agent-generated prefixes (`claude/*`, `cursor/*`, `codex/*`) are acceptable for short-lived scratch branches, but rename to one of the above before pushing work you want to come back to.
+
+## Cursor Cloud specific instructions
+
+### Prerequisites
+
+Hugo v0.155.3 extended must be installed. It is not available via `apt`; install the binary from the GitHub release (see `.devcontainer/Dockerfile` for the exact download pattern). The update script handles this automatically.
+
+### Running services
+
+- **Dev server**: `hugo server --buildDrafts` at http://localhost:1313 (add `--bind 0.0.0.0` if testing from outside the container)
+- **Tests**: `npm test` runs Jest tests for `static/js/talks-filter.js` (34 tests)
+- **Build**: `hugo` builds the full site to `public/`
+- No databases, backend services, or Docker containers are needed for development
+
+### Gotchas
+
+- The PaperMod theme is a git submodule — always run `git submodule update --init --recursive` before building if `themes/PaperMod/` is empty
+- There is no lockfile (`package-lock.json` / `pnpm-lock.yaml`) in the repo; `npm install` will resolve latest versions within the ranges in `package.json`
+- The `make spellcheck` target requires Docker; skip it in environments without Docker unless you install it yourself
