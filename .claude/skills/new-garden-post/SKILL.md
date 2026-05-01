@@ -5,4 +5,6 @@ argument-hint: [your idea]
 disable-model-invocation: true
 ---
 
+# Garden Post Alias
+
 Invoke the `new-garden-page` skill now, passing `$ARGUMENTS` as the initial idea.
