@@ -1,44 +1,61 @@
-{{- define "main" }}
+{{ define "header" }}
+<header class="intro-header" style="background-image: url('{{ .Site.Params.header_image | relURL }}')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>{{ .Title }}</h1>
+                    {{- with .Content }}
+                    <span class="subheading">{{ . | plainify }}</span>
+                    {{- end }}
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{{ end }}
+
+{{ define "main" }}
 
 {{- $topicData := .Site.Data.garden.topics -}}
 {{- $sections := .Sections.ByTitle -}}
 
-<header class="page-header">
-  {{- partial "breadcrumbs.html" . }}
-  <h1>{{ .Title }}</h1>
-  {{- with .Content }}
-  <div class="garden-intro">{{ . }}</div>
-  {{- end }}
-</header>
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
+                {{- if gt (len $sections) 0 }}
+                <div class="garden-columns">
+                    {{- range $sections }}
+                    {{- $groupName := .Title | default "Unsorted" -}}
+                    {{- $topic := index $topicData $groupName -}}
+                    {{- $emoji := "" -}}
+                    {{- with $topic }}{{ with .emoji }}{{ $emoji = . }}{{ end }}{{ end -}}
+                    {{- $pages := .RegularPages.ByTitle -}}
+                    {{- if gt (len $pages) 0 }}
+                    <section class="garden-topic">
+                        <h2 class="garden-topic-title">
+                            {{- with $emoji }}<span class="garden-topic-emoji">{{ . }}</span>{{ end }}
+                            {{ $groupName }}
+                            <span class="badge">{{ len $pages }}</span>
+                        </h2>
+                        <ul class="list-group">
+                            {{- range $pages }}
+                            <li class="list-group-item">
+                                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                            </li>
+                            {{- end }}
+                        </ul>
+                    </section>
+                    {{- end }}
+                    {{- end }}
+                </div>
+                {{- else }}
+                <p>Nothing planted yet — check back soon.</p>
+                {{- end }}
+            </div>
+        </div>
+    </div>
+</article>
 
-{{- if gt (len $sections) 0 }}
-<div class="garden-columns">
-  {{- range $sections }}
-  {{- $groupName := .Title | default "Unsorted" -}}
-  {{- $topic := index $topicData $groupName -}}
-  {{- $emoji := "🌱" -}}
-  {{- with $topic.emoji }}{{ $emoji = . }}{{ end -}}
-  {{- $pages := .RegularPages.ByTitle -}}
-  {{- if gt (len $pages) 0 }}
-  <section class="garden-topic">
-    <h2 class="garden-topic-title">
-      <span class="garden-topic-emoji">{{ $emoji }}</span>
-      {{ $groupName }}
-      <span class="garden-topic-count">{{ len $pages }}</span>
-    </h2>
-    <ul class="garden-notes">
-      {{- range $pages }}
-      <li>
-        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-      </li>
-      {{- end }}
-    </ul>
-  </section>
-  {{- end }}
-  {{- end }}
-</div>
-{{- else }}
-<p class="garden-empty">Nothing planted yet — check back soon.</p>
-{{- end }}
-
-{{- end }}
+{{ end }}
