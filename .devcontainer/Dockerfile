@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-ARG NODE_VERSION=24
+ARG NODE_VERSION=26
 FROM mcr.microsoft.com/devcontainers/javascript-node:${NODE_VERSION}
 
 ARG USER=node
