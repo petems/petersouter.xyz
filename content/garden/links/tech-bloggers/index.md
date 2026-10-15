@@ -23,3 +23,11 @@ Creator of [pi](https://pi.dev/), an agent that isn't _quite_ for me but I enjoy
 ## [Gergely Orosz — The Pragmatic Engineer](https://pragmaticengineer.com)
 
 Gergely is a former Uber engineer turned full-time writer. I like how he gets a lot of good interviews where he asks well-thought-out, grounded questions. Honestly, it's a good balance of grounded but still wide-scoped tech reporting that feels like it's largely died off on bigger sites.
+
+## [Simon Willison](https://simonwillison.net/)
+
+Co-creator of Django and the person behind [Datasette](https://datasette.io/). His link blog is the best way I've found to keep up with what's actually happening in LLM-land without drowning in hype. He's prolific without being noisy, which is a rare combination, and his annotated posts about new model releases consistently teach me something I didn't know I needed to know.
+
+## [Mitchell Hashimoto](https://mitchellh.com/writing)
+
+Co-founder of HashiCorp (so, Terraform, Vagrant, Vault and friends) and these days working on the [Ghostty](https://ghostty.org/) terminal. His writing is less frequent but always worth the wait. His posts on software craft and tooling are a practical take from someone who has shipped a lot of software the hard way.
