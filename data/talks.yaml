@@ -1,4 +1,17 @@
 talks:
+  - title: "AI and the Future of Observability"
+    date: 2026-10-07
+    conference: "World Summit AI"
+    year: 2026
+    topics:
+      - AI
+      - Observability
+      - SRE
+      - Incident Response
+    description: "Keynote for the AI LABS track on how AI is changing the way engineering teams monitor, investigate and manage complex software, using Datadog's Bits AI SRE as a practical example of AI investigating alerts, querying telemetry and supporting incident response in real production environments."
+    url: "https://worldsummit.ai/programme/"
+    slides_url: "/slides/2026/ai-and-the-future-of-observability-world-summit-ai-2026.pdf"
+
   - title: "Untaggling Strings: Getting CI Visibility for Vox Pupuli Tests"
     date: 2026-02-03
     conference: "Config Management Camp"
