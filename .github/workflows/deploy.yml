@@ -64,7 +64,7 @@ jobs:
           role-session-name: github-actions-deploy-${{ github.run_id }}
 
       - name: Deploy to S3
-        run: hugo deploy
+        run: hugo deploy --maxDeletes 0
 
       - name: Deployment complete
         run: |
