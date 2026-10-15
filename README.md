@@ -51,7 +51,7 @@ The site uses the following AWS services (managed via Terraform in `terraform/s3
 **Production: GitHub Actions**
 - Workflow: `.github/workflows/deploy.yml`
 - Triggers on push to `master` branch
-- Uses Hugo v0.152.2 (extended) for builds
+- Uses Hugo v0.168.0 (extended) for builds
 - Deploys via `go3up` with MD5 caching
 - OIDC authentication (no static AWS keys)
 - View deployments: https://github.com/petems/petersouter.xyz/actions
@@ -69,7 +69,7 @@ The site uses PrettyURLs (e.g., `/path/` instead of `/path/index.html`) implemen
 
 ## Prerequisites
 
-- [Hugo](https://gohugo.io/) (v0.152.2 extended or later)
+- [Hugo](https://gohugo.io/) (v0.168.0 extended or later)
 - [Git](https://git-scm.com/) (for cloning and submodules)
 - [Terraform](https://www.terraform.io/) (for infrastructure changes)
 - [AWS CLI](https://aws.amazon.com/cli/) (optional, for manual S3 operations)

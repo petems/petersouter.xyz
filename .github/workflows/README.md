@@ -32,7 +32,7 @@ This directory contains GitHub Actions workflows for automated testing and deplo
 
 2. **Build and Deploy Job** (runs after test job passes):
    - Checks out code with submodules
-   - Sets up Hugo 0.155.3
+   - Sets up Hugo 0.168.0
    - Builds the static site
    - Configures AWS credentials via OIDC
    - Uploads to S3 using go3up
