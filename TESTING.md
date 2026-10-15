@@ -6,7 +6,7 @@ This document describes the testing setup for the petersouter.xyz website, speci
 
 ## What Was Implemented
 
-### 1. Extracted JavaScript (`static/js/talks-filter.js`)
+### 1. Extracted JavaScript (`assets/js/talks-filter.js`)
 
 The JavaScript code for filtering talks was extracted from the inline `<script>` tag in the partial template to a separate file. This provides several benefits:
 
@@ -72,7 +72,8 @@ The extracted code includes:
 
 `layouts/partials/talks-list.html` now uses:
 ```html
-<script src="/js/talks-filter.js"></script>
+{{- $talksFilter := resources.Get "js/talks-filter.js" | minify | fingerprint }}
+<script src="{{ $talksFilter.RelPermalink }}" integrity="{{ $talksFilter.Data.Integrity }}"></script>
 ```
 
 Instead of inline JavaScript, keeping the template clean and the logic testable.
@@ -137,7 +138,7 @@ npx jest -u
 
 ## Integration with Hugo
 
-The JavaScript file is served from the `/static/js/` directory, which Hugo automatically copies to the `public/` directory during build.
+The JavaScript file is served from the `/assets/js/` directory, which Hugo automatically copies to the `public/` directory during build.
 
 **Hugo build verification:**
 ```bash
@@ -252,7 +253,7 @@ node --inspect-brk node_modules/.bin/jest --runInBand
 When adding new filtering features:
 
 1. Write the test first (TDD approach)
-2. Implement the feature in `static/js/talks-filter.js`
+2. Implement the feature in `assets/js/talks-filter.js`
 3. Ensure the function is exported for testing
 4. Run tests: `npm test`
 5. Verify coverage: `npm run test:coverage`
@@ -281,5 +282,5 @@ For questions or issues with the test suite:
 
 1. Check the test output for specific error messages
 2. Review the test file: `tests/talks-filter.test.js`
-3. Check the source code: `static/js/talks-filter.js`
+3. Check the source code: `assets/js/talks-filter.js`
 4. Refer to this documentation and the `tests/README.md`

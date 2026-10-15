@@ -283,4 +283,5 @@
   </div>
 </div>
 
-<script src="/js/talks-filter.js"></script>
+{{- $talksFilter := resources.Get "js/talks-filter.js" | minify | fingerprint }}
+<script src="{{ $talksFilter.RelPermalink }}" integrity="{{ $talksFilter.Data.Integrity }}"></script>
