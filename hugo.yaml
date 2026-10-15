@@ -131,9 +131,14 @@ deployment:
     - name: "production"
       url: "s3://petersouter.xyz?region=eu-west-1"
   matchers:
-    # Long-lived static assets: aggressive caching
+    # First matching matcher wins, so fingerprinted assets must come first.
+    # Fingerprinted CSS/JS (content hash in URL): cache forever
+    - pattern: '^.+\.[0-9a-f]{64}\.(js|css)$'
+      cacheControl: "max-age=31536000, public, immutable"
+      gzip: true
+    # Other static assets (stable URLs): one week, so replacements propagate
     - pattern: '^.+\.(js|css|png|jpg|jpeg|gif|svg|webp|ico|ttf|woff|woff2|eot)$'
-      cacheControl: "max-age=31536000, public"
+      cacheControl: "max-age=604800, public"
       gzip: true
     # HTML pages: short cache, always revalidate
     - pattern: '^.+\.(html)$'

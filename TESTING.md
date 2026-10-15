@@ -138,7 +138,7 @@ npx jest -u
 
 ## Integration with Hugo
 
-The JavaScript file is served from the `/assets/js/` directory, which Hugo automatically copies to the `public/` directory during build.
+Hugo processes `assets/js/talks-filter.js` through Hugo Pipes (minify + fingerprint) and publishes it when the template renders `$talksFilter.RelPermalink`. The browser loads the generated, fingerprinted URL (e.g. `/js/talks-filter.min.<hash>.js`).
 
 **Hugo build verification:**
 ```bash
