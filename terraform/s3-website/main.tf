@@ -2,19 +2,32 @@ provider "aws" {
   region = var.region
 }
 
+data "aws_caller_identity" "current" {}
+
+####
+# Website bucket
+###
 resource "aws_s3_bucket" "website" {
   bucket = var.s3_bucket_name
 }
 
-resource "aws_s3_bucket_acl" "website" {
+# ACLs are disabled; public access is granted by the bucket policy instead
+resource "aws_s3_bucket_ownership_controls" "website" {
   bucket = aws_s3_bucket.website.id
-  acl    = "public-read"
+
+  rule {
+    object_ownership = "BucketOwnerEnforced"
+  }
 }
 
-resource "aws_s3_bucket_logging" "website" {
-  bucket        = aws_s3_bucket.website.id
-  target_bucket = var.s3_bucket_name
-  target_prefix = "log/"
+# Public bucket policy is needed for S3 static website hosting (PrettyURLs)
+resource "aws_s3_bucket_public_access_block" "website" {
+  bucket = aws_s3_bucket.website.id
+
+  block_public_acls       = true
+  block_public_policy     = false
+  ignore_public_acls      = true
+  restrict_public_buckets = false
 }
 
 resource "aws_s3_bucket_website_configuration" "website" {
@@ -38,60 +51,163 @@ resource "aws_s3_bucket_website_configuration" "website" {
   }
 }
 
-# START: For PrettyURLS
-resource "aws_s3_bucket_policy" "s3_bucket_policy" {
-  bucket = var.s3_bucket_name
+data "aws_iam_policy_document" "public_read" {
+  statement {
+    sid       = "PublicReadGetObject"
+    effect    = "Allow"
+    actions   = ["s3:GetObject"]
+    resources = ["${aws_s3_bucket.website.arn}/*"]
 
-  policy = <<POLICY
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "PublicReadAccess",
-      "Effect": "Allow",
-      "Principal": {
-        "AWS": "*"
-      },
-      "Action": "s3:*",
-      "Resource": "arn:aws:s3:::${var.s3_bucket_name}/*",
-      "Condition": {
-         "StringEquals": {"aws:UserAgent": "${var.content-secret}"}
-      }
+    principals {
+      type        = "*"
+      identifiers = ["*"]
     }
-  ]
-}
-POLICY
-
+  }
 }
 
-# END: For PrettyURLS
+resource "aws_s3_bucket_policy" "public_read" {
+  bucket = aws_s3_bucket.website.id
+  policy = data.aws_iam_policy_document.public_read.json
 
-# START: For UglyURLS
-# resource "aws_s3_bucket_policy" "s3_bucket_policy" {
-#   bucket = "${var.s3_bucket_name}"
-#   policy =<<POLICY
-# {
-#   "Version": "2012-10-17",
-#   "Statement": [
-#     {
-#       "Effect": "Allow",
-#       "Principal": {
-#         "AWS": ["${aws_cloudfront_origin_access_identity.website-cf-identity.iam_arn}"]
-#       },
-#       "Action": "s3:*",
-#       "Resource": ["arn:aws:s3:::${var.s3_bucket_name}/*"]
-#     }
-#   ]
-# }
-# POLICY
-# }
-# END: For UglyURLS
+  depends_on = [aws_s3_bucket_public_access_block.website]
+}
+
+resource "aws_s3_bucket_logging" "website" {
+  bucket        = aws_s3_bucket.website.id
+  target_bucket = aws_s3_bucket.logs.id
+  target_prefix = "s3-access/"
+
+  # S3 needs the delivery permission in place before logging can be enabled
+  depends_on = [aws_s3_bucket_policy.logs]
+}
+
+####
+# Access logs bucket
+###
+resource "aws_s3_bucket" "logs" {
+  bucket = "${var.s3_bucket_name}-logs"
+}
+
+resource "aws_s3_bucket_ownership_controls" "logs" {
+  bucket = aws_s3_bucket.logs.id
+
+  rule {
+    object_ownership = "BucketOwnerEnforced"
+  }
+}
+
+resource "aws_s3_bucket_public_access_block" "logs" {
+  bucket = aws_s3_bucket.logs.id
+
+  block_public_acls       = true
+  block_public_policy     = false
+  ignore_public_acls      = true
+  restrict_public_buckets = true
+}
+
+data "aws_iam_policy_document" "s3_logging" {
+  statement {
+    sid       = "S3ServerAccessLogsPolicy"
+    effect    = "Allow"
+    actions   = ["s3:PutObject"]
+    resources = ["${aws_s3_bucket.logs.arn}/s3-access/*"]
+
+    principals {
+      type        = "Service"
+      identifiers = ["logging.s3.amazonaws.com"]
+    }
+
+    condition {
+      test     = "ArnLike"
+      variable = "aws:SourceArn"
+      values   = [aws_s3_bucket.website.arn]
+    }
+
+    condition {
+      test     = "StringEquals"
+      variable = "aws:SourceAccount"
+      values   = [data.aws_caller_identity.current.account_id]
+    }
+  }
+}
+
+resource "aws_s3_bucket_policy" "logs" {
+  bucket = aws_s3_bucket.logs.id
+  policy = data.aws_iam_policy_document.s3_logging.json
+}
+
+####
+# TLS certificate (CloudFront requires us-east-1)
+###
+resource "aws_acm_certificate" "website" {
+  region                    = "us-east-1"
+  domain_name               = var.dns_record
+  subject_alternative_names = [var.alt_dns_record]
+  validation_method         = "DNS"
+
+  lifecycle {
+    create_before_destroy = true
+  }
+}
+
+resource "aws_route53_record" "cert_validation" {
+  for_each = {
+    for dvo in aws_acm_certificate.website.domain_validation_options : dvo.domain_name => {
+      name   = dvo.resource_record_name
+      record = dvo.resource_record_value
+      type   = dvo.resource_record_type
+    }
+  }
+
+  allow_overwrite = true
+  zone_id         = data.aws_route53_zone.main.zone_id
+  name            = each.value.name
+  records         = [each.value.record]
+  ttl             = 60
+  type            = each.value.type
+}
+
+resource "aws_acm_certificate_validation" "website" {
+  region                  = "us-east-1"
+  certificate_arn         = aws_acm_certificate.website.arn
+  validation_record_fqdns = [for record in aws_route53_record.cert_validation : record.fqdn]
+}
 
 ####
 # CloudFront Bits
 ###
-resource "aws_cloudfront_origin_access_identity" "website-cf-identity" {
-  comment = "Website CloudFront identity"
+resource "aws_cloudfront_function" "www_redirect" {
+  name    = "petersouter-www-redirect"
+  runtime = "cloudfront-js-2.0"
+  comment = "301 ${var.alt_dns_record} to ${var.dns_record}"
+  publish = true
+  code    = templatefile("${path.module}/functions/www-redirect.js", { canonical_host = var.dns_record })
+}
+
+# Same TTLs as the old legacy forwarded_values settings, but via a cache
+# policy (forwarded_values is deprecated). Brotli/gzip in the cache key lets
+# CloudFront serve compressed variants.
+resource "aws_cloudfront_cache_policy" "website" {
+  name        = "petersouter-website"
+  comment     = "Static site: no cookies, headers or query strings"
+  min_ttl     = 120 # 2min
+  default_ttl = 120 # 2min
+  max_ttl     = 300 # 5min
+
+  parameters_in_cache_key_and_forwarded_to_origin {
+    enable_accept_encoding_brotli = true
+    enable_accept_encoding_gzip   = true
+
+    cookies_config {
+      cookie_behavior = "none"
+    }
+    headers_config {
+      header_behavior = "none"
+    }
+    query_strings_config {
+      query_string_behavior = "none"
+    }
+  }
 }
 
 resource "aws_cloudfront_distribution" "website_distribution" {
@@ -106,19 +222,12 @@ resource "aws_cloudfront_distribution" "website_distribution" {
       https_port             = "443"
       origin_ssl_protocols   = ["TLSv1", "TLSv1.1", "TLSv1.2"]
     }
-
-    custom_header {
-      name  = "User-Agent"
-      value = var.content-secret
-    }
     # END: For PrettyURLS
 
-    # START: For UglyURLS
-    # domain_name = "${aws_s3_bucket.website.bucket_domain_name}"
-    # origin_id   = "myS3Origin"
-    # s3_origin_config {
-    #   origin_access_identity = "${aws_cloudfront_origin_access_identity.website-cf-identity.cloudfront_access_identity_path}"
-    # }
+    # START: For UglyURLS (also needs an aws_cloudfront_origin_access_control)
+    # domain_name              = aws_s3_bucket.website.bucket_regional_domain_name
+    # origin_id                = "myS3Origin"
+    # origin_access_control_id = aws_cloudfront_origin_access_control.website.id
     # END: For UglyURLS
   }
 
@@ -146,28 +255,22 @@ resource "aws_cloudfront_distribution" "website_distribution" {
   }
 
   default_cache_behavior {
-    allowed_methods  = ["GET", "HEAD"]
-    cached_methods   = ["GET", "HEAD"]
-    target_origin_id = "myS3Origin"
-    compress         = true
-
-    forwarded_values {
-      query_string = false
-
-      cookies {
-        forward = "none"
-      }
-    }
-
+    allowed_methods        = ["GET", "HEAD"]
+    cached_methods         = ["GET", "HEAD"]
+    target_origin_id       = "myS3Origin"
+    compress               = true
+    cache_policy_id        = aws_cloudfront_cache_policy.website.id
     viewer_protocol_policy = "redirect-to-https"
-    min_ttl                = 120 # 2min
-    default_ttl            = 120 # 2min
-    max_ttl                = 300 # 5min
+
+    function_association {
+      event_type   = "viewer-request"
+      function_arn = aws_cloudfront_function.www_redirect.arn
+    }
   }
 
   viewer_certificate {
-    acm_certificate_arn      = var.ssl_cert_arn
-    minimum_protocol_version = "TLSv1.2_2018"
+    acm_certificate_arn      = aws_acm_certificate_validation.website.certificate_arn
+    minimum_protocol_version = "TLSv1.2_2021"
     ssl_support_method       = "sni-only" # Warning: Not using SNI costs $600/mo, so use SNI
   }
 }
@@ -195,3 +298,14 @@ resource "aws_route53_record" "dns" {
   }
 }
 
+resource "aws_route53_record" "www" {
+  zone_id = data.aws_route53_zone.main.zone_id
+  name    = "${var.alt_dns_record}."
+  type    = "A"
+
+  alias {
+    name                   = aws_cloudfront_distribution.website_distribution.domain_name
+    zone_id                = aws_cloudfront_distribution.website_distribution.hosted_zone_id
+    evaluate_target_health = false
+  }
+}

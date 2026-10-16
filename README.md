@@ -37,14 +37,14 @@ The site uses the following AWS services (managed via Terraform in `terraform/s3
 
 2. **CloudFront** - CDN for content delivery
    - Reduces costs and improves performance
-   - Custom User-Agent restriction for security
+   - Cache policy (2-5 min TTLs) and a CloudFront Function that 301s `www` to the apex
    - SSL/TLS termination
 
 3. **Route53** - DNS management
    - Root domain and www subdomain routing
 
 4. **Certificate Manager** - Free SSL/TLS certificates
-   - Certificate ARN stored in Terraform variables
+   - Apex + `www` certificate created and DNS-validated by Terraform
 
 ### Deployment Pipeline
 
