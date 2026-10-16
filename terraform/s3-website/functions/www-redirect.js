@@ -8,18 +8,12 @@ function handler(event) {
     return request;
   }
 
-  var query = [];
-  for (var key in request.querystring) {
-    var param = request.querystring[key];
-    var values = param.multiValue ? param.multiValue : [param];
-    for (var i = 0; i < values.length; i++) {
-      query.push(values[i].value === "" ? key : key + "=" + values[i].value);
-    }
-  }
-
+  // rawQueryString() keeps the query exactly as received (order, encoding,
+  // and empty values), so the redirect doesn't alter it
+  var query = request.rawQueryString();
   var location = "https://${canonical_host}" + request.uri;
-  if (query.length > 0) {
-    location += "?" + query.join("&");
+  if (query) {
+    location += "?" + query;
   }
 
   return {

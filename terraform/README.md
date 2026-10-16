@@ -34,6 +34,10 @@ aws s3api put-public-access-block --bucket $B --public-access-block-configuratio
 aws s3api put-bucket-versioning --bucket $B --versioning-configuration Status=Enabled
 aws s3api put-bucket-encryption --bucket $B --server-side-encryption-configuration \
   '{"Rules":[{"ApplyServerSideEncryptionByDefault":{"SSEAlgorithm":"AES256"},"BucketKeyEnabled":true}]}'
+aws s3api put-bucket-policy --bucket $B --policy '{"Version":"2012-10-17","Statement":[{
+  "Sid":"DenyInsecureTransport","Effect":"Deny","Principal":"*","Action":"s3:*",
+  "Resource":["arn:aws:s3:::'$B'","arn:aws:s3:::'$B'/*"],
+  "Condition":{"Bool":{"aws:SecureTransport":"false"}}}]}'
 ```
 
 Versioning is on, so a bad state write can be rolled back by restoring a
@@ -58,10 +62,14 @@ No seriously keep waiting. Building a CF distribution point takes a while...
 Route53 has a $0.50 charge per month just for hosting a domain. This cost,
 while nominal, can add up overtime. Many other DNS providers
 (Namecheap, Google Domains, etc.) are more than sufficient for most sites
-and do not have a monthly charge. If you go with another provider you'll
-need to comment out the DNS resources at the bottom of the `main.tf` file.
-You will lose the programmatic DNS access that Route53 provides but save
-money in the long run.
+and do not have a monthly charge.
+
+This configuration requires Route53, though: the ACM certificate is
+DNS-validated by records Terraform writes into the Route53 zone, and the apex
+and `www` aliases point at CloudFront. To use another provider you'd need to
+remove the `aws_route53_*` resources, create the ACM validation CNAMEs and
+the CloudFront aliases at that provider, and drop `aws_acm_certificate_validation`
+(or point it at the externally-created records).
 
 ## (Pretty) URL Notes
 

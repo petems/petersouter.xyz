@@ -76,6 +76,9 @@ resource "aws_s3_bucket_logging" "website" {
   bucket        = aws_s3_bucket.website.id
   target_bucket = aws_s3_bucket.logs.id
   target_prefix = "s3-access/"
+
+  # S3 needs the delivery permission in place before logging can be enabled
+  depends_on = [aws_s3_bucket_policy.logs]
 }
 
 ####
@@ -293,11 +296,6 @@ resource "aws_route53_record" "dns" {
     zone_id                = aws_cloudfront_distribution.website_distribution.hosted_zone_id
     evaluate_target_health = false
   }
-}
-
-import {
-  to = aws_route53_record.www
-  id = "${data.aws_route53_zone.main.zone_id}_${var.alt_dns_record}_A"
 }
 
 resource "aws_route53_record" "www" {
