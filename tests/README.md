@@ -59,7 +59,7 @@ All 30 tests pass successfully:
 ## Files
 
 - `talks-filter.test.js`: Main test suite
-- `../static/js/talks-filter.js`: Source code being tested
+- `../assets/js/talks-filter.js`: Source code being tested
 - `../jest.config.js`: Jest configuration
 - `../package.json`: Test dependencies and scripts
 
@@ -94,7 +94,7 @@ These tests can be integrated into CI/CD pipelines:
 
 When adding new filtering features:
 
-1. Add the new function to `static/js/talks-filter.js`
+1. Add the new function to `assets/js/talks-filter.js`
 2. Export the function for testing
 3. Add corresponding tests to `talks-filter.test.js`
 4. Run `npm test` to verify

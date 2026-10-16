@@ -10,7 +10,7 @@ const {
   applyFilters,
   resetFilters,
   getActiveFilters
-} = require('../static/js/talks-filter.js');
+} = require('../assets/js/talks-filter.js');
 
 describe('Talks Filter Logic', () => {
   beforeEach(() => {

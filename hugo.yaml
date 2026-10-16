@@ -122,3 +122,29 @@ outputs:
   page:
     - "HTML"
     - "Markdown"
+
+deployment:
+  # Never delete remote files missing from the build (matches go3up behaviour).
+  # The bucket still serves legacy URLs and images from older site versions.
+  maxDeletes: 0
+  targets:
+    - name: "production"
+      url: "s3://petersouter.xyz?region=eu-west-1"
+  matchers:
+    # First matching matcher wins, so fingerprinted assets must come first.
+    # Fingerprinted CSS/JS (content hash in URL): cache forever
+    - pattern: '^.+\.[0-9a-f]{64}\.(js|css)$'
+      cacheControl: "max-age=31536000, public, immutable"
+      gzip: true
+    # Other static assets (stable URLs): one week, so replacements propagate
+    - pattern: '^.+\.(js|css|png|jpg|jpeg|gif|svg|webp|ico|ttf|woff|woff2|eot)$'
+      cacheControl: "max-age=604800, public"
+      gzip: true
+    # HTML pages: short cache, always revalidate
+    - pattern: '^.+\.(html)$'
+      cacheControl: "public, no-cache"
+      gzip: true
+    # XML/JSON feeds and data: moderate cache
+    - pattern: '^.+\.(xml|json)$'
+      cacheControl: "max-age=3600, public"
+      gzip: true
