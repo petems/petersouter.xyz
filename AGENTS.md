@@ -25,14 +25,17 @@ Configuration: `hugo.yaml`
 
 ### Terraform
 
-Run from `terraform/s3-website/`:
+Run from `terraform/s3-website/` (or `terraform/github-actions-oidc/`):
 
 ```sh
+export AWS_PROFILE=petems-personal-aws
 OTEL_TRACES_EXPORTER= terraform init
 OTEL_TRACES_EXPORTER= terraform plan
 OTEL_TRACES_EXPORTER= terraform apply
 OTEL_TRACES_EXPORTER= terraform show
 ```
+
+State is stored remotely in the `petersouter.xyz-terraform-state` S3 bucket (eu-west-1), one key per stack, with S3-native locking (`use_lockfile`). Requires Terraform >= 1.16.6. There is no local `terraform.tfstate`.
 
 ### Makefile
 
