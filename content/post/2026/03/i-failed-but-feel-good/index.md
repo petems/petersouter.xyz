@@ -10,7 +10,7 @@ title = "I Failed, But I Feel Good: GenAI, Blogging For Fun and Touching Grass"
 keywords = ["blogging", "GenAI", "productivity", "motivation", "accountability", "writing", "personal blog"]
 
 [cover]
-  image = "/images/2026/02/flag-of-zheleznogorsk-dark.png"
+  image = "/images/2026/02/flag-of-zheleznogorsk-cover.png"
 
 +++
 

@@ -1,0 +1,60 @@
+<!-- post list with thumbnails -->
+<div data-pagefind-ignore="all">
+{{ range $index, $element := $.Paginator.Pages }}
+<div class="post-preview">
+    <a href="{{ .Permalink }}">
+        <h2 class="post-title">
+            {{ .Title }}
+        </h2>
+        {{ with .Params.cover }}{{ with .image }}
+        {{ $thumbnail := replaceRE `-cover\.` "." . }}
+        <div class="post-preview-img-wrapper">
+            <img class="post-preview-img" src="{{ $thumbnail | relURL }}" alt="{{ $.Title }}">
+        </div>
+        {{ end }}{{ end }}
+	{{with .Params.subtitle }}
+        <h3 class="post-subtitle">
+            {{ . }}
+        </h3>
+	{{ end }}
+        <div class="post-content-preview">
+	{{ with .Description }}
+            {{ . }}
+        {{ else }}
+            {{ .Summary | plainify}}
+       {{ end }}
+        </div>
+    </a>
+    <p class="post-meta">
+    {{ if .Params.metadata }}
+        {{ range $index, $element := .Params.metadata }}
+            {{ if .link }}
+                <a href="{{ .link }}">{{ .text }}</a>
+            {{ else }}
+                {{ .text }}
+            {{ end }}
+        {{ end }}
+    {{ else }}
+        Posted by {{ with .Params.author }}{{ . }}{{ else }}{{ .Site.Title }}{{ end }} on {{ .Date.Format "Monday, January 2, 2006" }}
+        {{ if (and (not .Lastmod.IsZero) (not (eq (dateFormat "2006-01-02" .Lastmod) (dateFormat "2006-01-02" .Date)))) }}
+            <br>Last Modified on {{ dateFormat "Monday, January 2, 2006" .Params.LastMod }}
+        {{ end }}
+    {{ end }}
+    </p>
+
+</div>
+<hr>
+{{ end }}
+</div>
+
+<style>
+.post-preview-img-wrapper {
+    margin: 10px 0 15px 0;
+    max-width: 100%;
+}
+.post-preview-img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+</style>
