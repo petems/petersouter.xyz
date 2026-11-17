@@ -6,15 +6,79 @@ resource "aws_s3_bucket" "website" {
   bucket = var.s3_bucket_name
 }
 
-resource "aws_s3_bucket_acl" "website" {
+resource "aws_s3_bucket_ownership_controls" "website" {
   bucket = aws_s3_bucket.website.id
-  acl    = "public-read"
+  rule {
+    object_ownership = "BucketOwnerEnforced"
+  }
+}
+
+resource "aws_s3_bucket_public_access_block" "website" {
+  bucket = aws_s3_bucket.website.id
+
+  block_public_acls       = true
+  ignore_public_acls      = true
+  block_public_policy     = false
+  restrict_public_buckets = false
+}
+
+####
+# Logging bucket
+###
+resource "aws_s3_bucket" "logs" {
+  bucket = "${var.s3_bucket_name}-logs"
+}
+
+resource "aws_s3_bucket_ownership_controls" "logs" {
+  bucket = aws_s3_bucket.logs.id
+  rule {
+    object_ownership = "BucketOwnerEnforced"
+  }
+}
+
+resource "aws_s3_bucket_public_access_block" "logs" {
+  bucket = aws_s3_bucket.logs.id
+
+  block_public_acls       = true
+  ignore_public_acls      = true
+  block_public_policy     = false
+  restrict_public_buckets = true
+}
+
+data "aws_caller_identity" "current" {}
+
+data "aws_iam_policy_document" "s3_logging" {
+  statement {
+    sid = "S3ServerAccessLogsPolicy"
+    principals {
+      type        = "Service"
+      identifiers = ["logging.s3.amazonaws.com"]
+    }
+    actions   = ["s3:PutObject"]
+    resources = ["${aws_s3_bucket.logs.arn}/${aws_s3_bucket_logging.website.target_prefix}*"]
+    condition {
+      test     = "ArnLike"
+      variable = "aws:SourceArn"
+      values   = [aws_s3_bucket.website.arn]
+    }
+    condition {
+      test     = "StringEquals"
+      variable = "aws:SourceAccount"
+      values   = [data.aws_caller_identity.current.account_id]
+    }
+  }
+}
+
+resource "aws_s3_bucket_policy" "logs" {
+  bucket     = aws_s3_bucket.logs.id
+  policy     = data.aws_iam_policy_document.s3_logging.json
+  depends_on = [aws_s3_bucket_ownership_controls.logs]
 }
 
 resource "aws_s3_bucket_logging" "website" {
   bucket        = aws_s3_bucket.website.id
-  target_bucket = var.s3_bucket_name
-  target_prefix = "log/"
+  target_bucket = aws_s3_bucket.logs.id
+  target_prefix = "s3-access/"
 }
 
 resource "aws_s3_bucket_website_configuration" "website" {
@@ -38,54 +102,25 @@ resource "aws_s3_bucket_website_configuration" "website" {
   }
 }
 
-# START: For PrettyURLS
-resource "aws_s3_bucket_policy" "s3_bucket_policy" {
-  bucket = var.s3_bucket_name
+data "aws_iam_policy_document" "public_read" {
+  statement {
+    sid     = "PublicReadGetObject"
+    effect  = "Allow"
+    actions = ["s3:GetObject"]
 
-  policy = <<POLICY
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "PublicReadAccess",
-      "Effect": "Allow",
-      "Principal": {
-        "AWS": "*"
-      },
-      "Action": "s3:*",
-      "Resource": "arn:aws:s3:::${var.s3_bucket_name}/*",
-      "Condition": {
-         "StringEquals": {"aws:UserAgent": "${var.content-secret}"}
-      }
+    principals {
+      type        = "*"
+      identifiers = ["*"]
     }
-  ]
+
+    resources = ["${aws_s3_bucket.website.arn}/*"]
+  }
 }
-POLICY
 
+resource "aws_s3_bucket_policy" "public_read" {
+  bucket = aws_s3_bucket.website.id
+  policy = data.aws_iam_policy_document.public_read.json
 }
-
-# END: For PrettyURLS
-
-# START: For UglyURLS
-# resource "aws_s3_bucket_policy" "s3_bucket_policy" {
-#   bucket = "${var.s3_bucket_name}"
-#   policy =<<POLICY
-# {
-#   "Version": "2012-10-17",
-#   "Statement": [
-#     {
-#       "Effect": "Allow",
-#       "Principal": {
-#         "AWS": ["${aws_cloudfront_origin_access_identity.website-cf-identity.iam_arn}"]
-#       },
-#       "Action": "s3:*",
-#       "Resource": ["arn:aws:s3:::${var.s3_bucket_name}/*"]
-#     }
-#   ]
-# }
-# POLICY
-# }
-# END: For UglyURLS
 
 ####
 # CloudFront Bits
@@ -107,10 +142,6 @@ resource "aws_cloudfront_distribution" "website_distribution" {
       origin_ssl_protocols   = ["TLSv1", "TLSv1.1", "TLSv1.2"]
     }
 
-    custom_header {
-      name  = "User-Agent"
-      value = var.content-secret
-    }
     # END: For PrettyURLS
 
     # START: For UglyURLS

@@ -30,9 +30,3 @@ variable "alt_dns_record" {
   default = "www.petersouter.xyz"
 }
 
-variable "content-secret" {
-  type        = string
-  description = "Literally just a random string. Used to restrict s3 read access so CF is used."
-  default     = "1c3ae050-8446-45a8-8d1f-3ae92dc543c3"
-}
-
